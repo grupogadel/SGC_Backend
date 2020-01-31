@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Laboratorio\" />
+    <Folder Include="Entities\Controlnterno\" />
+    <Folder Include="Entities\Comercial\" />
+    <Folder Include="Entities\Acopio\" />
+    <Folder Include="Entities\Contabilidad\" />
+    <Folder Include="Entities\MaestroDatos\" />
+    <Folder Include="Entities\Configuracion\" />
+    <Folder Include="Entities\RecepcionMineral\" />
+    <Folder Include="View\Acopio\" />
+    <Folder Include="View\Comercial\" />
+    <Folder Include="View\Configuracion\" />
+    <Folder Include="View\Contabilidad\" />
+    <Folder Include="View\Controlnterno\" />
+    <Folder Include="View\Laboratorio\" />
+    <Folder Include="View\MaestroDatos\" />
+    <Folder Include="View\RecepcionMineral\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGC.Data\SGC.Data.csproj" />
+    <ProjectReference Include="..\SGC.Entities\SGC.Entities.csproj" />
+    <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
+    <ProjectReference Include="..\SGC.Services\SGC.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Acopio\" />
+    <Folder Include="Controllers\Comercial\" />
+    <Folder Include="Controllers\Configuracion\" />
+    <Folder Include="Controllers\Contabilidad\" />
+    <Folder Include="Controllers\Controlnterno\" />
+    <Folder Include="Controllers\Laboratorio\" />
+    <Folder Include="Controllers\MaestroDatos\" />
+    <Folder Include="Controllers\RecepcionMineral\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>
