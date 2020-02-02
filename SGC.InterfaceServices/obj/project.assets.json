@@ -1362,19 +1362,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\Cristhian\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
       "projectName": "SGC.InterfaceServices",
-      "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\obj\\",
+      "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1387,8 +1391,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+            "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+              "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
             }
           }
         }
@@ -1426,7 +1430,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

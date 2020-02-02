@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj": {}
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Web\\SGC.Web.csproj": {}
   },
   "projects": {
-    "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj": {
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
         "projectName": "SGC.Data",
-        "projectPath": "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Master_SGC\\SGC\\SGC.Data\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
               }
             }
           }
@@ -68,21 +71,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj",
         "projectName": "SGC.Entities",
-        "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,21 +136,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
         "projectName": "SGC.InterfaceServices",
-        "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -157,8 +166,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
               }
             }
           }
@@ -196,21 +205,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj": {
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\SGC.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
         "projectName": "SGC.Services",
-        "projectPath": "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Master_SGC\\SGC\\SGC.Services\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,11 +235,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj"
               },
-              "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
               }
             }
           }
@@ -272,21 +284,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj": {
+    "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Web\\SGC.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Web\\SGC.Web.csproj",
         "projectName": "SGC.Web",
-        "projectPath": "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\Master_SGC\\SGC\\SGC.Web\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Web\\SGC.Web.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Web\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -299,17 +314,17 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Data\\SGC.Data.csproj"
               },
-              "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
               },
-              "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
               },
-              "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj": {
-                "projectPath": "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj"
+              "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\SGC.Services.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\source\\repos\\SGC_Backend\\SGC.Services\\SGC.Services.csproj"
               }
             }
           }
@@ -360,7 +375,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

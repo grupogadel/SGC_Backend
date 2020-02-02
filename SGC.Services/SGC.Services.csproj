@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Comercial\Maestros\" />
+  </ItemGroup>
+
 </Project>
