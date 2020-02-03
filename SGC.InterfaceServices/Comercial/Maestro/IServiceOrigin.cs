@@ -1,10 +1,10 @@
-﻿using SGC.Entities.View.BatchMineral;
+﻿using SGC.Entities.View.Comercial.Maestros.Origin;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGC.InterfaceServices.BatchMineral
+namespace SGC.InterfaceServices.Comercial.Maestros
 {
     public interface IServiceOrigin
     {

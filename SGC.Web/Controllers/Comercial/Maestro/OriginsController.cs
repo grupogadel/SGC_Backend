@@ -6,54 +6,54 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SGC.Data;
-using SGC.Entities.Entities.BatchMineral;
+using SGC.Entities.Entities.Comercial.Maestros;
 
-namespace SGC.Web.Controllers
+namespace SGC.Web.Controllers.Comercial.Maestros
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Zones1Controller : ControllerBase
+    public class OriginsController : ControllerBase
     {
         private readonly DbContextSGC _context;
 
-        public Zones1Controller(DbContextSGC context)
+        public OriginsController(DbContextSGC context)
         {
             _context = context;
         }
 
-        // GET: api/Zones1
+        // GET: api/Origins
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Zone>>> GetZones()
+        public async Task<ActionResult<IEnumerable<Origin>>> GetOrigins()
         {
-            return await _context.Zones.ToListAsync();
+            return await _context.Origins.ToListAsync();
         }
 
-        // GET: api/Zones1/5
+        // GET: api/Origins/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Zone>> GetZone(int id)
+        public async Task<ActionResult<Origin>> GetOrigin(int id)
         {
-            var zone = await _context.Zones.FindAsync(id);
+            var origin = await _context.Origins.FindAsync(id);
 
-            if (zone == null)
+            if (origin == null)
             {
                 return NotFound();
             }
 
-            return zone;
+            return origin;
         }
 
-        // PUT: api/Zones1/5
+        // PUT: api/Origins/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutZone(int id, Zone zone)
+        public async Task<IActionResult> PutOrigin(int id, Origin origin)
         {
-            if (id != zone.Zone_ID)
+            if (id != origin.Orig_ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(zone).State = EntityState.Modified;
+            _context.Entry(origin).State = EntityState.Modified;
 
             try
             {
@@ -61,7 +61,7 @@ namespace SGC.Web.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ZoneExists(id))
+                if (!OriginExists(id))
                 {
                     return NotFound();
                 }
@@ -74,37 +74,37 @@ namespace SGC.Web.Controllers
             return NoContent();
         }
 
-        // POST: api/Zones1
+        // POST: api/Origins
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Zone>> PostZone(Zone zone)
+        public async Task<ActionResult<Origin>> PostOrigin(Origin origin)
         {
-            _context.Zones.Add(zone);
+            _context.Origins.Add(origin);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetZone", new { id = zone.Zone_ID }, zone);
+            return CreatedAtAction("GetOrigin", new { id = origin.Orig_ID }, origin);
         }
 
-        // DELETE: api/Zones1/5
+        // DELETE: api/Origins/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Zone>> DeleteZone(int id)
+        public async Task<ActionResult<Origin>> DeleteOrigin(int id)
         {
-            var zone = await _context.Zones.FindAsync(id);
-            if (zone == null)
+            var origin = await _context.Origins.FindAsync(id);
+            if (origin == null)
             {
                 return NotFound();
             }
 
-            _context.Zones.Remove(zone);
+            _context.Origins.Remove(origin);
             await _context.SaveChangesAsync();
 
-            return zone;
+            return origin;
         }
 
-        private bool ZoneExists(int id)
+        private bool OriginExists(int id)
         {
-            return _context.Zones.Any(e => e.Zone_ID == id);
+            return _context.Origins.Any(e => e.Orig_ID == id);
         }
     }
 }

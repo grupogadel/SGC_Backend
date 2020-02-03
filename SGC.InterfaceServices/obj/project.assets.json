@@ -1072,6 +1072,7 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -1361,23 +1362,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MAU\\.nuget\\packages\\": {},
+    "C:\\Users\\Cristhian\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "projectUniqueName": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
       "projectName": "SGC.InterfaceServices",
-      "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
-      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-      "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\obj\\",
+      "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.InterfaceServices\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1390,8 +1391,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
-              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj"
+            "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+              "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
             }
           }
         }

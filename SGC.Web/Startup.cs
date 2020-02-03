@@ -12,12 +12,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using SGC.Data;
 using Newtonsoft.Json;
-using SGC.InterfaceServices.BatchMineral;
-using SGC.Services.BatchMineral;
 using SGC.InterfaceServices.Configuracion.Sistema;
 using SGC.Services.Configuracion.Sistema;
 using SGC.InterfaceServices.Comercial.Maestro;
 using SGC.Services.Comercial.Maestro;
+using SGC.InterfaceServices.Comercial.Maestros;
+using SGC.Services.Comercial.Maestros;
 
 namespace SGC.Web
 {
@@ -38,11 +38,19 @@ namespace SGC.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddDbContext<DbContextSGC>(options=>options.UseSqlServer(connection));
-            services.AddTransient<IServiceZone, ServiceZone>();
+            services.AddTransient<IServiceZona, ServiceZona>();
             services.AddTransient<IServiceOrigin, ServiceOrigin>();
             services.AddTransient<IServiceCompany, ServiceCompany>();
             services.AddTransient<IServiceCollector, ServiceCollector>();
             services.AddTransient<IServicePeriod, ServicePeriod>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyPolicy", builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                );
+            });
             services.AddMvc();
         }
 
@@ -53,6 +61,7 @@ namespace SGC.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors("MyPolicy");
 
             app.UseHttpsRedirection();
 

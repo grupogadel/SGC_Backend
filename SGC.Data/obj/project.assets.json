@@ -2304,6 +2304,7 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -2750,7 +2751,7 @@
       ]
     },
     "System.Collections.Specialized/4.3.0": {
-      "sha512": "NoPBj0ykejqAWW4p4gGtrrL+3c84ZLSvGnHgq422ew1Rj4WKj1FA8/BCybqC111EtgcqUl6ZJNFYYS22HLgbjA==",
+      "sha512": "Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
       "type": "package",
       "path": "system.collections.specialized/4.3.0",
       "files": [
@@ -3914,7 +3915,6 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4569,6 +4569,7 @@
       "path": "system.runtime.serialization.json/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4622,7 +4623,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "2Z5t70a2SwMsfQDp9KOclaZNyQhfIga2gppq9lIUDM1A4ohTshn4JqT7ir8bvIhXgorWKYDAr6rPzEbi/nTGKg==",
+      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -5589,23 +5590,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MAU\\.nuget\\packages\\": {},
+    "C:\\Users\\Cristhian\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
       "projectName": "SGC.Data",
-      "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj",
-      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-      "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\obj\\",
+      "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
+      "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5618,8 +5619,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
-              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj"
+            "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+              "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
             }
           }
         }

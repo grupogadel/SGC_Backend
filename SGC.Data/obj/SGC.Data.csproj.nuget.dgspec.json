@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj": {}
+    "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj": {}
   },
   "projects": {
-    "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj": {
+    "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
         "projectName": "SGC.Data",
-        "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj",
-        "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-        "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\SGC.Data.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
-                "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj"
+              "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
+                "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj"
               }
             }
           }
@@ -75,20 +75,20 @@
         }
       }
     },
-    "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
+    "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj",
         "projectName": "SGC.Entities",
-        "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj",
-        "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-        "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\obj\\",
+        "projectPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\SGC.Entities.csproj",
+        "packagesPath": "C:\\Users\\Cristhian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cristhian\\Documents\\GitHub\\SGC_Backend\\SGC.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cristhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

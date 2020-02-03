@@ -58,3 +58,18 @@ D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Services\obj\Debug\netcoreapp3.
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csproj.CopyComplete
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.dll
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csprojAssemblyReference.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.AssemblyInfo.cs
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.deps.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Data.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csproj.CopyComplete

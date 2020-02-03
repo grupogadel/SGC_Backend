@@ -42,3 +42,14 @@ D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.InterfaceServices\obj\Debug\net
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.csproj.CopyComplete
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
 D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.csprojAssemblyReference.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.AssemblyInfo.cs
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.deps.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.InterfaceServices\obj\Debug\netcoreapp3.1\SGC.InterfaceServices.csproj.CopyComplete
