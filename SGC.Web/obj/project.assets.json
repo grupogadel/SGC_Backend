@@ -4150,7 +4150,6 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -5174,7 +5173,7 @@
       ]
     },
     "System.Collections.Specialized/4.3.0": {
-      "sha512": "Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
+      "sha512": "NoPBj0ykejqAWW4p4gGtrrL+3c84ZLSvGnHgq422ew1Rj4WKj1FA8/BCybqC111EtgcqUl6ZJNFYYS22HLgbjA==",
       "type": "package",
       "path": "system.collections.specialized/4.3.0",
       "files": [
@@ -5480,7 +5479,6 @@
       "path": "system.composition.convention/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.Convention.dll",
@@ -5523,7 +5521,6 @@
       "path": "system.composition.typedparts/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.TypedParts.dll",
@@ -6595,6 +6592,7 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7268,7 +7266,6 @@
       "path": "system.runtime.serialization.json/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -7322,7 +7319,7 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.3.0": {
-      "sha512": "Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "2Z5t70a2SwMsfQDp9KOclaZNyQhfIga2gppq9lIUDM1A4ohTshn4JqT7ir8bvIhXgorWKYDAr6rPzEbi/nTGKg==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
@@ -8355,19 +8352,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\MAU\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj",
+      "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Web\\SGC.Web.csproj",
       "projectName": "SGC.Web",
-      "projectPath": "D:\\Master_SGC\\SGC\\SGC.Web\\SGC.Web.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Master_SGC\\SGC\\SGC.Web\\obj\\",
+      "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Web\\SGC.Web.csproj",
+      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
+      "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Web\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8380,17 +8381,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.Data\\SGC.Data.csproj"
+            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj": {
+              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Data\\SGC.Data.csproj"
             },
-            "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
+              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj"
             },
-            "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
+            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
             },
-            "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.Services\\SGC.Services.csproj"
+            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Services\\SGC.Services.csproj": {
+              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Services\\SGC.Services.csproj"
             }
           }
         }
@@ -8441,7 +8442,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

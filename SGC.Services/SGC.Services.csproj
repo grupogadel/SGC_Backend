@@ -15,4 +15,13 @@
     <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Acopio\" />
+    <Folder Include="Contablidad\" />
+    <Folder Include="ControlInterno\" />
+    <Folder Include="Laboratorio\" />
+    <Folder Include="MuestraDatoos\" />
+    <Folder Include="RecepcionMineral\" />
+  </ItemGroup>
+
 </Project>

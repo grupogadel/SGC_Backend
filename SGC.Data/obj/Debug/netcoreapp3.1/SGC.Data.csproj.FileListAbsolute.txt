@@ -37,3 +37,16 @@ D:\Master_SGC\SGC\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.AssemblyInfo.cs
 D:\Master_SGC\SGC\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.csproj.CopyComplete
 D:\Master_SGC\SGC\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.dll
 D:\Master_SGC\SGC\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Data.deps.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Data.runtimeconfig.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Data.runtimeconfig.dev.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Data.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.csprojAssemblyReference.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.AssemblyInfo.cs
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.csproj.CopyComplete
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Data\obj\Debug\netcoreapp3.1\SGC.Data.pdb

@@ -23,8 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Acopio\" />
-    <Folder Include="Controllers\Comercial\" />
-    <Folder Include="Controllers\Configuracion\" />
     <Folder Include="Controllers\Contabilidad\" />
     <Folder Include="Controllers\Controlnterno\" />
     <Folder Include="Controllers\Laboratorio\" />

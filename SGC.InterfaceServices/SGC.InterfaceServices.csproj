@@ -15,8 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Acopio\" />
-    <Folder Include="Comercial\" />
-    <Folder Include="Configuracion\" />
     <Folder Include="Contabilidad\" />
     <Folder Include="Controlnterno\" />
     <Folder Include="Laboratorio\" />

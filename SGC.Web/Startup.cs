@@ -14,6 +14,10 @@ using SGC.Data;
 using Newtonsoft.Json;
 using SGC.InterfaceServices.BatchMineral;
 using SGC.Services.BatchMineral;
+using SGC.InterfaceServices.Configuracion.Sistema;
+using SGC.Services.Configuracion.Sistema;
+using SGC.InterfaceServices.Comercial.Maestro;
+using SGC.Services.Comercial.Maestro;
 
 namespace SGC.Web
 {
@@ -30,9 +34,15 @@ namespace SGC.Web
         public void ConfigureServices(IServiceCollection services)
         {
             var connection = Configuration.GetConnectionString("Conexion");
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddDbContext<DbContextSGC>(options=>options.UseSqlServer(connection));
             services.AddTransient<IServiceZone, ServiceZone>();
             services.AddTransient<IServiceOrigin, ServiceOrigin>();
+            services.AddTransient<IServiceCompany, ServiceCompany>();
+            services.AddTransient<IServiceCollector, ServiceCollector>();
+            services.AddTransient<IServicePeriod, ServicePeriod>();
             services.AddMvc();
         }
 

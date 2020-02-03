@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\Acopio\" />
-    <Folder Include="Mapping\Comercial\" />
-    <Folder Include="Mapping\Configuracion\" />
+    <Folder Include="Mapping\Acopio\Maestro\" />
     <Folder Include="Mapping\Contabilidad\" />
     <Folder Include="Mapping\Controlnterno\" />
     <Folder Include="Mapping\Laboratorio\" />

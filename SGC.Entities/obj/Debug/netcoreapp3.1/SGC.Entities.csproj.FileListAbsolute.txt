@@ -21,3 +21,11 @@ D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo
 D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
 D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
 D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache

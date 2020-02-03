@@ -1072,7 +1072,6 @@
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
@@ -1362,19 +1361,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lenovo\\.nuget\\packages\\": {}
+    "C:\\Users\\MAU\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "projectUniqueName": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
       "projectName": "SGC.InterfaceServices",
-      "projectPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\Master_SGC\\SGC\\SGC.InterfaceServices\\obj\\",
+      "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj",
+      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
+      "outputPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.InterfaceServices\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1387,8 +1390,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj": {
-              "projectPath": "D:\\Master_SGC\\SGC\\SGC.Entities\\SGC.Entities.csproj"
+            "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj": {
+              "projectPath": "D:\\Grupo Gadel\\SGC-SISTEMADEGESTIONCOMERCIAL\\SGC.Entities\\SGC.Entities.csproj"
             }
           }
         }
@@ -1426,7 +1429,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
