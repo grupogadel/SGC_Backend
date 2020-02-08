@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Acopio\**" />
+    <Compile Remove="Contablidad\**" />
+    <Compile Remove="ControlInterno\**" />
+    <Compile Remove="Laboratorio\**" />
+    <Compile Remove="MuestraDatoos\**" />
+    <Compile Remove="RecepcionMineral\**" />
+    <EmbeddedResource Remove="Acopio\**" />
+    <EmbeddedResource Remove="Contablidad\**" />
+    <EmbeddedResource Remove="ControlInterno\**" />
+    <EmbeddedResource Remove="Laboratorio\**" />
+    <EmbeddedResource Remove="MuestraDatoos\**" />
+    <EmbeddedResource Remove="RecepcionMineral\**" />
+    <None Remove="Acopio\**" />
+    <None Remove="Contablidad\**" />
+    <None Remove="ControlInterno\**" />
+    <None Remove="Laboratorio\**" />
+    <None Remove="MuestraDatoos\**" />
+    <None Remove="RecepcionMineral\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.0" />
+    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,47 @@
+D:\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
+D:\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Master_SGC\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\Master_SGC\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Master_SGC\SGC\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Master_SGC\SGC\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\GADEL\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\GADEL\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\GADEL\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
+D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb

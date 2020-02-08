@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Acopio\**" />
+    <Compile Remove="Contabilidad\**" />
+    <Compile Remove="Controlnterno\**" />
+    <Compile Remove="Laboratorio\**" />
+    <Compile Remove="MaestroDatos\**" />
+    <Compile Remove="RecepcionMineral\**" />
+    <EmbeddedResource Remove="Acopio\**" />
+    <EmbeddedResource Remove="Contabilidad\**" />
+    <EmbeddedResource Remove="Controlnterno\**" />
+    <EmbeddedResource Remove="Laboratorio\**" />
+    <EmbeddedResource Remove="MaestroDatos\**" />
+    <EmbeddedResource Remove="RecepcionMineral\**" />
+    <None Remove="Acopio\**" />
+    <None Remove="Contabilidad\**" />
+    <None Remove="Controlnterno\**" />
+    <None Remove="Laboratorio\**" />
+    <None Remove="MaestroDatos\**" />
+    <None Remove="RecepcionMineral\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGC.Entities\SGC.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

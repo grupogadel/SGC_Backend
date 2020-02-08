@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Contabilidad\**" />
+    <Compile Remove="Entities\Controlnterno\**" />
+    <Compile Remove="Entities\Laboratorio\**" />
+    <Compile Remove="Entities\RecepcionMineral\**" />
+    <EmbeddedResource Remove="Entities\Contabilidad\**" />
+    <EmbeddedResource Remove="Entities\Controlnterno\**" />
+    <EmbeddedResource Remove="Entities\Laboratorio\**" />
+    <EmbeddedResource Remove="Entities\RecepcionMineral\**" />
+    <None Remove="Entities\Contabilidad\**" />
+    <None Remove="Entities\Controlnterno\**" />
+    <None Remove="Entities\Laboratorio\**" />
+    <None Remove="Entities\RecepcionMineral\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+</Project>

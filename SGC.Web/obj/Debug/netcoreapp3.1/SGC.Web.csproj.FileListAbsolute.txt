@@ -1,0 +1,914 @@
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+D:\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+C:\Users\Cristhian\Desktop\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+D:\Master_SGC\SGC\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+D:\Master_SGC\SGC\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+D:\Grupo Gadel\SGC-SISTEMADEGESTIONCOMERCIAL\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Data.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+C:\Users\Cristhian\Documents\GitHub\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\appsettings.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.exe
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.deps.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.runtimeconfig.dev.json
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csprojAssemblyReference.cache
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.Manifest.cache
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\staticwebassets\SGC.Web.StaticWebAssets.xml
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfoInputs.cache
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.AssemblyInfo.cs
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.RazorTargetAssemblyInfo.cache
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.csproj.CopyComplete
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.dll
+D:\GADEL\SGC_Backend\SGC.Web\obj\Debug\netcoreapp3.1\SGC.Web.pdb
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\GADEL\SGC_Backend\SGC.Web\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

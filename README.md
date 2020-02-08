@@ -1,1 +1,1 @@
-# SGC_Backend ASAPC GRUPO GADEL
+# SGC_Backend

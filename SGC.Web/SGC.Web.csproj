@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Acopio\**" />
+    <Compile Remove="Controllers\Contabilidad\**" />
+    <Compile Remove="Controllers\Controlnterno\**" />
+    <Compile Remove="Controllers\Laboratorio\**" />
+    <Compile Remove="Controllers\MaestroDatos\**" />
+    <Compile Remove="Controllers\RecepcionMineral\**" />
+    <Content Remove="Controllers\Acopio\**" />
+    <Content Remove="Controllers\Contabilidad\**" />
+    <Content Remove="Controllers\Controlnterno\**" />
+    <Content Remove="Controllers\Laboratorio\**" />
+    <Content Remove="Controllers\MaestroDatos\**" />
+    <Content Remove="Controllers\RecepcionMineral\**" />
+    <EmbeddedResource Remove="Controllers\Acopio\**" />
+    <EmbeddedResource Remove="Controllers\Contabilidad\**" />
+    <EmbeddedResource Remove="Controllers\Controlnterno\**" />
+    <EmbeddedResource Remove="Controllers\Laboratorio\**" />
+    <EmbeddedResource Remove="Controllers\MaestroDatos\**" />
+    <EmbeddedResource Remove="Controllers\RecepcionMineral\**" />
+    <None Remove="Controllers\Acopio\**" />
+    <None Remove="Controllers\Contabilidad\**" />
+    <None Remove="Controllers\Controlnterno\**" />
+    <None Remove="Controllers\Laboratorio\**" />
+    <None Remove="Controllers\MaestroDatos\**" />
+    <None Remove="Controllers\RecepcionMineral\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SGC.Entities\SGC.Entities.csproj" />
+    <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
+    <ProjectReference Include="..\SGC.Services\SGC.Services.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+
+</Project>
