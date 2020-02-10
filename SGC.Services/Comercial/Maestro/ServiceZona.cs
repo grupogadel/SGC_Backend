@@ -51,7 +51,7 @@ namespace SGC.Services.Comercial.Maestros
         {
             return new Zona()
             {
-                Zona_ID = (int)reader["Zona_ID"],
+                Zone_ID = (int)reader["Zone_ID"],
                 Zone_Cod = reader["Zone_Cod"].ToString(),
                 Dist_ID = (int)reader["Dist_ID"],
                 Zone_Name = reader["Zone_Name"].ToString(),
@@ -101,7 +101,7 @@ namespace SGC.Services.Comercial.Maestros
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Zona_Update";
-                cmd.Parameters.Add(new SqlParameter("@Zona_ID", model.Zona_ID));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Cod", model.Zone_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Name", model.Zone_Name));
@@ -132,7 +132,7 @@ namespace SGC.Services.Comercial.Maestros
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Zona_Delete";
-                cmd.Parameters.Add(new SqlParameter("@Zona_ID", id));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -159,7 +159,7 @@ namespace SGC.Services.Comercial.Maestros
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Zona_Get";
-                cmd.Parameters.Add(new SqlParameter("@Zona_ID", id));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
                 Zona response = null;
