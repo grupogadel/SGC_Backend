@@ -47,6 +47,20 @@
     <ProjectReference Include="..\SGC.Services\SGC.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\M_CM\Acopio\" />
+    <Folder Include="Controllers\M_CM\Comercial\" />
+    <Folder Include="Controllers\M_CM\ControlInterno\" />
+    <Folder Include="Controllers\M_CM\Laboratorio\" />
+    <Folder Include="Controllers\M_CM\MaestroDatos\" />
+    <Folder Include="Controllers\M_CM\RecepcionMineral\" />
+    <Folder Include="Controllers\M_FI\Contabilidad\" />
+    <Folder Include="Controllers\M_OP\PlantaCIP\" />
+    <Folder Include="Controllers\M_OP\PlantaFlotacion\" />
+    <Folder Include="Controllers\M_WK\" />
+    <Folder Include="Controllers\M_XX\Comercial\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 

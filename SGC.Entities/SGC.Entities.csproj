@@ -24,4 +24,18 @@
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\M_CM\Acopio\" />
+    <Folder Include="Entities\M_CM\Comercial\" />
+    <Folder Include="Entities\M_CM\Laboratorio\" />
+    <Folder Include="Entities\M_CM\ControlInterno\" />
+    <Folder Include="Entities\M_CM\MaestroDatos\" />
+    <Folder Include="Entities\M_CM\RecepcionMineral\" />
+    <Folder Include="Entities\M_FI\Contabilidad\" />
+    <Folder Include="Entities\M_OP\PlantaFlotacion\" />
+    <Folder Include="Entities\M_OP\PlantaCIP\" />
+    <Folder Include="Entities\M_WK\" />
+    <Folder Include="Entities\M_XX\Comercial\" />
+  </ItemGroup>
+
 </Project>

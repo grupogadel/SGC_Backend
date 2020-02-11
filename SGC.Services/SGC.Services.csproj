@@ -37,4 +37,18 @@
     <ProjectReference Include="..\SGC.InterfaceServices\SGC.InterfaceServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="M_CM\Acopio\" />
+    <Folder Include="M_CM\Comercial\" />
+    <Folder Include="M_CM\ControlInterno\" />
+    <Folder Include="M_CM\Laboratorio\" />
+    <Folder Include="M_CM\MaestroDatos\" />
+    <Folder Include="M_CM\RecepcionMineral\" />
+    <Folder Include="M_FI\Contabilidad\" />
+    <Folder Include="M_OP\PlantaCIP\" />
+    <Folder Include="M_OP\PlantaFlotacion\" />
+    <Folder Include="M_WK\" />
+    <Folder Include="M_XX\Comercial\" />
+  </ItemGroup>
+
 </Project>

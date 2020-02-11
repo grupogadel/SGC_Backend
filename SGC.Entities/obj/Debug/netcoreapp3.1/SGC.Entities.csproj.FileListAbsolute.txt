@@ -45,3 +45,11 @@ D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyI
 D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
 D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
 D:\GADEL\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.deps.json
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache

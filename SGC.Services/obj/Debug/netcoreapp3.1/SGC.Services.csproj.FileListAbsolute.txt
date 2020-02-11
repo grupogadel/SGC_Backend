@@ -86,3 +86,16 @@ D:\GADEL\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.AssemblyI
 D:\GADEL\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csproj.CopyComplete
 D:\GADEL\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.dll
 D:\GADEL\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.deps.json
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Services.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Entities.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.InterfaceServices.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Services\bin\Debug\netcoreapp3.1\SGC.Entities.pdb
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csprojAssemblyReference.cache
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.AssemblyInfoInputs.cache
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.AssemblyInfo.cs
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.csproj.CopyComplete
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.dll
+D:\Grupo Gadel\SGC_Backend\SGC.Services\obj\Debug\netcoreapp3.1\SGC.Services.pdb
