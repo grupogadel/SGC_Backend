@@ -53,7 +53,7 @@ namespace SGC.Services.M_XX.Sistema
             return new Company()
             {
                 Compa_ID = (int)reader["Compa_ID"],
-                Compa_Father_ID = reader["compa_Father_ID"] == default ? (int)reader["compa_Father_ID"] : new int?(),
+                Compa_Father_ID = reader["Compa_Father_ID"] == DBNull.Value ? new int?() : (int)reader["Compa_Father_ID"],
                 Compa_Cod = reader["Compa_Cod"].ToString(),
                 Compa_Name = reader["Compa_Name"].ToString(),
                 Compa_TaxID = reader["Compa_TaxID"].ToString(),
@@ -83,7 +83,7 @@ namespace SGC.Services.M_XX.Sistema
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Compania_Add";
-                cmd.Parameters.Add(new SqlParameter("@Compa_ID", model.Compa_ID));
+                cmd.Parameters.Add(new SqlParameter("@Compa_Father_ID", model.Compa_Father_ID != null ? model.Compa_Father_ID : 0));
                 cmd.Parameters.Add(new SqlParameter("@Compa_Cod", model.Compa_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Compa_Name", model.Compa_Name));
                 cmd.Parameters.Add(new SqlParameter("@Compa_TaxID", model.Compa_TaxID));
@@ -96,10 +96,7 @@ namespace SGC.Services.M_XX.Sistema
                 cmd.Parameters.Add(new SqlParameter("@Compa_AcctDeb", model.Compa_AcctDeb));
                 cmd.Parameters.Add(new SqlParameter("@Compa_AcctCre", model.Compa_AcctCre));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-                cmd.Parameters.Add(new SqlParameter("@Creation_Date", model.Creation_Date));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
-                cmd.Parameters.Add(new SqlParameter("@Modified_Date", model.Modified_Date));
-                cmd.Parameters.Add(new SqlParameter("@Compa_Status", model.Compa_Status));
 
                 //cmd.Parameters.Add("@Resultado",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
 
@@ -128,6 +125,7 @@ namespace SGC.Services.M_XX.Sistema
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Compania_Update";
                 cmd.Parameters.Add(new SqlParameter("@Compa_ID", model.Compa_ID));
+                cmd.Parameters.Add(new SqlParameter("@Compa_Father_ID", model.Compa_Father_ID != null ? model.Compa_Father_ID : 0));
                 cmd.Parameters.Add(new SqlParameter("@Compa_Cod", model.Compa_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Compa_Name", model.Compa_Name));
                 cmd.Parameters.Add(new SqlParameter("@Compa_TaxID", model.Compa_TaxID));

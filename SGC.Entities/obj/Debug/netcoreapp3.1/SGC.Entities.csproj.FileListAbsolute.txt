@@ -52,4 +52,3 @@ D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.Ass
 D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.AssemblyInfo.cs
 D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.dll
 D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.pdb
-D:\Grupo Gadel\SGC_Backend\SGC.Entities\obj\Debug\netcoreapp3.1\SGC.Entities.csprojAssemblyReference.cache
