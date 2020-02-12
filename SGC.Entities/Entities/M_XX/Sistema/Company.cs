@@ -9,7 +9,7 @@ namespace SGC.Entities.Entities.M_XX.Sistema
     {
         [Key]
         public int Compa_ID { get; set; }
-        public int Compa_Father_ID { get; set; }
+        public int? Compa_Father_ID { get; set; }
         public string Compa_Cod { get; set; }
         public string Compa_Name { get; set; }
         public string Compa_TaxID { get; set; }

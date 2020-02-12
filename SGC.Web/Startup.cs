@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using SGC.InterfaceServices.Comercial.Maestros;
 using SGC.Services.Comercial.Maestros;
+using SGC.Services.M_XX.Sistema;
+using SGC.InterfaceServices.M_XX.Sistema;
 
 namespace SGC.Web
 {
@@ -27,6 +29,7 @@ namespace SGC.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZona, ServiceZona>();
+            services.AddScoped<IServiceCompany, ServiceCompany>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>

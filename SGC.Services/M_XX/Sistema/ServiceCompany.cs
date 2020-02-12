@@ -28,7 +28,7 @@ namespace SGC.Services.M_XX.Sistema
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Company_GetAll";
+                cmd.CommandText = "[XX].Compania_GetAll";
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -49,21 +49,21 @@ namespace SGC.Services.M_XX.Sistema
         }
 
         private Company MapToCompany(SqlDataReader reader)
-        {
+        {            
             return new Company()
             {
                 Compa_ID = (int)reader["Compa_ID"],
-                Compa_Father_ID = (int)reader["Compa_Father_ID"],
-                Compa_Cod = reader["Compa_Cod "].ToString(),
-                Compa_Name = reader["Compa_Name "].ToString(),
+                Compa_Father_ID = reader["compa_Father_ID"] == default ? (int)reader["compa_Father_ID"] : new int?(),
+                Compa_Cod = reader["Compa_Cod"].ToString(),
+                Compa_Name = reader["Compa_Name"].ToString(),
                 Compa_TaxID = reader["Compa_TaxID"].ToString(),
                 Compa_Country = reader["Compa_Country"].ToString(),
                 Compa_Region = reader["Compa_Region"].ToString(),
                 Compa_Address = reader["Compa_Address"].ToString(),
                 Compa_Curr_Funct = reader["Compa_Curr_Funct"].ToString(),
                 Compa_Curr_Loc = reader["Compa_Curr_Loc"].ToString(),
-                Compa_Curr_Grp = reader["Compa_Curr_Grp  "].ToString(),
-                Compa_AcctDeb = reader["Compa_AcctDeb  "].ToString(),
+                Compa_Curr_Grp = reader["Compa_Curr_Grp"].ToString(),
+                Compa_AcctDeb = reader["Compa_AcctDeb"].ToString(),
                 Compa_AcctCre = reader["Compa_AcctCre"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
@@ -169,7 +169,7 @@ namespace SGC.Services.M_XX.Sistema
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Compania_Delete";
+                cmd.CommandText = "[XX].Compania_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Compa_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -196,7 +196,7 @@ namespace SGC.Services.M_XX.Sistema
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Compania_Get";
+                cmd.CommandText = "[XX].Compania_Get";
                 cmd.Parameters.Add(new SqlParameter("@Compa_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
