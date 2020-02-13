@@ -4850,23 +4850,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MAU\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Alex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
+      "projectUniqueName": "D:\\GADEL\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
       "projectName": "SGC.Services",
-      "projectPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
-      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-      "outputPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\obj\\",
+      "projectPath": "D:\\GADEL\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
+      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+      "outputPath": "D:\\GADEL\\SGC_Backend\\SGC.Services\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4879,8 +4875,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Grupo Gadel\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
-              "projectPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
+            "D:\\GADEL\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+              "projectPath": "D:\\GADEL\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
             }
           }
         }

@@ -44,7 +44,6 @@
     <Folder Include="M_FI\Contabilidad\" />
     <Folder Include="M_OP\PlantaCIP\" />
     <Folder Include="M_OP\PlantaFlotacion\" />
-    <Folder Include="M_WK\" />
     <Folder Include="M_XX\Comercial\" />
   </ItemGroup>
 

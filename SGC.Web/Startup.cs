@@ -9,6 +9,8 @@ using SGC.InterfaceServices.Comercial.Maestros;
 using SGC.Services.Comercial.Maestros;
 using SGC.Services.M_XX.Sistema;
 using SGC.InterfaceServices.M_XX.Sistema;
+using SGC.InterfaceServices.M_WK;
+using SGC.Services.M_WK;
 
 namespace SGC.Web
 {
@@ -30,6 +32,8 @@ namespace SGC.Web
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZona, ServiceZona>();
             services.AddScoped<IServiceCompany, ServiceCompany>();
+            services.AddScoped<IServiceUsuario, ServiceUsuario>();
+            services.AddScoped<IServicePosicion, ServicePosicion>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>

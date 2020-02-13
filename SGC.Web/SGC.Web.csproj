@@ -57,7 +57,6 @@
     <Folder Include="Controllers\M_FI\Contabilidad\" />
     <Folder Include="Controllers\M_OP\PlantaCIP\" />
     <Folder Include="Controllers\M_OP\PlantaFlotacion\" />
-    <Folder Include="Controllers\M_WK\" />
     <Folder Include="Controllers\M_XX\Comercial\" />
   </ItemGroup>
 
