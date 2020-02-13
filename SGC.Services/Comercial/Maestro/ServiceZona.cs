@@ -42,7 +42,7 @@ namespace SGC.Services.Comercial.Maestros
             }
             catch (Exception e)
             {
-                return new List<Zona>();//[]
+                return response;// new List<Zona>();//[]
                 throw e;
             }
         }
