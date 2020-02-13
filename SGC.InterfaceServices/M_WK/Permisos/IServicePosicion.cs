@@ -12,6 +12,6 @@ namespace SGC.InterfaceServices.M_WK
         //int Add(Usuario model);
         //int Update(Usuario model);
         //int Delete(int id);
-        Task<List<Posicion>> GetByUser(int id);
+        List<Posicion> GetByUser(int id);
     }
 }

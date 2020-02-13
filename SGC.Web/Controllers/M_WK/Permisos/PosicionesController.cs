@@ -75,11 +75,11 @@ namespace SGC.Web.Controllers.M_WK
 
         // GET api/Posiciones/GetByUser/1
         [HttpGet("[action]/{id}")]
-        public async Task<IActionResult> GetByUser(int id)
+        public IActionResult GetByUser(int id)
         {
             try
             {
-                var result = await this._posicionService.GetByUser(id);
+                var result = this._posicionService.GetByUser(id);
                 return Ok(result);
             }
             catch (Exception ex)

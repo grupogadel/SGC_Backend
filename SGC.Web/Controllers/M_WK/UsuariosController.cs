@@ -20,11 +20,11 @@ namespace SGC.Web.Controllers.M_WK
 
         // GET: api/Usuarios/GetAll
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
             try
             {
-                var result = await this._usuarioService.GetAll();
+                var result = this._usuarioService.GetAll();
                 return Ok(result);
             }
             catch (Exception ex)

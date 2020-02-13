@@ -184,7 +184,7 @@ namespace SGC.Services.M_WK
 
         // GET api/Zonas/GetByUser/1
 
-        public async Task<List<Posicion>> GetByUser(int id)
+        public List<Posicion> GetByUser(int id)
         {
             var response = new List<Posicion>();
 
@@ -196,15 +196,15 @@ namespace SGC.Services.M_WK
                 cmd.CommandText = "[WK].Posicion_GetByUser";
                 cmd.Parameters.Add(new SqlParameter("@User_ID", id));
 
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
+                conn.OpenAsync();
+                using (var reader = cmd.ExecuteReader())
                 {
-                    while (await reader.ReadAsync())
+                    while (reader.Read())
                     {
                         response.Add(MapToPosicion(reader));
                     }
                 }
-                await conn.CloseAsync();
+                conn.CloseAsync();
                 return response;
             }
             catch (Exception e)

@@ -18,9 +18,9 @@ namespace SGC.Services.M_WK
         }
 
         // GET: api/Usuarios/GetAll
-        public async Task<List<Usuario>> GetAll()
+        public List<Usuario> GetAll()
         {
-            var response = new List<Usuario>();
+            var usuarios = new List<Usuario>();
 
             try
             {
@@ -29,27 +29,43 @@ namespace SGC.Services.M_WK
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[WK].Usuario_GetAll";
 
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
                 {
-                    while (await reader.ReadAsync())
+                    while (reader.Read())
                     {
-                        response.Add(MapToUsuario(reader));
+                        usuarios.Add(MapToUsuario(reader));
                     }
                 }
-                await conn.CloseAsync();
-                return response;
+
+                cmd.CommandText = "[WK].Posicion_GetByUser";
+
+                foreach (var u in usuarios)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@User_ID", u.User_ID));
+                    
+                    using (var dr =  cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            u.Positions.Add(MapToPosicion(dr));
+                        }
+                    }
+                }
+                conn.Close();
+				
+                return usuarios;
             }
             catch (Exception e)
             {
-                return response;//
+                return usuarios;//
                 throw e;
             }
         }
 
         private Usuario MapToUsuario(SqlDataReader reader)
         {
-
             return new Usuario()
             {
                 User_ID = (int)reader["User_ID"],
@@ -60,13 +76,19 @@ namespace SGC.Services.M_WK
                 User_User = reader["User_User"].ToString(),
                 User_Status = reader["User_Status"].ToString(),
                 //Position_ID = (int)reader["Position_ID"],
-
-                //Positions = ServicePosicion.GetByUser((int)reader["User_ID"])
             };
         }
 
+        private Posicion MapToPosicion(SqlDataReader reader)
+        {
+            return new Posicion()
+            {
+                Position_ID = (int)reader["Position_ID"],
+                Position_Cod = reader["Position_Cod"].ToString(),
+                Position_Name = reader["Position_Name"].ToString()
+            };
+        }
 
-        
         // POST: api/Usuarios/Add
         /*public int Add(Usuario model)
         {

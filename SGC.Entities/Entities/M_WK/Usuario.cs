@@ -24,6 +24,11 @@ namespace SGC.Entities.Entities.M_WK
         //public int? Position_ID { get; set; }
 
         public virtual List<Posicion> Positions { get;  set;}
+
+        public Usuario()
+        {
+            Positions = new List<Posicion>();
+        }
     }
     
 }

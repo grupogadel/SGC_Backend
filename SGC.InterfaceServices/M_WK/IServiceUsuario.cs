@@ -8,7 +8,7 @@ namespace SGC.InterfaceServices.M_WK
     public interface IServiceUsuario
     {
 
-        Task<List<Usuario>> GetAll();
+        List<Usuario> GetAll();
         //int Add(Usuario model);
         //int Update(Usuario model);
         //int Delete(int id);
