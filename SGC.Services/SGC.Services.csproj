@@ -38,16 +38,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="M_CM\Acopio\" />
-    <Folder Include="M_CM\Comercial\" />
-    <Folder Include="M_CM\ControlInterno\" />
-    <Folder Include="M_CM\Laboratorio\" />
-    <Folder Include="M_CM\MaestroDatos\" />
-    <Folder Include="M_CM\RecepcionMineral\" />
-    <Folder Include="M_FI\Contabilidad\" />
-    <Folder Include="M_OP\PlantaCIP\" />
-    <Folder Include="M_OP\PlantaFlotacion\" />
-    <Folder Include="M_XX\Comercial\" />
+    <Folder Include="CM\Acopio\" />
+    <Folder Include="CM\Comercial\" />
+    <Folder Include="CM\ControlInterno\" />
+    <Folder Include="CM\Laboratorio\" />
+    <Folder Include="CM\MaestroDatos\" />
+    <Folder Include="CM\RecepcionMineral\" />
+    <Folder Include="FI\Contabilidad\" />
+    <Folder Include="OP\PlantaCIP\" />
+    <Folder Include="OP\PlantaFlotacion\" />
+    <Folder Include="XX\Comercial\" />
   </ItemGroup>
 
 </Project>

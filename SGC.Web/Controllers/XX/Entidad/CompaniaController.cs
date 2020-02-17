@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SGC.Entities.Entities.M_XX.Sistema;
-using SGC.InterfaceServices.M_XX.Sistema;
+using SGC.Entities.Entities.XX.Entidad;
+using SGC.InterfaceServices.XX.Entidad;
 
 namespace SGC.Web.Controllers.M_XX.Sistema
 {
     [Route("api/[controller]")]
     [ApiController]
     //[EnableCors("MyPolicy")]
-    public class CompanyController : ControllerBase
+    public class CompaniaController : ControllerBase
     {
-        IServiceCompany _companyService;
-        public CompanyController(IServiceCompany companyService)
+        IServiceCompania _companyService;
+        public CompaniaController(IServiceCompania companyService)
         {
             this._companyService = companyService;
         }
@@ -40,7 +40,7 @@ namespace SGC.Web.Controllers.M_XX.Sistema
         
         // POST api/Company/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] Company model) 
+        public IActionResult Add([FromBody] Compania model) 
         {
             return Ok(
                 _companyService.Add(model)
@@ -50,7 +50,7 @@ namespace SGC.Web.Controllers.M_XX.Sistema
 
         // POST api/Company/Update/1
         [HttpPut("[action]")]
-        public IActionResult Update([FromBody] Company model)
+        public IActionResult Update([FromBody] Compania model)
         {
             return Ok(
                 _companyService.Update(model)

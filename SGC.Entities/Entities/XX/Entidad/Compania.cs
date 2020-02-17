@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace SGC.Entities.Entities.M_XX.Sistema
+namespace SGC.Entities.Entities.XX.Entidad
 {
-    public class Company
+    public class Compania
     {
         [Key]
         public int Compa_ID { get; set; }

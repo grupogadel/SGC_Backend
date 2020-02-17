@@ -7,8 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using SGC.InterfaceServices.Comercial.Maestros;
 using SGC.Services.Comercial.Maestros;
-using SGC.Services.M_XX.Sistema;
-using SGC.InterfaceServices.M_XX.Sistema;
+using SGC.Services.XX.Entidad;
+using SGC.InterfaceServices.XX.Entidad;
 using SGC.InterfaceServices.M_WK;
 using SGC.Services.M_WK;
 
@@ -31,7 +31,7 @@ namespace SGC.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZona, ServiceZona>();
-            services.AddScoped<IServiceCompany, ServiceCompany>();
+            services.AddScoped<IServiceCompania, ServiceCompania>();
             services.AddScoped<IServiceUsuario, ServiceUsuario>();
             services.AddScoped<IServicePosicion, ServicePosicion>();
             services.AddCors(options =>

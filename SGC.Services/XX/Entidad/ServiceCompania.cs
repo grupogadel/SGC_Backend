@@ -1,27 +1,27 @@
 ﻿
 using Microsoft.Extensions.Configuration;
-using SGC.Entities.Entities.M_XX.Sistema;
-using SGC.InterfaceServices.M_XX.Sistema;
+using SGC.Entities.Entities.XX.Entidad;
+using SGC.InterfaceServices.XX.Entidad;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace SGC.Services.M_XX.Sistema
+namespace SGC.Services.XX.Entidad
 {
-    public class ServiceCompany : IServiceCompany
+    public class ServiceCompania : IServiceCompania
     {
         private readonly string _context;
 
-        public ServiceCompany(IConfiguration configuration)
+        public ServiceCompania(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
 
         // GET: api/Company/GetAll
-        public async Task<List<Company>> GetAll()
+        public async Task<List<Compania>> GetAll()
         {
-            var response = new List<Company>();
+            var response = new List<Compania>();
 
             try
             {
@@ -43,14 +43,14 @@ namespace SGC.Services.M_XX.Sistema
             }
             catch (Exception e)
             {
-                return new List<Company>();//[]
+                return new List<Compania>();//[]
                 throw e;
             }
         }
 
-        private Company MapToCompany(SqlDataReader reader)
+        private Compania MapToCompany(SqlDataReader reader)
         {            
-            return new Company()
+            return new Compania()
             {
                 Compa_ID = (int)reader["Compa_ID"],
                 Compa_Father_ID = reader["Compa_Father_ID"] == DBNull.Value ? new int?() : (int)reader["Compa_Father_ID"],
@@ -75,7 +75,7 @@ namespace SGC.Services.M_XX.Sistema
         }
 
         // POST: api/Company/Add
-        public int Add(Company model)
+        public int Add(Compania model)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace SGC.Services.M_XX.Sistema
         }
 
         // PUT: api/Company/Update/1
-        public int Update(Company model)
+        public int Update(Compania model)
         {
             try
             {
@@ -187,7 +187,7 @@ namespace SGC.Services.M_XX.Sistema
         }
 
         // GET api/Company/Get/1
-        public Company Get(int id)
+        public Compania Get(int id)
         {
             try
             {
@@ -198,7 +198,7 @@ namespace SGC.Services.M_XX.Sistema
                 cmd.Parameters.Add(new SqlParameter("@Compa_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                Company response = null;
+                Compania response = null;
 
                 conn.Open();
 

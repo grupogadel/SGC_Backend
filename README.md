@@ -1,1 +1,1 @@
-# SGC_Backend
+# Grupo Gadel - SGC / Sistema de Gstion Comercial  
