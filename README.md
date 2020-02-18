@@ -1,1 +1,1 @@
-# Grupo Gadel - SGC / Sistema de Gstion Comercial  
+# Grupo Gadel - SGC / Sistema de Gestion Comercial  
