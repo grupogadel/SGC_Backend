@@ -791,7 +791,7 @@
           "build/netstandard2.0/_._": {}
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -1390,6 +1390,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.8",
+          "Newtonsoft.Json": "12.0.3",
           "SGC.Entities": "1.0.0"
         },
         "compile": {
@@ -2614,10 +2615,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/12.0.2": {
-      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
-      "path": "newtonsoft.json/12.0.2",
+      "path": "newtonsoft.json/12.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2640,8 +2641,9 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.2.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Newtonsoft.Json.Bson/1.0.2": {
@@ -4823,23 +4825,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\MAU\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Alex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
+      "projectUniqueName": "D:\\GADEL\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
       "projectName": "SGC.Services",
-      "projectPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
-      "packagesPath": "C:\\Users\\MAU\\.nuget\\packages\\",
-      "outputPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.Services\\obj\\",
+      "projectPath": "D:\\GADEL\\SGC_Backend\\SGC.Services\\SGC.Services.csproj",
+      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+      "outputPath": "D:\\GADEL\\SGC_Backend\\SGC.Services\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\MAU\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4852,8 +4850,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Grupo Gadel\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
-              "projectPath": "D:\\Grupo Gadel\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
+            "D:\\GADEL\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj": {
+              "projectPath": "D:\\GADEL\\SGC_Backend\\SGC.InterfaceServices\\SGC.InterfaceServices.csproj"
             }
           }
         }
