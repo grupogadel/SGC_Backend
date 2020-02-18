@@ -32,6 +32,8 @@ namespace SGC.Web
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZona, ServiceZona>();
             services.AddScoped<IServiceCompania, ServiceCompania>();
+			services.AddScoped<IServiceDistrito, ServiceDistrito>();
+			services.AddScoped<IServiceProvincia, ServiceProvincia>();
             services.AddScoped<IServiceUsuario, ServiceUsuario>();
             services.AddScoped<IServicePosicion, ServicePosicion>();
             services.AddCors(options =>
