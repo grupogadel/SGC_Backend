@@ -25,16 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\CM\Acopio\" />
-    <Folder Include="Entities\CM\Comercial\" />
-    <Folder Include="Entities\CM\Laboratorio\" />
-    <Folder Include="Entities\CM\ControlInterno\" />
-    <Folder Include="Entities\CM\MaestroDatos\" />
-    <Folder Include="Entities\CM\RecepcionMineral\" />
-    <Folder Include="Entities\FI\Contabilidad\" />
-    <Folder Include="Entities\OP\PlantaFlotacion\" />
-    <Folder Include="Entities\OP\PlantaCIP\" />
-    <Folder Include="Entities\XX\Comercial\" />
+    <Folder Include="Entities\CM\Collector\" />
+    <Folder Include="Entities\CM\Commercial\" />
+    <Folder Include="Entities\CM\Laboratory\" />
+    <Folder Include="Entities\CM\InternalControl\" />
+    <Folder Include="Entities\CM\DataMaster\" />
+    <Folder Include="Entities\CM\MineralReception\" />
+    <Folder Include="Entities\FI\Accounting\" />
+    <Folder Include="Entities\OP\FlotationPlant\" />
+    <Folder Include="Entities\OP\PlantCIP\" />
+    <Folder Include="Entities\XX\Commercial\" />
   </ItemGroup>
 
 </Project>

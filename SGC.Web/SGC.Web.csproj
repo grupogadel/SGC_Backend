@@ -48,16 +48,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\CM\Acopio\" />
-    <Folder Include="Controllers\CM\Comercial\" />
-    <Folder Include="Controllers\CM\ControlInterno\" />
-    <Folder Include="Controllers\CM\Laboratorio\" />
-    <Folder Include="Controllers\CM\MaestroDatos\" />
-    <Folder Include="Controllers\CM\RecepcionMineral\" />
-    <Folder Include="Controllers\FI\Contabilidad\" />
-    <Folder Include="Controllers\OP\PlantaCIP\" />
-    <Folder Include="Controllers\OP\PlantaFlotacion\" />
-    <Folder Include="Controllers\XX\Comercial\" />
+    <Folder Include="Controllers\CM\Collector\" />
+    <Folder Include="Controllers\CM\Commercial\" />
+    <Folder Include="Controllers\CM\InternalControl\" />
+    <Folder Include="Controllers\CM\Laboratory\" />
+    <Folder Include="Controllers\CM\DataMaster\" />
+    <Folder Include="Controllers\CM\MineralReception\" />
+    <Folder Include="Controllers\FI\Accounting\" />
+    <Folder Include="Controllers\OP\PlantCIP\" />
+    <Folder Include="Controllers\OP\FlotationPlant\" />
+    <Folder Include="Controllers\XX\Commercial\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

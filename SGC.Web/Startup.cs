@@ -7,10 +7,12 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using SGC.InterfaceServices.Comercial.Maestros;
 using SGC.Services.Comercial.Maestros;
-using SGC.Services.XX.Entidad;
-using SGC.InterfaceServices.XX.Entidad;
-using SGC.InterfaceServices.M_WK;
-using SGC.Services.M_WK;
+using SGC.Services.XX.Entity;
+using SGC.InterfaceServices.XX.Entity;
+using SGC.InterfaceServices.WK;
+using SGC.Services.WK;
+using SGC.Services.XX;
+using SGC.InterfaceServices.XX.Finance;
 
 namespace SGC.Web
 {
@@ -31,11 +33,12 @@ namespace SGC.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZona, ServiceZona>();
-            services.AddScoped<IServiceCompania, ServiceCompania>();
-			services.AddScoped<IServiceDistrito, ServiceDistrito>();
-			services.AddScoped<IServiceProvincia, ServiceProvincia>();
-            services.AddScoped<IServiceUsuario, ServiceUsuario>();
-            services.AddScoped<IServicePosicion, ServicePosicion>();
+            services.AddScoped<IServiceCompany, ServiceCompany>();
+			services.AddScoped<IServiceDistrict, ServiceDistrict>();
+			services.AddScoped<IServiceProvince, ServiceProvince>();
+            services.AddScoped<IServiceUser, ServiceUser>();
+            services.AddScoped<IServicePosition, ServicePosition>();
+            services.AddScoped<IServiceCurrency, ServiceCurrency>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
