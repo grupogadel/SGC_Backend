@@ -142,10 +142,7 @@ namespace SGC.Services.XX.Entity
                 cmd.Parameters.Add(new SqlParameter("@Compa_Curr_Grp", model.Compa_Curr_Grp));
                 //cmd.Parameters.Add(new SqlParameter("@Compa_AcctDeb", model.Compa_AcctDeb));
                 //cmd.Parameters.Add(new SqlParameter("@Compa_AcctCre", model.Compa_AcctCre));
-                cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-                cmd.Parameters.Add(new SqlParameter("@Creation_Date", model.Creation_Date));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
-                cmd.Parameters.Add(new SqlParameter("@Modified_Date", model.Modified_Date));
                 cmd.Parameters.Add(new SqlParameter("@Compa_Status", model.Compa_Status));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
