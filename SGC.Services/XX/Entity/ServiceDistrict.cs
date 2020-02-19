@@ -18,7 +18,7 @@ namespace SGC.Services.XX
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        // GET: api/Distritos/GetAll
+        // GET: api/District/GetAll
         public async Task<List<District>> GetAll()
         {
             var response = new List<District>();
@@ -28,14 +28,14 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Distrito_GetAll";
+                cmd.CommandText = "[XX].District_GetAll";
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToDistrito(reader));
+                        response.Add(MapToDistrict(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -48,7 +48,7 @@ namespace SGC.Services.XX
             }
         }
 
-        private District MapToDistrito(SqlDataReader reader)
+        private District MapToDistrict(SqlDataReader reader)
         {
             return new District()
             {
@@ -65,7 +65,7 @@ namespace SGC.Services.XX
             };
         }
 
-        // POST: api/Distritos/Add
+        // POST: api/District/Add
         public int Add(District model)
         {
             try
@@ -73,7 +73,7 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Distrito_Add";
+                cmd.CommandText = "[XX].District_Add";
                 cmd.Parameters.Add(new SqlParameter("@Dist_Cod", model.Dist_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Prov_ID", model.Prov_ID));
                 cmd.Parameters.Add(new SqlParameter("@Dist_Name", model.Dist_Name));
@@ -97,7 +97,7 @@ namespace SGC.Services.XX
 
         }
 
-        // PUT: api/Distritos/Update/1
+        // PUT: api/District/Update/1
         public int Update(District model)
         {
             try
@@ -105,7 +105,7 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Distrito_Update";
+                cmd.CommandText = "[XX].District_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Dist_Cod", model.Dist_Cod));
@@ -130,7 +130,7 @@ namespace SGC.Services.XX
             }
         }
 
-        // DELETE: api/Distritos/Delete/1
+        // DELETE: api/District/Delete/
         public int Delete(JObject obj)
         {
             try
@@ -138,7 +138,7 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Distrito_Delete";
+                cmd.CommandText = "[XX].District_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
 
@@ -158,7 +158,7 @@ namespace SGC.Services.XX
             }
         }
 
-        // GET api/Distritos/Get/1
+        // GET api/District/Get/1
         public District Get(int id)
         {
             try
@@ -166,7 +166,7 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Distrito_Get";
+                cmd.CommandText = "[XX].District_Get";
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -178,7 +178,7 @@ namespace SGC.Services.XX
                 {
                     while (reader.Read())
                     {
-                        response = MapToDistrito(reader);
+                        response = MapToDistrict(reader);
                     }
                 }
                 conn.Close();

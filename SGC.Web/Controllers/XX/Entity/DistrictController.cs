@@ -12,10 +12,10 @@ namespace SGC.Web.Controllers.XX
     //[EnableCors("MyPolicy")]
     public class DistrictController : ControllerBase
     {
-        IServiceDistrict _distritoService;
+        IServiceDistrict _districtService;
         public DistrictController(IServiceDistrict DistritoService)
         {
-            this._distritoService = DistritoService;
+            this._districtService = DistritoService;
         }
 
         // GET: api/Distritos/GetAll
@@ -24,7 +24,7 @@ namespace SGC.Web.Controllers.XX
         {
             try
             {
-                var result = await this._distritoService.GetAll();
+                var result = await this._districtService.GetAll();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -39,7 +39,7 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Add([FromBody] District model)
         {
             return Ok(
-                _distritoService.Add(model)
+                _districtService.Add(model)
             );
         }
 
@@ -49,7 +49,7 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Update([FromBody] District model)
         {
             return Ok(
-                _distritoService.Update(model)
+                _districtService.Update(model)
             );
         }
 
@@ -58,7 +58,7 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Delete([FromBody] JObject obj)
         {
             return Ok(
-                _distritoService.Delete(obj)
+                _districtService.Delete(obj)
             );
         }
 
@@ -67,7 +67,7 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Get(int id)
         {
             return Ok(
-                _distritoService.Get(id)
+                _districtService.Get(id)
             );
         }
 

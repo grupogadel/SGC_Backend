@@ -28,14 +28,14 @@ namespace SGC.Services.XX
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Provincia_GetAll";
+                cmd.CommandText = "[XX].Province_GetAll";
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToProvincia(reader));
+                        response.Add(MapToProvince(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -48,7 +48,7 @@ namespace SGC.Services.XX
             }
         }
 
-        private Province MapToProvincia(SqlDataReader reader)
+        private Province MapToProvince(SqlDataReader reader)
         {
             return new Province()
             {
