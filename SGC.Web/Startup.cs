@@ -39,6 +39,7 @@ namespace SGC.Web
             services.AddScoped<IServiceUser, ServiceUser>();
             services.AddScoped<IServicePosition, ServicePosition>();
             services.AddScoped<IServiceCurrency, ServiceCurrency>();
+            services.AddScoped<IServicePeriod, ServicePeriod>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
