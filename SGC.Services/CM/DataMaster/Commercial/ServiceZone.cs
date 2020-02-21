@@ -1,40 +1,41 @@
-﻿
-using Microsoft.Extensions.Configuration;
-using SGC.Entities.Entities.Comercial.Maestros;
-using SGC.InterfaceServices.Comercial.Maestros;
+﻿using Microsoft.Extensions.Configuration;
+using SGC.Entities.Entities.CM.DataMaster;
+using SGC.InterfaceServices.CM.DataMaster;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using System.Threading.Tasks;
-namespace SGC.Services.Comercial.Maestros
+
+namespace SGC.Services.CM.DataMaster
 {
-    public class ServiceZona : IServiceZona
+    public class ServiceZone : IServiceZone
     {
         private readonly string _context;
 
-        public ServiceZona(IConfiguration configuration)
+        public ServiceZone(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        // GET: api/Zonas/GetAll
-        public async Task<List<Zona>> GetAll()
+        // GET: api/Zone/GetAll
+        public async Task<List<Zone>> GetAll()
         {
-            var response = new List<Zona>();
+            var response = new List<Zone>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Zona_GetAll";
+                cmd.CommandText = "[CM].Zone_GetAll";
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToZona(reader));
+                        response.Add(MapToZone(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -42,14 +43,14 @@ namespace SGC.Services.Comercial.Maestros
             }
             catch (Exception e)
             {
-                return response;// new List<Zona>();//[]
+                return response;// 
                 throw e;
             }
         }
 
-        private Zona MapToZona(SqlDataReader reader)
+        private Zone MapToZone(SqlDataReader reader)
         {
-            return new Zona()
+            return new Zone()
             {
                 Zone_ID = (int)reader["Zone_ID"],
                 Zone_Cod = reader["Zone_Cod"].ToString(),
@@ -61,15 +62,15 @@ namespace SGC.Services.Comercial.Maestros
             };
         }
 
-        // POST: api/Zonas/Add
-        public int Add(Zona model)
+        // POST: api/Zone/Add
+        public int Add(Zone model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Zona_Add";
+                cmd.CommandText = "[CM].Zone_Add";
                 cmd.Parameters.Add(new SqlParameter("@Zone_Cod", model.Zone_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Name", model.Zone_Name));
@@ -92,15 +93,15 @@ namespace SGC.Services.Comercial.Maestros
 
         }
 
-        // PUT: api/Zonas/Update/1
-        public int Update(Zona model)
+        // PUT: api/Zone/Update/1
+        public int Update(Zone model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Zona_Update";
+                cmd.CommandText = "[CM].Zone_Update";
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Cod", model.Zone_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
@@ -123,7 +124,7 @@ namespace SGC.Services.Comercial.Maestros
             }
         }
 
-        // DELETE: api/Zonas/Delete/1
+        // DELETE: api/Zone/Delete/1
         public int Delete(int id)
         {
             try
@@ -131,7 +132,7 @@ namespace SGC.Services.Comercial.Maestros
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Zona_Delete";
+                cmd.CommandText = "[CM].Zone_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -150,19 +151,19 @@ namespace SGC.Services.Comercial.Maestros
             }
         }
 
-        // GET api/Zonas/Get/1
-        public Zona Get(int id)
+        // GET api/Zone/Get/1
+        public Zone Get(int id)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Zona_Get";
+                cmd.CommandText = "[CM].Zone_Get";
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                Zona response = null;
+                Zone response = null;
 
                 conn.Open();
 
@@ -170,7 +171,7 @@ namespace SGC.Services.Comercial.Maestros
                 {
                     while (reader.Read())
                     {
-                        response = MapToZona(reader);
+                        response = MapToZone(reader);
                     }
                 }
                 conn.Close();
@@ -184,5 +185,4 @@ namespace SGC.Services.Comercial.Maestros
         }
 
     }
-
 }

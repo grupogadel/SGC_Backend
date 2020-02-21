@@ -29,7 +29,6 @@
     <Folder Include="Entities\CM\Commercial\" />
     <Folder Include="Entities\CM\Laboratory\" />
     <Folder Include="Entities\CM\InternalControl\" />
-    <Folder Include="Entities\CM\DataMaster\" />
     <Folder Include="Entities\CM\MineralReception\" />
     <Folder Include="Entities\FI\Accounting\" />
     <Folder Include="Entities\OP\FlotationPlant\" />

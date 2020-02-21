@@ -52,7 +52,6 @@
     <Folder Include="Controllers\CM\Commercial\" />
     <Folder Include="Controllers\CM\InternalControl\" />
     <Folder Include="Controllers\CM\Laboratory\" />
-    <Folder Include="Controllers\CM\DataMaster\" />
     <Folder Include="Controllers\CM\MineralReception\" />
     <Folder Include="Controllers\FI\Accounting\" />
     <Folder Include="Controllers\OP\PlantCIP\" />

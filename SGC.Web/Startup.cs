@@ -32,7 +32,7 @@ namespace SGC.Web
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-            services.AddScoped<IServiceZona, ServiceZona>();
+            services.AddScoped<IServiceZone, ServiceZone>();
             services.AddScoped<IServiceCompany, ServiceCompany>();
 			services.AddScoped<IServiceDistrict, ServiceDistrict>();
 			services.AddScoped<IServiceProvince, ServiceProvince>();
@@ -40,6 +40,7 @@ namespace SGC.Web
             services.AddScoped<IServicePosition, ServicePosition>();
             services.AddScoped<IServiceCurrency, ServiceCurrency>();
             services.AddScoped<IServicePeriod, ServicePeriod>();
+			services.AddScoped<IServiceOrigin, ServiceOrigin>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>

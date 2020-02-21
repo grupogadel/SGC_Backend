@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace SGC.Entities.Entities.Comercial.Maestros
+namespace SGC.Entities.Entities.CM.DataMaster
 {
-    public class Zona
+    public class Zone
     {
         [Key]
         public int Zone_ID { get; set; }
