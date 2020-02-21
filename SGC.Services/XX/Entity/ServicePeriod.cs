@@ -79,7 +79,6 @@ namespace SGC.Services.XX.Entity
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Period_Add";
-                cmd.Parameters.Add(new SqlParameter("@Period_ID", model.Period_ID));
                 cmd.Parameters.Add(new SqlParameter("@Period_Cod", model.Period_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Period_NO", model.Period_NO));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
@@ -87,7 +86,6 @@ namespace SGC.Services.XX.Entity
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_Start", model.Period_Date_Start));
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_End", model.Period_Date_End));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
                 //var resul = (int)cmd.Parameters["@Resultado"].Value;
@@ -145,7 +143,6 @@ namespace SGC.Services.XX.Entity
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Period_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Period_ID", obj["id"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
