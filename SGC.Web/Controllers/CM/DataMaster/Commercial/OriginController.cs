@@ -19,12 +19,12 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
         }
 
         // GET: api/Origin/GetAll
-        [HttpGet("[action]")]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetAll(int id)
         {
             try
             {
-                var result = await this._originService.GetAll();
+                var result = await this._originService.GetAll(id);
                 return Ok(result);
             }
             catch (Exception ex)

@@ -19,7 +19,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
         }
 
         // GET: api/Origin/GetAll
-        public async Task<List<Origin>> GetAll()
+        public async Task<List<Origin>> GetAll(int idCompany)
         {
             var response = new List<Origin>();
 
@@ -29,6 +29,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Origin_GetAll";
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())

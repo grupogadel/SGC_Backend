@@ -7,7 +7,7 @@ namespace SGC.InterfaceServices.CM.DataMaster.Commercial
 {
     public interface IServiceOrigin
     {
-        Task<List<Origin>> GetAll();
+        Task<List<Origin>> GetAll(int id);
         int Add(Origin model);
         int Update(Origin model);
         int Delete(JObject obj);
