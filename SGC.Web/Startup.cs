@@ -5,14 +5,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
-using SGC.InterfaceServices.Comercial.Maestros;
-using SGC.Services.Comercial.Maestros;
 using SGC.Services.XX.Entity;
 using SGC.InterfaceServices.XX.Entity;
 using SGC.InterfaceServices.WK;
 using SGC.Services.WK;
 using SGC.Services.XX;
 using SGC.InterfaceServices.XX.Finance;
+using SGC.InterfaceServices.CM.DataMaster;
+using SGC.Services.CM.DataMaster;
+using SGC.InterfaceServices.CM.DataMaster.Commercial;
+using SGC.Services.CM.DataMaster.Commercial;
 
 namespace SGC.Web
 {
