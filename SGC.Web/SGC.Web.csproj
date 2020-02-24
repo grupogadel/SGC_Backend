@@ -56,7 +56,6 @@
     <Folder Include="Controllers\FI\Accounting\" />
     <Folder Include="Controllers\OP\PlantCIP\" />
     <Folder Include="Controllers\OP\FlotationPlant\" />
-    <Folder Include="Controllers\XX\Commercial\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
