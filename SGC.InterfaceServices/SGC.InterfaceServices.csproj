@@ -44,7 +44,6 @@
     <Folder Include="FI\Accounting\" />
     <Folder Include="OP\PlantCIP\" />
     <Folder Include="OP\FlotationPlant\" />
-    <Folder Include="XX\Commercial\" />
   </ItemGroup>
 
 </Project>

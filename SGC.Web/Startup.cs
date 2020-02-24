@@ -15,6 +15,8 @@ using SGC.InterfaceServices.CM.DataMaster;
 using SGC.Services.CM.DataMaster;
 using SGC.InterfaceServices.CM.DataMaster.Commercial;
 using SGC.Services.CM.DataMaster.Commercial;
+using SGC.InterfaceServices.XX.Commercial;
+using SGC.Services.XX.Commercial;
 
 namespace SGC.Web
 {
@@ -44,6 +46,7 @@ namespace SGC.Web
             services.AddScoped<IServicePeriod, ServicePeriod>();
 			services.AddScoped<IServiceOrigin, ServiceOrigin>();
             services.AddScoped<IServiceCollector, ServiceCollector>();
+            services.AddScoped<IServiceConditions, ServiceConditions>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
