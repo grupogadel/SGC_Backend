@@ -1,36 +1,35 @@
-﻿
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
-using SGC.Entities.Entities.XX.Entity;
-using SGC.Entities.Entities.XX.Finance;
-using SGC.InterfaceServices.XX.Entity;
+using SGC.Entities.Entities.CM.DataMaster;
+using SGC.InterfaceServices.CM.DataMaster;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace SGC.Services.XX.Entity
+namespace SGC.Services.CM.DataMaster
 {
-    public class ServicePeriod : IServicePeriod
+    public class ServiceCollector : IServiceCollector
     {
         private readonly string _context;
 
-        public ServicePeriod(IConfiguration configuration)
+        public ServiceCollector(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        // GET: api/Period/GetAll
-        public async Task<List<Period>> GetAll(int idCompany)
+        // GET: api/Collector/GetAll
+        public async Task<List<Collector>> GetAll(int idCompany)
         {
-            var response = new List<Period>();
+            var response = new List<Collector>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_GetAll";
+                cmd.CommandText = "[CM].Collector_GetAll";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
@@ -38,7 +37,7 @@ namespace SGC.Services.XX.Entity
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToPeriod(reader));
+                        response.Add(MapToCollector(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -46,46 +45,49 @@ namespace SGC.Services.XX.Entity
             }
             catch (Exception e)
             {
-                return new List<Period>();//[]
+                return response;// 
                 throw e;
             }
         }
 
-        private Period MapToPeriod(SqlDataReader reader)
+        private Collector MapToCollector(SqlDataReader reader)
         {
-            return new Period()
+            return new Collector()
             {
-                Period_ID = (int)reader["Period_ID"],
-                Period_Cod = reader["Period_Cod"].ToString(),
-                Period_NO = reader["Period_NO"].ToString(),
+                Collec_ID = (int)reader["Collec_ID"],
+                Zone_ID = (int)reader["Zone_ID"],
                 Company_ID = (int)reader["Company_ID"],
-                Period_Year = reader["Period_Year"].ToString(),
-                Period_Date_Start = (DateTime)reader["Period_Date_Start"],
-                Period_Date_End = (DateTime)reader["Period_Date_End"],
+                Collec_Cod = reader["Collec_Cod"].ToString(),
+                Collec_TaxID = reader["Collec_TaxID"].ToString(),
+                Collec_Name = reader["Collec_Name"].ToString(),
+                Collec_LastName = reader["Collec_LastName"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                Period_Status = reader["Period_Status"].ToString(),
+                Collec_Status = reader["Collec_Status"].ToString(),
             };
         }
 
-        // POST: api/Period/Add
-        public int Add(Period model)
+        // POST: api/Collector/Add
+        public int Add(Collector model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_Add";
-                cmd.Parameters.Add(new SqlParameter("@Period_Cod", model.Period_Cod));
-                cmd.Parameters.Add(new SqlParameter("@Period_NO", model.Period_NO));
+                cmd.CommandText = "[CM].Collector_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Period_Year", model.Period_Year));
-                cmd.Parameters.Add(new SqlParameter("@Period_Date_Start", model.Period_Date_Start));
-                cmd.Parameters.Add(new SqlParameter("@Period_Date_End", model.Period_Date_End));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
+                cmd.Parameters.Add(new SqlParameter("@Collec_Cod", model.Collec_Cod));
+                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
+                cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
+                cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
+
+                //cmd.Parameters.Add("@Resultado",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
                 //var resul = (int)cmd.Parameters["@Resultado"].Value;
@@ -101,24 +103,25 @@ namespace SGC.Services.XX.Entity
 
         }
 
-        // PUT: api/Period/Update/1
-        public int Update(Period model)
+        // PUT: api/Collector/Update/1
+        public int Update(Collector model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_Update";
-                cmd.Parameters.Add(new SqlParameter("@Period_ID", model.Period_ID));
-                cmd.Parameters.Add(new SqlParameter("@Period_Cod", model.Period_Cod));
-                cmd.Parameters.Add(new SqlParameter("@Period_NO", model.Period_NO));
+                cmd.CommandText = "[CM].Collector_Update";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Period_Year", model.Period_Year));
-                cmd.Parameters.Add(new SqlParameter("@Period_Date_Start", model.Period_Date_Start));
-                cmd.Parameters.Add(new SqlParameter("@Period_Date_End", model.Period_Date_End));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
+                cmd.Parameters.Add(new SqlParameter("@Collec_Cod", model.Collec_Cod));
+                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
+                cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
+                cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
+                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
                 //var resul = (int)cmd.Parameters["@Resultado"].Value;
@@ -133,7 +136,7 @@ namespace SGC.Services.XX.Entity
             }
         }
 
-        // DELETE: api/Period/Delete/
+        // DELETE: api/Collector/Delete/1
         public int Delete(JObject obj)
         {
             try
@@ -141,12 +144,13 @@ namespace SGC.Services.XX.Entity
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_Delete";
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["id"].ToObject<int>()));
+                cmd.CommandText = "[CM].Collector_Delete";
+                cmd.Parameters.Add(new SqlParameter("@Period_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                
+                //var resul = (int)cmd.Parameters["@Resultado"].Value;
                 conn.Close();
 
                 return resul;
@@ -158,20 +162,18 @@ namespace SGC.Services.XX.Entity
             }
         }
 
-        // GET api/Period/Get/
-        public Period Get(JObject obj)
+        // GET api/Collector/Get/1
+        public Collector Get(int id)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_Get";
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["id"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.CommandText = "[CM].Collector_Get";
+                cmd.Parameters.Add(new SqlParameter("@Collector_ID", id));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                Period response = null;
+                Collector response = null;
 
                 conn.Open();
 
@@ -179,7 +181,7 @@ namespace SGC.Services.XX.Entity
                 {
                     while (reader.Read())
                     {
-                        response = MapToPeriod(reader);
+                        response = MapToCollector(reader);
                     }
                 }
                 conn.Close();
@@ -191,7 +193,5 @@ namespace SGC.Services.XX.Entity
                 throw e;
             }
         }
-
     }
-
 }
