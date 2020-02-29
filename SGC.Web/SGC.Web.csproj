@@ -48,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\CM\Collector\" />
     <Folder Include="Controllers\CM\Commercial\" />
     <Folder Include="Controllers\CM\InternalControl\" />
     <Folder Include="Controllers\CM\Laboratory\" />

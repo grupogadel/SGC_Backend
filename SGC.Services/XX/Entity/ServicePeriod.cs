@@ -67,6 +67,13 @@ namespace SGC.Services.XX.Entity
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Period_Status = reader["Period_Status"].ToString(),
+
+                MPeriod = new MPeriod { MPeriod_ID = (int)reader["MPeriod_ID"],
+                    MPeriod_Name = reader["MPeriod_Name"].ToString(),
+                    MPeriod_Name2 = reader["MPeriod_Name2"].ToString(),
+                    MPeriod_Desc = reader["MPeriod_Desc"].ToString(),
+                    MPeriod_Month = reader["MPeriod_Month"].ToString(),
+                }
             };
         }
 

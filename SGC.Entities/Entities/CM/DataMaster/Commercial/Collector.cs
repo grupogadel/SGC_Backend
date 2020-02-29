@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using SGC.Entities.Entities.CM.DataMaster;
 
 namespace SGC.Entities.Entities.CM.DataMaster
 {
@@ -9,7 +10,7 @@ namespace SGC.Entities.Entities.CM.DataMaster
     {
         [Key]
         public int Collec_ID { get; set; }
-        public int  Zone_ID { get; set; }
+        public int Zone_ID { get; set; }
         public int Company_ID { get; set; }
         public string Collec_Cod { get; set; }
         public string Collec_TaxID { get; set; }
@@ -20,5 +21,6 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Modified_User { get; set; }
         public DateTime Modified_Date { get; set; }
         public string Collec_Status { get; set; }
+        public virtual Zone Zone { get; set; }
     }
 }

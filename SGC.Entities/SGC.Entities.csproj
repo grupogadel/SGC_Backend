@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\CM\Collector\" />
     <Folder Include="Entities\CM\Commercial\" />
     <Folder Include="Entities\CM\Laboratory\" />
     <Folder Include="Entities\CM\InternalControl\" />

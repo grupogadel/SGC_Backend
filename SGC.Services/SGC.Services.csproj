@@ -38,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CM\Collector\" />
     <Folder Include="CM\Commercial\" />
     <Folder Include="CM\InternalControl\" />
     <Folder Include="CM\Laboratory\" />

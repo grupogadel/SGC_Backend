@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using SGC.Entities.Entities.XX.Entity;
 
 namespace SGC.Entities.Entities.XX.Entity
 {
@@ -20,5 +21,7 @@ namespace SGC.Entities.Entities.XX.Entity
         public string Modified_User { get; set; }
         public DateTime Modified_Date { get; set; }
         public string Period_Status { get; set; }
+        public virtual MPeriod MPeriod { get; set; }
+
     }
 }
