@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using SGC.Entities.Entities.XX.Entity;
 
 namespace SGC.Entities.Entities.CM.DataMaster.Commercial
 {
@@ -22,5 +23,6 @@ namespace SGC.Entities.Entities.CM.DataMaster.Commercial
         public DateTime Modified_Date { get; set; }
         public int Company_ID { get; set; }
         public string Orig_Status { get; set; }
+        public Zone Zones{ get; set; }
     }
 }

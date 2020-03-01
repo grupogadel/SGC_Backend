@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
+using SGC.Entities.Entities.CM.DataMaster;
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.InterfaceServices.CM.DataMaster.Commercial;
 using System;
@@ -55,7 +56,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
             {
                 Orig_ID = (int)reader["Orig_ID"],
                 Orig_Cod = reader["Orig_Cod"].ToString(),
-                Zone_ID = (int)reader["Zone_ID"],
+                //Zone_ID = (int)reader["Zone_ID"],
                 Orig_Name = reader["Orig_Name"].ToString(),
                 Orig_Desc = reader["Orig_Desc"].ToString(),
                 Orig_Address = reader["Orig_Address"].ToString(),
@@ -66,7 +67,12 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Company_ID = (int)reader["Company_ID"],
-                Orig_Status = reader["Orig_Status"].ToString()
+                Orig_Status = reader["Orig_Status"].ToString(),
+                Zones = new Zone {
+                    Zone_ID = (int)reader["Zone_ID"],
+                    Zone_Name = reader["Zone_Name"].ToString()
+                }
+
             };
         }
 
@@ -79,7 +85,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Origin_Add";
-                cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Name", model.Orig_Name));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Desc", model.Orig_Desc));
@@ -89,11 +95,11 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
-                //cmd.Parameters.Add("@Resultado",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -117,7 +123,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.CommandText = "[CM].Origin_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", model.Orig_ID));
-                cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Name", model.Orig_Name));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Desc", model.Orig_Desc));
@@ -126,11 +132,11 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Orig_Coordinates", model.Orig_Coordinates));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -154,11 +160,11 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
