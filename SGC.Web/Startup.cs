@@ -50,6 +50,9 @@ namespace SGC.Web
             services.AddScoped<IServiceCollector, ServiceCollector>();
             services.AddScoped<IServiceQuota, ServiceQuota>();
             services.AddScoped<IServiceMPeriod, ServiceMPeriod>();
+            services.AddScoped<IServiceConditions, ServiceConditions>();
+            services.AddScoped<IServiceMaquilaCommercial, ServiceMaquilaCommercial>();
+            services.AddScoped<IServiceVendorOrigin, ServiceVendorOrigin>();
 
             services.AddCors(options =>
             {
