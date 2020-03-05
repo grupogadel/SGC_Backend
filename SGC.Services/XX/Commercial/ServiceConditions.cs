@@ -4,6 +4,7 @@ using SGC.Entities.Entities.XX.Commercial;
 using SGC.InterfaceServices.XX.Commercial;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
@@ -49,7 +50,53 @@ namespace SGC.Services.XX.Commercial
                 throw e;
             }
         }
-      
+
+        // POST: api/Conditions/AddByZones
+        public int AddByZones(Conditions model)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].Conditions_AddByZones";
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Orig_ID));
+                cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Cond_DateStart", model.Cond_DateStart));
+                cmd.Parameters.Add(new SqlParameter("@Cond_DateEnd", model.Cond_DateEnd));
+                cmd.Parameters.Add(new SqlParameter("@Cond_WeigPor_Sec", model.Cond_WeigPor_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_LeyAuPor_Sec", model.Cond_LeyAuPor_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_LeyAgPor_Sec", model.Cond_LeyAgPor_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
         private Conditions MapToConditions(SqlDataReader reader, int opc)
         {
             return new Conditions()
@@ -86,52 +133,6 @@ namespace SGC.Services.XX.Commercial
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Cond_Status = (string)reader["Cond_Status"]
             };
-        }
-
-        // POST: api/Conditions/AddByZones
-        public int AddByZones(Conditions model)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_AddByZones";
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
-                cmd.Parameters.Add(new SqlParameter("@Cond_DateStart", model.Cond_DateStart));
-                cmd.Parameters.Add(new SqlParameter("@Cond_DateEnd", model.Cond_DateEnd));
-                cmd.Parameters.Add(new SqlParameter("@Cond_WeigPor_Sec", model.Cond_WeigPor_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_LeyAuPor_Sec", model.Cond_LeyAuPor_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_LeyAgPor_Sec", model.Cond_LeyAgPor_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
-                cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
-                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
-                cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
-                cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
-                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
-                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
-                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
-                cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-
-                cmd.Parameters.Add("@Result",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
-
-                conn.Open();
-                var resul = cmd.ExecuteNonQuery();
-                resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
-
-                return resul;
-            }
-            catch (Exception e)
-            {
-                return -1;
-                throw e;
-            }
-
         }
 
         // PUT: api/Conditions/UpdateByZones/1
@@ -239,16 +240,19 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-
         // POST: api/Conditions/AddByOrigins
         public int AddByOrigins(Conditions model)
         {
+            //logger.InfoFormat("Servicio, Condicion por Rol:   PutRol(RolModel objRol=: <strDescripcion=:{0}, strUsuarioCrea=:{1}>)", objRol.strDescripcion, objRol.strUsuarioCrea);
+
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Conditions_AddByOrigins";
+
+                //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", model.Orig_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
@@ -268,7 +272,10 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-
+                //Details
+                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                cmd.Parameters.Add(parMaquilasCommercials);
+                //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
@@ -280,10 +287,50 @@ namespace SGC.Services.XX.Commercial
             }
             catch (Exception e)
             {
+                //logger.ErrorFormat("Servicio, Rol:  Error en el metodo PutRol(RolModel objRol=: <strDescripcion=:{0}, strUsuarioCrea=:{1}>)", objRol.strDescripcion, objRol.strUsuarioCrea);
+                //logger.ErrorFormat("Exception - {0}", e);
                 return -1;
                 throw e;
             }
+        }
 
+        private SqlParameter GetMaquilaCommercial(string name, List<MaquilaCommercial> listMaquilaCommercial)
+        {
+            //logger.InfoFormat("Servicio, Rol:   GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
+
+            try
+            {
+                DataTable table = new DataTable("dbo.tabMaquilaCommercial");
+                table.Columns.Add("MaqComm_LeyFrom", typeof(decimal));
+                table.Columns.Add("MaqComm_LeyTo", typeof(decimal));
+                table.Columns.Add("MaqComm_Maquila", typeof(decimal));
+                table.Columns.Add("MaqComm_Recov", typeof(decimal));
+                table.Columns.Add("MaqComm_MarginPI", typeof(decimal));
+                table.Columns.Add("MaqComm_Consu", typeof(decimal));
+                table.Columns.Add("MaqComm_ExpAdm", typeof(decimal));
+
+                foreach (MaquilaCommercial maqCom in listMaquilaCommercial)
+                    table.Rows.Add(new object[] { maqCom.MaqComm_LeyFrom,
+                                                  maqCom.MaqComm_LeyTo,
+                                                  maqCom.MaqComm_Maquila,
+                                                  maqCom.MaqComm_Recov,
+                                                  maqCom.MaqComm_MarginPI,
+                                                  maqCom.MaqComm_Consu,
+                                                  maqCom.MaqComm_ExpAdm });
+
+                SqlParameter parameter = new SqlParameter(name, table);
+                parameter.SqlDbType = SqlDbType.Structured;
+                parameter.TypeName = "dbo.tabMaquilaCommercial";
+
+                return parameter;
+            }
+            catch (Exception e)
+            {
+                //logger.ErrorFormat("Servicio, Rol:  Error en el metodo GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
+                //logger.ErrorFormat("Exception - {0}", e);
+                return null;
+                throw e;
+            }
         }
 
         // PUT: api/Conditions/UpdateByOrigins/1

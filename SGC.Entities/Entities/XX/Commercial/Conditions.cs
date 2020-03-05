@@ -39,5 +39,10 @@ namespace SGC.Entities.Entities.XX.Commercial
         public string Modified_User { get; set; }
         public DateTime Modified_Date { get; set; }
         public string Cond_Status { get; set; }
+        public List<MaquilaCommercial> MaquilasCommercials { get; set; }
+        public Conditions()
+        {
+            MaquilasCommercials = new List<MaquilaCommercial>();
+        }
 	}
 }
