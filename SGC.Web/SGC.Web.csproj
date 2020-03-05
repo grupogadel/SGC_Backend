@@ -38,7 +38,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,7 +51,6 @@
     <Folder Include="Controllers\CM\Commercial\" />
     <Folder Include="Controllers\CM\InternalControl\" />
     <Folder Include="Controllers\CM\Laboratory\" />
-    <Folder Include="Controllers\CM\MineralReception\" />
     <Folder Include="Controllers\FI\Accounting\" />
     <Folder Include="Controllers\OP\PlantCIP\" />
     <Folder Include="Controllers\OP\FlotationPlant\" />

@@ -19,6 +19,8 @@ using SGC.InterfaceServices.XX.Commercial;
 using SGC.Services.XX.Commercial;
 using SGC.InterfaceServices.CM.Collect;
 using SGC.Services.CM.Collect;
+using SGC.InterfaceServices.CM.MineralReception;
+using SGC.Services.CM.MineralReception;
 
 namespace SGC.Web
 {
@@ -53,6 +55,7 @@ namespace SGC.Web
             services.AddScoped<IServiceConditions, ServiceConditions>();
             services.AddScoped<IServiceMaquilaCommercial, ServiceMaquilaCommercial>();
             services.AddScoped<IServiceVendorOrigin, ServiceVendorOrigin>();
+            services.AddScoped<IServiceScales, ServiceScales>();
 
             services.AddCors(options =>
             {
