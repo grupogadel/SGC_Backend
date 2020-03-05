@@ -45,7 +45,7 @@ namespace SGC.Web.Controllers.XX.Commercial
 
         // PUT api/MaquilaCommercial/Update/
         [HttpPut("[action]")]
-        public IActionResult Update([FromBody] MaquilaCommercial model)
+        public IActionResult Update([FromBody] MaquilaCommercialHead model)
         {
             return Ok(
                 _maquilaCommercialService.Update(model)

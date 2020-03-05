@@ -4,7 +4,6 @@ using SGC.Entities.Entities.XX.Commercial;
 using SGC.InterfaceServices.XX.Commercial;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
@@ -60,6 +59,7 @@ namespace SGC.Services.XX.Commercial
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Conditions_AddByZones";
+                //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Orig_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
@@ -79,7 +79,10 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-
+                //Details
+                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                cmd.Parameters.Add(parMaquilasCommercials);
+                //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
@@ -273,7 +276,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
-                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
                 cmd.Parameters.Add(parMaquilasCommercials);
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -290,45 +293,6 @@ namespace SGC.Services.XX.Commercial
                 //logger.ErrorFormat("Servicio, Rol:  Error en el metodo PutRol(RolModel objRol=: <strDescripcion=:{0}, strUsuarioCrea=:{1}>)", objRol.strDescripcion, objRol.strUsuarioCrea);
                 //logger.ErrorFormat("Exception - {0}", e);
                 return -1;
-                throw e;
-            }
-        }
-
-        private SqlParameter GetMaquilaCommercial(string name, List<MaquilaCommercial> listMaquilaCommercial)
-        {
-            //logger.InfoFormat("Servicio, Rol:   GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
-
-            try
-            {
-                DataTable table = new DataTable("dbo.tabMaquilaCommercial");
-                table.Columns.Add("MaqComm_LeyFrom", typeof(decimal));
-                table.Columns.Add("MaqComm_LeyTo", typeof(decimal));
-                table.Columns.Add("MaqComm_Maquila", typeof(decimal));
-                table.Columns.Add("MaqComm_Recov", typeof(decimal));
-                table.Columns.Add("MaqComm_MarginPI", typeof(decimal));
-                table.Columns.Add("MaqComm_Consu", typeof(decimal));
-                table.Columns.Add("MaqComm_ExpAdm", typeof(decimal));
-
-                foreach (MaquilaCommercial maqCom in listMaquilaCommercial)
-                    table.Rows.Add(new object[] { maqCom.MaqComm_LeyFrom,
-                                                  maqCom.MaqComm_LeyTo,
-                                                  maqCom.MaqComm_Maquila,
-                                                  maqCom.MaqComm_Recov,
-                                                  maqCom.MaqComm_MarginPI,
-                                                  maqCom.MaqComm_Consu,
-                                                  maqCom.MaqComm_ExpAdm });
-
-                SqlParameter parameter = new SqlParameter(name, table);
-                parameter.SqlDbType = SqlDbType.Structured;
-                parameter.TypeName = "dbo.tabMaquilaCommercial";
-
-                return parameter;
-            }
-            catch (Exception e)
-            {
-                //logger.ErrorFormat("Servicio, Rol:  Error en el metodo GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
-                //logger.ErrorFormat("Exception - {0}", e);
-                return null;
                 throw e;
             }
         }
@@ -419,6 +383,7 @@ namespace SGC.Services.XX.Commercial
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Conditions_AddByVendors";
+                //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@VendorOrig_ID", model.VendorOrig_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
@@ -438,7 +403,10 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
-
+                //Details
+                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                cmd.Parameters.Add(parMaquilasCommercials);
+                //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
