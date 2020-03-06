@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
+using SGC.Entities.Entities.CM.DataMaster;
+using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.Entities.Entities.CM.MineralReception;
 using SGC.InterfaceServices.CM.MineralReception;
 using System;
@@ -52,16 +54,17 @@ namespace SGC.Services.CM.MineralReception
             return new Scales()
             {
                 Scales_ID= (int)reader["Scales_ID"],
-                VendorOrig_ID= (int)reader["VendorOrig_ID"],
+                //VendorOrig_ID= (int)reader["VendorOrig_ID"],
                 Company_ID= (int)reader["Company_ID"],
                 Scales_Lote = reader["Scales_Lote"].ToString(),
                 Scales_SubLote = reader["Scales_SubLote"].ToString(),
                 MinType_ID = (int)reader["MinType_ID"],
+                Scales_Analysis= reader["Scales_Analysis"].ToString(),
                 Scales_MinOwner = reader["Scales_MinOwner"].ToString(),
                 Scales_DateInp = (DateTime)reader["Scales_DateInp"],
                 Scales_DateOut = (DateTime)reader["Scales_DateOut"],
-                Orig_ID = (int)reader["Orig_ID"],
-                Collec_ID = (int)reader["Collec_ID"],
+                //Orig_ID = (int)reader["Orig_ID"],
+                //Collec_ID = (int)reader["Collec_ID"],
                 WrkShi_ID = (int)reader["WrkShi_ID"],
                 Scales_Operator = reader["Scales_Operator"].ToString(),
                 Scales_GuiRemRe_Serie = reader["Scales_GuiRemRe_Serie"].ToString(),
@@ -69,20 +72,35 @@ namespace SGC.Services.CM.MineralReception
                 Scales_GuiRemDate = (DateTime)reader["Scales_GuiRemDate"],
                 Scales_NumSacos = (int)reader["Scales_NumSacos"],
                 Scales_TMH = (int)reader["Scales_TMH"],
-                Scale_TMH_Hist = (decimal)reader["Scale_TMH_Hist"],
+                Scales_TMH_Hist = (decimal)reader["Scales_TMH_Hist"],
                 Scales_DriverName = reader["Scales_DriverName"].ToString(),
                 Scales_GRDriv_Serie = reader["Scales_GRDriv_Serie"].ToString(),
                 Scales_GRDriv_Num = reader["Scales_GRDriv_Num"].ToString(),
                 Scales_GRDate = (DateTime)reader["Scales_GRDate"],
                 Scales_Patente = reader["Scales_Patente"].ToString(),
-                Scale_Conces_NO = reader["Scale_Conces_NO"].ToString(),
-                Scale_Conces_Name = reader["Scale_Conces_Name"].ToString(),
-                Scale_Commit_NO = reader["Scale_Commit_NO"].ToString(),
+                Scales_Conces_NO = reader["Scales_Conces_NO"].ToString(),
+                Scales_Conces_Name = reader["Scales_Conces_Name"].ToString(),
+                Scales_Commit_NO = reader["Scales_Commit_NO"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Scales_Status = reader["Scales_Status"].ToString(),
+                //VendorOrigins = new VendorOrigin
+                //{
+                //    Orig_ID = (int)reader["Orig_ID"],
+                //    Orig_Name = reader["Orig_Name"].ToString()
+                //},
+                //Origins = new Origin
+                //{
+                //    Orig_ID = (int)reader["Orig_ID"],
+                //    Orig_Name = reader["Orig_Name"].ToString()
+                //},
+                //Collectors = new Collector
+                //{
+                //    Collec_ID = (int)reader["Collec_ID"],
+                //    Collec_Name = reader["Collec_Name"].ToString()
+                //}
             };
         }
         public int Add(Scales model)
@@ -111,15 +129,15 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_GuiRemDate", model.Scales_GuiRemDate));
                 cmd.Parameters.Add(new SqlParameter("@Scales_NumSacos", model.Scales_NumSacos));
                 cmd.Parameters.Add(new SqlParameter("@Scales_TMH", model.Scales_TMH));
-                cmd.Parameters.Add(new SqlParameter("@Scale_TMH_Hist", model.Scale_TMH_Hist));
+                cmd.Parameters.Add(new SqlParameter("@Scales_TMH_Hist", model.Scales_TMH_Hist));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DriverName", model.Scales_DriverName));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDriv_Serie", model.Scales_GRDriv_Serie));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDriv_Num", model.Scales_GRDriv_Num));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDate", model.Scales_GRDate));
                 cmd.Parameters.Add(new SqlParameter("@Scales_Patente", model.Scales_Patente));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_NO", model.Scale_Conces_NO));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_Name", model.Scale_Conces_Name));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Commit_NO", model.Scale_Commit_NO));
+                cmd.Parameters.Add(new SqlParameter("@Scales_Conces_NO", model.Scales_Conces_NO));
+                cmd.Parameters.Add(new SqlParameter("@Scales_Conces_Name", model.Scales_Conces_Name));
+                cmd.Parameters.Add(new SqlParameter("@Scales_Commit_NO", model.Scales_Commit_NO));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -198,15 +216,15 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_GuiRemDate", model.Scales_GuiRemDate));
                 cmd.Parameters.Add(new SqlParameter("@Scales_NumSacos", model.Scales_NumSacos));
                 cmd.Parameters.Add(new SqlParameter("@Scales_TMH", model.Scales_TMH));
-                cmd.Parameters.Add(new SqlParameter("@Scale_TMH_Hist", model.Scale_TMH_Hist));
+                cmd.Parameters.Add(new SqlParameter("@Scale_TMH_Hist", model.Scales_TMH_Hist));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DriverName", model.Scales_DriverName));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDriv_Serie", model.Scales_GRDriv_Serie));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDriv_Num", model.Scales_GRDriv_Num));
                 cmd.Parameters.Add(new SqlParameter("@Scales_GRDate", model.Scales_GRDate));
                 cmd.Parameters.Add(new SqlParameter("@Scales_Patente", model.Scales_Patente));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_NO", model.Scale_Conces_NO));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_Name", model.Scale_Conces_Name));
-                cmd.Parameters.Add(new SqlParameter("@Scale_Commit_NO", model.Scale_Commit_NO));
+                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_NO", model.Scales_Conces_NO));
+                cmd.Parameters.Add(new SqlParameter("@Scale_Conces_Name", model.Scales_Conces_Name));
+                cmd.Parameters.Add(new SqlParameter("@Scale_Commit_NO", model.Scales_Commit_NO));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
