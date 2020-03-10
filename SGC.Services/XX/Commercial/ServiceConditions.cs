@@ -105,9 +105,8 @@ namespace SGC.Services.XX.Commercial
             return new Conditions()
             {
                 Cond_ID = (int)reader["Cond_ID"],
-                VendorOrig_ID = (int)reader["VendorOrig_ID"],
-                VendorOrig_VendorFullName = opc == 3 ? ((string)reader["Vendor_Name"]+ " "+(string)reader["Vendor_LastName"]) : null,
-                VendorOrig_OrigName = opc ==3 ? (string)reader["Orig_Name"] : null,
+                Vendor_ID = (int)reader["Vendor_ID"],
+                Vendor_FullName = opc == 3 ? ((string)reader["Vendor_Name"]+ " "+(string)reader["Vendor_LastName"]) : null,
                 Orig_ID = (int)reader["Orig_ID"],
                 Orig_Name = opc == 2 ?(string)reader["Orig_Name"]: null,
                 Zone_ID = (int)reader["Zone_ID"],
@@ -385,7 +384,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].Conditions_AddByVendors";
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@VendorOrig_ID", model.VendorOrig_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateStart", model.Cond_DateStart));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateEnd", model.Cond_DateEnd));
@@ -435,7 +434,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].Conditions_UpdateByVendors";
 
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
-                cmd.Parameters.Add(new SqlParameter("@VendorOrig_ID", model.VendorOrig_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateStart", model.Cond_DateStart));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateEnd", model.Cond_DateEnd));

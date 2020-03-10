@@ -9,9 +9,8 @@ namespace SGC.Entities.Entities.XX.Commercial
     {
         [Key]
         public int Cond_ID { get; set; }
-        public int VendorOrig_ID { get; set; }
-        public string VendorOrig_VendorFullName { get; set; }
-        public string VendorOrig_OrigName { get; set; }
+        public int Vendor_ID { get; set; }
+        public string Vendor_FullName { get; set; }
         public int Orig_ID { get; set; }
         public string Orig_Name { get; set; }
         public int Zone_ID { get; set; }

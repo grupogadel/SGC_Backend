@@ -26,7 +26,5 @@ namespace SGC.InterfaceServices.XX.Commercial
         Task<List<Conditions>> GetAllByVendors(int id);
         int AddByVendors(Conditions model);
         int UpdateByVendors(Conditions model);
-
-        /*Conditions Get(int id);*/
     }
 }
