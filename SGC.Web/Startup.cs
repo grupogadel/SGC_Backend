@@ -54,7 +54,7 @@ namespace SGC.Web
             services.AddScoped<IServiceMPeriod, ServiceMPeriod>();
             services.AddScoped<IServiceConditions, ServiceConditions>();
             services.AddScoped<IServiceMaquilaCommercial, ServiceMaquilaCommercial>();
-            services.AddScoped<IServiceVendorOrigin, ServiceVendorOrigin>();
+            services.AddScoped<IServiceVendor, ServiceVendor>();
             services.AddScoped<IServiceScales, ServiceScales>();
 
             services.AddCors(options =>

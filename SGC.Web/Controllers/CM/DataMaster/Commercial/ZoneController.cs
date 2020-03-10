@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.DataMaster;
 using SGC.InterfaceServices.CM.DataMaster;
 using System;
@@ -52,12 +53,12 @@ namespace SGC.Web.Controllers.CM.DataMaster
             );
         }
 
-        // DELETE api/Zone/Delete/1
-        [HttpDelete("[action]/{id}")]
-        public IActionResult Delete(int id)
+        // DELETE api/Zone/Delete/{}
+        [HttpDelete("[action]")]
+        public IActionResult Delete([FromBody] JObject obj)
         {
             return Ok(
-                _zoneService.Delete(id)
+                _zoneService.Delete(obj)
             );
         }
 

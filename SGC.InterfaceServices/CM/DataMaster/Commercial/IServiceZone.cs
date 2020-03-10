@@ -1,4 +1,5 @@
-﻿using SGC.Entities.Entities.CM.DataMaster;
+﻿using Newtonsoft.Json.Linq;
+using SGC.Entities.Entities.CM.DataMaster;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace SGC.InterfaceServices.CM.DataMaster
         Task<List<Zone>> GetAll();
         int Add(Zone model);
         int Update(Zone model);
-        int Delete(int id);
+        int Delete(JObject obj);
         Zone Get(int id);
     }
 }
