@@ -34,9 +34,9 @@ namespace SGC.Entities.Entities.XX.Commercial
         public decimal Cond_MaquilaAu_Estim { get; set; }
         public decimal Cond_ConsuAu_Estim { get; set; }
         public string Creation_User { get; set; }
-        public DateTime Creation_Date { get; set; }
+        public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
-        public DateTime Modified_Date { get; set; }
+        public DateTime? Modified_Date { get; set; }
         public string Cond_Status { get; set; }
         public List<MaquilaCommercial> MaquilasCommercials { get; set; }
         public Conditions()

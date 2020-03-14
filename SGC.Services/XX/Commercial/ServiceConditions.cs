@@ -61,7 +61,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].Conditions_AddByZones";
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Orig_ID));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Cond_Desc", model.Cond_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateStart", model.Cond_DateStart));
                 cmd.Parameters.Add(new SqlParameter("@Cond_DateEnd", model.Cond_DateEnd));
@@ -194,7 +194,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].Conditions_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
-
+				cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
