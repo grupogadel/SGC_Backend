@@ -4,7 +4,7 @@ using System.Text;
 using System.ComponentModel.DataAnnotations;
 using SGC.Entities.Entities.CM.DataMaster;
 using SGC.Entities.Entities.XX.Entity;
-
+using SGC.Entities.Entities.XX.Finance;
 
 namespace SGC.Entities.Entities.CM.Collect
 {
@@ -26,6 +26,7 @@ namespace SGC.Entities.Entities.CM.Collect
         public string Quota_Status { get; set; }
         public virtual Period Period { get; set; }
         public virtual Collector Collector { get; set; }
-
+        public virtual Zone Zone { get; set; }
+        public virtual UnitMeasuare UnitMeasuare { get; set; }
     }
 }

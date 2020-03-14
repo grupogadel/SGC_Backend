@@ -13,5 +13,7 @@ namespace SGC.InterfaceServices.CM.Collect
         int Update(Quota model);
         int Delete(JObject obj);
         Quota Get(int id);
+        Task<List<Quota>> Search(JObject obj);
+
     }
 }

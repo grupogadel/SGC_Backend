@@ -71,5 +71,20 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
             );
         }
 
+        // GET: api/Quota/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._quotaService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
