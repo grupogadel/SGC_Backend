@@ -42,7 +42,6 @@ namespace SGC.Web.Controllers.CM.DataMaster
             );
         }
 
-
         // PUT api/Vendor/Update/
         [HttpPut("[action]")]
         public IActionResult Update([FromBody] Vendor model)
@@ -58,6 +57,15 @@ namespace SGC.Web.Controllers.CM.DataMaster
         {
             return Ok(
                 _vendorService.Delete(obj)
+            );
+        }
+
+        // GET api/Vendor/Get/1
+        [HttpGet("[action]/{id}")]
+        public IActionResult Get(int id)
+        {
+            return Ok(
+                _vendorService.Get(id)
             );
         }
 

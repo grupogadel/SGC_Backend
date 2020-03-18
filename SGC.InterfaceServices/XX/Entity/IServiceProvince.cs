@@ -12,9 +12,9 @@ namespace SGC.InterfaceServices.XX.Entity
     public interface IServiceProvince
     {
         Task<List<Province>> GetAll();
-        //int Add(Distrito model);
-        //int Update(Distrito model);
-        //int Delete(JObject obj);
-        //Distrito Get(int id);
+        int Add(Province model);
+        int Update(Province model);
+        int Delete(Province obj);
+        Province Get(int id);
     }
 }
