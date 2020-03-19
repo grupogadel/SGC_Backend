@@ -102,10 +102,6 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
-        //public Vendor Get(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
         public Vendor Get(int id)
         {
             try
@@ -169,10 +165,6 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
-        public int Update(Vendor model)
-        {
-            throw new NotImplementedException();
-        }
 
         private Vendor MapToVendor(SqlDataReader reader)
         {
@@ -254,47 +246,61 @@ namespace SGC.Services.CM.DataMaster
             };
         }
 
-        //public int Update(Vendor model)
-        //{
-        //    try
-        //    {
-        //        SqlConnection conn = new SqlConnection(_context);
-        //        SqlCommand cmd = conn.CreateCommand();
-        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        //        cmd.CommandText = "[CM].Vendor_Update";
+        public int Update(Vendor model)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Vendor_Update";
 
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
-        //        //cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
-        //        cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", model.Vendor_TaxID));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_CatPers", model.Vendor_CatPers));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", model.Vendor_Desc));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
-        //        cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_CelPhone", model.Vendor_CelPhone));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_Email", model.Vendor_Email));
-        //        cmd.Parameters.Add(new SqlParameter("@Bank_Acct_Cod", model.Bank_Acct_Cod));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_BankAcct", model.Vendor_BankAcct));
-        //        cmd.Parameters.Add(new SqlParameter("@Bank_AcctDet_Cod", model.Bank_AcctDet_Cod));
-        //        cmd.Parameters.Add(new SqlParameter("@Vendor_BankAcctDet", model.Vendor_BankAcctDet));
-        //        cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", model.Vendor_TaxID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_CatPers", model.Vendor_CatPers));
+                cmd.Parameters.Add(new SqlParameter("@DocIdent_ID", model.DocIdent_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", model.Vendor_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
+                cmd.Parameters.Add(new SqlParameter("@Country_ID", model.Country_ID));
+                cmd.Parameters.Add(new SqlParameter("@Region_ID", model.Region_ID));
+                cmd.Parameters.Add(new SqlParameter("@Depa_ID", model.Depa_ID));
+                cmd.Parameters.Add(new SqlParameter("@Prov_ID", model.Prov_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Distric", model.Vendor_Distric));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_CelPhone", model.Vendor_CelPhone));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Email", model.Vendor_Email));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_DetracPorc", model.Vendor_DetracPorc));
 
-        //        cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add(new SqlParameter("@Bank_ID_AcctLocal_NO", model.Bank_ID_AcctLocal_NO));
+                cmd.Parameters.Add(new SqlParameter("@Currency_ID_AcctLocal_NO", model.Currency_ID_AcctLocal_NO));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_AcctLocal_NO", model.Vendor_AcctLocal_NO));
 
-        //        conn.Open();
-        //        var resul = cmd.ExecuteNonQuery();
-        //        resul = (int)cmd.Parameters["@Result"].Value;
-        //        conn.Close();
+                cmd.Parameters.Add(new SqlParameter("@Bank_ID_AcctLocalCCI_NO", model.Bank_ID_AcctLocalCCI_NO));
+                cmd.Parameters.Add(new SqlParameter("@Currency_ID_AcctLocalCCI_NO", model.Currency_ID_AcctLocalCCI_NO));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_AcctLocalCCI_NO", model.Vendor_AcctLocalCCI_NO));
 
-        //        return resul;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return -1;
-        //        throw e;
-        //    }
-        //}
+                cmd.Parameters.Add(new SqlParameter("@Bank_ID_AcctDetracc_NO", model.Bank_ID_AcctDetracc_NO));
+                cmd.Parameters.Add(new SqlParameter("@Currency_ID_AcctDetracc_NO", model.Currency_ID_AcctDetracc_NO));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_AcctDetracc_NO", model.Vendor_AcctDetracc_NO));
+
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
     }
 }
