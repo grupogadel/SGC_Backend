@@ -19,9 +19,9 @@ namespace SGC.Entities.Entities.XX.Commercial
         public decimal MaqComm_Consu { get; set; }
         public decimal MaqComm_ExpAdm { get; set; }
         public string Creation_User { get; set; }
-        public DateTime Creation_Date { get; set; }
+        public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
-        public DateTime Modified_Date { get; set; }
+        public DateTime? Modified_Date { get; set; }
         public string MaqComm_Status { get; set; }
     }
 }

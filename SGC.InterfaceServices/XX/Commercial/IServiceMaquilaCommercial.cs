@@ -9,7 +9,6 @@ namespace SGC.InterfaceServices.XX.Commercial
     {
         Task<List<MaquilaCommercial>> GetAll(int id, int cond);
         int Add(MaquilaCommercial model);
-        int Update(MaquilaCommercialHead model);
         int Delete(int id, string user);
     }
 }

@@ -129,17 +129,17 @@ namespace SGC.Web.Controllers.XX.Commercial
                 _conditionService.UpdateByVendors(model)
             );
         }
-
-
-        /*
-        // GET api/Conditions/Get/1
-        [HttpGet("[action]/{id}")]
-        public IActionResult Get(int id)
+		
+		// PUT api/Conditions/UpdateByMaquilas/
+        [HttpPut("[action]")]
+        public IActionResult UpdateByMaquilas([FromBody] Conditions model)
         {
             return Ok(
-                _conditionService.Get(id)
+                _conditionService.UpdateByMaquilas(model)
             );
         }
-        */
+
+
+        
     }
 }

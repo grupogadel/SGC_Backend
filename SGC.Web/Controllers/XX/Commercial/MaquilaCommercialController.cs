@@ -43,15 +43,6 @@ namespace SGC.Web.Controllers.XX.Commercial
         }
 
 
-        // PUT api/MaquilaCommercial/Update/
-        [HttpPut("[action]")]
-        public IActionResult Update([FromBody] MaquilaCommercialHead model)
-        {
-            return Ok(
-                _maquilaCommercialService.Update(model)
-            );
-        }
-
         // DELETE api/MaquilaCommercial/Delete/{}
         [HttpDelete("[action]/{id}/{user}")]
         public IActionResult Delete(int id, string user)

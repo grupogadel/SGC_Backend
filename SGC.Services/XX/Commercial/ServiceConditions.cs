@@ -4,6 +4,7 @@ using SGC.Entities.Entities.XX.Commercial;
 using SGC.InterfaceServices.XX.Commercial;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
@@ -80,7 +81,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
-                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
                 cmd.Parameters.Add(parMaquilasCommercials);
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -275,7 +276,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
-                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
                 cmd.Parameters.Add(parMaquilasCommercials);
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -403,7 +404,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
-                SqlParameter parMaquilasCommercials = ServiceMaquilaCommercial.GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
                 cmd.Parameters.Add(parMaquilasCommercials);
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -469,39 +470,82 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        /*
-        // GET api/Conditions/Get/1
-        public Conditions Get(int id)
+        // PUT: api/Conditions/UpdateByMaquilas/
+        public int UpdateByMaquilas(Conditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_Get";
-                cmd.Parameters.Add(new SqlParameter("@Cond_ID", id));
-
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                Conditions response = null;
+                cmd.CommandText = "[XX].Conditions_UpdateByMaquilas";
+                //Head
+                cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
+                cmd.Parameters.Add(new SqlParameter("@CreaModi_User", model.Modified_User));
+                //Detail
+                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
+                cmd.Parameters.Add(parMaquilasCommercials);
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        response = MapToConditions(reader);
-                    }
-                }
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
-                return response;
+
+                return resul;
             }
             catch (Exception e)
             {
+                return -1;
+                throw e;
+            }
+        }
+		
+	public SqlParameter GetMaquilaCommercial(string name, List<MaquilaCommercial> listMaquilaCommercial)
+        {
+            //logger.InfoFormat("Servicio, Rol:   GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
+
+            try
+            {
+                DataTable table = new DataTable("dbo.tabMaquilaCommercial");
+                table.Columns.Add("MaqComm_ID", typeof(int));
+                table.Columns.Add("MaqComm_LeyFrom", typeof(decimal));
+                table.Columns.Add("MaqComm_LeyTo", typeof(decimal));
+                table.Columns.Add("MaqComm_Maquila", typeof(decimal));
+                table.Columns.Add("MaqComm_Recov", typeof(decimal));
+                table.Columns.Add("MaqComm_MarginPI", typeof(decimal));
+                table.Columns.Add("MaqComm_Consu", typeof(decimal));
+                table.Columns.Add("MaqComm_ExpAdm", typeof(decimal));
+                table.Columns.Add("MaqComm_Status", typeof(string));
+
+                foreach (MaquilaCommercial maqCom in listMaquilaCommercial)
+                    table.Rows.Add(new object[] { maqCom.MaqComm_ID,
+                                                  maqCom.MaqComm_LeyFrom,
+                                                  maqCom.MaqComm_LeyTo,
+                                                  maqCom.MaqComm_Maquila,
+                                                  maqCom.MaqComm_Recov,
+                                                  maqCom.MaqComm_MarginPI,
+                                                  maqCom.MaqComm_Consu,
+                                                  maqCom.MaqComm_ExpAdm,
+                                                  maqCom.MaqComm_Status
+                                                });
+
+                SqlParameter parameter = new SqlParameter(name, table);
+                parameter.SqlDbType = SqlDbType.Structured;
+                parameter.TypeName = "dbo.tabMaquilaCommercial";
+
+                return parameter;
+            }
+            catch (Exception e)
+            {
+                //logger.ErrorFormat("Servicio, Rol:  Error en el metodo GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
+                //logger.ErrorFormat("Exception - {0}", e);
                 return null;
                 throw e;
             }
-        }*/
+        }
 
     }
 }
