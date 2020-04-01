@@ -22,6 +22,10 @@ using SGC.Services.CM.Collect;
 using SGC.InterfaceServices.CM.MineralReception;
 using SGC.Services.CM.MineralReception;
 using SGC.Services.XX.Finance;
+using SGC.InterfaceServices.FI.DataMaster;
+using SGC.Services.FI.DataMaster;
+using SGC.InterfaceServices.CM.Commercial;
+using SGC.Services.CM.Commercial;
 
 namespace SGC.Web
 {
@@ -62,6 +66,9 @@ namespace SGC.Web
             services.AddScoped<IServiceCountry, ServiceCountry>();
             services.AddScoped<IServiceRegion, ServiceRegion>();
             services.AddScoped<IServiceDepartment, ServiceDepartment>();
+            services.AddScoped<IServiceExchangeRate, ServiceExchangeRate>();
+            services.AddScoped<IServicePriceInternational, ServicePriceInternational>();
+            services.AddScoped<IServiceHumidity, ServiceHumidity>();
 
             services.AddCors(options =>
             {
