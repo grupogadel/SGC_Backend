@@ -110,82 +110,8 @@ namespace SGC.Services.XX.Commercial
 
         }
 
-        // PUT: api/MaquilaCommercial/Update/1
-        public int Update(MaquilaCommercialHead model)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MaquilaCommercial_Update";
-                //Head
-                cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@CreaModi_User", model.CreaModi_User));
-                //Detail
-                SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
-                cmd.Parameters.Add(parMaquilasCommercials);
-                //Output
-                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-
-                conn.Open();
-                var resul = cmd.ExecuteNonQuery();
-                resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
-
-                return resul;
-            }
-            catch (Exception e)
-            {
-                return -1;
-                throw e;
-            }
-        }
-
-        public static SqlParameter GetMaquilaCommercial(string name, List<MaquilaCommercial> listMaquilaCommercial)
-        {
-            //logger.InfoFormat("Servicio, Rol:   GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
-
-            try
-            {
-                DataTable table = new DataTable("dbo.tabMaquilaCommercial");
-                table.Columns.Add("MaqComm_ID", typeof(int));
-                table.Columns.Add("MaqComm_LeyFrom", typeof(decimal));
-                table.Columns.Add("MaqComm_LeyTo", typeof(decimal));
-                table.Columns.Add("MaqComm_Maquila", typeof(decimal));
-                table.Columns.Add("MaqComm_Recov", typeof(decimal));
-                table.Columns.Add("MaqComm_MarginPI", typeof(decimal));
-                table.Columns.Add("MaqComm_Consu", typeof(decimal));
-                table.Columns.Add("MaqComm_ExpAdm", typeof(decimal));
-                table.Columns.Add("MaqComm_Status", typeof(string));
-
-                foreach (MaquilaCommercial maqCom in listMaquilaCommercial)
-                    table.Rows.Add(new object[] { maqCom.MaqComm_ID,
-                                                  maqCom.MaqComm_LeyFrom,
-                                                  maqCom.MaqComm_LeyTo,
-                                                  maqCom.MaqComm_Maquila,
-                                                  maqCom.MaqComm_Recov,
-                                                  maqCom.MaqComm_MarginPI,
-                                                  maqCom.MaqComm_Consu,
-                                                  maqCom.MaqComm_ExpAdm,
-                                                  maqCom.MaqComm_Status
-                                                });
-
-                SqlParameter parameter = new SqlParameter(name, table);
-                parameter.SqlDbType = SqlDbType.Structured;
-                parameter.TypeName = "dbo.tabMaquilaCommercial";
-
-                return parameter;
-            }
-            catch (Exception e)
-            {
-                //logger.ErrorFormat("Servicio, Rol:  Error en el metodo GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
-                //logger.ErrorFormat("Exception - {0}", e);
-                return null;
-                throw e;
-            }
-        }
+        
+        
 
         // DELETE: api/MaquilaCommercial/Delete/
         public int Delete(int id, string user)

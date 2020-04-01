@@ -18,6 +18,21 @@ namespace SGC.Services.XX
             _context = configuration.GetConnectionString("Conexion");
         }
 
+        public int Add(Province model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Delete(Province obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Province Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         // GET: api/Provincias/GetAll
         public async Task<List<Province>> GetAll()
         {
@@ -48,19 +63,24 @@ namespace SGC.Services.XX
             }
         }
 
+        public int Update(Province model)
+        {
+            throw new NotImplementedException();
+        }
+
         private Province MapToProvince(SqlDataReader reader)
         {
             return new Province()
             {
-                Prov_ID = (int) reader["Prov_ID"],
+                Prov_ID= (int)reader["Prov_ID"],
+                Depa_ID = (int)reader["Depa_ID"],
                 Prov_Cod = reader["Prov_Cod"].ToString(),
-                Depa_ID = (int) reader["Depa_ID"],
                 Prov_Name = reader["Prov_Name"].ToString(),
                 Prov_Desc = reader["Prov_Desc"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime) reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
-                Modified_Date = (DateTime) reader["Modified_Date"],
+                Modified_Date   = (DateTime) reader["Modified_Date"],
                 Prov_Status = reader["Prov_Status"].ToString()
             };
         }

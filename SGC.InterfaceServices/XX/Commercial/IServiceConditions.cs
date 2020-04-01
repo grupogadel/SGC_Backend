@@ -21,10 +21,12 @@ namespace SGC.InterfaceServices.XX.Commercial
         int AddByOrigins(Conditions model);
         int UpdateByOrigins(Conditions model);
 
-
         //Conditions by Vendors
         Task<List<Conditions>> GetAllByVendors(int id);
         int AddByVendors(Conditions model);
         int UpdateByVendors(Conditions model);
+		
+		//Update by Maquilas
+		int UpdateByMaquilas(Conditions model);
     }
 }
