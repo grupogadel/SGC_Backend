@@ -23,21 +23,6 @@ namespace SGC.Web.Controllers.XX
             this._periodService = periodService;
         }
 
-        // GET: api/Period/GetAll/idCompany
-        [HttpGet("[action]/{idCompany}")]
-        public async Task<IActionResult> GetAll(int idCompany)
-        {
-            try
-            {
-                var result = await this._periodService.GetAll(idCompany);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
 
         // POST api/Period/Add/
         [HttpPost("[action]")]
@@ -58,13 +43,27 @@ namespace SGC.Web.Controllers.XX
             );
         }
 
-        // DELETE api/Period/Delete/1
         [HttpDelete("[action]")]
-        public IActionResult Delete([FromBody] JObject obj)
+        public IActionResult ChangeStatus([FromBody] JObject obj)
         {
             return Ok(
-                _periodService.Delete(obj)
+                _periodService.ChangeStatus(obj)
             );
+        }
+
+        // POST: api/Company/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._periodService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;   
+            }
         }
 
         // GET api/Period/Get/

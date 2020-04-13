@@ -69,6 +69,8 @@ namespace SGC.Web
             services.AddScoped<IServiceExchangeRate, ServiceExchangeRate>();
             services.AddScoped<IServicePriceInternational, ServicePriceInternational>();
             services.AddScoped<IServiceHumidity, ServiceHumidity>();
+            services.AddScoped<IServiceHumidity, ServiceHumidity>();
+            services.AddScoped<IServicePositionCollector, ServicePositionCollector>();
 
             services.AddCors(options =>
             {

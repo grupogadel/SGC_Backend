@@ -53,13 +53,28 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
             );
         }
 
-        // DELETE api/Collector/Delete/{}
+
         [HttpDelete("[action]")]
-        public IActionResult Delete([FromBody] JObject obj)
+        public IActionResult ChangeStatus([FromBody] JObject obj)
         {
             return Ok(
-                _collectorService.Delete(obj)
+                _collectorService.ChangeStatus(obj)
             );
+        }
+
+        // POST: api/Company/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._collectorService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET api/Collector/Get/1

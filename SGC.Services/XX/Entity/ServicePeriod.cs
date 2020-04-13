@@ -20,37 +20,7 @@ namespace SGC.Services.XX.Entity
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        // GET: api/Period/GetAll
-        public async Task<List<Period>> GetAll(int idCompany)
-        {
-            var response = new List<Period>();
-
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_GetAll";
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
-
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        response.Add(MapToPeriod(reader));
-                    }
-                }
-                await conn.CloseAsync();
-                return response;
-            }
-            catch (Exception e)
-            {
-                return new List<Period>();//[]
-                throw e;
-            }
-        }
-
+  
         private Period MapToPeriod(SqlDataReader reader)
         {
             return new Period()
@@ -87,15 +57,17 @@ namespace SGC.Services.XX.Entity
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].Period_Add";
                 cmd.Parameters.Add(new SqlParameter("@Period_Cod", model.Period_Cod));
-                cmd.Parameters.Add(new SqlParameter("@Period_NO", model.Period_NO));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Period_Year", model.Period_Year));
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_Start", model.Period_Date_Start));
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_End", model.Period_Date_End));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -119,16 +91,17 @@ namespace SGC.Services.XX.Entity
                 cmd.CommandText = "[XX].Period_Update";
                 cmd.Parameters.Add(new SqlParameter("@Period_ID", model.Period_ID));
                 cmd.Parameters.Add(new SqlParameter("@Period_Cod", model.Period_Cod));
-                cmd.Parameters.Add(new SqlParameter("@Period_NO", model.Period_NO));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Period_Year", model.Period_Year));
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_Start", model.Period_Date_Start));
                 cmd.Parameters.Add(new SqlParameter("@Period_Date_End", model.Period_Date_End));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -140,20 +113,24 @@ namespace SGC.Services.XX.Entity
             }
         }
 
-        // DELETE: api/Period/Delete/
-        public int Delete(JObject obj)
+
+        public int ChangeStatus(JObject obj)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Period_Delete";
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["id"].ToObject<int>()));
+                cmd.CommandText = "[XX].Period_ChangeStatus";
+                cmd.Parameters.Add(new SqlParameter("@Period_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -161,6 +138,38 @@ namespace SGC.Services.XX.Entity
             catch (Exception e)
             {
                 return -1;
+                throw e;
+            }
+        }
+
+        public async Task<List<Period>> Search(JObject obj)
+        {
+            var response = new List<Period>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].Period_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Period_Year", obj["year"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToPeriod(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
                 throw e;
             }
         }

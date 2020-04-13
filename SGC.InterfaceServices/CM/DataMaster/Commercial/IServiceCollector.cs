@@ -10,7 +10,8 @@ namespace SGC.InterfaceServices.CM.DataMaster
         Task<List<Collector>> GetAll(int id);
         int Add(Collector model);
         int Update(Collector model);
-        int Delete(JObject obj);
+        int ChangeStatus(JObject obj);
         Collector Get(int id);
+        Task<List<Collector>> Search(JObject obj);
     }
 }

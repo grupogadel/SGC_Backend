@@ -87,7 +87,6 @@ namespace SGC.Services.CM.Collect
                 Collector = new Collector
                 {
                     Zone_ID = (int)reader["Zona_ID_Collector"],
-                    Collec_Cod = reader["Collec_Cod"].ToString(),
                     Collec_TaxID = reader["Collec_TaxID"].ToString(),
                     Collec_Name = reader["Collec_Name"].ToString(),
                     Collec_LastName = reader["Collec_LastName"].ToString()

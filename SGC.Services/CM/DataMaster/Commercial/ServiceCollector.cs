@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.DataMaster;
+using SGC.Entities.Entities.XX.Entity;
 using SGC.InterfaceServices.CM.DataMaster;
 using System;
 using System.Collections.Generic;
@@ -56,8 +57,8 @@ namespace SGC.Services.CM.DataMaster
             {
                 Collec_ID = (int)reader["Collec_ID"],
                 Zone_ID = (int)reader["Zone_ID"],
+                PosCollec_ID = (int)reader["PosCollec_ID"],
                 Company_ID = (int)reader["Company_ID"],
-                Collec_Cod = reader["Collec_Cod"].ToString(),
                 Collec_TaxID = reader["Collec_TaxID"].ToString(),
                 Collec_Name = reader["Collec_Name"].ToString(),
                 Collec_LastName = reader["Collec_LastName"].ToString(),
@@ -67,9 +68,14 @@ namespace SGC.Services.CM.DataMaster
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Collec_Status = reader["Collec_Status"].ToString(),
 
-                Zone = new Zone { Zone_Cod = reader["Zone_Cod"].ToString(),
+                Zone = new Zone { 
+                    Zone_ID = (int)reader["Zone_ID"],
                     Dist_ID = (int)reader["Dist_ID"],
                     Zone_Name = reader["Zone_Name"].ToString(),
+                },
+                PositionCollector = new PositionCollector { 
+                    PosCollec_ID = (int)reader["PosCollec_ID"],
+                    PosCollec_Name = reader["PosCollec_Name"].ToString(),
                 }
             };
         }
@@ -83,19 +89,19 @@ namespace SGC.Services.CM.DataMaster
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Collector_Add";
+                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", model.PosCollec_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_Cod", model.Collec_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
                 cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
                 cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
-                //cmd.Parameters.Add("@Resultado",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();    
+                conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -117,20 +123,20 @@ namespace SGC.Services.CM.DataMaster
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Collector_Update";
+                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", model.PosCollec_ID));
                 cmd.Parameters.Add(new SqlParameter("@Collec_ID", model.Collec_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_Cod", model.Collec_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
                 cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
                 cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -142,21 +148,23 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
-        // DELETE: api/Collector/Delete/1
-        public int Delete(JObject obj)
+        public int ChangeStatus(JObject obj)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_Delete";
+                cmd.CommandText = "[CM].Collector_ChangeStatus";
                 cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -196,6 +204,40 @@ namespace SGC.Services.CM.DataMaster
             catch (Exception e)
             {
                 return null;
+                throw e;
+            }
+        }
+
+        public async Task<List<Collector>> Search(JObject obj)
+        {
+            var response = new List<Collector>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Collector_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", obj["tax"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", obj["posCollec_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Status", obj["status"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToCollector(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
                 throw e;
             }
         }
