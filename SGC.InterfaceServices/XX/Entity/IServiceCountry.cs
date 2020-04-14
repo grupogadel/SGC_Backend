@@ -13,5 +13,6 @@ namespace SGC.InterfaceServices.XX.Entity
         int Update(Country model);
         int Delete(Country obj);
         Country Get(int id);
+        Country GetCod(string cod);
     }
 }

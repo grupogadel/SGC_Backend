@@ -30,5 +30,13 @@ namespace SGC.Web.Controllers.XX
                 throw ex;
             }
         }
+        // GET api/Country/Get/pe
+        [HttpGet("[action]/{cod}")]
+        public IActionResult GetCod(string cod)
+        {
+            return Ok(
+                _countryService.GetCod(cod)
+            );
+        }
     }
 }

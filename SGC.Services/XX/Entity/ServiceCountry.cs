@@ -82,5 +82,38 @@ namespace SGC.Services.XX.Entity
         {
             throw new NotImplementedException();
         }
+
+        public Country GetCod(string cod)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].Country_GetCod";
+                cmd.Parameters.Add(new SqlParameter("@Country_Cod", cod));
+
+                //cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                Country response = null;
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        response = MapToCountry(reader);
+                    }
+                }
+                conn.Close();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return null;
+                throw e;
+            }
+        }
     }
 }

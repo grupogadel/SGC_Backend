@@ -26,6 +26,8 @@ using SGC.InterfaceServices.FI.DataMaster;
 using SGC.Services.FI.DataMaster;
 using SGC.InterfaceServices.CM.Commercial;
 using SGC.Services.CM.Commercial;
+using SGC.InterfaceServices.XX.Operations;
+using SGC.Services.XX.Operations;
 
 namespace SGC.Web
 {
@@ -71,6 +73,8 @@ namespace SGC.Web
             services.AddScoped<IServiceHumidity, ServiceHumidity>();
             services.AddScoped<IServiceHumidity, ServiceHumidity>();
             services.AddScoped<IServicePositionCollector, ServicePositionCollector>();
+            services.AddScoped<IServiceMineralsType, ServiceMineralsType>();
+            services.AddScoped<IServiceWorkShifts, ServiceWorkShifts>();
 
             services.AddCors(options =>
             {
