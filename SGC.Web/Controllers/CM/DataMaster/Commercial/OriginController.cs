@@ -63,13 +63,13 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
         }
 
         // GET api/Origin/Get/1
-        [HttpGet("[action]/{id}")]
+        /*[HttpGet("[action]/{id}")]
         public IActionResult Get(int id)
         {
             return Ok(
                 _originService.Get(id)
             );
         }
-
+        */
     }
 }

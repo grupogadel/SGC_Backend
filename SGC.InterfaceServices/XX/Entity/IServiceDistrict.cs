@@ -15,6 +15,6 @@ namespace SGC.InterfaceServices.XX.Entity
         int Add(District model);
         int Update(District model);
         int Delete(JObject obj);
-        District Get(int id);
+        //District Get(int id);
     }
 }

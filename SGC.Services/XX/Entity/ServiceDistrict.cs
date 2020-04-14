@@ -61,7 +61,12 @@ namespace SGC.Services.XX
                 Creation_Date = (DateTime) reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime) reader["Modified_Date"],
-                Dist_Status = reader["Dist_Status"].ToString()
+                Dist_Status = reader["Dist_Status"].ToString(),
+                Provinces = new Province
+                {
+                    Prov_ID = (int)reader["Prov_ID"],
+                    Prov_Name = reader["Prov_Name"].ToString()
+                }
             };
         }
 
@@ -80,11 +85,11 @@ namespace SGC.Services.XX
                 cmd.Parameters.Add(new SqlParameter("@Dist_Desc", model.Dist_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
-                //cmd.Parameters.Add("@Resultado",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result",System.Data.SqlDbType.Int).Direction=System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -114,11 +119,11 @@ namespace SGC.Services.XX
                 cmd.Parameters.Add(new SqlParameter("@Dist_Desc", model.Dist_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -141,12 +146,13 @@ namespace SGC.Services.XX
                 cmd.CommandText = "[XX].District_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
 
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Resultado"].Value;
+                //var resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -159,7 +165,7 @@ namespace SGC.Services.XX
         }
 
         // GET api/District/Get/1
-        public District Get(int id)
+        /*public District Get(int id)
         {
             try
             {
@@ -189,7 +195,7 @@ namespace SGC.Services.XX
                 return null;
                 throw e;
             }
-        }
+        }*/
 
     }
 

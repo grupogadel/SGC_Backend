@@ -56,7 +56,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
             {
                 Orig_ID = (int)reader["Orig_ID"],
                 Orig_Cod = reader["Orig_Cod"].ToString(),
-                //Zone_ID = (int)reader["Zone_ID"],
+                Zone_ID = (int)reader["Zone_ID"],
                 Orig_Name = reader["Orig_Name"].ToString(),
                 Orig_Desc = reader["Orig_Desc"].ToString(),
                 Orig_Address = reader["Orig_Address"].ToString(),
@@ -123,7 +123,6 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.CommandText = "[CM].Origin_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", model.Orig_ID));
-                //cmd.Parameters.Add(new SqlParameter("@Orig_Cod", model.Orig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Name", model.Orig_Name));
                 cmd.Parameters.Add(new SqlParameter("@Orig_Desc", model.Orig_Desc));
@@ -159,6 +158,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.CommandText = "[CM].Origin_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -177,7 +177,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
         }
 
         // GET api/District/Get/1
-        public Origin Get(int id)
+        /*public Origin Get(int id)
         {
             try
             {
@@ -207,7 +207,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 return null;
                 throw e;
             }
-        }
+        }*/
 
     }
 

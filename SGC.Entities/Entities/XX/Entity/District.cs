@@ -14,9 +14,11 @@ namespace SGC.Entities.Entities.XX.Entity
         public string Dist_Name { get; set; }
         public string Dist_Desc { get; set; }
         public string Creation_User { get; set; }
-        public DateTime Creation_Date { get; set; }
+        public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
-        public DateTime Modified_Date { get; set; }
+        public DateTime? Modified_Date { get; set; }
         public string Dist_Status { get; set; }
+
+        public Province Provinces { get; set; }
     }
 }

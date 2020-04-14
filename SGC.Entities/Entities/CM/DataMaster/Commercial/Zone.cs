@@ -15,9 +15,9 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Zone_Name { get; set; }
         public string Zone_Desc { get; set; }
         public string Creation_User { get; set; }
-        public DateTime Creation_Date { get; set; }
+        public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
-        public DateTime Modified_Date { get; set; }
+        public DateTime? Modified_Date { get; set; }
         public string Zone_Status { get; set; }
         public District Districts { get; set; }
 

@@ -13,9 +13,9 @@ namespace SGC.Web.Controllers.XX
     public class DistrictController : ControllerBase
     {
         IServiceDistrict _districtService;
-        public DistrictController(IServiceDistrict DistritoService)
+        public DistrictController(IServiceDistrict DistrictService)
         {
-            this._districtService = DistritoService;
+            this._districtService = DistrictService;
         }
 
         // GET: api/Distritos/GetAll
@@ -61,7 +61,7 @@ namespace SGC.Web.Controllers.XX
                 _districtService.Delete(obj)
             );
         }
-
+        /*
         // GET api/Distritos/Get/1
         [HttpGet("[action]/{id}")]
         public IActionResult Get(int id)
@@ -69,7 +69,7 @@ namespace SGC.Web.Controllers.XX
             return Ok(
                 _districtService.Get(id)
             );
-        }
+        }*/
 
     }
 }

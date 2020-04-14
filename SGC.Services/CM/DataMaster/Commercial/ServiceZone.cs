@@ -84,7 +84,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Name", model.Zone_Name));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Desc", model.Zone_Desc));
-                cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Zone_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -113,7 +113,6 @@ namespace SGC.Services.CM.DataMaster
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Zone_Update";
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                //cmd.Parameters.Add(new SqlParameter("@Zone_Cod", model.Zone_Cod));
                 cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Name", model.Zone_Name));
                 cmd.Parameters.Add(new SqlParameter("@Zone_Desc", model.Zone_Desc));
@@ -146,7 +145,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.CommandText = "[CM].Zone_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
-
+				cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();

@@ -18,9 +18,9 @@ namespace SGC.Entities.Entities.CM.DataMaster.Commercial
         public string Orig_Reference { get; set; }
         public string Orig_Coordinates { get; set; }
         public string Creation_User { get; set; }
-        public DateTime Creation_Date { get; set; }
+        public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
-        public DateTime Modified_Date { get; set; }
+        public DateTime? Modified_Date { get; set; }
         public int Company_ID { get; set; }
         public string Orig_Status { get; set; }
         public Zone Zones{ get; set; }
