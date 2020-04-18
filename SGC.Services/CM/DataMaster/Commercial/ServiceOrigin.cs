@@ -176,6 +176,39 @@ namespace SGC.Services.CM.DataMaster.Commercial
             }
         }
 
+        // GET: api/Origin/Search
+        public async Task<List<Origin>> Search(JObject obj)
+        {
+            var response = new List<Origin>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Origin_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Orig_Cod", obj["cod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["companyID"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToOrigin(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
         // GET api/District/Get/1
         /*public Origin Get(int id)
         {

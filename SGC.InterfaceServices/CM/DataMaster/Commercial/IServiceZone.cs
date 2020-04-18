@@ -14,5 +14,7 @@ namespace SGC.InterfaceServices.CM.DataMaster
         int Update(Zone model);
         int Delete(JObject obj);
         Zone Get(int id);
+        Task<List<Zone>> Search(JObject obj);
+
     }
 }

@@ -152,7 +152,7 @@ namespace SGC.Services.XX
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                //var resul = (int)cmd.Parameters["@Result"].Value;
+                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -160,6 +160,37 @@ namespace SGC.Services.XX
             catch (Exception e)
             {
                 return -1;
+                throw e;
+            }
+        }
+		
+		public async Task<List<District>> Search(JObject obj)
+        {
+            var response = new List<District>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].District_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Dist_Cod", obj["cod"].ToObject<string>()));
+               
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToDistrict(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
                 throw e;
             }
         }

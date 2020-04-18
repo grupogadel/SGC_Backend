@@ -18,7 +18,7 @@ namespace SGC.Web.Controllers.XX
             this._districtService = DistrictService;
         }
 
-        // GET: api/Distritos/GetAll
+        // GET: api/District/GetAll
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAll()
         {
@@ -34,7 +34,7 @@ namespace SGC.Web.Controllers.XX
         }
 
 
-        // POST api/Distritos/Add/
+        // POST api/District/Add/
         [HttpPost("[action]")]
         public IActionResult Add([FromBody] District model)
         {
@@ -44,7 +44,7 @@ namespace SGC.Web.Controllers.XX
         }
 
 
-        // PUT api/Distritos/Update/
+        // PUT api/District/Update/
         [HttpPut("[action]")]
         public IActionResult Update([FromBody] District model)
         {
@@ -53,7 +53,7 @@ namespace SGC.Web.Controllers.XX
             );
         }
 
-        // DELETE api/Distritos/Delete/{}
+        // DELETE api/District/Delete/{}
         [HttpDelete("[action]")]
         public IActionResult Delete([FromBody] JObject obj)
         {
@@ -61,8 +61,24 @@ namespace SGC.Web.Controllers.XX
                 _districtService.Delete(obj)
             );
         }
+		
+		// POST: api/District/Search/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._districtService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+		
         /*
-        // GET api/Distritos/Get/1
+        // GET api/District/Get/1
         [HttpGet("[action]/{id}")]
         public IActionResult Get(int id)
         {

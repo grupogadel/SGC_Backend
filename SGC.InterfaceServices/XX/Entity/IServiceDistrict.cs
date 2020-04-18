@@ -15,6 +15,7 @@ namespace SGC.InterfaceServices.XX.Entity
         int Add(District model);
         int Update(District model);
         int Delete(JObject obj);
+		Task<List<District>> Search(JObject obj);
         //District Get(int id);
     }
 }

@@ -162,6 +162,38 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
+        // GET: api/Zone/Search
+        public async Task<List<Zone>> Search(JObject obj)
+        {
+            var response = new List<Zone>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Zone_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Zone_Cod", obj["cod"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToZone(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
         // GET api/Zone/Get/1
         public Zone Get(int id)
         {

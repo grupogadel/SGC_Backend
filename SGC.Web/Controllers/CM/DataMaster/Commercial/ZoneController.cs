@@ -62,6 +62,21 @@ namespace SGC.Web.Controllers.CM.DataMaster
             );
         }
 
+        // GET: api/Zone/Search/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search(JObject obj)
+        {
+            try
+            {
+                var result = await this._zoneService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // GET api/Zone/Get/1
         [HttpGet("[action]/{id}")]
         public IActionResult Get(int id)
