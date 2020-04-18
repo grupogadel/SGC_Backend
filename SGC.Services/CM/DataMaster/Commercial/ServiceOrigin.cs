@@ -210,7 +210,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
         }
 
         // GET api/District/Get/1
-        /*public Origin Get(int id)
+        public Origin Get(int id)
         {
             try
             {
@@ -240,7 +240,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 return null;
                 throw e;
             }
-        }*/
+        }
 
     }
 

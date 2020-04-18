@@ -176,6 +176,34 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
+        //public int Delete(JObject obj)
+        //{
+        //    try
+        //    {
+        //        SqlConnection conn = new SqlConnection(_context);
+        //        SqlCommand cmd = conn.CreateCommand();
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        cmd.CommandText = "[CM].Scales_Delete";
+        //        cmd.Parameters.Add(new SqlParameter("@Scales_ID", obj["id"].ToObject<int>()));
+        //        cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+
+        //        cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+        //        conn.Open();
+        //        var resul = cmd.ExecuteNonQuery();
+        //        resul = (int)cmd.Parameters["@Result"].Value;
+        //        conn.Close();
+
+        //        return resul;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return -1;
+        //        throw e;
+        //    }
+        //}
+
+        // DELETE: api/Scales/Delete/1
         public int Delete(JObject obj)
         {
             try
@@ -186,7 +214,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.CommandText = "[CM].Scales_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Scales_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
-
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();

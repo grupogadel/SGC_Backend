@@ -12,6 +12,6 @@ namespace SGC.InterfaceServices.CM.DataMaster.Commercial
         int Update(Origin model);
         int Delete(JObject obj);
         Task<List<Origin>> Search(JObject obj);
-        //Origin Get(int id);
+        Origin Get(int id);
     }
 }
