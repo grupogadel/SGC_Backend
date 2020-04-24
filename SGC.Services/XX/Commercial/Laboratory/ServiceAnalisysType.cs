@@ -1,44 +1,41 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
-using SGC.Entities.Entities.CM.DataMaster;
-using SGC.Entities.Entities.XX.Entity;
-using SGC.InterfaceServices.CM.DataMaster;
+using SGC.Entities.Entities.XX.Commercial.Laboratory;
+using SGC.InterfaceServices.XX.Commercial.Laboratory;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGC.Services.CM.DataMaster
+namespace SGC.Services.XX.Commercial.Laboratory
 {
-    public class ServiceCollector : IServiceCollector
+    public class ServiceAnalisysType : IServiceAnalisysType
     {
         private readonly string _context;
 
-        public ServiceCollector(IConfiguration configuration)
+        public ServiceAnalisysType(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
-
-        // GET: api/Collector/GetAll
-        public async Task<List<Collector>> GetAll(int idCompany)
+        public async Task<List<AnalisysType>> GetAll(int id)
         {
-            var response = new List<Collector>();
+            var response = new List<AnalisysType>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_GetAll";
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
+                cmd.CommandText = "[XX].AnalisysType_GetAll";
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", id));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToCollector(reader));
+                        response.Add(MapToAnalisysType(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -46,55 +43,36 @@ namespace SGC.Services.CM.DataMaster
             }
             catch (Exception e)
             {
-                return response;// 
+                return response;
                 throw e;
             }
         }
-
-        private Collector MapToCollector(SqlDataReader reader)
+        private AnalisysType MapToAnalisysType(SqlDataReader reader)
         {
-            return new Collector()
+            return new AnalisysType()
             {
-                Collec_ID = (int)reader["Collec_ID"],
-                Zone_ID = (int)reader["Zone_ID"],
-                PosCollec_ID = (int)reader["PosCollec_ID"],
-                Company_ID = (int)reader["Company_ID"],
-                Collec_TaxID = reader["Collec_TaxID"].ToString(),
-                Collec_Name = reader["Collec_Name"].ToString(),
-                Collec_LastName = reader["Collec_LastName"].ToString(),
+                AnalType_ID = (int)reader["AnalType_ID"],
+                AnalType_Cod = reader["AnalType_Cod"].ToString(),
+                AnalType_Name = reader["AnalType_Name"].ToString(),
+                AnalType_Desc = reader["AnalType_Desc"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                Collec_Status = reader["Collec_Status"].ToString(),
-
-                Zone = new Zone { 
-                    Zone_ID = (int)reader["Zone_ID"],
-                    Dist_ID = (int)reader["Dist_ID"],
-                    Zone_Name = reader["Zone_Name"].ToString(),
-                },
-                PositionCollector = new PositionCollector { 
-                    PosCollec_ID = (int)reader["PosCollec_ID"],
-                    PosCollec_Name = reader["PosCollec_Name"].ToString(),
-                }
+                AnalType_Status = reader["MinType_Status"].ToString(),
             };
         }
-
-        // POST: api/Collector/Add
-        public int Add(Collector model)
+        public int Add(AnalisysType model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_Add";
-                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", model.PosCollec_ID));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
-                cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
+                cmd.CommandText = "[XX].AnalisysType_Add";
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Name", model.AnalType_Name));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Desc", model.AnalType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -111,25 +89,19 @@ namespace SGC.Services.CM.DataMaster
                 return -1;
                 throw e;
             }
-
         }
-
-        // PUT: api/Collector/Update/1
-        public int Update(Collector model)
+        public int Update(AnalisysType model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_Update";
-                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", model.PosCollec_ID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", model.Collec_ID));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", model.Collec_TaxID));
-                cmd.Parameters.Add(new SqlParameter("@Collec_Name", model.Collec_Name));
-                cmd.Parameters.Add(new SqlParameter("@Collec_LastName", model.Collec_LastName));
+                cmd.CommandText = "[XX].AnalisysType_Update";
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", model.AnalType_ID));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Name", model.AnalType_Name));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Desc", model.AnalType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -147,19 +119,17 @@ namespace SGC.Services.CM.DataMaster
                 throw e;
             }
         }
-
-        public int ChangeStatus(JObject obj)
+        public int Delete(JObject obj)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_ChangeStatus";
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["id"].ToObject<int>()));
+                cmd.CommandText = "[XX].AnalisysType_Delete";
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
-
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
@@ -175,19 +145,49 @@ namespace SGC.Services.CM.DataMaster
                 throw e;
             }
         }
+        public async Task<List<AnalisysType>> Search(JObject obj)
+        {
+            var response = new List<AnalisysType>();
 
-        // GET api/Collector/Get/1
-        public Collector Get(int id)
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].AnalisysType_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", obj["cod"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToAnalisysType(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
+        public AnalisysType Get(int id)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_Get";
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", id));
+                cmd.CommandText = "[XX].AnalisysType_Get";
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", id));
 
-                Collector response = null;
+                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                AnalisysType response = null;
 
                 conn.Open();
 
@@ -195,7 +195,7 @@ namespace SGC.Services.CM.DataMaster
                 {
                     while (reader.Read())
                     {
-                        response = MapToCollector(reader);
+                        response = MapToAnalisysType(reader);
                     }
                 }
                 conn.Close();
@@ -208,52 +208,18 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
-        public async Task<List<Collector>> Search(JObject obj)
-        {
-            var response = new List<Collector>();
-
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_Search";
-
-                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", obj["tax"].ToObject<string>()));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@PosCollec_ID", obj["posCollec_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Status", obj["status"].ToObject<string>()));
-
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        response.Add(MapToCollector(reader));
-                    }
-                }
-                await conn.CloseAsync();
-                return response;
-            }
-            catch (Exception e)
-            {
-                return response;// 
-                throw e;
-            }
-        }
-
-        // GET api/Collector/Get/1
-        public Collector GetRuc(int id)
+        public AnalisysType GetCod(String cod)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Collector_GetRuc";
-                cmd.Parameters.Add(new SqlParameter("@Collec_TaxID", id));
+                cmd.CommandText = "[XX].AnalisysType_GetCod";
+                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", cod));
 
-                Collector response = null;
+                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                AnalisysType response = null;
 
                 conn.Open();
 
@@ -261,7 +227,7 @@ namespace SGC.Services.CM.DataMaster
                 {
                     while (reader.Read())
                     {
-                        response = MapToCollector(reader);
+                        response = MapToAnalisysType(reader);
                     }
                 }
                 conn.Close();

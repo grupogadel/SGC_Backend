@@ -12,5 +12,6 @@ namespace SGC.InterfaceServices.CM.DataMaster
         int Update(Vendor model);
         int Delete(JObject obj);
         Vendor Get(int id);
+        Vendor GetRuc(int id);
     }
 }

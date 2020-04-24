@@ -13,5 +13,6 @@ namespace SGC.InterfaceServices.CM.DataMaster
         int ChangeStatus(JObject obj);
         Collector Get(int id);
         Task<List<Collector>> Search(JObject obj);
+        Collector GetRuc(int id);
     }
 }

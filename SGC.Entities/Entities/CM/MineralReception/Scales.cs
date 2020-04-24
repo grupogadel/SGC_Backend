@@ -51,5 +51,6 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public Origin Origins { get; set; }
         public Collector Collectors { get; set; }
         public WorkShifts WorkShifts { get; set; }
+        public Vendor Vendors { get; set; }
     }
 }

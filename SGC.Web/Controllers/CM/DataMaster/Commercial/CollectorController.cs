@@ -85,6 +85,13 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
                 _collectorService.Get(id)
             );
         }
-
+        // GET api/Collector/GetRuc/1
+        [HttpGet("[action]/{id}")]
+        public IActionResult GetRuc(int id)
+        {
+            return Ok(
+                _collectorService.GetRuc(id)
+            );
+        }
     }
 }

@@ -135,6 +135,39 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
+        public Vendor GetRuc(int id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Vendor_GetRuc";
+                cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", id));
+
+                //cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                Vendor response = null;
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        response = MapToVendor(reader);
+                    }
+                }
+                conn.Close();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return null;
+                throw e;
+            }
+        }
+
         public async Task<List<Vendor>> GetAll(int idCompany)
         {
             var response = new List<Vendor>();

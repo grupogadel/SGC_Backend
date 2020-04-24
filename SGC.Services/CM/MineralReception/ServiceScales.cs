@@ -100,7 +100,7 @@ namespace SGC.Services.CM.MineralReception
                 {
                     MinType_ID = (int)reader["MinType_ID"],
                     MinType_Cod = reader["MinType_Cod"].ToString(),
-                    MinType_Name = reader["MinType_Name"].ToString()
+                    MinType_Desc = reader["MinType_Desc"].ToString()
                 },
                 Origins = new Origin
                 {
@@ -111,13 +111,20 @@ namespace SGC.Services.CM.MineralReception
                 Collectors = new Collector
                 {
                     Collec_ID = (int)reader["Collec_ID"],
-                    Collec_Name = reader["Collec_Name"].ToString()
+                    Collec_Name = reader["Collec_Name"].ToString(),
+                    Collec_TaxID = reader["Collec_TaxID"].ToString()
+
                 },
                 WorkShifts = new WorkShifts
                 {
                     WrkShi_ID = (int)reader["WrkShi_ID"],
                     WrkShi_Cod = reader["WrkShi_Cod"].ToString(),
                     WrkShi_Desc = reader["WrkShi_Desc"].ToString()
+                },
+                Vendors = new Vendor
+                {
+                    Vendor_ID = (int)reader["Vendor_ID"],
+                    Vendor_TaxID = reader["Vendor_TaxID"].ToString()
                 }
             };
         }

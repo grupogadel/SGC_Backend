@@ -69,5 +69,14 @@ namespace SGC.Web.Controllers.CM.DataMaster
             );
         }
 
+        // GET api/Vendor/GetRuc/1
+        [HttpGet("[action]/{id}")]
+        public IActionResult GetRuc(int id)
+        {
+            return Ok(
+                _vendorService.GetRuc(id)
+            );
+        }
+
     }
 }

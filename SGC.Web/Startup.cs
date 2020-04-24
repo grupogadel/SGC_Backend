@@ -26,8 +26,8 @@ using SGC.InterfaceServices.FI.DataMaster;
 using SGC.Services.FI.DataMaster;
 using SGC.InterfaceServices.CM.Commercial;
 using SGC.Services.CM.Commercial;
-using SGC.InterfaceServices.XX.Operations;
-using SGC.Services.XX.Operations;
+using SGC.InterfaceServices.XX.Operations.Mining;
+using SGC.Services.XX.Operations.Mining;
 
 namespace SGC.Web
 {
