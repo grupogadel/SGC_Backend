@@ -10,7 +10,6 @@ namespace SGC.Entities.Entities.CM.DataMaster
         [Key]
         public int Vendor_ID { get; set; }
         public int? Company_ID { get; set; }
-        public string Vendor_Cod { get; set; }
         public string Vendor_TaxID { get; set; }
         public string Vendor_CatPers { get; set; }
         public int? DocIdent_ID { get; set; }

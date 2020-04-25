@@ -205,7 +205,6 @@ namespace SGC.Services.CM.DataMaster
             {
                 Vendor_ID = (int)reader["Vendor_ID"],
                 Company_ID = (int)reader["Company_ID"],
-                Vendor_Cod = reader["Vendor_Cod"].ToString(),
                 Vendor_TaxID = reader["Vendor_TaxID"].ToString(),
                 Vendor_CatPers = reader["Vendor_CatPers"].ToString(),
                 DocIdent_ID = (int)reader["DocIdent_ID"],
