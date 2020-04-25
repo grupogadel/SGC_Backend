@@ -273,7 +273,7 @@ namespace SGC.Services.CM.DataMaster
                 {
                     DocIdent_ID = (int)reader["DocIdent_ID"],
                     DocIdent_Cod = reader["DocIdent_Cod"].ToString(),
-                    DocIdent_Name= reader["DocIdent_Name"].ToString()
+                    DocIdent_Desc= reader["DocIdent_Desc"].ToString()
                 }
             };
         }
