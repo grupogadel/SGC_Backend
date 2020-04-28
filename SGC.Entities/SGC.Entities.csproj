@@ -31,6 +31,7 @@
     <Folder Include="Entities\FI\Accounting\" />
     <Folder Include="Entities\OP\FlotationPlant\" />
     <Folder Include="Entities\OP\PlantCIP\" />
+    <Folder Include="Entities\XX\Operations\Industry\" />
   </ItemGroup>
 
 </Project>

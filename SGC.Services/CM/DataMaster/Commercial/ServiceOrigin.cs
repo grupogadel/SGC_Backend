@@ -221,7 +221,7 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", id));
 
                 //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                Origin response = null;
+                Origin response = new Origin();
 
                 conn.Open();
 

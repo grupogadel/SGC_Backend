@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.Entities.Entities.CM.DataMaster;
-using SGC.Entities.Entities.XX.Operations;
+using SGC.Entities.Entities.XX.Operations.Mining;
 
 namespace SGC.Entities.Entities.CM.MineralReception
 {

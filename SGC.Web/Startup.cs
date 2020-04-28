@@ -28,6 +28,10 @@ using SGC.InterfaceServices.CM.Commercial;
 using SGC.Services.CM.Commercial;
 using SGC.InterfaceServices.XX.Operations.Mining;
 using SGC.Services.XX.Operations.Mining;
+using SGC.InterfaceServices.XX.Commercial.Laboratory;
+using SGC.Services.XX.Commercial.Laboratory;
+using SGC.InterfaceServices.XX.Commercial.MineralReception;
+using SGC.Services.XX.Commercial.MineralReception;
 
 namespace SGC.Web
 {
@@ -43,19 +47,19 @@ namespace SGC.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+
             services.AddMvc(option => option.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             services.AddScoped<IServiceZone, ServiceZone>();
             services.AddScoped<IServiceCompany, ServiceCompany>();
-			services.AddScoped<IServiceDistrict, ServiceDistrict>();
-			services.AddScoped<IServiceProvince, ServiceProvince>();
+            services.AddScoped<IServiceDistrict, ServiceDistrict>();
+            services.AddScoped<IServiceProvince, ServiceProvince>();
             services.AddScoped<IServiceUser, ServiceUser>();
             services.AddScoped<IServicePosition, ServicePosition>();
             services.AddScoped<IServiceCurrency, ServiceCurrency>();
             services.AddScoped<IServicePeriod, ServicePeriod>();
-			services.AddScoped<IServiceOrigin, ServiceOrigin>();
+            services.AddScoped<IServiceOrigin, ServiceOrigin>();
             services.AddScoped<IServiceCollector, ServiceCollector>();
             services.AddScoped<IServiceQuota, ServiceQuota>();
             services.AddScoped<IServiceMPeriod, ServiceMPeriod>();
@@ -75,7 +79,10 @@ namespace SGC.Web
             services.AddScoped<IServicePositionCollector, ServicePositionCollector>();
             services.AddScoped<IServiceMineralsType, ServiceMineralsType>();
             services.AddScoped<IServiceWorkShifts, ServiceWorkShifts>();
-
+            services.AddScoped<IServiceProductType, ServiceProductType>();
+            services.AddScoped<IServiceLabProcessType, ServiceLabProcessType>();
+            services.AddScoped<IServiceSampleOrigin, ServiceSampleOrigin>();
+            services.AddScoped<IServiceCorrelDocuments, ServiceCorrelDocuments>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>

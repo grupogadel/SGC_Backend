@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.DataMaster;
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.Entities.Entities.CM.MineralReception;
-using SGC.Entities.Entities.XX.Operations;
+using SGC.Entities.Entities.XX.Operations.Mining;
 using SGC.InterfaceServices.CM.MineralReception;
 using System;
 using System.Collections.Generic;
