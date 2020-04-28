@@ -55,7 +55,6 @@ namespace SGC.Services.XX.Operations.Mining
                 ProdType_ID = (int)reader["ProdType_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 ProdType_Cod = reader["ProdType_Cod"].ToString(),
-                ProdType_Name = reader["ProdType_Name"].ToString(),
                 ProdType_Desc = reader["ProdType_Desc"].ToString(),
                 ProdType_Area = reader["ProdType_Area"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
@@ -77,7 +76,6 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandText = "[XX].ProductType_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Cod", model.ProdType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@ProdType_Name", model.ProdType_Name));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Desc", model.ProdType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Area", model.ProdType_Area));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
@@ -110,7 +108,6 @@ namespace SGC.Services.XX.Operations.Mining
 
                 cmd.Parameters.Add(new SqlParameter("@ProdType_ID", model.ProdType_ID));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Cod", model.ProdType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@ProdType_Name", model.ProdType_Name));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Desc", model.ProdType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Area", model.ProdType_Area));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));

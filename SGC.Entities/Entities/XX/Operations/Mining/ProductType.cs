@@ -11,7 +11,6 @@ namespace SGC.Entities.Entities.XX.Operations.Mining
         public int ProdType_ID { get; set; }
         public int Company_ID { get; set; }
         public string ProdType_Cod { get; set; }
-        public string ProdType_Name { get; set; }
         public string ProdType_Desc { get; set; }
         public string ProdType_Area { get; set; }
         public string Creation_User { get; set; }
