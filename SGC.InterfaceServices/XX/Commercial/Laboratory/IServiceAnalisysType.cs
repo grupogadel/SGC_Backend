@@ -9,7 +9,7 @@ namespace SGC.InterfaceServices.XX.Commercial.Laboratory
 {
     public interface IServiceAnalisysType
     {
-        Task<List<AnalisysType>> GetAll(int id);
+        Task<List<AnalisysType>> GetAll();
         int Add(AnalisysType model);
         int Update(AnalisysType model);
         int Delete(JObject obj);

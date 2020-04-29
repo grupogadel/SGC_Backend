@@ -79,6 +79,7 @@ namespace SGC.Web
             services.AddScoped<IServicePositionCollector, ServicePositionCollector>();
             services.AddScoped<IServiceMineralsType, ServiceMineralsType>();
             services.AddScoped<IServiceWorkShifts, ServiceWorkShifts>();
+            services.AddScoped<IServiceAnalisysType, ServiceAnalisysType>();
             services.AddScoped<IServiceProductType, ServiceProductType>();
             services.AddScoped<IServiceLabProcessType, ServiceLabProcessType>();
             services.AddScoped<IServiceSampleOrigin, ServiceSampleOrigin>();

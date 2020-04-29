@@ -8,7 +8,6 @@ namespace SGC.Entities.Entities.XX.Commercial.Laboratory
     {
         public int AnalType_ID { get; set; }
         public string AnalType_Cod { get; set; }
-        public string AnalType_Name { get; set; }
         public string AnalType_Desc { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }

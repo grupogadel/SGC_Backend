@@ -59,5 +59,20 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 _scalesService.Update(model)
             );
         }
+
+        // GET: api/Scales/Search/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search(JObject obj)
+        {
+            try
+            {
+                var result = await this._scalesService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

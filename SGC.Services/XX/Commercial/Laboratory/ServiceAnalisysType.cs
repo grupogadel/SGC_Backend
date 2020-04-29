@@ -18,7 +18,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
         {
             _context = configuration.GetConnectionString("Conexion");
         }
-        public async Task<List<AnalisysType>> GetAll(int id)
+        public async Task<List<AnalisysType>> GetAll()
         {
             var response = new List<AnalisysType>();
 
@@ -28,7 +28,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].AnalisysType_GetAll";
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", id));
+                //cmd.Parameters.Add(new SqlParameter("@Company_ID", id));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -53,13 +53,12 @@ namespace SGC.Services.XX.Commercial.Laboratory
             {
                 AnalType_ID = (int)reader["AnalType_ID"],
                 AnalType_Cod = reader["AnalType_Cod"].ToString(),
-                AnalType_Name = reader["AnalType_Name"].ToString(),
                 AnalType_Desc = reader["AnalType_Desc"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                AnalType_Status = reader["MinType_Status"].ToString(),
+                AnalType_Status = reader["AnalType_Status"].ToString(),
             };
         }
         public int Add(AnalisysType model)
@@ -70,8 +69,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].AnalisysType_Add";
-                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@AnalType_Name", model.AnalType_Name));
+                //cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@AnalType_Desc", model.AnalType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
@@ -99,8 +97,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].AnalisysType_Update";
                 cmd.Parameters.Add(new SqlParameter("@AnalType_ID", model.AnalType_ID));
-                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@AnalType_Name", model.AnalType_Name));
+                //cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@AnalType_Desc", model.AnalType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 

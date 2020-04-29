@@ -27,6 +27,38 @@ namespace SGC.Services.CM.MineralReception
             throw new NotImplementedException();
         }
 
+        // GET: api/Scales/Search
+        public async Task<List<Scales>> Search(JObject obj)
+        {
+            var response = new List<Scales>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Scales_GetLote";
+
+                cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["lote"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToScales(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
         public async Task<List<Scales>> GetAll(int idCompany)
         {
             var response = new List<Scales>();
@@ -61,13 +93,13 @@ namespace SGC.Services.CM.MineralReception
         {
             return new Scales()
             {
-                Scales_ID= (int)reader["Scales_ID"],
-                Vendor_ID= (int)reader["Vendor_ID"],
+                Scales_ID = (int)reader["Scales_ID"],
+                Vendor_ID = (int)reader["Vendor_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 Scales_Lote = reader["Scales_Lote"].ToString(),
                 Scales_SubLote = reader["Scales_SubLote"].ToString(),
                 MinType_ID = (int)reader["MinType_ID"],
-                Scales_Analysis= reader["Scales_Analysis"].ToString(),
+                Scales_Analysis = reader["Scales_Analysis"].ToString(),
                 Scales_MinOwner = reader["Scales_MinOwner"].ToString(),
                 Scales_DateInp = (DateTime)reader["Scales_DateInp"],
                 Scales_DateOut = (DateTime)reader["Scales_DateOut"],
@@ -76,7 +108,7 @@ namespace SGC.Services.CM.MineralReception
                 WrkShi_ID = (int)reader["WrkShi_ID"],
                 Scales_Operator = reader["Scales_Operator"].ToString(),
                 Scales_GuiRemRe_TaxID = reader["Scales_GuiRemRe_TaxID"].ToString(),
-                Scales_GuiRemRe_Date=(DateTime)reader["Scales_GuiRemRe_Date"],
+                Scales_GuiRemRe_Date = (DateTime)reader["Scales_GuiRemRe_Date"],
                 Scales_GuiRemRe_Serie = reader["Scales_GuiRemRe_Serie"].ToString(),
                 Scales_GuiRemRe_Num = reader["Scales_GuiRemRe_Num"].ToString(),
                 Scales_NumSacos = (int)reader["Scales_NumSacos"],
@@ -105,7 +137,7 @@ namespace SGC.Services.CM.MineralReception
                 Origins = new Origin
                 {
                     Orig_ID = (int)reader["Orig_ID"],
-                    Orig_Cod= reader["Orig_Cod"].ToString(),
+                    Orig_Cod = reader["Orig_Cod"].ToString(),
                     Orig_Name = reader["Orig_Name"].ToString()
                 },
                 Collectors = new Collector

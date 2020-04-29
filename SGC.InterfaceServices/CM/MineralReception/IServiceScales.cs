@@ -13,5 +13,6 @@ namespace SGC.InterfaceServices.CM.MineralReception
         int Update(Scales model);
         int Delete(JObject obj);
         Scales Get(int id);
+        Task<List<Scales>> Search(JObject obj);
     }
 }
