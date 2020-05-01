@@ -74,7 +74,7 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].MineralsType_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
+                cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
@@ -103,7 +103,7 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandText = "[XX].MineralsType_Update";
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
+                cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 

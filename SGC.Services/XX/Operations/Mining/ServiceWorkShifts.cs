@@ -74,7 +74,7 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].WorkShifts_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                //cmd.Parameters.Add(new SqlParameter("@WrkShi_Cod", model.WrkShi_Cod));
+                cmd.Parameters.Add(new SqlParameter("@WrkShi_Cod", model.WrkShi_Cod));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_Desc", model.WrkShi_Desc));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_TimeStar", model.WrkShi_TimeStar));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_TimeEnd", model.WrkShi_TimeEnd));
@@ -106,7 +106,7 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandText = "[XX].WorkShifts_Update";
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_ID", model.WrkShi_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                //cmd.Parameters.Add(new SqlParameter("@WrkShi_Cod", model.WrkShi_Cod));
+                cmd.Parameters.Add(new SqlParameter("@WrkShi_Cod", model.WrkShi_Cod));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_Desc", model.WrkShi_Desc));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_TimeStar", model.WrkShi_TimeStar));
                 cmd.Parameters.Add(new SqlParameter("@WrkShi_TimeEnd", model.WrkShi_TimeEnd));
