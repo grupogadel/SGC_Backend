@@ -9,13 +9,11 @@ using SGC.Entities.Entities.XX.Finance;
 
 namespace SGC.InterfaceServices.XX.Finance
 {
-    public interface IServiceCurrency
+    public interface IServiceUnitMeasuare
     {
-        Task<List<Currency>> GetAll();
-        Currency Get(int id);
-        int Add(Currency model);
-        int Update(Currency model);
+        int Add(UnitMeasuare model);
+        int Update(UnitMeasuare model);
         int ChangeStatus(JObject obj);
-        Task<List<Currency>> Search(JObject obj);
+        Task<List<UnitMeasuare>> Search(JObject obj);
     }
 }

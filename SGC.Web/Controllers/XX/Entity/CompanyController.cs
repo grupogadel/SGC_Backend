@@ -87,7 +87,7 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Get(int id)
         {
             return Ok(
-                _companyService.Get(id)
+                _companyService.Get(id) 
             );
         }
 

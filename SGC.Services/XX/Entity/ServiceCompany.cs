@@ -73,9 +73,9 @@ namespace SGC.Services.XX.Entity
 
                 Region = new Region { Region_ID = (int)reader["Region_ID"], Region_Name = reader["Region_Name"].ToString() },
                 Country = new Country { Country_ID = (int)reader["Country_ID"], Country_Name = reader["Country_Name"].ToString() },
-                Currency_Funct = new Currency { Currency_ID = (int)reader["Currency_ID_F"], Currency_Country = reader["Currency_Country_F"].ToString(), Currency_Cod = reader["Currency_Cod_F"].ToString(), Currency_Name = reader["Currency_Name_F"].ToString() },
-                Currency_Loc = new Currency { Currency_ID = (int)reader["Currency_ID_L"], Currency_Country = reader["Currency_Country_L"].ToString(), Currency_Cod = reader["Currency_Cod_L"].ToString(), Currency_Name = reader["Currency_Name_L"].ToString() },
-                Currency_Grp = new Currency { Currency_ID = (int)reader["Currency_ID_G"], Currency_Country = reader["Currency_Country_G"].ToString(), Currency_Cod = reader["Currency_Cod_G"].ToString(), Currency_Name = reader["Currency_Name_G"].ToString() }
+                Currency_Funct = new Currency { Currency_ID = (int)reader["Currency_ID_F"],  Currency_Cod = reader["Currency_Cod_F"].ToString(), Currency_Name = reader["Currency_Name_F"].ToString() },
+                Currency_Loc = new Currency { Currency_ID = (int)reader["Currency_ID_L"],  Currency_Cod = reader["Currency_Cod_L"].ToString(), Currency_Name = reader["Currency_Name_L"].ToString() },
+                Currency_Grp = new Currency { Currency_ID = (int)reader["Currency_ID_G"],  Currency_Cod = reader["Currency_Cod_G"].ToString(), Currency_Name = reader["Currency_Name_G"].ToString() }
 
             };
         }

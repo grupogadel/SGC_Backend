@@ -67,8 +67,8 @@ namespace SGC.Services.FI.DataMaster
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 ExchRate_Status = reader["ExchRate_Status"].ToString(),
 
-                Currency_From = new Currency { Currency_ID = (int)reader["Currency_From_ID"], Currency_Country = reader["Currency_From_Country"].ToString(), Currency_Cod = reader["Currency_From_Cod"].ToString(), Currency_Name = reader["Currency_From_Name"].ToString() },
-                Currency_To = new Currency { Currency_ID = (int)reader["Currency_To_ID"], Currency_Country = reader["Currency_To_Country"].ToString(), Currency_Cod = reader["Currency_To_Cod"].ToString(), Currency_Name = reader["Currency_To_Name"].ToString() },
+                Currency_From = new Currency { Currency_ID = (int)reader["Currency_From_ID"], Currency_Cod = reader["Currency_From_Cod"].ToString(), Currency_Name = reader["Currency_From_Name"].ToString() },
+                Currency_To = new Currency { Currency_ID = (int)reader["Currency_To_ID"],  Currency_Cod = reader["Currency_To_Cod"].ToString(), Currency_Name = reader["Currency_To_Name"].ToString() },
 
 
             };

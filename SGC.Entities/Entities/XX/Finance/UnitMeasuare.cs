@@ -10,6 +10,7 @@ namespace SGC.Entities.Entities.XX.Finance
         [Key]
         public int UM_ID { get; set; }
         public string UM_Cod { get; set; }
+        public string UM_Cod_Alt { get; set; }
         public string UM_Desc { get; set; }
         public string Creation_User { get; set; }
         public DateTime Creation_Date { get; set; }

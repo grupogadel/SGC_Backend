@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.XX.Finance;
 using SGC.InterfaceServices.XX.Finance;
 
@@ -16,10 +17,10 @@ namespace SGC.Web.Controllers.XX
     //[EnableCors("MyPolicy")]
     public class CurrencyController : ControllerBase
     {
-        IServiceCurrency _companyService;
-        public CurrencyController(IServiceCurrency companyService)
+        IServiceCurrency _currencyService;
+        public CurrencyController(IServiceCurrency currencyService)
         {
-            this._companyService = companyService;
+            this._currencyService = currencyService;
         }
 
         // GET: api/Moneda/GetAll
@@ -28,7 +29,7 @@ namespace SGC.Web.Controllers.XX
         {
             try
             {
-                var result = await this._companyService.GetAll();
+                var result = await this._currencyService.GetAll();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -42,8 +43,51 @@ namespace SGC.Web.Controllers.XX
         public IActionResult Get(int id)
         {
             return Ok(
-                _companyService.Get(id)
+                _currencyService.Get(id)
             );
+        }
+
+        // POST api/Currency/Add/
+        [HttpPost("[action]")]
+        public IActionResult Add([FromBody] Currency model)
+        {
+            return Ok(
+                _currencyService.Add(model)
+            );
+        }
+
+
+        // PUT api/Currency/Update/
+        [HttpPut("[action]")]
+        public IActionResult Update([FromBody] Currency model)
+        {
+            return Ok(
+                _currencyService.Update(model)
+            );
+        }
+
+
+        [HttpDelete("[action]")]
+        public IActionResult ChangeStatus([FromBody] JObject obj)
+        {
+            return Ok(
+                _currencyService.ChangeStatus(obj)
+            );
+        }
+
+        // POST: api/Currency/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._currencyService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
