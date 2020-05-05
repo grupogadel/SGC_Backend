@@ -97,7 +97,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].AnalisysType_Update";
                 cmd.Parameters.Add(new SqlParameter("@AnalType_ID", model.AnalType_ID));
-                cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@AnalType_Cod", model.AnalType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@AnalType_Desc", model.AnalType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 

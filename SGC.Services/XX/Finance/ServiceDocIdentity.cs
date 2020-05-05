@@ -98,7 +98,7 @@ namespace SGC.Services.XX.Finance
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[XX].DocIdentity_Update";
                 cmd.Parameters.Add(new SqlParameter("@DocIdent_ID", model.DocIdent_ID));
-                cmd.Parameters.Add(new SqlParameter("@DocIdent_Cod", model.DocIdent_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@DocIdent_Cod", model.DocIdent_Cod));
                 cmd.Parameters.Add(new SqlParameter("@DocIdent_Desc", model.DocIdent_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
