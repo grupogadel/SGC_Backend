@@ -82,7 +82,11 @@ namespace SGC.Services.XX.Entity
                 cmd.CommandText = "[XX].CorrelDocuments_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@Correl_ID", model.Correl_ID));
+                cmd.Parameters.Add(new SqlParameter("@Correl_Module", model.Correl_Module));
+                cmd.Parameters.Add(new SqlParameter("@Correl_ProcessName", model.Correl_ProcessName));
+                cmd.Parameters.Add(new SqlParameter("@Correl_TransacName", model.Correl_TransacName));
                 cmd.Parameters.Add(new SqlParameter("@Correl_Prefix", model.Correl_Prefix));
+                cmd.Parameters.Add(new SqlParameter("@Correl_AcctDoc_NO", model.Correl_AcctDoc_NO));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;

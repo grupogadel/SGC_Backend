@@ -107,7 +107,7 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.CommandText = "[XX].ProductType_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@ProdType_ID", model.ProdType_ID));
-                cmd.Parameters.Add(new SqlParameter("@ProdType_Cod", model.ProdType_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@ProdType_Cod", model.ProdType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Desc", model.ProdType_Desc));
                 cmd.Parameters.Add(new SqlParameter("@ProdType_Area", model.ProdType_Area));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));

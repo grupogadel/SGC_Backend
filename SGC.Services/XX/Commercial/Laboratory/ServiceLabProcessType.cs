@@ -106,7 +106,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.CommandText = "[XX].LabProcessType_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@LabProcTyp_ID", model.LabProcTyp_ID));
-                cmd.Parameters.Add(new SqlParameter("@LabProcTyp_Cod", model.LabProcTyp_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@LabProcTyp_Cod", model.LabProcTyp_Cod));
                 cmd.Parameters.Add(new SqlParameter("@LabProcTyp_Name", model.LabProcTyp_Name));
                 cmd.Parameters.Add(new SqlParameter("@LabProcTyp_Desc", model.LabProcTyp_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));

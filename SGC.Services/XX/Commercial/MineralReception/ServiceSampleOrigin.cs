@@ -113,7 +113,7 @@ namespace SGC.Services.XX.Commercial.MineralReception
                 cmd.CommandText = "[XX].SampleOrigin_Update";
 
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", model.SampOrig_ID));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_Cod", model.SampOrig_Cod));
+                //cmd.Parameters.Add(new SqlParameter("@SampOrig_Cod", model.SampOrig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Module", model.SampOrig_Module));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Area", model.SampOrig_Area));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Desc", model.SampOrig_Desc));
