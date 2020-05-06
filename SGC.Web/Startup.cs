@@ -87,6 +87,7 @@ namespace SGC.Web
             services.AddScoped<IServiceLanguage, ServiceLanguage>();
             services.AddScoped<IServiceStatus, ServiceStatus>();
             services.AddScoped<IServiceUnitMeasuare, ServiceUnitMeasuare>();
+            services.AddScoped<IServiceAnalysisRequest, ServiceAnalysisRequest>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
