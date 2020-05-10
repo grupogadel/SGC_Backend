@@ -18,5 +18,6 @@ namespace SGC.Entities.Entities.XX.Entity
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string Prov_Status { get; set; }
+        public Department Departments { get; set; }
     }
 }

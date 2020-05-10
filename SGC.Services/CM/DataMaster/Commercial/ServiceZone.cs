@@ -67,7 +67,17 @@ namespace SGC.Services.CM.DataMaster
                 Districts = new District
                 {
                     Dist_ID = (int)reader["Dist_ID"],
-                    Dist_Name = reader["Dist_Name"].ToString()
+                    Dist_Name = reader["Dist_Name"].ToString(),
+                    Provinces = new Province
+                    {
+                        Prov_ID = (int)reader["Prov_ID"],
+                        Prov_Name = reader["Prov_Name"].ToString(),
+                        Departments = new Department
+                        {
+						    Depa_ID = (int)reader["Depa_ID"],
+						    Depa_Name = reader["Depa_Name"].ToString()
+					    }
+                    }
                 }
             };
         }

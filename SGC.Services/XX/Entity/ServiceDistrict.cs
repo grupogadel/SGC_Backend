@@ -65,7 +65,12 @@ namespace SGC.Services.XX
                 Provinces = new Province
                 {
                     Prov_ID = (int)reader["Prov_ID"],
-                    Prov_Name = reader["Prov_Name"].ToString()
+                    Prov_Name = reader["Prov_Name"].ToString(),
+					Departments = new Department
+                    {
+						Depa_ID = (int)reader["Depa_ID"],
+						Depa_Name = reader["Depa_Name"].ToString(),
+					}
                 }
             };
         }
