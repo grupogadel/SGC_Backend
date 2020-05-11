@@ -33,7 +33,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", model.Vendor_TaxID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_CatPers", model.Vendor_CatPers));
                 cmd.Parameters.Add(new SqlParameter("@DocIdent_ID", model.DocIdent_ID));
-                cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", model.Vendor_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", (object)model.Vendor_Desc ?? DBNull.Value));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
@@ -258,26 +258,80 @@ namespace SGC.Services.CM.DataMaster
                     Prov_ID = (int)reader["Prov_ID"],
                     Prov_Name = reader["Prov_Name"].ToString(),
                 },
-                //Banks = new Bank
-                //{
-                //    Bank_ID = (int)reader["Bank_ID"],
-                //    Bank_Cod = reader["Bank_Cod"].ToString(),
-                //    Bank_Name = reader["Bank_Name"].ToString()
-                //},
-                //Currencys = new Currency
-                //{
-                //    Currency_ID = (int)reader["Currency_ID"],
-                //    Currency_Cod = reader["Currency_Cod"].ToString()
-                //},
-                DocIdentitys= new DocIdentity
+                DocIdentitys = new DocIdentity
                 {
                     DocIdent_ID = (int)reader["DocIdent_ID"],
                     DocIdent_Cod = reader["DocIdent_Cod"].ToString(),
-                    DocIdent_Desc= reader["DocIdent_Desc"].ToString()
+                    DocIdent_Desc = reader["DocIdent_Desc"].ToString()
+                },
+                Banks = new Bank
+                {
+                    Bank_ID = (int)reader["Bank_ID"],
+                    Bank_Cod = reader["Bank_Cod"].ToString(),
+                    Bank_Name = reader["Bank_Name"].ToString()
+                },
+                Banks1 = new Bank
+                {
+                    Bank_ID = (int)reader["Bank_ID1"],
+                    Bank_Cod = reader["Bank_Cod1"].ToString(),
+                    Bank_Name = reader["Bank_Name1"].ToString()
+                },
+                Banks2 = new Bank
+                {
+                    Bank_ID = (int)reader["Bank_ID2"],
+                    Bank_Cod = reader["Bank_Cod2"].ToString(),
+                    Bank_Name = reader["Bank_Name2"].ToString()
+                },
+                Currencys = new Currency
+                {
+                    Currency_ID = (int)reader["Currency_ID"],
+                    Currency_Cod = reader["Currency_Cod"].ToString(),
+                    Currency_Name = reader["Currency_Name"].ToString()
+                },
+                Currencys1 = new Currency
+                {
+                    Currency_ID = (int)reader["Currency_ID1"],
+                    Currency_Cod = reader["Currency_Cod1"].ToString(),
+                    Currency_Name = reader["Currency_Name1"].ToString()
+                },
+                Currencys2 = new Currency
+                {
+                    Currency_ID = (int)reader["Currency_ID2"],
+                    Currency_Cod = reader["Currency_Cod2"].ToString(),
+                    Currency_Name = reader["Currency_Name2"].ToString()
                 }
             };
         }
+        public async Task<List<Vendor>> Search(JObject obj)
+        {
+            var response = new List<Vendor>();
 
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Vendor_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", obj["cod"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToVendor(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
         public int Update(Vendor model)
         {
             try

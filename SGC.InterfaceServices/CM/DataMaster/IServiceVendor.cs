@@ -13,5 +13,6 @@ namespace SGC.InterfaceServices.CM.DataMaster
         int Delete(JObject obj);
         Vendor Get(int id);
         Vendor GetRuc(int id);
+        Task<List<Vendor>> Search(JObject obj);
     }
 }

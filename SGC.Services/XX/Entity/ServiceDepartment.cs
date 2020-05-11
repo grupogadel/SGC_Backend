@@ -74,7 +74,12 @@ namespace SGC.Services.XX.Entity
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                Depa_Status = reader["Depa_Status"].ToString()
+                Depa_Status = reader["Depa_Status"].ToString(),
+                Regions = new Region
+                {
+                    Region_ID = (int)reader["Region_ID"],
+                    Region_Name = reader["Region_Name"].ToString()
+                }
             };
         }
         public int Update(Department model)

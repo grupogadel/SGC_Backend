@@ -81,7 +81,12 @@ namespace SGC.Services.XX
                 Creation_Date = (DateTime) reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date   = (DateTime) reader["Modified_Date"],
-                Prov_Status = reader["Prov_Status"].ToString()
+                Prov_Status = reader["Prov_Status"].ToString(),
+                Departments = new Department
+                {
+                    Depa_ID = (int)reader["Depa_ID"],
+                    Depa_Name = reader["Depa_Name"].ToString()
+                }
             };
         }
 

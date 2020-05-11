@@ -43,9 +43,12 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public Region Regions { get; set; }
         public Department Departments { get; set; }
         public Province Provinces { get; set; }
-        //public Bank Banks { get; set; }
-        //public Currency Currencys { get; set; }
         public DocIdentity DocIdentitys { get; set; }
-
+        public Bank Banks { get; set; }
+        public Bank Banks1 { get; set; }
+        public Bank Banks2 { get; set; }
+        public Currency Currencys { get; set; }
+        public Currency Currencys1 { get; set; }
+        public Currency Currencys2 { get; set; }
     }
 }

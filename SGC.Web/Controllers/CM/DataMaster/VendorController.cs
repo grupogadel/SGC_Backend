@@ -33,6 +33,21 @@ namespace SGC.Web.Controllers.CM.DataMaster
                 throw ex;
             }
         }
+        // GET: api/Vendor/Search/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Search(JObject obj)
+        {
+            try
+            {
+                var result = await this._vendorService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // POST api/Vendor/Add/
         [HttpPost("[action]")]
         public IActionResult Add([FromBody] Vendor model)

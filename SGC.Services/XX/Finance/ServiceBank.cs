@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using SGC.Entities.Entities.XX.Entity;
 using SGC.Entities.Entities.XX.Finance;
 using SGC.InterfaceServices.XX.Finance;
 using System;
@@ -60,6 +61,12 @@ namespace SGC.Services.XX.Finance
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Bank_Status = reader["Bank_Status"].ToString(),
+                Countrys = new Country
+                {
+                    Country_ID = (int)reader["Country_ID"],
+                    Country_Cod = reader["Country_Cod"].ToString(),
+                    Country_Name = reader["Country_Name"].ToString()
+                }
             };
         }
     }

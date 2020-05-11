@@ -74,7 +74,12 @@ namespace SGC.Services.XX.Entity
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                Region_Status = reader["Region_Status"].ToString()
+                Region_Status = reader["Region_Status"].ToString(),
+                Countrys = new Country
+                {
+                    Country_ID = (int)reader["Country_ID"],
+                    Country_Name = reader["Country_Name"].ToString()
+                }
             };
         }
 
