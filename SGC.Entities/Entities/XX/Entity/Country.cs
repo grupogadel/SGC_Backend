@@ -17,6 +17,4 @@ namespace SGC.Entities.Entities.XX.Entity
         public DateTime? Modified_Date { get; set; }
         public string Country_Status { get; set; }
     }
-
-
 }

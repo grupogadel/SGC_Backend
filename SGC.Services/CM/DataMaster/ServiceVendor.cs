@@ -37,11 +37,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
-                cmd.Parameters.Add(new SqlParameter("@Country_ID", model.Country_ID));
-                cmd.Parameters.Add(new SqlParameter("@Region_ID", model.Region_ID));
-                cmd.Parameters.Add(new SqlParameter("@Depa_ID", model.Depa_ID));
-                cmd.Parameters.Add(new SqlParameter("@Prov_ID", model.Prov_ID));
-                cmd.Parameters.Add(new SqlParameter("@Vendor_Distric", model.Vendor_Distric));
+                cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_CelPhone", model.Vendor_CelPhone));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Email", model.Vendor_Email));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_DetracPorc", model.Vendor_DetracPorc));
@@ -75,6 +71,7 @@ namespace SGC.Services.CM.DataMaster
             }
         }
 
+        // DELETE: api/Vendor/Delete/1
         public int Delete(JObject obj)
         {
             try
@@ -85,7 +82,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.CommandText = "[CM].Vendor_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
-
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
@@ -212,11 +209,7 @@ namespace SGC.Services.CM.DataMaster
                 Vendor_LastName = reader["Vendor_LastName"].ToString(),
                 Vendor_SurName = reader["Vendor_SurName"].ToString(),
                 Vendor_Address = reader["Vendor_Address"].ToString(),
-                Country_ID = (int)reader["Country_ID"],
-                Region_ID = (int)reader["Region_ID"],
-                Depa_ID= (int)reader["Depa_ID"],
-                Prov_ID= (int)reader["Prov_ID"],
-                Vendor_Distric = reader["Vendor_Distric"].ToString(),
+                Dist_ID= (int)reader["Dist_ID"],
                 Vendor_CelPhone = reader["Vendor_CelPhone"].ToString(),
                 Vendor_Email = reader["Vendor_Email"].ToString(),
                 Vendor_DetracPorc = (decimal)reader["Vendor_DetracPorc"],
@@ -238,25 +231,30 @@ namespace SGC.Services.CM.DataMaster
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Vendor_Status = reader["Vendor_Status"].ToString(),
-                Countrys=new Country
+                Districts = new District
                 {
-                    Country_ID = (int)reader["Country_ID"],
-                    Country_Name = reader["Country_Name"].ToString(),
-                },
-                Regions = new Region
-                {
-                    Region_ID = (int)reader["Region_ID"],
-                    Region_Name = reader["Region_Name"].ToString(),
-                },
-                Departments = new Department
-                {
-                    Depa_ID = (int)reader["Depa_ID"],
-                    Depa_Name = reader["Depa_Name"].ToString(),
-                },
-                Provinces = new Province
-                {
-                    Prov_ID = (int)reader["Prov_ID"],
-                    Prov_Name = reader["Prov_Name"].ToString(),
+                    Dist_ID = (int)reader["Dist_ID"],
+                    Dist_Name = reader["Dist_Name"].ToString(),
+                    Provinces = new Province
+                    {
+                        Prov_ID = (int)reader["Prov_ID"],
+                        Prov_Name = reader["Prov_Name"].ToString(),
+                        Departments = new Department
+                        {
+                            Depa_ID = (int)reader["Depa_ID"],
+                            Depa_Name = reader["Depa_Name"].ToString(),
+                            Regions = new Region
+                            {
+                                Region_ID = (int)reader["Region_ID"],
+                                Region_Name = reader["Region_Name"].ToString(),
+                                Countrys = new Country
+                                {
+                                    Country_ID = (int)reader["Country_ID"],
+                                    Country_Name = reader["Country_Name"].ToString()
+                                }
+                            }
+                        }
+                    }
                 },
                 DocIdentitys = new DocIdentity
                 {
@@ -350,11 +348,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
-                cmd.Parameters.Add(new SqlParameter("@Country_ID", model.Country_ID));
-                cmd.Parameters.Add(new SqlParameter("@Region_ID", model.Region_ID));
-                cmd.Parameters.Add(new SqlParameter("@Depa_ID", model.Depa_ID));
-                cmd.Parameters.Add(new SqlParameter("@Prov_ID", model.Prov_ID));
-                cmd.Parameters.Add(new SqlParameter("@Vendor_Distric", model.Vendor_Distric));
+                cmd.Parameters.Add(new SqlParameter("@Dist_ID", model.Dist_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_CelPhone", model.Vendor_CelPhone));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Email", model.Vendor_Email));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_DetracPorc", model.Vendor_DetracPorc));

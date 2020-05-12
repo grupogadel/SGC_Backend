@@ -70,7 +70,17 @@ namespace SGC.Services.XX
                     {
 						Depa_ID = (int)reader["Depa_ID"],
 						Depa_Name = reader["Depa_Name"].ToString(),
-					}
+                        Regions = new Region
+                        {
+                            Region_ID = (int)reader["Region_ID"],
+                            Region_Name = reader["Region_Name"].ToString(),
+                            Countrys = new Country
+                            {
+                                Country_ID = (int)reader["Country_ID"],
+                                Country_Name = reader["Country_Name"].ToString(),
+                            }
+                        }
+                    }
                 }
             };
         }

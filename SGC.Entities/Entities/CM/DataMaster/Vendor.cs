@@ -17,11 +17,7 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Vendor_LastName { get; set; }
         public string Vendor_SurName { get; set; }
         public string Vendor_Address { get; set; }
-        public int? Country_ID { get; set; }
-        public int? Region_ID { get; set; }
-        public int? Depa_ID { get; set; }
-        public int? Prov_ID { get; set; }
-        public string Vendor_Distric { get; set; }
+        public int? Dist_ID { get; set; }
         public string Vendor_CelPhone { get; set; }
         public string Vendor_Email { get; set; }
         public decimal? Vendor_DetracPorc { get; set; }
@@ -39,10 +35,7 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string Vendor_Status { get; set; }
-        public Country Countrys { get; set; }
-        public Region Regions { get; set; }
-        public Department Departments { get; set; }
-        public Province Provinces { get; set; }
+        public District Districts { get; set; }
         public DocIdentity DocIdentitys { get; set; }
         public Bank Banks { get; set; }
         public Bank Banks1 { get; set; }
