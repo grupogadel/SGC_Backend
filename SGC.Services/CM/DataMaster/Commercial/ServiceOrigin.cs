@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.DataMaster;
+using SGC.Entities.Entities.XX.Entity;
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.InterfaceServices.CM.DataMaster.Commercial;
 using System;
@@ -70,7 +71,19 @@ namespace SGC.Services.CM.DataMaster.Commercial
                 Orig_Status = reader["Orig_Status"].ToString(),
                 Zones = new Zone {
                     Zone_ID = (int)reader["Zone_ID"],
-                    Zone_Name = reader["Zone_Name"].ToString()
+                    Zone_Name = reader["Zone_Name"].ToString(),
+					Districts = new District{
+						Dist_ID = (int)reader["Dist_ID"],
+						Dist_Name = reader["Dist_Name"].ToString(),
+						Provinces = new Province{
+							Prov_ID = (int)reader["Prov_ID"],
+							Prov_Name = reader["Prov_Name"].ToString(),
+							Departments = new Department{
+								Depa_ID = (int)reader["Depa_ID"],
+								Depa_Name = reader["Depa_Name"].ToString()
+							}
+						}
+					}
                 }
 
             };
