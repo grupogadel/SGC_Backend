@@ -99,7 +99,7 @@ namespace SGC.Services.CM.MineralReception
                 Scales_Lote = reader["Scales_Lote"].ToString(),
                 Scales_SubLote = reader["Scales_SubLote"].ToString(),
                 MinType_ID = (int)reader["MinType_ID"],
-                Scales_Analysis = reader["Scales_Analysis"].ToString(),
+                AnalReq_ID = (int)reader["AnalReq_ID"],
                 Scales_MinOwner = reader["Scales_MinOwner"].ToString(),
                 Scales_DateInp = (DateTime)reader["Scales_DateInp"],
                 Scales_DateOut = (DateTime)reader["Scales_DateOut"],
@@ -134,6 +134,12 @@ namespace SGC.Services.CM.MineralReception
                     MinType_Cod = reader["MinType_Cod"].ToString(),
                     MinType_Desc = reader["MinType_Desc"].ToString()
                 },
+                AnalysisRequests = new AnalysisRequest
+                {
+                    AnalReq_ID = (int)reader["AnalReq_ID"],
+                    AnalReq_Cod = reader["AnalReq_Cod"].ToString(),
+                    AnalReq_Desc = reader["AnalReq_Desc"].ToString()
+                },
                 Origins = new Origin
                 {
                     Orig_ID = (int)reader["Orig_ID"],
@@ -156,7 +162,10 @@ namespace SGC.Services.CM.MineralReception
                 Vendors = new Vendor
                 {
                     Vendor_ID = (int)reader["Vendor_ID"],
-                    Vendor_TaxID = reader["Vendor_TaxID"].ToString()
+                    Vendor_TaxID = reader["Vendor_TaxID"].ToString(),
+                    Vendor_Desc = reader["Vendor_Desc"].ToString(),
+                    Vendor_LastName = reader["Vendor_LastName"].ToString(),
+                    Vendor_SurName = reader["Vendor_SurName"].ToString(),
                 }
             };
         }
@@ -173,7 +182,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", model.Scales_Lote));
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
-                cmd.Parameters.Add(new SqlParameter("@Scales_Analysis", model.Scales_Analysis));
+                cmd.Parameters.Add(new SqlParameter("@AnalReq_ID", model.AnalReq_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_MinOwner", model.Scales_MinOwner));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateInp", model.Scales_DateInp));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateOut", model.Scales_DateOut));
@@ -290,7 +299,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", model.Scales_Lote));
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
-                cmd.Parameters.Add(new SqlParameter("@Scales_Analysis", model.Scales_Analysis));
+                cmd.Parameters.Add(new SqlParameter("@AnalReq_ID", model.AnalReq_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_MinOwner", model.Scales_MinOwner));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateInp", model.Scales_DateInp));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateOut", model.Scales_DateOut));
