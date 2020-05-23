@@ -10,26 +10,25 @@ using System.Threading.Tasks;
 
 namespace SGC.Services.XX.Operations.Mining
 {
-    public class ServiceMineralsType : IServiceMineralsType
+    public class ServiceMineralFrom : IServiceMineralFrom
     {
         private readonly string _context;
 
-        public ServiceMineralsType(IConfiguration configuration)
+        public ServiceMineralFrom(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
-
-        // GET: api/DocIdentity/GetAll
-        public async Task<List<MineralsType>> GetAll(int idCompany)
+        // GET: api/MineralFrom/GetAll
+        public async Task<List<MineralFrom>> GetAll(int idCompany)
         {
-            var response = new List<MineralsType>();
+            var response = new List<MineralFrom>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_GetAll";
+                cmd.CommandText = "[XX].MineralFrom_GetAll";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
@@ -37,7 +36,7 @@ namespace SGC.Services.XX.Operations.Mining
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToMineralsType(reader));
+                        response.Add(MapToMineralFrom(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -50,34 +49,36 @@ namespace SGC.Services.XX.Operations.Mining
             }
         }
 
-        private MineralsType MapToMineralsType(SqlDataReader reader)
+        private MineralFrom MapToMineralFrom(SqlDataReader reader)
         {
-            return new MineralsType()
+            return new MineralFrom()
             {
-                MinType_ID = (int)reader["MinType_ID"],
+                MinFrom_ID = (int)reader["MinFrom_ID"],
                 Company_ID = (int)reader["Company_ID"],
-                MinType_Cod = reader["MinType_Cod"].ToString(),
-                MinType_Desc = reader["MinType_Desc"].ToString(),
-                MinType_Class = reader["MinType_Class"].ToString(),
+                MinFrom_Cod = reader["MinFrom_Cod"].ToString(),
+                MinFrom_Name = reader["MinFrom_Name"].ToString(),
+                MinFrom_Desc = reader["MinFrom_Desc"].ToString(),
+                MinFrom_Location = reader["MinFrom_Location"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                MinType_Status = reader["MinType_Status"].ToString(),
+                MinFrom_Status = reader["MinFrom_Status"].ToString(),
             };
         }
-        public int Add(MineralsType model)
+        public int Add(MineralFrom model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_Add";
+                cmd.CommandText = "[XX].MineralFrom_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Class", model.MinType_Class));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Cod", model.MinFrom_Cod));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Name", model.MinFrom_Name));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Desc", model.MinFrom_Desc));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Location", model.MinFrom_Location));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -95,18 +96,19 @@ namespace SGC.Services.XX.Operations.Mining
                 throw e;
             }
         }
-        public int Update(MineralsType model)
+        public int Update(MineralFrom model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_Update";
-                cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
+                cmd.CommandText = "[XX].MineralFrom_Update";
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_ID", model.MinFrom_ID));
                 //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Class", model.MinType_Class));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Name", model.MinFrom_Name));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Desc", model.MinFrom_Desc));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Location", model.MinFrom_Location));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -131,8 +133,8 @@ namespace SGC.Services.XX.Operations.Mining
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_Delete";
-                cmd.Parameters.Add(new SqlParameter("@MinType_ID", obj["id"].ToObject<int>()));
+                cmd.CommandText = "[XX].MineralFrom_Delete";
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -150,25 +152,25 @@ namespace SGC.Services.XX.Operations.Mining
                 throw e;
             }
         }
-        public async Task<List<MineralsType>> Search(JObject obj)
+        public async Task<List<MineralFrom>> Search(JObject obj)
         {
-            var response = new List<MineralsType>();
+            var response = new List<MineralFrom>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_Search";
+                cmd.CommandText = "[XX].MineralFrom_Search";
 
-                cmd.Parameters.Add(new SqlParameter("@MinType_Cod", obj["cod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_Cod", obj["cod"].ToObject<string>()));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToMineralsType(reader));
+                        response.Add(MapToMineralFrom(reader));
                     }
                 }
                 await conn.CloseAsync();
@@ -177,69 +179,6 @@ namespace SGC.Services.XX.Operations.Mining
             catch (Exception e)
             {
                 return response;
-                throw e;
-            }
-        }
-
-        public MineralsType Get(int id)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_Get";
-                cmd.Parameters.Add(new SqlParameter("@MinType_ID", id));
-
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                MineralsType response = null;
-
-                conn.Open();
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        response = MapToMineralsType(reader);
-                    }
-                }
-                conn.Close();
-                return response;
-            }
-            catch (Exception e)
-            {
-                return null;
-                throw e;
-            }
-        }
-        public MineralsType GetCod(String cod)
-        {
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].MineralsType_GetCod";
-                cmd.Parameters.Add(new SqlParameter("@MinType_Cod", cod));
-
-                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
-                MineralsType response = null;
-
-                conn.Open();
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        response = MapToMineralsType(reader);
-                    }
-                }
-                conn.Close();
-                return response;
-            }
-            catch (Exception e)
-            {
-                return null;
                 throw e;
             }
         }
