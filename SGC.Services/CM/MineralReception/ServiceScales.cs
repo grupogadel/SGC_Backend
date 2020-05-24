@@ -100,6 +100,7 @@ namespace SGC.Services.CM.MineralReception
                 Scales_SubLote = reader["Scales_SubLote"].ToString(),
                 MinType_ID = (int)reader["MinType_ID"],
                 AnalReq_ID = (int)reader["AnalReq_ID"],
+                MinFrom_ID = (int)reader["AnalReq_ID"],
                 Scales_MinOwner = reader["Scales_MinOwner"].ToString(),
                 Scales_DateInp = (DateTime)reader["Scales_DateInp"],
                 Scales_DateOut = (DateTime)reader["Scales_DateOut"],
@@ -139,6 +140,12 @@ namespace SGC.Services.CM.MineralReception
                     AnalReq_ID = (int)reader["AnalReq_ID"],
                     AnalReq_Cod = reader["AnalReq_Cod"].ToString(),
                     AnalReq_Desc = reader["AnalReq_Desc"].ToString()
+                },
+                MineralFroms = new MineralFrom
+                {
+                    MinFrom_ID = (int)reader["MinFrom_ID"],
+                    MinFrom_Cod = reader["MinFrom_Cod"].ToString(),
+                    MinFrom_Name = reader["MinFrom_Name"].ToString()
                 },
                 Origins = new Origin
                 {
@@ -183,6 +190,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
                 cmd.Parameters.Add(new SqlParameter("@AnalReq_ID", model.AnalReq_ID));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_ID", model.MinFrom_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_MinOwner", model.Scales_MinOwner));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateInp", model.Scales_DateInp));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateOut", model.Scales_DateOut));
@@ -300,6 +308,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
                 cmd.Parameters.Add(new SqlParameter("@AnalReq_ID", model.AnalReq_ID));
+                cmd.Parameters.Add(new SqlParameter("@MinFrom_ID", model.MinFrom_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_MinOwner", model.Scales_MinOwner));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateInp", model.Scales_DateInp));
                 cmd.Parameters.Add(new SqlParameter("@Scales_DateOut", model.Scales_DateOut));

@@ -19,6 +19,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public string Scales_SubLote { get; set; }
         public int MinType_ID { get; set; }
         public int AnalReq_ID { get; set; }
+        public int MinFrom_ID { get; set; }
         public string Scales_MinOwner { get; set; }
         public DateTime? Scales_DateInp { get; set; }
         public DateTime? Scales_DateOut { get; set; }
@@ -49,6 +50,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public string Scales_Status { get; set; }
         public MineralsType MineralTypes { get; set; }
         public AnalysisRequest AnalysisRequests { get; set; }
+        public MineralFrom MineralFroms { get; set; }
         public Origin Origins { get; set; }
         public Collector Collectors { get; set; }
         public WorkShifts WorkShifts { get; set; }
