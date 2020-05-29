@@ -89,6 +89,10 @@ namespace SGC.Web
             services.AddScoped<IServiceUnitMeasuare, ServiceUnitMeasuare>();
             services.AddScoped<IServiceAnalysisRequest, ServiceAnalysisRequest>();
             services.AddScoped<IServiceMineralFrom, ServiceMineralFrom>();
+            services.AddScoped<IServiceRuma, ServiceRuma>();
+            services.AddScoped<IServiceBatchMineral, ServiceBatchMineral>();
+            services.AddScoped<IServiceLaboratorySetting, ServiceLaboratorySetting>();
+            services.AddScoped<IServiceCommercialParameters, ServiceCommercialParameters>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
