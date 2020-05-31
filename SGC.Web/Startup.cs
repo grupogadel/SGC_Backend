@@ -32,6 +32,8 @@ using SGC.InterfaceServices.XX.Commercial.Laboratory;
 using SGC.Services.XX.Commercial.Laboratory;
 using SGC.InterfaceServices.XX.Commercial.MineralReception;
 using SGC.Services.XX.Commercial.MineralReception;
+using SGC.InterfaceServices.CM.MineralReception.Sampling;
+using SGC.Services.CM.MineralReception.Sampling;
 
 namespace SGC.Web
 {
@@ -94,6 +96,7 @@ namespace SGC.Web
             services.AddScoped<IServiceLaboratorySetting, ServiceLaboratorySetting>();
             services.AddScoped<IServiceCommercialParameters, ServiceCommercialParameters>();
             services.AddScoped<IServiceMaterialType, ServiceMaterialType>();
+            services.AddScoped<IServiceSampleCommercial, ServiceSampleCommercial>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
