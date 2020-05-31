@@ -84,6 +84,7 @@ namespace SGC.Services.CM.MineralReception
                 Hum_ID = (int)reader["Hum_ID"],
                 //Ruma_ID = (int)reader["Ruma_ID"],
                 //Quota_ID = (int)reader["Quota_ID"],
+                LeyMH_ID = (int)reader["LeyMH_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 Period_ID = (int)reader["Period_ID"],
                 BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
@@ -120,6 +121,16 @@ namespace SGC.Services.CM.MineralReception
                     Hum_ID = (int)reader["Hum_ID"],
                     Hum_Cod = reader["Hum_Cod"].ToString(),
                     Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"]
+                },
+                LeyMineralHeads = new LeyMineralHead
+                {
+                    LeyMH_ID = (int)reader["LeyMH_ID"],
+                    LeyMineralDetails = new LeyMineralDetail
+                    {
+                        LeyMD_ID = (int)reader["LeyMD_ID"],
+                        LeyMD_FinalAu = (decimal)reader["LeyMD_FinalAu"],
+                        LeyMD_FinalAg = (decimal)reader["LeyMD_FinalAg"],
+                    }
                 }
             };
         }

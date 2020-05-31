@@ -93,6 +93,7 @@ namespace SGC.Web
             services.AddScoped<IServiceBatchMineral, ServiceBatchMineral>();
             services.AddScoped<IServiceLaboratorySetting, ServiceLaboratorySetting>();
             services.AddScoped<IServiceCommercialParameters, ServiceCommercialParameters>();
+            services.AddScoped<IServiceMaterialType, ServiceMaterialType>();
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>

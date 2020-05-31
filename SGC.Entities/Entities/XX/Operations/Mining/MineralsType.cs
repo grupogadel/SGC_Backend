@@ -10,7 +10,6 @@ namespace SGC.Entities.Entities.XX.Operations.Mining
         public int Company_ID { get; set; }
         public string MinType_Cod { get; set; }
         public string MinType_Desc { get; set; }
-        public string MinType_Class { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }

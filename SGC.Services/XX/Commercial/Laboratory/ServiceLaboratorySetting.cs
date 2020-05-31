@@ -55,7 +55,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 LabS_ID = (int)reader["LabS_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 LabS_Cod = reader["LabS_Cod"].ToString(),
-                LabS_Name = reader["LabS_Name"].ToString(),
+                LabS_Desc = reader["LabS_Desc"].ToString(),
                 LabS_GravEsP1 = (decimal)reader["LabS_GravEsP1"],
                 LabS_GravEsP2 = (decimal)reader["LabS_GravEsP2"],
                 LabS_GravEsP3 = (decimal)reader["LabS_GravEsP3"],
@@ -95,7 +95,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.CommandText = "[XX].LaboratorySetting_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@LabS_Cod", model.LabS_Cod));
-                cmd.Parameters.Add(new SqlParameter("@LabS_Name", model.LabS_Name));
+                cmd.Parameters.Add(new SqlParameter("@LabS_Desc", model.LabS_Desc));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP1", model.LabS_GravEsP1));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP2", model.LabS_GravEsP2));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP3", model.LabS_GravEsP3));
@@ -145,7 +145,7 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.CommandText = "[XX].LaboratorySetting_Update";
                 cmd.Parameters.Add(new SqlParameter("@LabS_ID", model.LabS_ID));
                 //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@LabS_Name", model.LabS_Name));
+                cmd.Parameters.Add(new SqlParameter("@LabS_Desc", model.LabS_Desc));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP1", model.LabS_GravEsP1));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP2", model.LabS_GravEsP2));
                 cmd.Parameters.Add(new SqlParameter("@LabS_GravEsP3", model.LabS_GravEsP3));

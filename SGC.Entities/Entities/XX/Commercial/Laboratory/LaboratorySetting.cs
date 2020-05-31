@@ -9,7 +9,7 @@ namespace SGC.Entities.Entities.XX.Commercial.Laboratory
         public int LabS_ID { get; set; }
         public int Company_ID { get; set; }
         public string LabS_Cod { get; set; }
-        public string LabS_Name { get; set; }
+        public string LabS_Desc { get; set; }
         public decimal? LabS_GravEsP1 { get; set; }
         public decimal? LabS_GravEsP2 { get; set; }
         public decimal? LabS_GravEsP3 { get; set; }

@@ -58,7 +58,6 @@ namespace SGC.Services.XX.Operations.Mining
                 Company_ID = (int)reader["Company_ID"],
                 MinType_Cod = reader["MinType_Cod"].ToString(),
                 MinType_Desc = reader["MinType_Desc"].ToString(),
-                MinType_Class = reader["MinType_Class"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
@@ -77,7 +76,6 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Class", model.MinType_Class));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -106,7 +104,6 @@ namespace SGC.Services.XX.Operations.Mining
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
                 //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
                 cmd.Parameters.Add(new SqlParameter("@MinType_Desc", model.MinType_Desc));
-                cmd.Parameters.Add(new SqlParameter("@MinType_Class", model.MinType_Class));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
