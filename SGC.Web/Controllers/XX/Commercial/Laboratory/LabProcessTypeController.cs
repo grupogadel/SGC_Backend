@@ -76,5 +76,20 @@ namespace SGC.Web.Controllers.XX.Commercial.Laboratory
                 throw ex;
             }
         }
+
+        // GET: api/LabProcessType/Get
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var result = await this._labProcessTypeService.Get(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -14,5 +14,6 @@ namespace SGC.InterfaceServices.XX.Commercial.Laboratory
         int Update(LabProcessType model);
         int Delete(JObject obj);
         Task<List<LabProcessType>> Search(JObject obj);
+        Task<LabProcessType> Get(int id);
     }
 }

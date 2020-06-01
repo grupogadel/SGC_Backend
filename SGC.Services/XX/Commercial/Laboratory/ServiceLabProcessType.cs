@@ -186,5 +186,35 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 throw e;
             }
         }
+
+        // GET api/LabProcessType/Get/1
+        public async Task<LabProcessType> Get(int id)
+        {
+            var response = new LabProcessType();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].LabProcessType_Get";
+                cmd.Parameters.Add(new SqlParameter("@LabProcTyp_ID", id));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToLabProcessType(reader);
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
     }
 }

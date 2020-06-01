@@ -55,9 +55,10 @@ namespace SGC.Services.XX.Commercial.MineralReception
             {
                 SampOrig_ID = (int)reader["SampOrig_ID"],
                 Company_ID = (int)reader["Company_ID"],
+                SampOrig_AreaCod = reader["SampOrig_AreaCod"].ToString(),
+                SampOrig_AreaDesc = reader["SampOrig_AreaDesc"].ToString(),
                 SampOrig_Cod = reader["SampOrig_Cod"].ToString(),
                 SampOrig_Module = reader["SampOrig_Module"].ToString(),
-                SampOrig_Area = reader["SampOrig_Area"].ToString(),
                 SampOrig_Desc = reader["SampOrig_Desc"].ToString(),
                 SampOrig_ExgTab = (bool) reader["SampOrig_ExgTab"],
                 Creation_User = reader["Creation_User"].ToString(),
@@ -80,7 +81,7 @@ namespace SGC.Services.XX.Commercial.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Cod", model.SampOrig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Module", model.SampOrig_Module));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_Area", model.SampOrig_Area));
+                cmd.Parameters.Add(new SqlParameter("@SampOrig_AreaDesc", model.SampOrig_AreaDesc));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Desc", model.SampOrig_Desc));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_ExgTab", model.SampOrig_ExgTab));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
@@ -115,7 +116,7 @@ namespace SGC.Services.XX.Commercial.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", model.SampOrig_ID));
                 //cmd.Parameters.Add(new SqlParameter("@SampOrig_Cod", model.SampOrig_Cod));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Module", model.SampOrig_Module));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_Area", model.SampOrig_Area));
+                cmd.Parameters.Add(new SqlParameter("@SampOrig_AreaDesc", model.SampOrig_AreaDesc));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_Desc", model.SampOrig_Desc));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_ExgTab", model.SampOrig_ExgTab));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
@@ -185,6 +186,37 @@ namespace SGC.Services.XX.Commercial.MineralReception
                     while (await reader.ReadAsync())
                     {
                         response.Add(MapToSampleOrigin(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
+        // GET api/SampleOrigin/Get/1
+        public async Task<SampleOrigin> Get(int idCompany, int id)
+        {
+            var response = new SampleOrigin();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].SampleOrigin_Get";
+                cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", id));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToSampleOrigin(reader);
                     }
                 }
                 await conn.CloseAsync();

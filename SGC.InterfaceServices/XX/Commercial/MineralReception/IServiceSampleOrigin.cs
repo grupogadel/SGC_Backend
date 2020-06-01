@@ -14,5 +14,6 @@ namespace SGC.InterfaceServices.XX.Commercial.MineralReception
         int Update(SampleOrigin model);
         int Delete(JObject obj);
         Task<List<SampleOrigin>> Search(JObject obj);
+        Task<SampleOrigin> Get(int id, int idCompany);
     }
 }

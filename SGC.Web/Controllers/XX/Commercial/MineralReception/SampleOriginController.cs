@@ -78,5 +78,20 @@ namespace SGC.Web.Controllers.XX.Commercial.MineralReception
                 throw ex;
             }
         }
+
+        // GET: api/SampleOrigin/Get/1/1
+        [HttpGet("[action]/{idCompany}/{id}")]
+        public async Task<IActionResult> Get(int idCompany, int id)
+        {
+            try
+            {
+                var result = await this._sampleOriginService.Get(idCompany, id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
