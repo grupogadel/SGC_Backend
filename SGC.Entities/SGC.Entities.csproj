@@ -27,7 +27,6 @@
   <ItemGroup>
     <Folder Include="Entities\CM\Commercial\" />
     <Folder Include="Entities\CM\Laboratory\" />
-    <Folder Include="Entities\CM\InternalControl\" />
     <Folder Include="Entities\FI\Accounting\" />
     <Folder Include="Entities\OP\FlotationPlant\" />
     <Folder Include="Entities\OP\PlantCIP\" />

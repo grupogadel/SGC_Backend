@@ -37,7 +37,6 @@
 
   <ItemGroup>
     <Folder Include="CM\Commercial\" />
-    <Folder Include="CM\InternalControl\" />
     <Folder Include="CM\Laboratory\" />
     <Folder Include="FI\Accounting\" />
     <Folder Include="OP\PlantCIP\" />
