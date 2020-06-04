@@ -62,5 +62,20 @@ namespace SGC.Web.Controllers.CM.MineralReception.Sampling
                 _sampleCommercialService.Delete(obj)
             );
         }
+		
+		// POST: api/SampleCommercial/Search/{}
+        [HttpPost("[action]")]
+        public IActionResult Search([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._sampleCommercialService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

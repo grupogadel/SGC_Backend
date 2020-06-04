@@ -13,6 +13,7 @@ namespace SGC.Entities.Entities.CM.MineralReception.Sampling
         [Key]
         public int SampD_ID { get; set; }
         public int SampH_ID { get; set; }
+		public string SampD_NO { get; set; }
         public int LabProcTyp_ID { get; set; }
         public int AnalType_ID { get; set; }
         public int SampOrig_ID { get; set; }

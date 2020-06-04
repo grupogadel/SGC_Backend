@@ -116,6 +116,7 @@ namespace SGC.Services.CM.MineralReception.Sampling
             {
                 SampD_ID = (int)reader["SampD_ID"],
                 SampH_ID = (int)reader["SampH_ID"],
+				SampD_NO = reader["SampD_NO"].ToString(),
                 LabProcTyp_ID = (int)reader["LabProcTyp_ID"],
                 AnalType_ID = (int)reader["AnalType_ID"],
                 SampOrig_ID = (int)reader["SampOrig_ID"],
@@ -135,10 +136,12 @@ namespace SGC.Services.CM.MineralReception.Sampling
                 },
                 SampleOrigins = new SampleOrigin{
                     SampOrig_AreaDesc = reader["SampOrig_AreaDesc"].ToString(),
-                    SampOrig_Desc = reader["SampOrig_Desc"].ToString()
+                    SampOrig_Desc = reader["SampOrig_Desc"].ToString(),
+		    SampOrig_Cod = reader["SampOrig_Cod"].ToString()
                 },
                 MaterialTypes = new MaterialType{
-                    MatType_Name = reader["MatType_Name"].ToString()
+                    MatType_Name = reader["MatType_Name"].ToString(),
+					MatType_Cod = reader["MatType_Cod"].ToString()
                 }
             };
         }
@@ -236,6 +239,57 @@ namespace SGC.Services.CM.MineralReception.Sampling
             catch (Exception e)
             {
                 return -1;
+                throw e;
+            }
+        }
+		
+		// POST: api/SampleCommercial/Search/{}
+        public List<SampleHeadCommercial> Search(JObject obj)
+        {
+            var sampleHead = new List<SampleHeadCommercial>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].SampleHeadCommercial_Search";
+
+				cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["codLote"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
+				cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        sampleHead.Add(MapToSampleHeadCommercial(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].SampleDetailsCommercial_GetAll";
+
+                foreach (var sh in sampleHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", sh.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            sh.SampleDetailsCommercials.Add(MapToSampleDetailsCommercial(dr));
+                        }
+                    }
+                }
+                conn.Close();
+                return sampleHead;
+            }
+            catch (Exception e)
+            {
+                return sampleHead;
                 throw e;
             }
         }

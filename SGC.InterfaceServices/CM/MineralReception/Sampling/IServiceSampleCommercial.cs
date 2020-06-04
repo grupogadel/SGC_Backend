@@ -13,6 +13,6 @@ namespace SGC.InterfaceServices.CM.MineralReception.Sampling
         int Add(SampleDetailsCommercial model);
         int Update(SampleDetailsCommercial model);
         int Delete(JObject obj);
-        //Task<List<SampleHeadCommercial>> Search(JObject obj);
+        List<SampleHeadCommercial> Search(JObject obj);
     }
 }
