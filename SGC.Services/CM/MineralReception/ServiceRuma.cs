@@ -92,7 +92,19 @@ namespace SGC.Services.CM.MineralReception
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[OP].Ruma_Search";
 
-                cmd.Parameters.Add(new SqlParameter("@Ruma_NO", obj["cod"].ToObject<string>()));
+                bool rank = false;
+                if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>()) 
+                    rank = false;
+                else 
+                    rank = true;
+
+                //cmd.Parameters.Add(new SqlParameter("@Ruma_NO", obj["cod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Ruma_NO", obj["ruma_NO"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@TipoRuma", obj["tipoRuma"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())

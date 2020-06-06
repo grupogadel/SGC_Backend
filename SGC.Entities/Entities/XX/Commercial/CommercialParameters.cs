@@ -9,7 +9,7 @@ namespace SGC.Entities.Entities.XX.Commercial
         public int CommP_ID { get; set; }
         public int Company_ID { get; set; }
         public string CommP_Cod { get; set; }
-        public string CommP_Name { get; set; }
+        public string CommP_Desc { get; set; }
         public decimal? CommP_WeigAuPor { get; set; }
         public decimal? CommP_LeyAuQuan { get; set; }
         public decimal? CommP_LeyAgQuan { get; set; }

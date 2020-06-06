@@ -65,9 +65,38 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
-        public Task<List<BatchMineral>> Search(JObject obj)
+        public async Task<List<BatchMineral>> Search(JObject obj)
         {
-            throw new NotImplementedException();
+            var response = new List<BatchMineral>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].BatchMineral_Search";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@BatchM_Lote_New", obj["codLote"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToBatchMineral(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
         }
 
         public int Update(BatchMineral model)

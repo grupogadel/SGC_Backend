@@ -55,7 +55,7 @@ namespace SGC.Services.XX.Commercial
                 CommP_ID = (int)reader["CommP_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 CommP_Cod = reader["CommP_Cod"].ToString(),
-                CommP_Name = reader["CommP_Name"].ToString(),
+                CommP_Desc = reader["CommP_Desc"].ToString(),
                 CommP_WeigAuPor = (decimal)reader["CommP_WeigAuPor"],
                 CommP_LeyAuQuan = (decimal)reader["CommP_LeyAuQuan"],
                 CommP_LeyAgQuan = (decimal)reader["CommP_LeyAgQuan"],
@@ -85,7 +85,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].CommercialParameters_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@CommP_Cod", model.CommP_Cod));
-                cmd.Parameters.Add(new SqlParameter("@CommP_Name", model.CommP_Name));
+                cmd.Parameters.Add(new SqlParameter("@CommP_Desc", model.CommP_Desc));
                 cmd.Parameters.Add(new SqlParameter("@CommP_WeigAuPor", model.CommP_WeigAuPor));
                 cmd.Parameters.Add(new SqlParameter("@CommP_LeyAuQuan", model.CommP_LeyAuQuan));
                 cmd.Parameters.Add(new SqlParameter("@CommP_LeyAgQuan", model.CommP_LeyAgQuan));
@@ -96,7 +96,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMin", model.CommP_MaquilaMin));
                 cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMax", model.CommP_MaquilaMax));
                 cmd.Parameters.Add(new SqlParameter("@CommP_ConsuMin", model.CommP_ConsuMin));
-                cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMax", model.CommP_MaquilaMax));
+                cmd.Parameters.Add(new SqlParameter("@CommP_ConsuMax", model.CommP_ConsuMax));
                 cmd.Parameters.Add(new SqlParameter("@CommP_ExpAdm", model.CommP_ExpAdm));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
@@ -125,7 +125,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.CommandText = "[XX].CommercialParameters_Update";
                 cmd.Parameters.Add(new SqlParameter("@CommP_ID", model.CommP_ID));
                 //cmd.Parameters.Add(new SqlParameter("@MinType_Cod", model.MinType_Cod));
-                cmd.Parameters.Add(new SqlParameter("@CommP_Name", model.CommP_Name));
+                cmd.Parameters.Add(new SqlParameter("@CommP_Desc", model.CommP_Desc));
                 cmd.Parameters.Add(new SqlParameter("@CommP_WeigAuPor", model.CommP_WeigAuPor));
                 cmd.Parameters.Add(new SqlParameter("@CommP_LeyAuQuan", model.CommP_LeyAuQuan));
                 cmd.Parameters.Add(new SqlParameter("@CommP_LeyAgQuan", model.CommP_LeyAgQuan));
@@ -136,7 +136,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMin", model.CommP_MaquilaMin));
                 cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMax", model.CommP_MaquilaMax));
                 cmd.Parameters.Add(new SqlParameter("@CommP_ConsuMin", model.CommP_ConsuMin));
-                cmd.Parameters.Add(new SqlParameter("@CommP_MaquilaMax", model.CommP_MaquilaMax));
+                cmd.Parameters.Add(new SqlParameter("@CommP_ConsuMax", model.CommP_ConsuMax));
                 cmd.Parameters.Add(new SqlParameter("@CommP_ExpAdm", model.CommP_ExpAdm));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
