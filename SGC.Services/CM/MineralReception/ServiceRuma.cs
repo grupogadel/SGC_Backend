@@ -146,7 +146,7 @@ namespace SGC.Services.CM.MineralReception
                 //Details
                 var param= new SqlParameter("@lstLotes",SqlDbType.Structured);
                 param.TypeName = "dbo.IDLotes";
-                param.Value = GetLotes();
+                param.Value = GetLotes(model.LstLotes);
                 cmd.Parameters.Add(param);
                 //SqlParameter param = new SqlParameter();
                 //param.ParameterName = "@IDLotes";
@@ -169,14 +169,16 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
-        private DataTable GetLotes()
+        private DataTable GetLotes(List<int> lstLotes)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID_Lote", typeof(int));
-            for(int i = 1; i < 3; i++)
-            {
-                dt.Rows.Add(i);
-            }
+            //for(int i = 1; i < 3; i++)
+            //{
+            //    dt.Rows.Add(i);
+            //}
+            foreach (int idLote in lstLotes)
+                dt.Rows.Add(idLote);
             return dt;
         }
 
@@ -242,10 +244,37 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
-
+        // GET api/Ruma/Get/1
         public Ruma Get(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[OP].Ruma_Get";
+                cmd.Parameters.Add(new SqlParameter("@Ruma_ID", id));
+
+                //cmd.Parameters.Add("@Resultado", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+                Ruma response = null;
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        response = MapToRuma(reader);
+                    }
+                }
+                conn.Close();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return null;
+                throw e;
+            }
         }
     }
 }

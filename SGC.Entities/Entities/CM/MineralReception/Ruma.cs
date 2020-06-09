@@ -24,5 +24,6 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public DateTime? Modified_Date { get; set; }
         public string Ruma_Status { get; set; }
         public MaterialType MaterialTypes { get; set; }
+        public List<int> LstLotes { get; set; }
     }
 }

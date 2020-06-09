@@ -74,5 +74,13 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 throw ex;
             }
         }
+        // GET api/Ruma/Get/1
+        [HttpGet("[action]/{id}")]
+        public IActionResult Get(int id)
+        {
+            return Ok(
+                _rumaService.Get(id)
+            );
+        }
     }
 }

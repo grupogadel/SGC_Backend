@@ -46,5 +46,20 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 throw ex;
             }
         }
+
+        // GET: api/BatchMineral/SearchByRuma/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchByRuma(JObject obj)
+        {
+            try
+            {
+                var result = await this._batchMineralService.SearchByRuma(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
