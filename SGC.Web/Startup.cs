@@ -100,6 +100,7 @@ namespace SGC.Web
             services.AddScoped<IServiceMaterialType, ServiceMaterialType>();
             services.AddScoped<IServiceSampleCommercial, ServiceSampleCommercial>();
             services.AddScoped<IServiceSampleHeadOperational, ServiceSampleHeadOperational>();
+            services.AddScoped<IServiceMetricSetting, ServiceMetricSetting>();
 
             services.AddCors(options =>
             {
