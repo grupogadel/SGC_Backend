@@ -13,7 +13,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public string Hum_Cod { get; set; }
         public decimal Hum_FirstWeig { get; set; }
         public decimal Hum_EndWeig { get; set; }
-        public decimal Hum_PorcH2O { get; set; }
+        public decimal? Hum_PorcH2O { get; set; }
         public string Creation_User { get; set; }
         public DateTime Creation_Date { get; set; }
         public string Modified_User { get; set; }

@@ -141,10 +141,10 @@ namespace SGC.Services.CM.MineralReception
             {
                 BatchM_ID = (int)reader["BatchM_ID"],
                 Scales_ID = (int)reader["Scales_ID"],
-                Hum_ID = (int)reader["Hum_ID"],
+                Hum_ID = reader["Hum_ID"]==DBNull.Value?0:(int)reader["Hum_ID"],
                 //Ruma_ID = (int)reader["Ruma_ID"],
                 //Quota_ID = (int)reader["Quota_ID"],
-                LeyMH_ID = (int)reader["LeyMH_ID"],
+                //LeyMH_ID = (int)reader["LeyMH_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 Period_ID = (int)reader["Period_ID"],
                 BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
@@ -152,7 +152,7 @@ namespace SGC.Services.CM.MineralReception
                 //BatchM_Retired_Date = (DateTime)reader["BatchM_Retired_Date"],
                 //BatchM_TMHInt = (int)reader["BatchM_TMHInt"],
                 //BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"],
-                BatchM_TMSHist = (decimal)reader["BatchM_TMSHist"],
+                BatchM_TMSHist = reader["BatchM_TMSHist"]==DBNull.Value? (decimal?)null : (decimal)reader["BatchM_TMSHist"],
                 //BatchM_TMSInt = (int)reader["BatchM_TMSInt"],
                 //BatchM_LeyInt = (int)reader["BatchM_LeyInt"],
                 //BatchM_RecovInt = (int)reader["BatchM_RecovInt"],
@@ -178,20 +178,20 @@ namespace SGC.Services.CM.MineralReception
                 },
                 Humiditys = new Humidity
                 {
-                    Hum_ID = (int)reader["Hum_ID"],
-                    Hum_Cod = reader["Hum_Cod"].ToString(),
-                    Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"]
+                    Hum_ID = reader["Hum_ID"]==DBNull.Value?0:(int)reader["Hum_ID"],
+                    Hum_Cod = reader["Hum_Cod"]==DBNull.Value?null:reader["Hum_Cod"].ToString(),
+                    Hum_PorcH2O = reader["Hum_PorcH2O"]==DBNull.Value? (decimal?)null : (decimal)reader["Hum_PorcH2O"],
                 },
-                LeyMineralHeads = new LeyMineralHead
-                {
-                    LeyMH_ID = (int)reader["LeyMH_ID"],
-                    LeyMineralDetails = new LeyMineralDetail
-                    {
-                        LeyMD_ID = (int)reader["LeyMD_ID"],
-                        LeyMD_FinalAu = (decimal)reader["LeyMD_FinalAu"],
-                        LeyMD_FinalAg = (decimal)reader["LeyMD_FinalAg"],
-                    }
-                }
+                //LeyMineralHeads = new LeyMineralHead
+                //{
+                //    LeyMH_ID = (int)reader["LeyMH_ID"],
+                //    LeyMineralDetails = new LeyMineralDetail
+                //    {
+                //        LeyMD_ID = (int)reader["LeyMD_ID"],
+                //        LeyMD_FinalAu = (decimal)reader["LeyMD_FinalAu"],
+                //        LeyMD_FinalAg = (decimal)reader["LeyMD_FinalAg"],
+                //    }
+                //}
             };
         }
 

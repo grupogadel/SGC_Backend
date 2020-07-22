@@ -38,6 +38,8 @@ using SGC.InterfaceServices.CM.InternalControl;
 using SGC.Services.CM.InternalControl;
 using SGC.InterfaceServices.CM.Laboratory;
 using SGC.Services.CM.Laboratory;
+using SGC.InterfaceServices.CM.InternalControl.BatchManagement;
+using SGC.Services.CM.InternalControl.BatchManagement;
 
 namespace SGC.Web
 {
@@ -104,6 +106,9 @@ namespace SGC.Web
             services.AddScoped<IServiceSampleHeadOperational, ServiceSampleHeadOperational>();
             services.AddScoped<IServiceMetricSetting, ServiceMetricSetting>();
             services.AddScoped<IServiceSampleLaboratory, ServiceSampleLaboratory>();
+            services.AddScoped<IServiceInternalCtrl, ServiceInternalCtrl>();
+	    services.AddScoped<IServiceLabExternal, ServiceLabExternal>();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("MyPolicy", builder =>
