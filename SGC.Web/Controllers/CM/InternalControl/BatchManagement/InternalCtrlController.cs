@@ -70,13 +70,58 @@ namespace SGC.Web.Controllers.CM.InternalControl.BatchManagement
             );
         }
 		
-		// POST: api/InternalCtrl/Search/{}
+	    // POST: api/InternalCtrl/SearchCommercial/{}
         [HttpPost("[action]")]
-        public IActionResult Search([FromBody] JObject obj)
+        public IActionResult SearchCommercial([FromBody] JObject obj)
         {
             try
             {
-                var result = this._internalCtrlService.Search(obj);
+                var result = this._internalCtrlService.SearchCommercial(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // POST: api/InternalCtrl/SearchCommercialInt/{}
+        [HttpPost("[action]")]
+        public IActionResult SearchCommercialInt([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._internalCtrlService.SearchCommercialInt(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // POST: api/InternalCtrl/SearchOperational/{}
+        [HttpPost("[action]")]
+        public IActionResult SearchOperational([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._internalCtrlService.SearchOperational(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // POST: api/InternalCtrl/SearchOperationalInt/{}
+        [HttpPost("[action]")]
+        public IActionResult SearchOperationalInt([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._internalCtrlService.SearchOperationalInt(obj);
                 return Ok(result);
             }
             catch (Exception ex)

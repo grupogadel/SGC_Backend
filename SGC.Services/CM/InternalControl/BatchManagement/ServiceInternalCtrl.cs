@@ -39,7 +39,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                     }
                 }
 
-                cmd.CommandText = "[CM].InternalCtrlDetailsCommercial_GetAll";
+                cmd.CommandText = "[CM].InternalCtrlDetails_GetAll";
 
                 foreach (var ich in internalCtrlHead)
                 {
@@ -50,7 +50,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                     {
                         while (dr.Read())
                         {
-                            ich.InternalCtrlDetailsCommercials.Add(MapToInternalCtrlDetailsCommercial(dr));
+                            ich.InternalCtrlDetailss.Add(MapToInternalCtrlDetails(dr));
                         }
                     }
                 }
@@ -143,21 +143,20 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 IntCtrlH_Status = reader["IntCtrlH_Status"].ToString(),
-		LeyMH_FinishAu = reader["LeyMH_FinishAu"]==DBNull.Value?(decimal?)null:(decimal)reader["LeyMH_FinishAu"],
-		SampH_Status_Cod = reader["SampH_Status_Cod"].ToString()
+		        LeyMH_FinishAu = reader["LeyMH_FinishAu"]==DBNull.Value?(decimal?)null:(decimal)reader["LeyMH_FinishAu"],
+		        SampH_Status_Cod = reader["SampH_Status_Cod"].ToString()
             };
         }
 
-        private InternalCtrlDetailsCommercial MapToInternalCtrlDetailsCommercial(SqlDataReader reader)
+        private InternalCtrlDetails MapToInternalCtrlDetails(SqlDataReader reader)
         {
-            return new InternalCtrlDetailsCommercial()
+            return new InternalCtrlDetails()
             {
                 IntCtrlD_ID = (int)reader["IntCtrlD_ID"],
                 IntCtrlH_ID = (int)reader["IntCtrlH_ID"],
                 LabExt_ID = reader["LabExt_ID"]==DBNull.Value?0:(int)reader["LabExt_ID"],
                 LabExt_Name = reader["LabExt_Name"]==DBNull.Value?null:reader["LabExt_Name"].ToString(),
-                PolCorp_ID = reader["PolCorp_ID"]==DBNull.Value?0:(int)reader["PolCorp_ID"],
-		PolCorp_Value1 = reader["PolCorp_Value1"]==DBNull.Value?(decimal?)null:(decimal)reader["PolCorp_Value1"],
+                IntCtrlD_PolCorp = reader["IntCtrlD_PolCorp"] ==DBNull.Value?(decimal?)null:(decimal)reader["IntCtrlD_PolCorp"],
                 LabProcTyp_ID = reader["LabProcTyp_ID"]==DBNull.Value?0:(int)reader["LabProcTyp_ID"],
                 LabProcTyp_Name = reader["LabProcTyp_Name"]==DBNull.Value?null:reader["LabProcTyp_Name"].ToString(),
                 LabProcTyp_Desc = reader["LabProcTyp_Desc"]==DBNull.Value?null:reader["LabProcTyp_Desc"].ToString(),
@@ -246,6 +245,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                 cmd.CommandText = "[CM].InternalCtrlPuruna_Add";
                 
                 cmd.Parameters.Add(new SqlParameter("@Option", obj["option"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID", obj["intCtrlH_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@IntCtrlD_SampWeig", obj["intCtrlD_SampWeig"].ToObject<string>().Equals("") ? (object)DBNull.Value: obj["intCtrlD_SampWeig"].ToObject<decimal>()));
                 cmd.Parameters.Add(new SqlParameter("@IntCtrlD_LeyAu_Puru", obj["intCtrlD_LeyAu_Puru"].ToObject<string>().Equals("") ? (object)DBNull.Value: obj["intCtrlD_LeyAu_Puru"].ToObject<decimal>()));
@@ -281,6 +281,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                 cmd.CommandText = "[CM].InternalCtrlReq_Add";
 
                 cmd.Parameters.Add(new SqlParameter("@Option", obj["option"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["analType_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", obj["sampOrig_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID", obj["intCtrlH_ID"].ToObject<int>()));
@@ -340,7 +341,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
             }
         }
 		
-		// DELETE: api/InternalCtrl/Delete/
+	    // DELETE: api/InternalCtrl/Delete/
         public int Delete(JObject obj)
         {
             try
@@ -369,8 +370,8 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
             }
         }
 		
-		// POST: api/InternalCtrl/Search/{}
-        public List<InternalCtrlHeadCommercial> Search(JObject obj)
+	    // POST: api/InternalCtrl/SearchCommercial/{}
+        public List<InternalCtrlHeadCommercial> SearchCommercial(JObject obj)
         {
             var internalCtrlHead = new List<InternalCtrlHeadCommercial>();
 
@@ -381,10 +382,10 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].InternalCtrlHeadCommercial_Search";
 				
-		cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
-		cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["numero"].ToObject<string>()));
+		        cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+		        cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["numero"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
-		cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+		        cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
 
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
@@ -395,7 +396,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                     }
                 }
 
-                cmd.CommandText = "[CM].InternalCtrlDetailsCommercial_GetAll";
+                cmd.CommandText = "[CM].InternalCtrlDetails_GetAll";
 
                 foreach (var ich in internalCtrlHead)
                 {
@@ -406,7 +407,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                     {
                         while (dr.Read())
                         {
-                            ich.InternalCtrlDetailsCommercials.Add(MapToInternalCtrlDetailsCommercial(dr));
+                            ich.InternalCtrlDetailss.Add(MapToInternalCtrlDetails(dr));
                         }
                     }
                 }
@@ -468,6 +469,344 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
                 return internalCtrlHead;
                 throw e;
             }
+        }
+
+        // POST: api/InternalCtrl/SearchCommercialInt/{}
+        public List<InternalCtrlHeadCommercial> SearchCommercialInt(JObject obj)
+        {
+            var internalCtrlHead = new List<InternalCtrlHeadCommercial>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].InternalCtrlHeadCommercial_SearchInt";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_LoteInt", obj["loteInt"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_LabProcTyp", obj["typeAn"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        internalCtrlHead.Add(MapToInternalCtrlHeadCommercial(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetails_GetAll";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID", ich.IntCtrlH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailss.Add(MapToInternalCtrlDetails(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsLeyM_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsLeyMs.Add(MapToInternalCtrlDetailsLeyM(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsConsume_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsConsumes.Add(MapToInternalCtrlDetailsConsume(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsRecovery_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsRecoverys.Add(MapToInternalCtrlDetailsRecovery(dr));
+                        }
+                    }
+                }
+
+                conn.Close();
+
+                return internalCtrlHead;
+            }
+            catch (Exception e)
+            {
+                return internalCtrlHead;
+                throw e;
+            }
+        }
+
+        // POST: api/InternalCtrl/SearchOperational/{}
+        public List<InternalCtrlHeadOperational> SearchOperational(JObject obj)
+        {
+            var internalCtrlHead = new List<InternalCtrlHeadOperational>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].InternalCtrlHeadOperational_Search";
+				
+		        cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+		        cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["numero"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
+		        cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        internalCtrlHead.Add(MapToInternalCtrlHeadOperational(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetails_GetAll";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID", ich.IntCtrlH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailss.Add(MapToInternalCtrlDetails(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsLeyM_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsLeyMs.Add(MapToInternalCtrlDetailsLeyM(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsConsume_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsConsumes.Add(MapToInternalCtrlDetailsConsume(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsRecovery_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsRecoverys.Add(MapToInternalCtrlDetailsRecovery(dr));
+                        }
+                    }
+                }
+
+                conn.Close();
+
+                return internalCtrlHead;
+            }
+            catch (Exception e)
+            {
+                return internalCtrlHead;
+                throw e;
+            }
+        }
+
+        // POST: api/InternalCtrl/SearchOperationalInt/{}
+        public List<InternalCtrlHeadOperational> SearchOperationalInt(JObject obj)
+        {
+            var internalCtrlHead = new List<InternalCtrlHeadOperational>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].InternalCtrlHeadOperational_SearchInt";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_LoteInt", obj["loteInt"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_LabProcTyp", obj["typeAn"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["dateFrom"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["dateTo"].ToObject<DateTime>()));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        internalCtrlHead.Add(MapToInternalCtrlHeadOperational(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetails_GetAll";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID", ich.IntCtrlH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailss.Add(MapToInternalCtrlDetails(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsLeyM_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsLeyMs.Add(MapToInternalCtrlDetailsLeyM(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsConsume_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsConsumes.Add(MapToInternalCtrlDetailsConsume(dr));
+                        }
+                    }
+                }
+
+                cmd.CommandText = "[CM].InternalCtrlDetailsRecovery_Get";
+
+                foreach (var ich in internalCtrlHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@SampH_ID", ich.SampH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ich.InternalCtrlDetailsRecoverys.Add(MapToInternalCtrlDetailsRecovery(dr));
+                        }
+                    }
+                }
+
+                conn.Close();
+
+                return internalCtrlHead;
+            }
+            catch (Exception e)
+            {
+                return internalCtrlHead;
+                throw e;
+            }
+        }
+
+        private InternalCtrlHeadOperational MapToInternalCtrlHeadOperational(SqlDataReader reader)
+        {
+            return new InternalCtrlHeadOperational()
+            {
+                IntCtrlH_ID = (int)reader["IntCtrlH_ID"],
+                SampH_ID = (int)reader["SampH_ID"],
+                Company_ID = (int)reader["Company_ID"],
+                IntCtrlH_Current_Detail = (int)reader["IntCtrlH_Current_Detail"],
+                SampH_Current_Detail = (int)reader["SampH_Current_Detail"],
+		        SampH_NO = reader["SampH_NO"].ToString(),
+		        SampH_Refer = reader["SampH_Refer"].ToString(),
+		        SampH_Desc = reader["SampH_Desc"].ToString(),
+		        SampOrig_ID = (int)reader["SampOrig_ID"],
+                SampOrig_Desc = reader["SampOrig_Desc"].ToString(),
+		        SampOrig_AreaDesc = reader["SampOrig_AreaDesc"].ToString(),
+                AnalType_ID = (int)reader["AnalType_ID"],
+                AnalType_Desc = reader["AnalType_Desc"].ToString(),
+		        LabProcTyp_ID = (int)reader["LabProcTyp_ID"],
+                LabProcTyp_Name = reader["LabProcTyp_Name"].ToString(),
+		        MatType_ID = (int)reader["MatType_ID"],
+                MatType_Name = reader["MatType_Name"].ToString(),
+		        SampD_Weight = (decimal)reader["SampD_Weight"],
+                SampD_Date = (DateTime)reader["SampD_Date"],
+                Creation_User = reader["Creation_User"].ToString(),
+                Creation_Date = (DateTime)reader["Creation_Date"],
+                Modified_User = reader["Modified_User"].ToString(),
+                Modified_Date = (DateTime)reader["Modified_Date"],
+                IntCtrlH_Status = reader["IntCtrlH_Status"].ToString(),
+		        LeyMH_FinishAu = reader["LeyMH_FinishAu"]==DBNull.Value?(decimal?)null:(decimal)reader["LeyMH_FinishAu"],
+		        SampH_Status_Cod = reader["SampH_Status_Cod"].ToString()
+            };
         }
 
     }

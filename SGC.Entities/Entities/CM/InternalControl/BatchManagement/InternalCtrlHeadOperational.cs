@@ -5,29 +5,28 @@ using System.Text;
 
 namespace SGC.Entities.Entities.CM.InternalControl.BatchManagement
 {
-    public class InternalCtrlHeadCommercial
+    public class InternalCtrlHeadOperational
     {
         [Key]
         public int IntCtrlH_ID { get; set; }
         public int SampH_ID { get; set; }
         public int Company_ID { get; set; }
         public int IntCtrlH_Current_Detail { get; set; }
-        public int BatchM_ID { get; set; }
         public int SampH_Current_Detail { get; set; }
+	    public string SampH_NO { get; set; }
+	    public string SampH_Refer { get; set; }
+	    public string SampH_Desc { get; set; }
+	    public int SampOrig_ID { get; set; }
+        public string SampOrig_Desc { get; set; }
+	    public string SampOrig_AreaDesc { get; set; }
         public int AnalType_ID { get; set; }
         public string AnalType_Desc { get; set; }
-        public int Hum_ID { get; set; }
-        public decimal Hum_PorcH2O { get; set; }
-        public int Scales_ID { get; set; }
-        public string Scales_Lote { get; set; }
-        public decimal Scales_TMH { get; set; }
-        public DateTime Scales_DateInp { get; set; }
-        public int MinType_ID { get; set; }
-        public string MinType_Desc { get; set; }
-        public int Orig_ID { get; set; }
-        public string Orig_Name { get; set; }
-        public int Zone_ID { get; set; }
-        public string Zone_Name { get; set; }
+	    public int LabProcTyp_ID { get; set; }
+        public string LabProcTyp_Name { get; set; }
+	    public int MatType_ID { get; set; }
+        public string MatType_Name { get; set; }
+	    public decimal SampD_Weight { get; set; }
+        public DateTime SampD_Date { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
@@ -39,7 +38,7 @@ namespace SGC.Entities.Entities.CM.InternalControl.BatchManagement
         public List<InternalCtrlDetailsLeyM> InternalCtrlDetailsLeyMs { get; set; }
         public List<InternalCtrlDetailsConsume> InternalCtrlDetailsConsumes { get; set; }
         public List<InternalCtrlDetailsRecovery> InternalCtrlDetailsRecoverys { get; set; }
-        public InternalCtrlHeadCommercial()
+        public InternalCtrlHeadOperational()
         {
             InternalCtrlDetailss = new List<InternalCtrlDetails>();
             InternalCtrlDetailsLeyMs = new List<InternalCtrlDetailsLeyM>();

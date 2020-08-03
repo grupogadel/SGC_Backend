@@ -12,8 +12,11 @@ namespace SGC.InterfaceServices.CM.InternalControl.BatchManagement
         int AddPuruna(JObject obj);
         int AddReq(JObject obj);
         int AddLabExt(JObject obj);
-		int Delete(JObject obj);
-		List<InternalCtrlHeadCommercial> Search(JObject obj);
+	    int Delete(JObject obj);
+	    List<InternalCtrlHeadCommercial> SearchCommercial(JObject obj);
+        List<InternalCtrlHeadCommercial> SearchCommercialInt(JObject obj);
+        List<InternalCtrlHeadOperational> SearchOperational(JObject obj);
+        List<InternalCtrlHeadOperational> SearchOperationalInt(JObject obj);
 
         //int Update(SampleDetailsCommercial model);
     }

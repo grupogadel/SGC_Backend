@@ -5,15 +5,14 @@ using System.Text;
 
 namespace SGC.Entities.Entities.CM.InternalControl.BatchManagement
 {
-    public class InternalCtrlDetailsCommercial
+    public class InternalCtrlDetails
     {
         [Key]
         public int IntCtrlD_ID { get; set; }
         public int IntCtrlH_ID { get; set; }
         public int LabExt_ID { get; set; }
         public string LabExt_Name { get; set; }
-        public int PolCorp_ID { get; set; }
-	public decimal? PolCorp_Value1 { get; set; }
+	    public decimal? IntCtrlD_PolCorp { get; set; }
         public int LabProcTyp_ID { get; set; }
         public string LabProcTyp_Name { get; set; }
         public string LabProcTyp_Desc { get; set; }
