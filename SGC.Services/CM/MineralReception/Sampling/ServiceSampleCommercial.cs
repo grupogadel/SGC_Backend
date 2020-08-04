@@ -89,7 +89,7 @@ namespace SGC.Services.CM.MineralReception.Sampling
                     Scales = new Scales {
                         Scales_ID = (int)reader["Scales_ID"],
                         Scales_Lote = reader["Scales_Lote"].ToString(),
-                        Scales_TMH = (int)reader["Scales_TMH"],
+                        Scales_TMH = (decimal)reader["Scales_TMH"],
                         Scales_DateInp = (DateTime)reader["Scales_DateInp"],
                         MinType_ID = (int)reader["MinType_ID"],
                         MineralTypes = new MineralsType { 

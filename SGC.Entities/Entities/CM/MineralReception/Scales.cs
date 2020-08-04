@@ -32,7 +32,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public string Scales_GuiRemRe_Serie { get; set; }
         public string Scales_GuiRemRe_Num { get; set; }
         public int? Scales_NumSacos { get; set; }
-        public int? Scales_TMH { get; set; }
+        public decimal? Scales_TMH { get; set; }
         public decimal? Scales_TMH_Hist { get; set; }
         public string Scales_DriverRUC { get; set; }
         public string Scales_DriverName { get; set; }
