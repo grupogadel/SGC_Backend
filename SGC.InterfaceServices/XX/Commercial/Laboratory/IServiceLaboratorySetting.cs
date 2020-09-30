@@ -14,5 +14,7 @@ namespace SGC.InterfaceServices.XX.Commercial.Laboratory
         int Update(LaboratorySetting model);
         int Delete(JObject obj);
         Task<List<LaboratorySetting>> Search(JObject obj);
+        LaboratorySetting Get(int id);
+
     }
 }

@@ -39,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="CM\Commercial\" />
-    <Folder Include="CM\Laboratory\" />
     <Folder Include="FI\Accounting\" />
     <Folder Include="FI\DataMaster\" />
     <Folder Include="OP\PlantCIP\" />

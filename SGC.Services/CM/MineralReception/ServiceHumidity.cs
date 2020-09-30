@@ -25,22 +25,22 @@ namespace SGC.Services.CM.MineralReception
             return new SampleHead()
             {
                 SampH_ID = (int)reader["SampH_ID"],
-                BatchMineral = new BatchMineral { BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"], 
-                            Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
-                },
-                Humidity = new Humidity {
-                    Hum_ID = (int)reader["Hum_ID"],
-                    Company_ID = (int)reader["Company_ID"],
-                    Hum_Cod = reader["Hum_Cod"].ToString(),
-                    Hum_FirstWeig = (decimal)reader["Hum_FirstWeig"],
-                    Hum_EndWeig = (decimal)reader["Hum_EndWeig"],
-                    Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"],
-                    Creation_User = reader["Creation_User"].ToString(),
-                    Creation_Date = (DateTime)reader["Creation_Date"],
-                    Modified_User = reader["Modified_User"].ToString(),
-                    Modified_Date = (DateTime)reader["Modified_Date"],
-                    Hum_Status = reader["Hum_Status"].ToString(),
-                }
+                //BatchMineral = new BatchMineral { BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"], 
+                //            Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
+                //},  
+                //Humidity = new Humidity {
+                //    Hum_ID = (int)reader["Hum_ID"],
+                //    Company_ID = (int)reader["Company_ID"],
+                //    Hum_Cod = reader["Hum_Cod"].ToString(),
+                //    Hum_FirstWeig = (decimal)reader["Hum_FirstWeig"],
+                //    Hum_EndWeig = (decimal)reader["Hum_EndWeig"],
+                //    Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"],
+                //    Creation_User = reader["Creation_User"].ToString(),
+                //    Creation_Date = (DateTime)reader["Creation_Date"],
+                //    Modified_User = reader["Modified_User"].ToString(),
+                //    Modified_Date = (DateTime)reader["Modified_Date"],
+                //    Hum_Status = reader["Hum_Status"].ToString(),
+                //}
             };
         }
 
@@ -49,11 +49,11 @@ namespace SGC.Services.CM.MineralReception
             return new SampleHead()
             {
                 SampH_ID = (int)reader["SampH_ID"],
-                BatchMineral = new BatchMineral
-                {
-                    BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"],
-                    Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
-                }
+                //BatchMineral = new BatchMineral
+                //{
+                //    BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"],
+                //    Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
+                //}
             };
         }
 

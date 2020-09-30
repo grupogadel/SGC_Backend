@@ -107,7 +107,9 @@ namespace SGC.Web
             services.AddScoped<IServiceMetricSetting, ServiceMetricSetting>();
             services.AddScoped<IServiceSampleLaboratory, ServiceSampleLaboratory>();
             services.AddScoped<IServiceInternalCtrl, ServiceInternalCtrl>();
-	    services.AddScoped<IServiceLabExternal, ServiceLabExternal>();
+	        services.AddScoped<IServiceLabExternal, ServiceLabExternal>();
+            services.AddScoped<IServiceLaboratorySampleAnalysis, ServiceLaboratorySampleAnalysis>();
+            services.AddScoped<IServiceLaboratorySampleAnalysis, ServiceLaboratorySampleAnalysis>();
 
             services.AddCors(options =>
             {

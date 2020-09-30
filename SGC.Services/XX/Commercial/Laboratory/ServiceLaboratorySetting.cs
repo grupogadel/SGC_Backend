@@ -241,5 +241,38 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 throw e;
             }
         }
+
+        public LaboratorySetting Get(int id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].LaboratorySetting_Get";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", id));
+
+                LaboratorySetting response = null;
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        response = MapToLaboratorySetting(reader);
+                    }
+                }
+                conn.Close();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return null;
+                throw e;
+            }
+        }
+
     }
 }
