@@ -695,6 +695,7 @@ namespace SGC.Services.CM.Laboratory
                 cmd.CommandText = "[CM].[Recovery_Add]";
 
                 cmd.Parameters.Add(new SqlParameter("@SampD_ID", obj["sampD_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["sampH_ID"].ToObject<int>()));
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("RecovH_LeyAuRipio", model.RecovH_LeyAuRipio));
