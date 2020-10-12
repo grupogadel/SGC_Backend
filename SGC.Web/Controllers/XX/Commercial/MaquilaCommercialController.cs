@@ -33,24 +33,5 @@ namespace SGC.Web.Controllers.XX.Commercial
             }
         }
 
-        // POST api/MaquilaCommercial/Add/
-        [HttpPost("[action]")]
-        public IActionResult Add([FromBody] MaquilaCommercial model)
-        {
-            return Ok(
-                _maquilaCommercialService.Add(model)
-            );
-        }
-
-
-        // DELETE api/MaquilaCommercial/Delete/{}
-        [HttpDelete("[action]/{id}/{user}")]
-        public IActionResult Delete(int id, string user)
-        {
-            return Ok(
-                _maquilaCommercialService.Delete(id, user)
-            );
-        }
-
     }
 }
