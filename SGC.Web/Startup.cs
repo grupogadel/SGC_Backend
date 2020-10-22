@@ -42,6 +42,8 @@ using SGC.InterfaceServices.CM.InternalControl.BatchManagement;
 using SGC.Services.CM.InternalControl.BatchManagement;
 using SGC.InterfaceServices.CM.Commercial.Advance;
 using SGC.Services.CM.Commercial.Advance;
+using SGC.Services.CM.Commercial.Settlement;
+using SGC.InterfaceServices.CM.Commercial.Settlement;
 
 namespace SGC.Web
 {
@@ -112,6 +114,8 @@ namespace SGC.Web
 	        services.AddScoped<IServiceLabExternal, ServiceLabExternal>();
             services.AddScoped<IServiceLaboratorySampleAnalysis, ServiceLaboratorySampleAnalysis>();
 			services.AddScoped<IServiceAdvance, ServiceAdvance>();
+            services.AddScoped<IServiceManagementBatchMineral, ServiceManagementBatchMineral>();
+            services.AddScoped<IServiceCommercialBatchManagement, ServiceCommercialBatchManagement>();
 
             services.AddCors(options =>
             {
