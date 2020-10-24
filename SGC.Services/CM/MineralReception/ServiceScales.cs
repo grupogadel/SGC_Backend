@@ -164,7 +164,7 @@ namespace SGC.Services.CM.MineralReception
                 Scales_GuiRemRe_Serie = reader["Scales_GuiRemRe_Serie"].ToString(),
                 Scales_GuiRemRe_Num = reader["Scales_GuiRemRe_Num"].ToString(),
                 Scales_NumSacos = (int)reader["Scales_NumSacos"],
-                Scales_TMH = (int)reader["Scales_TMH"],
+                Scales_TMH = (decimal)reader["Scales_TMH"],
                 Scales_TMH_Hist = (decimal)reader["Scales_TMH_Hist"],
                 Scales_DriverRUC = reader["Scales_DriverRUC"].ToString(),
                 Scales_DriverName = reader["Scales_DriverName"].ToString(),
