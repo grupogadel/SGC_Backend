@@ -214,18 +214,30 @@ namespace SGC.Services.CM.DataMaster
                 Vendor_Email = reader["Vendor_Email"].ToString(),
                 Vendor_DetracPorc = (decimal)reader["Vendor_DetracPorc"],
 
-                Bank_ID_AcctLocal_NO = (int)reader["Bank_ID_AcctLocal_NO"],
-                Currency_ID_AcctLocal_NO = (int)reader["Currency_ID_AcctLocal_NO"],
-                Vendor_AcctLocal_NO = reader["Vendor_AcctLocal_NO"].ToString(),
+                //Bank_ID_AcctLocal_NO = (int)reader["Bank_ID_AcctLocal_NO"],
+                //Currency_ID_AcctLocal_NO = (int)reader["Currency_ID_AcctLocal_NO"],
+                //Vendor_AcctLocal_NO = reader["Vendor_AcctLocal_NO"].ToString(),
 
-                Bank_ID_AcctLocalCCI_NO = (int)reader["Bank_ID_AcctLocalCCI_NO"],
-                Currency_ID_AcctLocalCCI_NO = (int)reader["Currency_ID_AcctLocalCCI_NO"],
-                Vendor_AcctLocalCCI_NO = reader["Vendor_AcctLocalCCI_NO"].ToString(),
+                Bank_ID_AcctLocal_NO = reader["Bank_ID_AcctLocal_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctLocal_NO"],
+                Currency_ID_AcctLocal_NO = reader["Currency_ID_AcctLocal_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctLocal_NO"],
+                Vendor_AcctLocal_NO = reader["Vendor_AcctLocal_NO"] == DBNull.Value ? null : reader["Vendor_AcctLocal_NO"].ToString(),
 
-                Bank_ID_AcctDetracc_NO = (int)reader["Bank_ID_AcctDetracc_NO"],
-                Currency_ID_AcctDetracc_NO = (int)reader["Currency_ID_AcctDetracc_NO"],
-                Vendor_AcctDetracc_NO = reader["Vendor_AcctDetracc_NO"].ToString(),
-                
+                //Bank_ID_AcctLocalCCI_NO = (int)reader["Bank_ID_AcctLocalCCI_NO"],
+                //Currency_ID_AcctLocalCCI_NO = (int)reader["Currency_ID_AcctLocalCCI_NO"],
+                //Vendor_AcctLocalCCI_NO = reader["Vendor_AcctLocalCCI_NO"].ToString(),
+
+                Bank_ID_AcctLocalCCI_NO = reader["Bank_ID_AcctLocalCCI_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctLocalCCI_NO"],
+                Currency_ID_AcctLocalCCI_NO = reader["Currency_ID_AcctLocalCCI_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctLocalCCI_NO"],
+                Vendor_AcctLocalCCI_NO = reader["Vendor_AcctLocalCCI_NO"] == DBNull.Value ? null : reader["Vendor_AcctLocalCCI_NO"].ToString(),
+
+                //Bank_ID_AcctDetracc_NO = (int)reader["Bank_ID_AcctDetracc_NO"],
+                //Currency_ID_AcctDetracc_NO = (int)reader["Currency_ID_AcctDetracc_NO"],
+                //Vendor_AcctDetracc_NO = reader["Vendor_AcctDetracc_NO"].ToString(),
+
+                Bank_ID_AcctDetracc_NO = reader["Bank_ID_AcctDetracc_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctDetracc_NO"],
+                Currency_ID_AcctDetracc_NO = reader["Currency_ID_AcctDetracc_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctDetracc_NO"],
+                Vendor_AcctDetracc_NO = reader["Vendor_AcctDetracc_NO"] == DBNull.Value ? null : reader["Vendor_AcctDetracc_NO"].ToString(),
+
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
@@ -264,39 +276,63 @@ namespace SGC.Services.CM.DataMaster
                 },
                 Banks = new Bank
                 {
-                    Bank_ID = (int)reader["Bank_ID"],
-                    Bank_Cod = reader["Bank_Cod"].ToString(),
-                    Bank_Name = reader["Bank_Name"].ToString()
+                    //Bank_ID = (int)reader["Bank_ID"],
+                    //Bank_Cod = reader["Bank_Cod"].ToString(),
+                    //Bank_Name = reader["Bank_Name"].ToString()
+
+                    Bank_ID = reader["Bank_ID"] == DBNull.Value ? 0 : (int)reader["Bank_ID"],
+                    Bank_Cod = reader["Bank_Cod"] == DBNull.Value ? null : reader["Bank_Cod"].ToString(),
+                    Bank_Name = reader["Bank_Name"] == DBNull.Value ? null : reader["Bank_Name"].ToString(),
                 },
                 Banks1 = new Bank
                 {
-                    Bank_ID = (int)reader["Bank_ID1"],
-                    Bank_Cod = reader["Bank_Cod1"].ToString(),
-                    Bank_Name = reader["Bank_Name1"].ToString()
+                    //Bank_ID = (int)reader["Bank_ID1"],
+                    //Bank_Cod = reader["Bank_Cod1"].ToString(),
+                    //Bank_Name = reader["Bank_Name1"].ToString()
+
+                    Bank_ID = reader["Bank_ID1"] == DBNull.Value ? 0 : (int)reader["Bank_ID1"],
+                    Bank_Cod = reader["Bank_Cod1"] == DBNull.Value ? null : reader["Bank_Cod1"].ToString(),
+                    Bank_Name = reader["Bank_Name1"] == DBNull.Value ? null : reader["Bank_Name1"].ToString(),
                 },
                 Banks2 = new Bank
                 {
-                    Bank_ID = (int)reader["Bank_ID2"],
-                    Bank_Cod = reader["Bank_Cod2"].ToString(),
-                    Bank_Name = reader["Bank_Name2"].ToString()
+                    //Bank_ID = (int)reader["Bank_ID2"],
+                    //Bank_Cod = reader["Bank_Cod2"].ToString(),
+                    //Bank_Name = reader["Bank_Name2"].ToString()
+
+                    Bank_ID = reader["Bank_ID2"] == DBNull.Value ? 0 : (int)reader["Bank_ID2"],
+                    Bank_Cod = reader["Bank_Cod2"] == DBNull.Value ? null : reader["Bank_Cod2"].ToString(),
+                    Bank_Name = reader["Bank_Name2"] == DBNull.Value ? null : reader["Bank_Name2"].ToString(),
                 },
                 Currencys = new Currency
                 {
-                    Currency_ID = (int)reader["Currency_ID"],
-                    Currency_Cod = reader["Currency_Cod"].ToString(),
-                    Currency_Name = reader["Currency_Name"].ToString()
+                    //Currency_ID = (int)reader["Currency_ID"],
+                    //Currency_Cod = reader["Currency_Cod"].ToString(),
+                    //Currency_Name = reader["Currency_Name"].ToString()
+
+                    Currency_ID = reader["Currency_ID"] == DBNull.Value ? 0 : (int)reader["Currency_ID"],
+                    Currency_Cod = reader["Currency_Cod"] == DBNull.Value ? null : reader["Currency_Cod"].ToString(),
+                    Currency_Name = reader["Currency_Name"] == DBNull.Value ? null : reader["Currency_Name"].ToString(),
                 },
                 Currencys1 = new Currency
                 {
-                    Currency_ID = (int)reader["Currency_ID1"],
-                    Currency_Cod = reader["Currency_Cod1"].ToString(),
-                    Currency_Name = reader["Currency_Name1"].ToString()
+                    //Currency_ID = (int)reader["Currency_ID1"],
+                    //Currency_Cod = reader["Currency_Cod1"].ToString(),
+                    //Currency_Name = reader["Currency_Name1"].ToString()
+
+                    Currency_ID = reader["Currency_ID1"] == DBNull.Value ? 0 : (int)reader["Currency_ID1"],
+                    Currency_Cod = reader["Currency_Cod1"] == DBNull.Value ? null : reader["Currency_Cod1"].ToString(),
+                    Currency_Name = reader["Currency_Name1"] == DBNull.Value ? null : reader["Currency_Name1"].ToString(),
                 },
                 Currencys2 = new Currency
                 {
-                    Currency_ID = (int)reader["Currency_ID2"],
-                    Currency_Cod = reader["Currency_Cod2"].ToString(),
-                    Currency_Name = reader["Currency_Name2"].ToString()
+                    //Currency_ID = (int)reader["Currency_ID2"],
+                    //Currency_Cod = reader["Currency_Cod2"].ToString(),
+                    //Currency_Name = reader["Currency_Name2"].ToString()
+
+                    Currency_ID = reader["Currency_ID2"] == DBNull.Value ? 0 : (int)reader["Currency_ID2"],
+                    Currency_Cod = reader["Currency_Cod2"] == DBNull.Value ? null : reader["Currency_Cod2"].ToString(),
+                    Currency_Name = reader["Currency_Name2"] == DBNull.Value ? null : reader["Currency_Name2"].ToString(),
                 }
             };
         }

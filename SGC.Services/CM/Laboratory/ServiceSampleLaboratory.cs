@@ -20,7 +20,7 @@ namespace SGC.Services.CM.Laboratory
     public class ServiceSampleLaboratory : IServiceSampleLaboratory
     {
         private readonly string _context;
-
+ 
         public ServiceSampleLaboratory(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
@@ -80,6 +80,7 @@ namespace SGC.Services.CM.Laboratory
             }
             return (int)reader[fieldName];
         }
+
         private SampleHeadLaboratory MapToSampleLaboratory(SqlDataReader reader)
         {
             return new SampleHeadLaboratory()
@@ -320,17 +321,22 @@ namespace SGC.Services.CM.Laboratory
         {
             return new LaboratoryRecep()
             {
-                SampD_ID = (int)reader["SampD_ID"],
+                SampD_ID = GetNullableInt(reader, "SampD_ID"),
+                //SampD_ID = (int)reader["SampD_ID"],
                 //SampD_NO = reader["SampD_NO"].ToString(),
                 SampD_NO = GetNullableString(reader, "SampD_NO"),
-                LabProcTyp_ID = (int)reader["LabProcTyp_ID"],
-                AnalType_ID = (int)reader["AnalType_ID"],
-                SampOrig_ID = (int)reader["SampOrig_ID"],
-                MatType_ID = (int)reader["MatType_ID"],
+                //LabProcTyp_ID = (int)reader["LabProcTyp_ID"],
+                LabProcTyp_ID = GetNullableInt(reader, "LabProcTyp_ID"),
+                //AnalType_ID = (int)reader["AnalType_ID"],
+                AnalType_ID = GetNullableInt(reader, "AnalType_ID"),
+                //SampOrig_ID = (int)reader["SampOrig_ID"],
+                SampOrig_ID = GetNullableInt(reader, "SampOrig_ID"),
+                //MatType_ID = (int)reader["MatType_ID"],
+                MatType_ID = GetNullableInt(reader, "MatType_ID"),
                 //MinFrom_ID = (int)reader["MinFrom_ID"],
                 MinFrom_ID = GetNullableInt(reader,"MinFrom_ID"),
                 //LabProcTyp_Cod = reader["LabProcTyp_Cod"].ToString(),
-                Modified_DateDet = (DateTime)reader["Modified_DateDet"],
+                //Modified_DateDet = (DateTime)reader["Modified_DateDet"],
                 SampD_Status = reader["SampD_Status"].ToString(),
                 LabProcTyp_Cod = GetNullableString(reader, "LabProcTyp_Cod"),
                 LabProcTyp_Name = GetNullableString(reader, "LabProcTyp_Name"),

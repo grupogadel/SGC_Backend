@@ -110,6 +110,52 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
+
+
+        public async Task<List<Scales>> Search3(JObject obj)
+        {
+            var response = new List<Scales>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Scales_Search3";
+
+                bool rank = false;
+                if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>())
+                    rank = false;
+                else
+                    rank = true;
+
+                //cmd.Parameters.Add(new SqlParameter("@Ruma_NO", obj["cod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["scales_Lote"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Zone", obj["zone"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Proveedor", obj["proveedor"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToScales(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
         public async Task<List<Scales>> GetAll(int idCompany)
         {
             var response = new List<Scales>();
@@ -164,7 +210,7 @@ namespace SGC.Services.CM.MineralReception
                 Scales_GuiRemRe_Serie = reader["Scales_GuiRemRe_Serie"].ToString(),
                 Scales_GuiRemRe_Num = reader["Scales_GuiRemRe_Num"].ToString(),
                 Scales_NumSacos = (int)reader["Scales_NumSacos"],
-                Scales_TMH = (int)reader["Scales_TMH"],
+                Scales_TMH = (decimal)reader["Scales_TMH"],
                 Scales_TMH_Hist = (decimal)reader["Scales_TMH_Hist"],
                 Scales_DriverRUC = reader["Scales_DriverRUC"].ToString(),
                 Scales_DriverName = reader["Scales_DriverName"].ToString(),

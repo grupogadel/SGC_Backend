@@ -15,5 +15,6 @@ namespace SGC.InterfaceServices.CM.MineralReception
         Scales Get(int id);
         Task<List<Scales>> Search(JObject obj);
         Task<List<Scales>> Search2(JObject obj);
+        Task<List<Scales>> Search3(JObject obj);
     }
 }
