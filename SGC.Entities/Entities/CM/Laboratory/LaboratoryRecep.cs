@@ -6,6 +6,20 @@ namespace SGC.Entities.Entities.CM.Laboratory
 {
     public class LaboratoryRecep
     {
+        public int? SampH_ID { get; set; }
+        public int? Company_ID { get; set; }
+        public int? BatchM_ID { get; set; }
+        public int? SampH_Current_Detail { get; set; }
+        public string SampH_NO { get; set; }
+        public string SampH_Type { get; set; }
+        public string SampH_Desc { get; set; }
+        public string SampH_Refer { get; set; }
+        public string SampH_Status_Cod { get; set; }
+        public string Creation_User { get; set; }
+        public DateTime? Creation_Date { get; set; }
+        public string Modified_User { get; set; }
+        public DateTime? Modified_Date { get; set; }
+        public string SampH_Status { get; set; }
         public int? SampD_ID { get; set; }
         public string SampD_NO { get; set; }
         public int? LabProcTyp_ID { get; set; }
@@ -14,7 +28,6 @@ namespace SGC.Entities.Entities.CM.Laboratory
         public int? MatType_ID { get; set; }
         public int? MinFrom_ID { get; set; }
         public DateTime? Modified_DateDet { get; set; }
-        public string SampD_Status { get; set; }
         public string LabProcTyp_Cod { get; set; }
         public string LabProcTyp_Name { get; set; }
         public string LabProcTyp_Desc { get; set; }
@@ -31,22 +44,12 @@ namespace SGC.Entities.Entities.CM.Laboratory
         public string SampOrig_Cod { get; set; }
         public string SampOrig_Module { get; set; }
         public string SampOrig_Desc { get; set; }
-        public int? SampH_ID { get; set; }
-        public int? Company_ID { get; set; }
-        public string SampH_NO { get; set; }
-        public string SampH_Type { get; set; }
-        public int? BatchM_ID { get; set; }
+        public DateTime? SampD_RecLab_Date { get; set; }
+        public string SampD_RecLab_Oper { get; set; }
+        public string SampD_Status { get; set; }
         public string BatchM_Lote_New { get; set; }
         public int? Scales_ID { get; set; }
         public int? AnalReq_ID { get; set; }
         public string AnalReq_Desc { get; set; }
-        public string SampH_Desc { get; set; }
-        public string SampH_Refer { get; set; }
-        public string SampH_Status_Cod { get; set; }
-        public string Creation_User { get; set; }
-        public DateTime? Creation_Date { get; set; }
-        public string Modified_User { get; set; }
-        public DateTime? Modified_Date { get; set; }
-        public string SampH_Status { get; set; }
     }
 }
