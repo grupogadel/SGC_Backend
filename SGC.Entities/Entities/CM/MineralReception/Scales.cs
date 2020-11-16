@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.Entities.Entities.CM.DataMaster;
 using SGC.Entities.Entities.XX.Operations.Mining;
+using SGC.Entities.Entities.XX.Entity;
 
 namespace SGC.Entities.Entities.CM.MineralReception
 {
@@ -15,6 +16,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public int Scales_ID { get; set; }
         public int Vendor_ID { get; set; }
         public int Company_ID { get; set; }
+        public int Period_ID { get; set; }
         public string Scales_Lote { get; set; }
         public string Scales_SubLote { get; set; }
         public int MinType_ID { get; set; }
@@ -55,5 +57,6 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public Collector Collectors { get; set; }
         public WorkShifts WorkShifts { get; set; }
         public Vendor Vendors { get; set; }
+        public Period Periods { get; set; }
     }
 }

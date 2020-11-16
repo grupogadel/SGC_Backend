@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.DataMaster;
 using SGC.Entities.Entities.CM.DataMaster.Commercial;
 using SGC.Entities.Entities.CM.MineralReception;
+using SGC.Entities.Entities.XX.Entity;
 using SGC.Entities.Entities.XX.Operations.Mining;
 using SGC.InterfaceServices.CM.MineralReception;
 using System;
@@ -193,6 +194,7 @@ namespace SGC.Services.CM.MineralReception
                 Scales_ID = (int)reader["Scales_ID"],
                 Vendor_ID = (int)reader["Vendor_ID"],
                 Company_ID = (int)reader["Company_ID"],
+                Period_ID = (int)reader["Period_ID"],
                 Scales_Lote = reader["Scales_Lote"].ToString(),
                 Scales_SubLote = reader["Scales_SubLote"].ToString(),
                 MinType_ID = (int)reader["MinType_ID"],
@@ -270,6 +272,11 @@ namespace SGC.Services.CM.MineralReception
                     Vendor_Desc = reader["Vendor_Desc"].ToString(),
                     Vendor_LastName = reader["Vendor_LastName"].ToString(),
                     Vendor_SurName = reader["Vendor_SurName"].ToString(),
+                },
+                Periods =new Period
+                {
+                    Period_ID = (int)reader["Period_ID"],
+                    Period_Cod = reader["Period_Cod"].ToString(),
                 }
             };
         }
@@ -283,6 +290,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.CommandText = "[CM].Scales_Add";
                 cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
+                cmd.Parameters.Add(new SqlParameter("@Period_ID", model.Period_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", model.Scales_Lote));
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
@@ -401,6 +409,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_ID", model.Scales_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
+                cmd.Parameters.Add(new SqlParameter("@Period_ID", model.Period_ID));
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", model.Scales_Lote));
                 cmd.Parameters.Add(new SqlParameter("@Scales_SubLote", model.Scales_SubLote));
                 cmd.Parameters.Add(new SqlParameter("@MinType_ID", model.MinType_ID));
