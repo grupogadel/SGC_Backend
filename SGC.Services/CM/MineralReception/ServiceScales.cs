@@ -50,6 +50,9 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["scales_Lote"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Zone", obj["zone"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Proveedor", obj["proveedor"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Period_NO", obj["periodNO"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
                 await conn.OpenAsync();
@@ -91,7 +94,8 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Scales_Lote", obj["scales_Lote"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
-                cmd.Parameters.Add(new SqlParameter("@Zone", obj["zone"].ToObject<string>()));
+                //cmd.Parameters.Add(new SqlParameter("@Zone", obj["zone"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Period_NO", obj["periodNO"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
                 await conn.OpenAsync();
@@ -277,6 +281,7 @@ namespace SGC.Services.CM.MineralReception
                 {
                     Period_ID = (int)reader["Period_ID"],
                     Period_Cod = reader["Period_Cod"].ToString(),
+                    Period_NO = reader["Period_NO"].ToString(),
                 }
             };
         }
