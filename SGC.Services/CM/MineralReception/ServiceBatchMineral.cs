@@ -65,6 +65,36 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
+        public async Task<List<BatchMineral>> GetAllNoHumidity(int idCompany)
+        {
+            var response = new List<BatchMineral>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].BatchMineral_GetAllNoHumidity";
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToBatchMineral(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
         public async Task<List<BatchMineral>> Search(JObject obj)
         {
             var response = new List<BatchMineral>();
@@ -179,7 +209,7 @@ namespace SGC.Services.CM.MineralReception
                 Humiditys = new Humidity
                 {
                     Hum_ID = reader["Hum_ID"]==DBNull.Value?0:(int)reader["Hum_ID"],
-                    Hum_Cod = reader["Hum_Cod"]==DBNull.Value?null:reader["Hum_Cod"].ToString(),
+                    //Hum_Cod = reader["Hum_Cod"]==DBNull.Value?null:reader["Hum_Cod"].ToString(),
                     Hum_PorcH2O = reader["Hum_PorcH2O"]==DBNull.Value? (decimal?)null : (decimal)reader["Hum_PorcH2O"],
                 },
                 //LeyMineralHeads = new LeyMineralHead

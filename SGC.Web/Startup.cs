@@ -44,6 +44,8 @@ using SGC.InterfaceServices.CM.Commercial.Advance;
 using SGC.Services.CM.Commercial.Advance;
 using SGC.Services.CM.Commercial.Settlement;
 using SGC.InterfaceServices.CM.Commercial.Settlement;
+using SGC.InterfaceServices.CM.CollectorControl;
+using SGC.Services.CM.CollectorControl;
 
 namespace SGC.Web
 {
@@ -116,6 +118,7 @@ namespace SGC.Web
 			services.AddScoped<IServiceAdvance, ServiceAdvance>();
             services.AddScoped<IServiceManagementBatchMineral, ServiceManagementBatchMineral>();
             services.AddScoped<IServiceCommercialBatchManagement, ServiceCommercialBatchManagement>();
+            services.AddScoped<IServiceExpHead, ServiceExpHead>();
 
             services.AddCors(options =>
             {

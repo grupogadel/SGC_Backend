@@ -32,6 +32,21 @@ namespace SGC.Web.Controllers.CM.MineralReception
             }
         }
 
+        // GET: api/BatchMineral/GetAllNoHumidity
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetAllNoHumidity(int id)
+        {
+            try
+            {
+                var result = await this._batchMineralService.GetAllNoHumidity(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // GET: api/BatchMineral/Search/{}
         [HttpPost("[action]")]
         public async Task<IActionResult> Search(JObject obj)

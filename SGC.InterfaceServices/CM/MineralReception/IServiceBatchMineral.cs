@@ -10,6 +10,7 @@ namespace SGC.InterfaceServices.CM.MineralReception
     public interface IServiceBatchMineral
     {
         Task<List<BatchMineral>> GetAll(int id);
+        Task<List<BatchMineral>> GetAllNoHumidity(int id);
         int Add(BatchMineral model);
         int Update(BatchMineral model);
         int Delete(JObject obj);

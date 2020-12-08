@@ -62,20 +62,20 @@ namespace SGC.Web.Controllers.FI.DataMaster
             }
         }
 
-        // POST: api/Humidity/SampleNoHumidity
-        [HttpPost("[action]")]
-        public async Task<IActionResult> SampleNoHumidity([FromBody] JObject obj)
-        {
-            try
-            {
-                var result = await this._humidityService.SampleNoHumidity(obj);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //// POST: api/Humidity/SampleNoHumidity
+        //[HttpPost("[action]")]
+        //public async Task<IActionResult> SampleNoHumidity([FromBody] JObject obj)
+        //{
+        //    try
+        //    {
+        //        var result = await this._humidityService.SampleNoHumidity(obj);
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
 
     }
 }

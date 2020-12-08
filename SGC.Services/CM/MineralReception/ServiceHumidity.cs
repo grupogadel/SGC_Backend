@@ -20,45 +20,50 @@ namespace SGC.Services.CM.MineralReception
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        private SampleHead MapToHumidity(SqlDataReader reader)
+        private BatchMineral MapToBatchMineral(SqlDataReader reader)
         {
-            return new SampleHead()
+            return new BatchMineral()
             {
-                SampH_ID = (int)reader["SampH_ID"],
+                BatchM_ID = (int)reader["BatchM_ID"],
+
+                Hum_ID = reader["Hum_ID"] == DBNull.Value ? new int?() : (int)reader["Hum_ID"],
+
+                BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
+                Creation_User = reader["Creation_User"].ToString(),
+                Creation_Date = (DateTime)reader["Creation_Date"],
+                Modified_User = reader["Modified_User"].ToString(),
+                Modified_Date = (DateTime)reader["Modified_Date"],
+                BatchM_Status = reader["BatchM_Status"].ToString(),
+
                 //BatchMineral = new BatchMineral { BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"], 
                 //            Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
                 //},  
-                //Humidity = new Humidity {
-                //    Hum_ID = (int)reader["Hum_ID"],
-                //    Company_ID = (int)reader["Company_ID"],
-                //    Hum_Cod = reader["Hum_Cod"].ToString(),
-                //    Hum_FirstWeig = (decimal)reader["Hum_FirstWeig"],
-                //    Hum_EndWeig = (decimal)reader["Hum_EndWeig"],
-                //    Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"],
-                //    Creation_User = reader["Creation_User"].ToString(),
-                //    Creation_Date = (DateTime)reader["Creation_Date"],
-                //    Modified_User = reader["Modified_User"].ToString(),
-                //    Modified_Date = (DateTime)reader["Modified_Date"],
-                //    Hum_Status = reader["Hum_Status"].ToString(),
-                //}
+              
             };
         }
 
-        private SampleHead MapToNoHumidity(SqlDataReader reader)
+        private Humidity MapToHumidity(SqlDataReader reader)
         {
-            return new SampleHead()
+            return new Humidity()
             {
-                SampH_ID = (int)reader["SampH_ID"],
-                //BatchMineral = new BatchMineral
-                //{
-                //    BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"],
-                //    Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
-                //}
+                    Hum_ID = (int)reader["Hum_ID"],
+                    Company_ID = (int)reader["Company_ID"],
+                    //Hum_Cod = reader["Hum_Cod"].ToString(),
+                    Hum_FirstWeig = (decimal)reader["Hum_FirstWeig"],
+                    Hum_EndWeig = (decimal)reader["Hum_EndWeig"],
+                    Hum_PorcH2O = (decimal)reader["Hum_PorcH2O"],
+                    Creation_User = reader["Creation_User"].ToString(),
+                    Creation_Date = (DateTime)reader["Creation_Date"],
+                    Modified_User = reader["Modified_User"].ToString(),
+                    Modified_Date = (DateTime)reader["Modified_Date"],
+                    Hum_Status = reader["Hum_Status"].ToString(),
             };
         }
+
+
 
         // POST: api/Humidity/Add
-        public int Add(JObject obj)
+        public  int Add(JObject obj)
         {
             try
             {
@@ -73,7 +78,7 @@ namespace SGC.Services.CM.MineralReception
                 cmd.Parameters.Add(new SqlParameter("@Hum_EndWeig", humidity.Hum_EndWeig));
                 cmd.Parameters.Add(new SqlParameter("@Hum_PorcH2O", humidity.Hum_PorcH2O));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", humidity.Creation_User));
-                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["sampH_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@BatchM_ID", obj["batchM_ID"].ToObject<int>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -81,7 +86,6 @@ namespace SGC.Services.CM.MineralReception
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
-
                 return resul;
             }
             catch (Exception e)
@@ -101,6 +105,7 @@ namespace SGC.Services.CM.MineralReception
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Humidity_Update";
+                if (model.Hum_PorcH2O is null) model.Hum_PorcH2O = 0;
                 cmd.Parameters.Add(new SqlParameter("@Hum_ID", model.Hum_ID));
                 cmd.Parameters.Add(new SqlParameter("@Hum_FirstWeig", model.Hum_FirstWeig));
                 cmd.Parameters.Add(new SqlParameter("@Hum_EndWeig", model.Hum_EndWeig));
@@ -151,41 +156,41 @@ namespace SGC.Services.CM.MineralReception
         }
 
 
-        public async Task<List<SampleHead>> SampleNoHumidity(JObject obj)
-        {
-            var response = new List<SampleHead>();
+        //public async Task<List<SampleHead>> SampleNoHumidity(JObject obj)
+        //{
+        //    var response = new List<SampleHead>();
 
-            try
-            {
-                SqlConnection conn = new SqlConnection(_context);
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].Sample_No_Humidity";
+        //    try
+        //    {
+        //        SqlConnection conn = new SqlConnection(_context);
+        //        SqlCommand cmd = conn.CreateCommand();
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        cmd.CommandText = "[CM].Sample_No_Humidity";
                
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+        //        cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
 
-                await conn.OpenAsync();
-                using (var reader = await cmd.ExecuteReaderAsync())
-                {
-                    while (await reader.ReadAsync())
-                    {
-                        response.Add(MapToNoHumidity(reader));
-                    }
-                }
-                await conn.CloseAsync();
-                return response;
-            }
-            catch (Exception e)
-            {
-                return response;// 
-                throw e;
-            }
-        }
+        //        await conn.OpenAsync();
+        //        using (var reader = await cmd.ExecuteReaderAsync())
+        //        {
+        //            while (await reader.ReadAsync())
+        //            {
+        //                response.Add(MapToNoHumidity(reader));
+        //            }
+        //        }
+        //        await conn.CloseAsync();
+        //        return response;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return response;// 
+        //        throw e;
+        //    }
+        //}
 
 
-        public async Task<List<SampleHead>> Search(JObject obj)
+        public async Task<List<BatchMineral>> Search(JObject obj)
         {
-            var response = new List<SampleHead>();
+            var response = new List<BatchMineral>();
 
             try
             {
@@ -193,25 +198,81 @@ namespace SGC.Services.CM.MineralReception
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Humidity_Search";
-                DateTime fecha = new DateTime();
-                bool byMonth = false;
-                if (obj["date"].ToObject<string>() != "") fecha = obj["date"].ToObject<DateTime>();
-                else { byMonth = true; fecha = DateTime.Now; }
+                bool rank = false;
+                if (obj["dateTo"].ToObject<DateTime>() == obj["dateFrom"].ToObject<DateTime>()) rank = false;
+                else rank = true;
 
-                cmd.Parameters.Add(new SqlParameter("@Fecha", fecha));
-                cmd.Parameters.Add(new SqlParameter("@ByMonth", byMonth));
+                cmd.Parameters.Add(new SqlParameter("@DateFrom", obj["dateFrom"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@DateTo", obj["dateTo"].ToObject<DateTime>()));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Codigo", obj["codigo"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToHumidity(reader));
+                        response.Add(MapToBatchMineral(reader));
                     }
                 }
                 await conn.CloseAsync();
+
+                return await GetHumidityMinerals(response);
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
+    public async Task<Humidity> GetHumidity(int hum_ID)
+    {
+        var response = new Humidity();
+
+        try
+        {
+            SqlConnection conn = new SqlConnection(_context);
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "[CM].Humidity_Get";
+
+            cmd.Parameters.Add(new SqlParameter("@Hum_ID", hum_ID));
+
+            await conn.OpenAsync();
+            using (var reader = await cmd.ExecuteReaderAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    response = MapToHumidity(reader);
+                }
+            }
+            await conn.CloseAsync();
+
+            return response;
+        }
+        catch (Exception e)
+        {
+            return response;// 
+            throw e;
+        }
+    }
+
+        public async Task<List<BatchMineral>> GetHumidityMinerals(List<BatchMineral> temp )
+        {
+            var response = new List<BatchMineral>();
+            try
+            {
+                foreach (BatchMineral element in temp)
+                {
+                    if (element.Hum_ID == null) element.Humiditys = new Humidity();
+                    else {
+                        element.Humiditys = await GetHumidity((int)element.Hum_ID);
+                    } 
+                }
+
+                response = temp;
                 return response;
             }
             catch (Exception e)
@@ -220,5 +281,6 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
+
     }
 }
