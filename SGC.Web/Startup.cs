@@ -69,8 +69,8 @@ namespace SGC.Web
             services.AddScoped<IServiceCompany, ServiceCompany>();
             services.AddScoped<IServiceDistrict, ServiceDistrict>();
             services.AddScoped<IServiceProvince, ServiceProvince>();
-            services.AddScoped<IServiceUser, ServiceUser>();
-            services.AddScoped<IServicePosition, ServicePosition>();
+            //services.AddScoped<IServiceUser, ServiceUser>();
+            //services.AddScoped<IServicePosition, ServicePosition>();
             services.AddScoped<IServiceCurrency, ServiceCurrency>();
             services.AddScoped<IServicePeriod, ServicePeriod>();
             services.AddScoped<IServiceOrigin, ServiceOrigin>();
@@ -119,6 +119,8 @@ namespace SGC.Web
             services.AddScoped<IServiceManagementBatchMineral, ServiceManagementBatchMineral>();
             services.AddScoped<IServiceCommercialBatchManagement, ServiceCommercialBatchManagement>();
             services.AddScoped<IServiceExpHead, ServiceExpHead>();
+            services.AddScoped<IServiceModule, ServiceModule>();
+			services.AddScoped<IServicePosition, ServicePosition>();
 
             services.AddCors(options =>
             {
