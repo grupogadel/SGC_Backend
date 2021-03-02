@@ -9,6 +9,7 @@ namespace SGC.InterfaceServices.WK
 {
     public interface IServicePosition
     {
+		Task<List<Position>> GetAll();
         int Add(Position model);
         int Update(Position model);
 		Task<List<Position>> Search(JObject obj);

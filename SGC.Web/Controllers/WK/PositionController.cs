@@ -17,6 +17,21 @@ namespace SGC.Web.Controllers.CM.DataMaster
         {
             this._positionService = positionService;
         }
+		
+		// GET: api/Position/GetAll/
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var result = await this._positionService.GetAll();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         // POST api/Position/Add/
         [HttpPost("[action]")]

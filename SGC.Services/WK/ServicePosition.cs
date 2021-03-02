@@ -40,6 +40,35 @@ namespace SGC.Services.WK
             };
         }
 		
+		public async Task<List<Position>> GetAll()
+        {
+            var response = new List<Position>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[WK].Position_GetAll";
+               
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToPosition(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response; 
+                throw e;
+            }
+        }
+		
 		public async Task<List<Position>> Search(JObject obj)
         {
             var response = new List<Position>();
