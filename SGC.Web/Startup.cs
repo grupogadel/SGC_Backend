@@ -120,6 +120,7 @@ namespace SGC.Web
             services.AddScoped<IServiceModule, ServiceModule>();
 			services.AddScoped<IServicePosition, ServicePosition>();
 			services.AddScoped<IServiceUserAccount, ServiceUserAccount>();
+			services.AddScoped<IServicePerson, ServicePerson>();
 
             services.AddCors(options =>
             {
