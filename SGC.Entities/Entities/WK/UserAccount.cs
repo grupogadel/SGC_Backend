@@ -1,5 +1,6 @@
 ﻿using SGC.Entities.Entities.WK;
 using System;
+using SGC.Entities.Entities.XX.Entity;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -26,6 +27,9 @@ namespace SGC.Entities.Entities.WK
 		public string Person_Email { get; set; }
 
         public List<UserPosition> UserPositions { get;  set;}
+
+        public List<Company> Company { get; set; }
+
 
         public UserAccount()
         {

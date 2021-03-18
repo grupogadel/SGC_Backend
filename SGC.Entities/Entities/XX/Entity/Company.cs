@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using SGC.Entities.Entities.XX.Finance;
+using SGC.Entities.Entities.WK;
 
 namespace SGC.Entities.Entities.XX.Entity
 {
@@ -10,6 +11,7 @@ namespace SGC.Entities.Entities.XX.Entity
     {
         [Key]
         public int Company_ID { get; set; }
+        public int Index { get; set; }
         public int? Company_Father_ID { get; set; }
         public string Company_Cod { get; set; }
         public string Company_Name { get; set; }
@@ -30,6 +32,6 @@ namespace SGC.Entities.Entities.XX.Entity
         public virtual Currency Currency_Loc { get; set; }
         public virtual Country Country { get; set; }
         public virtual Region Region { get; set; }
-
+        public List<Position> Position { get; set; }
     }
 }
