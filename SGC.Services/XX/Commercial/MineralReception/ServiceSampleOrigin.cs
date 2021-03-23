@@ -59,6 +59,7 @@ namespace SGC.Services.XX.Commercial.MineralReception
                 SampOrig_AreaDesc = reader["SampOrig_AreaDesc"].ToString(),
                 SampOrig_Cod = reader["SampOrig_Cod"].ToString(),
                 SampOrig_Module = reader["SampOrig_Module"].ToString(),
+				SampOrig_Name = reader["SampOrig_Name"].ToString(),
                 SampOrig_Desc = reader["SampOrig_Desc"].ToString(),
                 SampOrig_ExgTab = (bool) reader["SampOrig_ExgTab"],
                 Creation_User = reader["Creation_User"].ToString(),
