@@ -66,5 +66,33 @@ namespace SGC.Web.Controllers.CM.DataMaster
                 throw ex;
             }
         }
+
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> LinkedAccesses(int id)
+        {
+            try
+            {
+                var result = await this._positionService.LinkedAccesses(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> UnlinkedAccesses(int id)
+        {
+            try
+            {
+                var result = await this._positionService.UnlinkedAccesses(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

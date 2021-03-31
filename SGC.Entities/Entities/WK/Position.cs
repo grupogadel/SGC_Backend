@@ -22,5 +22,6 @@ namespace SGC.Entities.Entities.WK
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string Position_Status { get; set; }
+        public List<AccessPosition> AccessPosition { get; set; }
     }
 }

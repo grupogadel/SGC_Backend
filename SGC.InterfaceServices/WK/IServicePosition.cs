@@ -13,5 +13,7 @@ namespace SGC.InterfaceServices.WK
         int Add(Position model);
         int Update(Position model);
 		Task<List<Position>> Search(JObject obj);
+		Task<List<AccessPosition>> UnlinkedAccesses(int idPosition);
+		Task<List<AccessPosition>> LinkedAccesses(int idPosition);
     }
 }
