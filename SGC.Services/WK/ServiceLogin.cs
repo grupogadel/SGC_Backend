@@ -343,7 +343,7 @@ namespace SGC.Services.WK
                 Id = (int)reader["Module_ID"],
                 Name = reader["Module_Name"].ToString(),
                 Icon = "fa fa-folder-open",
-                Url = "",
+                Url = reader["Module_Name"].ToString(),
                 Module_Father = reader["Module_Father"] == DBNull.Value ? new int?() : (int)reader["Module_Father"],
             };
         }
