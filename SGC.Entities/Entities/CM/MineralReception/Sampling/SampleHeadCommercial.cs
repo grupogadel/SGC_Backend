@@ -18,6 +18,7 @@ namespace SGC.Entities.Entities.CM.MineralReception.Sampling
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string SampH_Status_Cod { get; set; }
+        public string SampH_Reason { get; set; }
         public string SampH_Status { get; set; }
         public BatchMineral BatchMinerals { get; set; }
         public List<SampleDetailsCommercial> SampleDetailsCommercials { get; set; }

@@ -106,6 +106,7 @@ namespace SGC.Services.CM.MineralReception.Sampling
                     }
                 },
                 SampH_Status_Cod = reader["SampH_Status_Cod"].ToString(),
+                SampH_Reason = reader["SampH_Reason"].ToString(),
                 SampH_Status = reader["SampH_Status"].ToString()
             };
         }
@@ -225,6 +226,7 @@ namespace SGC.Services.CM.MineralReception.Sampling
                 cmd.CommandText = "[CM].SampleCommercial_Delete";
                 cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Reason", obj["reason"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
