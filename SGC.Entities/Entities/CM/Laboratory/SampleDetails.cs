@@ -23,6 +23,7 @@ namespace SGC.Entities.Entities.CM.Laboratory
         public int MatType_ID { get; set; }
         public int MinFrom_ID { get; set; }
         public decimal SampD_Weight { get; set; }
+        public DateTime? SampD_RecLab_Date { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }

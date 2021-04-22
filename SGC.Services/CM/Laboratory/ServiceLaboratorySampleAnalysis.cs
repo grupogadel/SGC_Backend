@@ -62,8 +62,17 @@ namespace SGC.Services.CM.Laboratory
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Sample_Search";
                 bool rank = false;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime)  && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                }
+
                 if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>()) rank = false;
-                else rank = true;       
+                else rank = true;
 
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
@@ -86,7 +95,7 @@ namespace SGC.Services.CM.Laboratory
             }
             catch (Exception e)
             {
-                return response;
+                return response;    
                 throw e;
             }
         }
@@ -444,6 +453,7 @@ namespace SGC.Services.CM.Laboratory
                     SampOrig_ID = (int)reader["SampOrig_ID"],
                     MatType_ID = (int)reader["MatType_ID"],
                     MinFrom_ID = (int)reader["MinFrom_ID"],
+                    SampD_RecLab_Date = (DateTime)reader["SampD_RecLab_Date"],
                     SampD_Weight = (decimal)reader["SampD_Weight"],
                     Creation_User = reader["Creation_User"].ToString(),
                     Creation_Date = (DateTime)reader["Creation_Date"],
