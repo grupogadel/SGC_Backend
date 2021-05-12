@@ -32,6 +32,8 @@ namespace SGC.Entities.Entities.XX.Commercial.Laboratory
         public decimal? LabS_VolumDesech24 { get; set; }
         public decimal? LabS_VolumDesech48 { get; set; }
         public decimal? LabS_VolumDesech72 { get; set; }
+        public decimal? LabS_AUFinos_Fact1 { get; set; }
+        public decimal? LabS_AUGrueso_Fact1 { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }

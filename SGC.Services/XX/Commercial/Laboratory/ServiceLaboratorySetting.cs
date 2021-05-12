@@ -78,6 +78,8 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 LabS_VolumDesech24 = (decimal)reader["LabS_VolumDesech24"],
                 LabS_VolumDesech48 = (decimal)reader["LabS_VolumDesech48"],
                 LabS_VolumDesech72 = (decimal)reader["LabS_VolumDesech72"],
+                LabS_AUFinos_Fact1 = (decimal)reader["LabS_AUFinos_Fact1"],
+                LabS_AUGrueso_Fact1 = (decimal)reader["LabS_AUGrueso_Fact1"],
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
@@ -274,5 +276,36 @@ namespace SGC.Services.XX.Commercial.Laboratory
             }
         }
 
+        public LaboratorySetting GetUsed(int id)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].LaboratorySetting_GetUsed";
+
+                cmd.Parameters.Add(new SqlParameter("@LabS_ID", id));
+
+                LaboratorySetting response = null;
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        response = MapToLaboratorySetting(reader);
+                    }
+                }
+                conn.Close();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return null;
+                throw e;
+            }
+        }
     }
 }

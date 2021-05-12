@@ -16,6 +16,8 @@ namespace SGC.Entities.Entities.CM.Laboratory
         public int? LeyMH_ID { get; set; }
         public int? ConsuH_ID { get; set; }
         public int? RecovH_ID { get; set; }
+        public int? LabS_ID { get; set; }
+        public int? MetSet_ID { get; set; }
         public string SampD_NO { get; set; }
         public int LabProcTyp_ID { get; set; }
         public int AnalType_ID { get; set; }

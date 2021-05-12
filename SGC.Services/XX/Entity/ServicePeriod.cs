@@ -47,7 +47,37 @@ namespace SGC.Services.XX.Entity
             };
         }
 
-        // POST: api/Period/Add
+        public async Task<int> AddAllPeriods(JObject obj)
+        {
+            try
+            {
+                List<MPeriod> mPeriods = new List<MPeriod>();
+                Period period = new Period();
+                var confirmationAdd = -1;
+                    
+                mPeriods = await this.GetAllPeriods();
+                
+                foreach (MPeriod mPeriod in mPeriods)
+                {
+                    period.Period_Cod = mPeriod.MPeriod_Cod;
+                    period.Company_ID = obj["company_ID"].ToObject<int>();
+                    period.Period_Year = obj["year"].ToObject<string>();
+                    period.Period_Date_Start = new DateTime(obj["year"].ToObject<int>(), Convert.ToInt32(mPeriod.MPeriod_Month), 1);
+                    period.Period_Date_End = period.Period_Date_Start.AddMonths(1).AddDays(-1);
+                    period.Creation_User = obj["creation_User"].ToObject<string>();
+                    confirmationAdd =  this.Add(period);
+                    if (confirmationAdd == -1) break;
+                }
+                return confirmationAdd;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
         public int Add(Period model)
         {
             try
@@ -67,7 +97,6 @@ namespace SGC.Services.XX.Entity
 
                 conn.Open();
                 var resul = cmd.ExecuteNonQuery();
-                resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
                 return resul;
@@ -207,6 +236,50 @@ namespace SGC.Services.XX.Entity
                 throw e;
             }
         }
+
+        public async Task<List<MPeriod>> GetAllPeriods()
+        {
+            var response = new List<MPeriod>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].MPeriod_GetAll";
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToMPeriod(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return new List<MPeriod>();
+                throw e;
+            }
+        }
+
+        private MPeriod MapToMPeriod(SqlDataReader reader)
+        {
+            return new MPeriod()
+            {
+                MPeriod_ID = (int)reader["MPeriod_ID"],
+                MPeriod_Cod = reader["MPeriod_Cod"].ToString(),
+                MPeriod_Name = reader["MPeriod_Name"].ToString(),
+                MPeriod_Name2 = reader["MPeriod_Name2"].ToString(),
+                MPeriod_Desc = reader["MPeriod_Desc"].ToString(),
+                MPeriod_Month = reader["MPeriod_Month"].ToString(),
+                MPeriod_Status = reader["MPeriod_Status"].ToString(),
+            };
+        }
+
 
     }
 

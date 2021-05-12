@@ -10,7 +10,7 @@ namespace SGC.InterfaceServices.XX.Entity
 {
     public interface IServicePeriod
     {
-        int Add(Period model);
+        Task<int> AddAllPeriods(JObject data);
         int Update(Period model);
         int ChangeStatus(JObject obj);
         Period Get(JObject obj);

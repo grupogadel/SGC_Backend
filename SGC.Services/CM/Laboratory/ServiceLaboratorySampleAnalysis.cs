@@ -110,8 +110,9 @@ namespace SGC.Services.CM.Laboratory
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].[LeyMineral_Add]";
-
+                //SampleDetail
                 cmd.Parameters.Add(new SqlParameter("@SampD_ID", obj["sampD_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@LabS_ID", obj["labS_ID"].ToObject<int>()));
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@LeyMH_FinishAu", model.LeyMH_FinishAu));
@@ -351,7 +352,7 @@ namespace SGC.Services.CM.Laboratory
             {
                 LeyMD_ID = (int)reader["LeyMD_ID"],
                 LeyMH_ID = (int)reader["LeyMH_ID"],
-                LeyMD_BK = reader["LeyMD_BK"].ToString(),
+                LeyMD_BK = (decimal)reader["LeyMD_BK"],
                 LeyMD_PMFino = (decimal)reader["LeyMD_PMFino"],
                 LeyMD_PMGrueso = (decimal)reader["LeyMD_PMGrueso"],
                 LeyMD_PesoAu_Ag = (decimal)reader["LeyMD_PesoAu_Ag"],
@@ -379,7 +380,7 @@ namespace SGC.Services.CM.Laboratory
             try
             {
                 DataTable table = new DataTable("dbo.tabLeyMineralDetail");
-                table.Columns.Add("LeyMD_BK", typeof(string));
+                table.Columns.Add("LeyMD_BK", typeof(decimal));
                 table.Columns.Add("LeyMD_PMFino", typeof(decimal));
                 table.Columns.Add("LeyMD_PMGrueso", typeof(decimal));
                 table.Columns.Add("LeyMD_PesoAu_Ag", typeof(decimal));
@@ -447,6 +448,8 @@ namespace SGC.Services.CM.Laboratory
                     LeyMH_ID = reader["LeyMH_ID"] == DBNull.Value ? new int?() : (int)reader["LeyMH_ID"],
                     ConsuH_ID = reader["ConsuH_ID"] == DBNull.Value ? new int?() : (int)reader["ConsuH_ID"],
                     RecovH_ID = reader["RecovH_ID"] == DBNull.Value ? new int?() : (int)reader["RecovH_ID"],
+                    LabS_ID = reader["LabS_ID"] == DBNull.Value ? new int?() : (int)reader["LabS_ID"],
+                    MetSet_ID = reader["MetSet_ID"] == DBNull.Value ? new int?() : (int)reader["MetSet_ID"],
                     SampD_NO = reader["SampD_NO"].ToString(),
                     LabProcTyp_ID = (int)reader["LabProcTyp_ID"],
                     AnalType_ID = (int)reader["AnalType_ID"],

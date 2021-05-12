@@ -24,12 +24,12 @@ namespace SGC.Web.Controllers.XX
         }
 
 
-        // POST api/Period/Add/
-        [HttpPost("[action]")]
-        public IActionResult Add([FromBody] Period model)
+        // POST api/Period/AddAllPeriods/
+        [HttpPost("[action]")]  
+        public IActionResult Add([FromBody] JObject data)
         {
             return Ok(
-                _periodService.Add(model)
+                _periodService.AddAllPeriods(data)
             );
         }
 

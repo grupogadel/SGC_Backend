@@ -89,5 +89,19 @@ namespace SGC.Web.Controllers.XX.Commercial.Laboratory
             }
         }
 
+        [HttpGet("[action]/{id}")]
+        public IActionResult GetUsed(int id)
+        {
+            try
+            {
+                var result = this._laboratorySettingService.GetUsed(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

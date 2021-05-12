@@ -14,7 +14,7 @@ namespace SGC.Entities.Entities.CM.Laboratory
 
         public int LeyMD_ID { get; set; }
         public int LeyMH_ID { get; set; }
-        public string LeyMD_BK { get; set; }
+        public decimal LeyMD_BK { get; set; }
         public decimal LeyMD_PMFino { get; set; }
         public decimal LeyMD_PMGrueso { get; set; }
         public decimal LeyMD_PesoAu_Ag { get; set; }
