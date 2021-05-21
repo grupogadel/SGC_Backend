@@ -327,6 +327,7 @@ namespace SGC.Services.CM.Laboratory
                     ConsuD_PHLixHrs48 = (decimal)reader["ConsuD_PHLixHrs48"],
                     ConsuD_PHLixHrs72 = (decimal)reader["ConsuD_PHLixHrs72"],
                     ConsuD_OHLixReacAgr0 = (decimal)reader["ConsuD_OHLixReacAgr0"],
+                    ConsuD_OHLixReacAgr2 = (decimal)reader["ConsuD_OHLixReacAgr2"],
                     ConsuD_OHLixReacAgr4 = (decimal)reader["ConsuD_OHLixReacAgr4"],
                     ConsuD_OHLixReacAgr8 = (decimal)reader["ConsuD_OHLixReacAgr8"],
                     ConsuD_OHLixReacAgr12 = (decimal)reader["ConsuD_OHLixReacAgr12"],
