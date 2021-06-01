@@ -764,6 +764,7 @@ namespace SGC.Services.CM.Laboratory
             try
             {
                 DataTable table = new DataTable("dbo.tabRecoveryDetail");
+                table.Columns.Add("RecovD_ID", typeof(int));
                 table.Columns.Add("RecovD_Row", typeof(int));
                 table.Columns.Add("RecovD_Type", typeof(string));
                 table.Columns.Add("RecovD_Solution_Ppn", typeof(decimal));
@@ -774,7 +775,8 @@ namespace SGC.Services.CM.Laboratory
 
 
                 foreach (RecoveryDetail Recov in listRecoveryDetails)
-                    table.Rows.Add(new object[] {   Recov.RecovD_Row,
+                    table.Rows.Add(new object[] {   Recov.RecovD_ID,
+                                                    Recov.RecovD_Row,
                                                     Recov.RecovD_Type,
                                                     Recov.RecovD_Solution_Ppn,
                                                     Recov.RecovD_Solution_Mg,
