@@ -150,5 +150,28 @@ namespace SGC.Web.Controllers.CM
             );
         }
 
+        [HttpPost("[action]")]
+        public IActionResult ConsumeEnd([FromBody] JObject obj)
+        {
+            return Ok(
+                _laboratorySampleAnalysisService.ConsumeEnd(obj)
+            );
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult RecoveryEnd([FromBody] JObject obj)
+        {
+            return Ok(
+                _laboratorySampleAnalysisService.RecoveryEnd(obj)
+            );
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult LeyMineralEnd([FromBody] JObject obj)
+        {
+            return Ok(
+                _laboratorySampleAnalysisService.LeyMineralEnd(obj)
+            );
+        }
     }
 }

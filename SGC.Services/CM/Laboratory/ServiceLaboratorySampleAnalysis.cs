@@ -202,13 +202,12 @@ namespace SGC.Services.CM.Laboratory
         {
             try
             {
+                var response = new LeyMineralHead();
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].LeyMineral_Get";
                 cmd.Parameters.Add(new SqlParameter("@LeyMH_ID", id));
-
-                LeyMineralHead response = null;
 
                 conn.Open();
 
@@ -629,7 +628,6 @@ namespace SGC.Services.CM.Laboratory
                 return -1;
                 throw e;
             }
-
         }
 
         public int UpdateConsume(ConsumeHead model)
@@ -802,12 +800,13 @@ namespace SGC.Services.CM.Laboratory
         {
             try
             {
+                var  response = new RecoveryHead();
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Recovery_Get";
                 cmd.Parameters.Add(new SqlParameter("@RecovH_ID", id));
-                RecoveryHead response = null;
+                
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -911,8 +910,7 @@ namespace SGC.Services.CM.Laboratory
                 RecovH_ID = (int)reader["RecovH_ID"],
                 RecovD_Row = (int)reader["RecovD_Row"],
                 RecovD_Type = reader["RecovD_Type"].ToString(),
-                RecovD_Solution_Ppn = (decimal)reader["RecovD_Solution_" +
-                "Ppn"],
+                RecovD_Solution_Ppn = (decimal)reader["RecovD_Solution_Ppn"],
                 RecovD_Solution_Mg = (decimal)reader["RecovD_Solution_Mg"],
                 RecovD_Desc_Accumul = (decimal)reader["RecovD_Desc_Accumul"],
                 RecovD_W3 = (decimal)reader["RecovD_W3"],
@@ -981,6 +979,89 @@ namespace SGC.Services.CM.Laboratory
                 throw e;
             }
         }
+
+        public int LeyMineralEnd(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].LeyMineral_End";
+                cmd.Parameters.Add(new SqlParameter("@LeyMD_ID", obj["leyMD_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["modified_User"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
+
+        public int ConsumeEnd (JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Consume_End";
+                cmd.Parameters.Add(new SqlParameter("@ConsuH_ID", obj["consuH_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["modified_User"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
+
+        public int RecoveryEnd(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Recovery_End";
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["sampH_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@RecovH_ID", obj["recovH_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["modified_User"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
+
     }
 
 }

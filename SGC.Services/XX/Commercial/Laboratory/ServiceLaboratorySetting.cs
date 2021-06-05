@@ -120,6 +120,8 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech24", model.LabS_VolumDesech24));
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech48", model.LabS_VolumDesech48));
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech72", model.LabS_VolumDesech72));
+                cmd.Parameters.Add(new SqlParameter("@LabS_AUFinos_Fact1", model.LabS_AUFinos_Fact1));
+                cmd.Parameters.Add(new SqlParameter("@LabS_AUGrueso_Fact1", model.LabS_AUGrueso_Fact1));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -170,6 +172,8 @@ namespace SGC.Services.XX.Commercial.Laboratory
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech24", model.LabS_VolumDesech24));
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech48", model.LabS_VolumDesech48));
                 cmd.Parameters.Add(new SqlParameter("@LabS_VolumDesech72", model.LabS_VolumDesech72));
+                cmd.Parameters.Add(new SqlParameter("@LabS_AUFinos_Fact1", model.LabS_AUFinos_Fact1));
+                cmd.Parameters.Add(new SqlParameter("@LabS_AUGrueso_Fact1", model.LabS_AUGrueso_Fact1));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;

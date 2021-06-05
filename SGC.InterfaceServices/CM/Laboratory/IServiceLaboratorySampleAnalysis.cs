@@ -24,5 +24,8 @@ namespace SGC.InterfaceServices.CM.Laboratory
         int AddRecovery(JObject obj);
         int UpdateRecovery(RecoveryHead recoveryHead);
         Task<RecoveryHead> GetRecovery(int id);
+        int LeyMineralEnd(JObject obj);
+        int RecoveryEnd(JObject obj);
+        int ConsumeEnd(JObject obj);
     }
 }
