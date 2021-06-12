@@ -64,6 +64,21 @@ namespace SGC.Web.Controllers.CM.Laboratory
             }
         }
 
+        // POST: api/SampleLaboratory/SearchCommercialLte
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchCommercialLte([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._sampleLaboratoryService.SearchCommercialLte(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // POST: api/SampleLaboratory/GetAllArea
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetAllArea(int id)

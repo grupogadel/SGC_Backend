@@ -14,5 +14,6 @@ namespace SGC.InterfaceServices.CM.Laboratory
         int Add(LaboratoryRecepcion model);
         Task<List<SampleOriginArea>> GetAllArea(int idCompany);
         Task<List<LaboratoryRecep>> Search(JObject obj);
+        Task<List<LaboratoryRecep>> SearchCommercialLte(JObject obj);
     }
 }

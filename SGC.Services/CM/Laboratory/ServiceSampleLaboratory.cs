@@ -35,14 +35,28 @@ namespace SGC.Services.CM.Laboratory
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].LaboratoryRecep_Search";
                 bool rank = false;
-                if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>()) rank = false;
-                else rank = true;
+                DateTime dateTime;
 
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                } else {
+                    rank = true;
+                }
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_From"] = obj["date_To"];
+                    rank = true;
+                }
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_AreaCod", obj["sampOrig_AreaCod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Type", obj["sampH_Type"].ToObject<string>()));
+
                 cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
 
@@ -63,6 +77,63 @@ namespace SGC.Services.CM.Laboratory
                 throw e;
             }
         }
+
+        public async Task<List<LaboratoryRecep>> SearchCommercialLte(JObject obj)
+        {
+            var response = new List<LaboratoryRecep>();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].LaboratoryRecep_SearchSearchCommercialLte";
+                bool rank = false;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                }
+                else
+                {
+                    rank = true;
+                }
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_From"] = obj["date_To"];
+                    rank = true;
+                }
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Type", obj["sampH_Type"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@BatchM_Lote_New", obj["batchM_Lote_New"].ToObject<string>()));
+
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
+
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToSampleLaboratory2(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
         public static string GetNullableString(SqlDataReader reader, string fieldName)
         {
             if (reader[fieldName] == DBNull.Value)
