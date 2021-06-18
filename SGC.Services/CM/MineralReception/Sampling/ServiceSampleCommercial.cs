@@ -138,7 +138,7 @@ namespace SGC.Services.CM.MineralReception.Sampling
                 SampleOrigins = new SampleOrigin{
                     SampOrig_AreaDesc = reader["SampOrig_AreaDesc"].ToString(),
                     SampOrig_Desc = reader["SampOrig_Desc"].ToString(),
-		    SampOrig_Cod = reader["SampOrig_Cod"].ToString()
+		            SampOrig_Cod = reader["SampOrig_Cod"].ToString()
                 },
                 MaterialTypes = new MaterialType{
                     MatType_Name = reader["MatType_Name"].ToString(),

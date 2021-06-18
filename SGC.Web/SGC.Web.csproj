@@ -48,7 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\CM\Commercial\" />
     <Folder Include="Controllers\FI\Accounting\" />
     <Folder Include="Controllers\OP\PlantCIP\" />
     <Folder Include="Controllers\OP\FlotationPlant\" />

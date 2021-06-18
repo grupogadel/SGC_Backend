@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CM\Commercial\" />
     <Folder Include="FI\Accounting\" />
     <Folder Include="OP\PlantCIP\" />
     <Folder Include="OP\FlotationPlant\" />

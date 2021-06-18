@@ -46,6 +46,8 @@ using SGC.Services.CM.Commercial.Settlement;
 using SGC.InterfaceServices.CM.Commercial.Settlement;
 using SGC.InterfaceServices.CM.CollectorControl;
 using SGC.Services.CM.CollectorControl;
+using SGC.InterfaceServices.CM.Commercial.SampleReferential;
+using SGC.Services.CM.Commercial.SampleReferential;
 
 namespace SGC.Web
 {
@@ -123,6 +125,7 @@ namespace SGC.Web
 			services.AddScoped<IServicePerson, ServicePerson>();
 			services.AddScoped<IServiceLogin, ServiceLogin>();
 			services.AddScoped<IServiceAccess, ServiceAccess>();
+            services.AddScoped<IServiceSampleReferential, ServiceSampleReferential>();
 
             services.AddCors(options =>
             {
