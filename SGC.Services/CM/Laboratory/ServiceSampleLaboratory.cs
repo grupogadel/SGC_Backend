@@ -86,7 +86,7 @@ namespace SGC.Services.CM.Laboratory
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[CM].LaboratoryRecep_SearchSearchCommercialLte";
+                cmd.CommandText = "[CM].LaboratoryRecep_SearchCommercialLte";
                 bool rank = false;
                 DateTime dateTime;
 

@@ -36,10 +36,10 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
 
         // POST api/Collector/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] Collector model)
+        public IActionResult Add([FromBody] JObject obj)
         {
             return Ok(
-                _collectorService.Add(model)
+                _collectorService.Add(obj)
             );
         }
 
@@ -74,6 +74,21 @@ namespace SGC.Web.Controllers.CM.DataMaster.Commercial
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        // POST: api/Company/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetDni([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._collectorService.GetDni(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;   
             }
         }
 
