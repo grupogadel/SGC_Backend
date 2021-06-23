@@ -104,5 +104,14 @@ namespace SGC.Web.Controllers.CM.Commercial.SampleReferential
                 throw ex;
             }
         }
+
+        // PUT api/SampleReferential/Approve
+        [HttpPut("[action]")]
+        public IActionResult Approve([FromBody] JObject obj)
+        {
+            return Ok(
+                _sampleReferentialService.Approve(obj)
+            );
+        }
     }
 }

@@ -188,20 +188,20 @@ namespace SGC.Services.CM.Commercial.SampleReferential
                 cmd.CommandText = "[CM].SampleReferential_Add";
                 //Head
                 //cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["SampH_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["Company_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Desc", obj["SampH_Desc"].ToObject<string>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Refer", obj["SampH_Refer"].ToObject<string>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Recep_Date", obj["SampH_Recep_Date"].ToObject<DateTime>()));
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["Collec_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@UserAcc_ID", obj["UserAcc_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Desc", obj["sampH_Desc"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Refer", obj["sampH_Refer"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Recep_Date", obj["sampH_Recep_Date"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["collec_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@UserAcc_ID", obj["userAcc_ID"].ToObject<int>()));
                 //Details
                 //cmd.Parameters.Add(new SqlParameter("@LabProcTyp_ID", obj["LabProcTyp_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["AnalType_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", obj["SampOrig_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@MatType_ID", obj["MatType_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampD_Weight", obj["SampD_Weight"].ToObject<decimal>()));
-                cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["Orig_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Creation_User", obj["Creation_User"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["analType_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", obj["sampOrig_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@MatType_ID", obj["matType_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampD_Weight", obj["sampD_Weight"].ToObject<decimal>()));
+                cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["orig_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Creation_User", obj["creation_User"].ToObject<string>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -230,21 +230,21 @@ namespace SGC.Services.CM.Commercial.SampleReferential
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].SampleReferential_Update";
                 //Head
-                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["SampH_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampD_ID", obj["SampD_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["sampH_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampD_ID", obj["sampD_ID"].ToObject<int>()));
                 //cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["Company_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Desc", obj["SampH_Desc"].ToObject<string>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Refer", obj["SampH_Refer"].ToObject<string>()));
-                cmd.Parameters.Add(new SqlParameter("@SampH_Recep_Date", obj["SampH_Recep_Date"].ToObject<DateTime>()));
-                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["Collec_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Desc", obj["sampH_Desc"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Refer", obj["sampH_Refer"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_Recep_Date", obj["sampH_Recep_Date"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Collec_ID", obj["collec_ID"].ToObject<int>()));
                 //cmd.Parameters.Add(new SqlParameter("@UserAcc_ID", obj["UserAcc_ID"].ToObject<int>()));
                 //Details
-                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["AnalType_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", obj["SampOrig_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@MatType_ID", obj["MatType_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@SampD_Weight", obj["SampD_Weight"].ToObject<decimal>()));
-                cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["Orig_ID"].ToObject<int>()));
-                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["Modified_User"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", obj["analType_ID"].ToObject<int>()));
+                //cmd.Parameters.Add(new SqlParameter("@SampOrig_ID", obj["sampOrig_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@MatType_ID", obj["matType_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampD_Weight", obj["sampD_Weight"].ToObject<decimal>()));
+                cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["orig_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["modified_User"].ToObject<string>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
@@ -391,6 +391,37 @@ namespace SGC.Services.CM.Commercial.SampleReferential
                 return sampleHead;
                 throw e;
             }
+        }
+
+        //PUT: api/SampleReferential/Approve/{}
+        public int Approve(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].SampleReferential_Approve";
+                //Detail
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID",obj["id"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_ApprUser", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
         }
     }
 }

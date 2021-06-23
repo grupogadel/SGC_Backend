@@ -13,5 +13,6 @@ namespace SGC.InterfaceServices.CM.Commercial.SampleReferential
         int Delete(JObject obj);
         List<SampleHeadReferential> Search(JObject obj);
         List<SampleHeadReferential> SearchByApprover(JObject obj);
+        int Approve(JObject obj);
     }
 }
