@@ -82,5 +82,21 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 _rumaService.Get(id)
             );
         }
+
+        // GET: api/Ruma/SearchLote/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchLote(JObject obj)
+        {
+            try
+            {
+                var result = await this._rumaService.SearchLote(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        // GET api
     }
 }

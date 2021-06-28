@@ -15,5 +15,7 @@ namespace SGC.InterfaceServices.CM.MineralReception
         int Delete(JObject obj);
         Ruma Get(int id);
         Task<List<Ruma>> Search(JObject obj);
+        Task<List<BatchMineral>> SearchLote(JObject obj);
+
     }
 }

@@ -37,5 +37,10 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public virtual Humidity Humiditys { get; set; }
         public virtual Scales Scales { get; set; }
         public virtual LeyMineralHead LeyMineralHeads { get; set; }
+        public virtual decimal? LeyMH_FinishAu { get; set; }
+        public virtual decimal? RecovH_AuRecovCalc { get; set; }
+        public DateTime? Scales_DateInp { get; set; }
+        public string Orig_Name { get; set; }
+
     }
 }

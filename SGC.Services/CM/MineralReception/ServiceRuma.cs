@@ -276,5 +276,91 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
+
+
+        public async Task<List<BatchMineral>> SearchLote(JObject obj){
+            var response = new List<BatchMineral>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[OP].Ruma_Search_Lote";
+
+                bool rank = false;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                }
+                else
+                {
+                    rank = true;
+                }
+
+                //if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                //{
+                //    obj["date_From"] = obj["date_To"];
+                //    rank = true;
+                //}
+
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Codigo", obj["codigo"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToBatchMineral(reader));
+                    }
+                }
+                await conn.CloseAsync();
+
+               
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
+        private BatchMineral MapToBatchMineral(SqlDataReader reader)
+        {
+            return new BatchMineral()
+            {
+                BatchM_ID = (int)reader["BatchM_ID"],
+                Hum_ID = reader["Hum_ID"] == DBNull.Value ? new int?() : (int)reader["Hum_ID"],
+                BatchM_TMSHist = reader["BatchM_TMSHist"] == DBNull.Value ? (decimal?)null : (decimal)reader["BatchM_TMSHist"],
+                BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
+                Creation_User = reader["Creation_User"].ToString(),
+                Creation_Date = (DateTime)reader["Creation_Date"],
+                Modified_User = reader["Modified_User"].ToString(),
+                Modified_Date = (DateTime)reader["Modified_Date"],
+                BatchM_Status = reader["BatchM_Status"].ToString(),
+
+                Humiditys = new Humidity
+                {
+                    Hum_ID = reader["Hum_ID"] == DBNull.Value ? 0 : (int)reader["Hum_ID"],
+                    Hum_PorcH2O = reader["Hum_PorcH2O"] == DBNull.Value ? (decimal?)null : (decimal)reader["Hum_PorcH2O"],
+                },
+                LeyMH_FinishAu = reader["LeyMH_FinishAu"] == DBNull.Value ? (decimal?)null : (decimal)reader["LeyMH_FinishAu"],
+                RecovH_AuRecovCalc = reader["RecovH_AuRecovCalc"] == DBNull.Value ? (decimal?)null : (decimal)reader["RecovH_AuRecovCalc"],
+                Scales_DateInp = (DateTime)reader["Scales_DateInp"],
+                Orig_Name = reader["Orig_Name"].ToString(),
+            };
+        }
+
+
     }
 }
