@@ -219,6 +219,7 @@ namespace SGC.Services.CM.Commercial.Advance
             {
                 DataTable table = new DataTable("CM.tabAdvanceDetails");
                 table.Columns.Add("AdvanD_ID", typeof(int));
+                table.Columns.Add("AdvanD_Item", typeof(int));
                 table.Columns.Add("BatchM_ID", typeof(int));
                 table.Columns.Add("Zone_ID", typeof(int));
                 table.Columns.Add("Currency_ID", typeof(int));
@@ -228,8 +229,12 @@ namespace SGC.Services.CM.Commercial.Advance
                 table.Columns.Add("AdvanD_Amount", typeof(decimal));
                 table.Columns.Add("AdvanD_Curr", typeof(string));
 
+                int count = 1;
+
                 foreach (AdvanceDetails maqCom in listAdvanceDetails)
+                    
                     table.Rows.Add(new object[] { maqCom.AdvanD_ID,
+                                                  count++,
                                                   maqCom.BatchM_ID,
                                                   maqCom.Zone_ID,
                                                   maqCom.Currency_ID,
@@ -290,6 +295,7 @@ namespace SGC.Services.CM.Commercial.Advance
             {
                 AdvanD_ID = (int)reader["AdvanD_ID"],
                 AdvanH_ID = (int)reader["AdvanH_ID"],
+                AdvanD_Item = (int)reader["AdvanD_Item"],
                 BatchM_ID = (int)reader["BatchM_ID"],
                 BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
                 Zone_ID = (int)reader["Zone_ID"],

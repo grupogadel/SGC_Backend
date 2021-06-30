@@ -333,6 +333,35 @@ namespace SGC.Services.WK
             }
         }
 
+        // DELETE: api/UserAccount/Delete/
+        public int Delete(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[WK].UserAccount_Delete";
+                cmd.Parameters.Add(new SqlParameter("@UserAcc_ID", obj["id"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
+
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
+
     }
 }
 

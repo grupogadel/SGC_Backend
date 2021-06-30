@@ -10,6 +10,7 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         [Key]
         public int AdvanD_ID { get; set; }
         public int AdvanH_ID { get; set; }
+        public int AdvanD_Item { get; set; }
         public int BatchM_ID { get; set; }
         public string BatchM_Lote_New { get; set; }
         public int Zone_ID { get; set; }

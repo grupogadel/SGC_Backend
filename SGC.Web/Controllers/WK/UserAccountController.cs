@@ -95,6 +95,15 @@ namespace SGC.Web.Controllers.WK
             );
         }
 
+        // DELETE api/UserAccount/Delete/{}
+        [HttpDelete("[action]")]
+        public IActionResult Delete([FromBody] JObject obj)
+        {
+            return Ok(
+                _userAccountService.Delete(obj)
+            );
+        }
+
 
     }
 

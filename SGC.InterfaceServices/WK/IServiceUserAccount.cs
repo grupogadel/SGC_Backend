@@ -16,6 +16,7 @@ namespace SGC.InterfaceServices.WK
         int Add(JObject obj);
         int Update(UserAccount model);
         int UpdateUserPosition(UserAccount model);
+        int Delete(JObject obj);
         
     }
 }
