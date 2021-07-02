@@ -133,7 +133,6 @@ namespace SGC.Services.CM.MineralReception
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[OP].Ruma_Add";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
-                cmd.Parameters.Add(new SqlParameter("@Ruma_NO", model.Ruma_NO));
                 cmd.Parameters.Add(new SqlParameter("@Ruma_Desc", model.Ruma_Desc));
                 cmd.Parameters.Add(new SqlParameter("@MatType_ID", model.MatType_ID));
                 cmd.Parameters.Add(new SqlParameter("@Ruma_Date", model.Ruma_Date));
@@ -169,7 +168,7 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
-        private DataTable GetLotes(List<int> lstLotes)
+        private DataTable GetLotes(List<BatchMineral> lstLotes)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID_Lote", typeof(int));
@@ -177,8 +176,8 @@ namespace SGC.Services.CM.MineralReception
             //{
             //    dt.Rows.Add(i);
             //}
-            foreach (int idLote in lstLotes)
-                dt.Rows.Add(idLote);
+            foreach (BatchMineral batch in lstLotes)
+                dt.Rows.Add(batch.BatchM_ID);
             return dt;
         }
 
