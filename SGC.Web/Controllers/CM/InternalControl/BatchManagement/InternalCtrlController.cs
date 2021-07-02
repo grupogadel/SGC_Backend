@@ -69,6 +69,15 @@ namespace SGC.Web.Controllers.CM.InternalControl.BatchManagement
                 _internalCtrlService.AddLabExt(obj)
             );
         }
+
+        // PUT api/InternalCtrl/Approve
+        [HttpPut("[action]")]
+        public IActionResult Approve([FromBody] JObject obj)
+        {
+            return Ok(
+                _internalCtrlService.Approve(obj)
+            );
+        }
 		
 	    // POST: api/InternalCtrl/SearchCommercial/{}
         [HttpPost("[action]")]

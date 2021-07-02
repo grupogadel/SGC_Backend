@@ -809,5 +809,36 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
             };
         }
 
+        //PUT: api/InternalCtrl/Approve/{}
+        public int Approve(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].InternalCtrl_Approve";
+                //Detail
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ID",obj["id"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@IntCtrlH_ApprUser", obj["user"].ToObject<string>()));
+                //cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
     }
 }
