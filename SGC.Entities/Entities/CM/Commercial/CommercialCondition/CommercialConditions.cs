@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace SGC.Entities.Entities.XX.Commercial
+namespace SGC.Entities.Entities.CM.Commercial.CommercialCondition
 {
-    public class Conditions
+    public class CommercialConditions
     {
         [Key]
         public int Cond_ID { get; set; }
@@ -32,6 +32,7 @@ namespace SGC.Entities.Entities.XX.Commercial
         public decimal? Cond_ExpAdmin_Estim { get; set; }
         public decimal? Cond_RecovAu_Estim { get; set; }
         public decimal? Cond_MaquilaAu_Estim { get; set; }
+        public decimal? Cond_MarginPI_Estim { get; set; }
         public decimal? Cond_ConsuAu_Estim { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
@@ -39,7 +40,7 @@ namespace SGC.Entities.Entities.XX.Commercial
         public DateTime? Modified_Date { get; set; }
         public string Cond_Status { get; set; }
         public List<MaquilaCommercial> MaquilasCommercials { get; set; }
-        public Conditions()
+        public CommercialConditions()
         {
             MaquilasCommercials = new List<MaquilaCommercial>();
         }

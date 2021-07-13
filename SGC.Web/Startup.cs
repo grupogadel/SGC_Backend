@@ -48,6 +48,8 @@ using SGC.InterfaceServices.CM.CollectorControl;
 using SGC.Services.CM.CollectorControl;
 using SGC.InterfaceServices.CM.Commercial.SampleReferential;
 using SGC.Services.CM.Commercial.SampleReferential;
+using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
+using SGC.Services.CM.Commercial.CommercialCondition;
 
 namespace SGC.Web
 {
@@ -77,7 +79,7 @@ namespace SGC.Web
             services.AddScoped<IServiceCollector, ServiceCollector>();
             services.AddScoped<IServiceQuota, ServiceQuota>();
             services.AddScoped<IServiceMPeriod, ServiceMPeriod>();
-            services.AddScoped<IServiceConditions, ServiceConditions>();
+            services.AddScoped<IServiceCommercialConditions, ServiceCommercialConditions>();
             services.AddScoped<IServiceMaquilaCommercial, ServiceMaquilaCommercial>();
             services.AddScoped<IServiceVendor, ServiceVendor>();
             services.AddScoped<IServiceScales, ServiceScales>();

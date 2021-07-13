@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using SGC.Entities.Entities.XX.Commercial;
-using SGC.InterfaceServices.XX.Commercial;
+using SGC.Entities.Entities.CM.Commercial.CommercialCondition;
+using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
 
 namespace SGC.Web.Controllers.XX.Commercial
 {

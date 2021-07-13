@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
-using SGC.Entities.Entities.XX.Commercial;
-using SGC.InterfaceServices.XX.Commercial;
+using SGC.Entities.Entities.CM.Commercial.CommercialCondition;
+using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace SGC.Services.XX.Commercial
+namespace SGC.Services.CM.Commercial.CommercialCondition
 {
     public class ServiceMaquilaCommercial : IServiceMaquilaCommercial
     {

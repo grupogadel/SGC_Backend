@@ -1,36 +1,36 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
-using SGC.Entities.Entities.XX.Commercial;
-using SGC.InterfaceServices.XX.Commercial;
+using SGC.Entities.Entities.CM.Commercial.CommercialCondition;
+using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
-namespace SGC.Services.XX.Commercial
+namespace SGC.Services.CM.Commercial.CommercialCondition
 {
     //1: Zone 2: Origin 3: Vendor
-    public class ServiceConditions : IServiceConditions
+    public class ServiceCommercialConditions : IServiceCommercialConditions
     {
         private readonly string _context;
 
-        public ServiceConditions(IConfiguration configuration)
+        public ServiceCommercialConditions(IConfiguration configuration)
         {
             _context = configuration.GetConnectionString("Conexion");
         }
 
-        // GET: api/Conditions/GetAllByZones/1
-        public async Task<List<Conditions>> GetAllByZones(int idCompany)
+        // GET: api/CommercialConditions/GetAllByZones/1
+        public async Task<List<CommercialConditions>> GetAllByZones(int idCompany)
         {
-            var response = new List<Conditions>();
+            var response = new List<CommercialConditions>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_GetAllByZones";
+                cmd.CommandText = "[XX].CommercialConditions_GetAllByZones";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
@@ -38,7 +38,7 @@ namespace SGC.Services.XX.Commercial
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToConditions(reader,1));
+                        response.Add(MapToCommercialConditions(reader,1));
                     }
                 }
                 await conn.CloseAsync();
@@ -51,15 +51,15 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // POST: api/Conditions/AddByZones
-        public int AddByZones(Conditions model)
+        // POST: api/CommercialConditions/AddByZones
+        public int AddByZones(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_AddByZones";
+                cmd.CommandText = "[XX].CommercialConditions_AddByZones";
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
@@ -78,6 +78,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
@@ -101,9 +102,9 @@ namespace SGC.Services.XX.Commercial
 
         }
 
-        private Conditions MapToConditions(SqlDataReader reader, int opc)
+        private CommercialConditions MapToCommercialConditions(SqlDataReader reader, int opc)
         {
-            return new Conditions()
+            return new CommercialConditions()
             {
                 Cond_ID = (int)reader["Cond_ID"],
                 Vendor_ID = (int)reader["Vendor_ID"],
@@ -129,6 +130,7 @@ namespace SGC.Services.XX.Commercial
                 Cond_ExpAdmin_Estim = (decimal)reader["Cond_ExpAdmin_Estim"],
                 Cond_RecovAu_Estim = (decimal)reader["Cond_RecovAu_Estim"],
                 Cond_MaquilaAu_Estim = (decimal)reader["Cond_MaquilaAu_Estim"],
+                Cond_MarginPI_Estim = (decimal)reader["Cond_MarginPI_Estim"],
                 Cond_ConsuAu_Estim = (decimal)reader["Cond_ConsuAu_Estim"],
                 Creation_User = (string)reader["Creation_User"],
                 Creation_Date = (DateTime)reader["Creation_Date"],
@@ -138,15 +140,15 @@ namespace SGC.Services.XX.Commercial
             };
         }
 
-        // PUT: api/Conditions/UpdateByZones/1
-        public int UpdateByZones(Conditions model)
+        // PUT: api/CommercialConditions/UpdateByZones/1
+        public int UpdateByZones(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_UpdateByZones";
+                cmd.CommandText = "[XX].CommercialConditions_UpdateByZones";
 
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
                 cmd.Parameters.Add(new SqlParameter("@Zone_ID", model.Zone_ID));
@@ -165,6 +167,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
@@ -184,7 +187,7 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // DELETE: api/Conditions/Delete/
+        // DELETE: api/CommercialConditions/Delete/
         public int Delete(JObject obj)
         {
             try
@@ -192,7 +195,7 @@ namespace SGC.Services.XX.Commercial
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_Delete";
+                cmd.CommandText = "[XX].CommercialConditions_Delete";
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", obj["id"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
 				cmd.Parameters.Add(new SqlParameter("@Action", obj["action"].ToObject<string>()));
@@ -212,17 +215,17 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // GET: api/Conditions/GetAllByOrigins/1
-        public async Task<List<Conditions>> GetAllByOrigins(int idCompany)
+        // GET: api/CommercialConditions/GetAllByOrigins/1
+        public async Task<List<CommercialConditions>> GetAllByOrigins(int idCompany)
         {
-            var response = new List<Conditions>();
+            var response = new List<CommercialConditions>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_GetAllByOrigins";
+                cmd.CommandText = "[XX].CommercialConditions_GetAllByOrigins";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
@@ -230,7 +233,7 @@ namespace SGC.Services.XX.Commercial
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToConditions(reader,2));
+                        response.Add(MapToCommercialConditions(reader,2));
                     }
                 }
                 await conn.CloseAsync();
@@ -243,8 +246,8 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // POST: api/Conditions/AddByOrigins
-        public int AddByOrigins(Conditions model)
+        // POST: api/CommercialConditions/AddByOrigins
+        public int AddByOrigins(CommercialConditions model)
         {
             //logger.InfoFormat("Servicio, Condicion por Rol:   PutRol(RolModel objRol=: <strDescripcion=:{0}, strUsuarioCrea=:{1}>)", objRol.strDescripcion, objRol.strUsuarioCrea);
 
@@ -253,7 +256,7 @@ namespace SGC.Services.XX.Commercial
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_AddByOrigins";
+                cmd.CommandText = "[XX].CommercialConditions_AddByOrigins";
 
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
@@ -273,6 +276,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
@@ -297,15 +301,15 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // PUT: api/Conditions/UpdateByOrigins/1
-        public int UpdateByOrigins(Conditions model)
+        // PUT: api/CommercialConditions/UpdateByOrigins/1
+        public int UpdateByOrigins(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_UpdateByOrigins";
+                cmd.CommandText = "[XX].CommercialConditions_UpdateByOrigins";
 
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
                 cmd.Parameters.Add(new SqlParameter("@Orig_ID", model.Orig_ID));
@@ -324,6 +328,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
@@ -343,17 +348,17 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // GET: api/Conditions/GetAllByVendors/1
-        public async Task<List<Conditions>> GetAllByVendors(int idCompany)
+        // GET: api/CommercialConditions/GetAllByVendors/1
+        public async Task<List<CommercialConditions>> GetAllByVendors(int idCompany)
         {
-            var response = new List<Conditions>();
+            var response = new List<CommercialConditions>();
 
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_GetAllByVendors";
+                cmd.CommandText = "[XX].CommercialConditions_GetAllByVendors";
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", idCompany));
 
                 await conn.OpenAsync();
@@ -361,7 +366,7 @@ namespace SGC.Services.XX.Commercial
                 {
                     while (await reader.ReadAsync())
                     {
-                        response.Add(MapToConditions(reader, 3));
+                        response.Add(MapToCommercialConditions(reader, 3));
                     }
                 }
                 await conn.CloseAsync();
@@ -374,15 +379,15 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // POST: api/Conditions/AddByVendors
-        public int AddByVendors(Conditions model)
+        // POST: api/CommercialConditions/AddByVendors
+        public int AddByVendors(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_AddByVendors";
+                cmd.CommandText = "[XX].CommercialConditions_AddByVendors";
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
@@ -401,6 +406,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
@@ -424,15 +430,15 @@ namespace SGC.Services.XX.Commercial
 
         }
 
-        // PUT: api/Conditions/UpdateByVendors/1
-        public int UpdateByVendors(Conditions model)
+        // PUT: api/CommercialConditions/UpdateByVendors/1
+        public int UpdateByVendors(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_UpdateByVendors";
+                cmd.CommandText = "[XX].CommercialConditions_UpdateByVendors";
 
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_ID", model.Vendor_ID));
@@ -451,6 +457,7 @@ namespace SGC.Services.XX.Commercial
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpAdmin_Estim", model.Cond_ExpAdmin_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAu_Estim", model.Cond_RecovAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
@@ -470,15 +477,15 @@ namespace SGC.Services.XX.Commercial
             }
         }
 
-        // PUT: api/Conditions/UpdateByMaquilas/
-        public int UpdateByMaquilas(Conditions model)
+        // PUT: api/CommercialConditions/UpdateByMaquilas/
+        public int UpdateByMaquilas(CommercialConditions model)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[XX].Conditions_UpdateByMaquilas";
+                cmd.CommandText = "[XX].CommercialConditions_UpdateByMaquilas";
                 //Head
                 cmd.Parameters.Add(new SqlParameter("@Cond_ID", model.Cond_ID));
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));

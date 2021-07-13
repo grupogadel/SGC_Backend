@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace SGC.Entities.Entities.XX.Commercial
+namespace SGC.Entities.Entities.CM.Commercial.CommercialCondition
 {
     public class MaquilaCommercial
     {
