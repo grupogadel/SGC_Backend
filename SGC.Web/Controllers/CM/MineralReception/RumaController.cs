@@ -35,20 +35,48 @@ namespace SGC.Web.Controllers.CM.MineralReception
         }
         // POST api/Ruma/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] Ruma model)
+        public async Task<IActionResult> Add([FromBody] Ruma model)
         {
-            return Ok(
-                _rumaService.Add(model)
-            );
+            try
+            {
+                var result = await this._rumaService.Add(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        // POST api/Ruma/Update/1
+        // PUT api/Ruma/Update/1
         [HttpPut("[action]")]
-        public IActionResult Update([FromBody] Ruma model)
+        public async Task<IActionResult> Update([FromBody] JObject obj)
         {
-            return Ok(
-                _rumaService.Update(model)
-            );
+            try
+            {
+                var result = await this._rumaService.Update(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        // PUT api/Ruma/Update/1
+        [HttpPut("[action]")]
+        public async Task<IActionResult> FinishRuma([FromBody] Ruma model)
+        {
+            try
+            {
+                var result = await this._rumaService.FinishRuma(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // DELETE api/Ruma/Delete/{}
@@ -97,6 +125,20 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 throw ex;
             }
         }
-        // GET api
+
+        // GET: api/Ruma/GetBatches/{}
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetBatches(int id)
+        {
+            try
+            {
+                var result = await this._rumaService.GetBatches(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

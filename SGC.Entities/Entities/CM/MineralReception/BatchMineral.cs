@@ -38,9 +38,12 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public virtual Scales Scales { get; set; }
         public virtual LeyMineralHead LeyMineralHeads { get; set; }
         public virtual decimal? LeyMH_FinishAu { get; set; }
+        public virtual decimal? LeyMH_FinishAg { get; set; }
+        public virtual decimal? ConsuH_ReacNaOH { get; set; }
+        public virtual decimal? ConsuH_ReacNaCN { get; set; }
         public virtual decimal? RecovH_AuRecovCalc { get; set; }
+        public virtual decimal? RecovH_AgRecovCalc { get; set; }
         public DateTime? Scales_DateInp { get; set; }
         public string Orig_Name { get; set; }
-
     }
 }

@@ -10,12 +10,14 @@ namespace SGC.InterfaceServices.CM.MineralReception
     public interface IServiceRuma
     {
         Task<List<Ruma>> GetAll(int id);
-        int Add(Ruma model);
-        int Update(Ruma model);
+        Task<int> Add(Ruma model);
+        Task<int> Update(JObject obj);
+        Task<int> FinishRuma(Ruma model);
         int Delete(JObject obj);
         Ruma Get(int id);
         Task<List<Ruma>> Search(JObject obj);
         Task<List<BatchMineral>> SearchLote(JObject obj);
+        Task<List<BatchMineral>> GetBatches(int id);
 
     }
 }
