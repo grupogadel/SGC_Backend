@@ -10,8 +10,8 @@ namespace SGC.InterfaceServices.CM.MineralReception
     public interface IServiceHumidity
     {
         Task<List<BatchMineral>> Search(JObject obj);
-        int Add(JObject obj);
-        int Update(Humidity model);
+        Task<int> Add(JObject obj);
+        Task<int> Update(JObject obj);
         int ChangeStatus(JObject obj);
     }
 }

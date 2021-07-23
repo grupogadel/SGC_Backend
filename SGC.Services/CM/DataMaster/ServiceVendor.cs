@@ -29,11 +29,16 @@ namespace SGC.Services.CM.DataMaster
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Vendor_Add";
+               
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", model.Vendor_TaxID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_CatPers", model.Vendor_CatPers));
                 cmd.Parameters.Add(new SqlParameter("@DocIdent_ID", model.DocIdent_ID));
-                cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", (object)model.Vendor_Desc ?? DBNull.Value));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", model.Vendor_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Class", model.Vendor_Class));
+                cmd.Parameters.Add(new SqlParameter("@Country_ID", model.Country_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Type", model.Vendor_Type));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_PostalCod", model.Vendor_PostalCod));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));
@@ -62,7 +67,7 @@ namespace SGC.Services.CM.DataMaster
                 resul = (int)cmd.Parameters["@Result"].Value;
                 conn.Close();
 
-                return resul;
+                 return resul;
             }
             catch (Exception e)
             {
@@ -209,30 +214,23 @@ namespace SGC.Services.CM.DataMaster
                 Vendor_LastName = reader["Vendor_LastName"].ToString(),
                 Vendor_SurName = reader["Vendor_SurName"].ToString(),
                 Vendor_Address = reader["Vendor_Address"].ToString(),
-                Dist_ID= (int)reader["Dist_ID"],
+                Dist_ID = (int)reader["Dist_ID"],
                 Vendor_CelPhone = reader["Vendor_CelPhone"].ToString(),
                 Vendor_Email = reader["Vendor_Email"].ToString(),
                 Vendor_DetracPorc = (decimal)reader["Vendor_DetracPorc"],
 
-                //Bank_ID_AcctLocal_NO = (int)reader["Bank_ID_AcctLocal_NO"],
-                //Currency_ID_AcctLocal_NO = (int)reader["Currency_ID_AcctLocal_NO"],
-                //Vendor_AcctLocal_NO = reader["Vendor_AcctLocal_NO"].ToString(),
+                Country_ID = (int)reader["Country_ID"],
+                Vendor_Class = reader["Vendor_Class"].ToString(),
+                Vendor_Type = reader["Vendor_Type"].ToString(),
+                Vendor_PostalCod = reader["Vendor_PostalCod"].ToString(),
 
                 Bank_ID_AcctLocal_NO = reader["Bank_ID_AcctLocal_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctLocal_NO"],
                 Currency_ID_AcctLocal_NO = reader["Currency_ID_AcctLocal_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctLocal_NO"],
                 Vendor_AcctLocal_NO = reader["Vendor_AcctLocal_NO"] == DBNull.Value ? null : reader["Vendor_AcctLocal_NO"].ToString(),
 
-                //Bank_ID_AcctLocalCCI_NO = (int)reader["Bank_ID_AcctLocalCCI_NO"],
-                //Currency_ID_AcctLocalCCI_NO = (int)reader["Currency_ID_AcctLocalCCI_NO"],
-                //Vendor_AcctLocalCCI_NO = reader["Vendor_AcctLocalCCI_NO"].ToString(),
-
                 Bank_ID_AcctLocalCCI_NO = reader["Bank_ID_AcctLocalCCI_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctLocalCCI_NO"],
                 Currency_ID_AcctLocalCCI_NO = reader["Currency_ID_AcctLocalCCI_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctLocalCCI_NO"],
                 Vendor_AcctLocalCCI_NO = reader["Vendor_AcctLocalCCI_NO"] == DBNull.Value ? null : reader["Vendor_AcctLocalCCI_NO"].ToString(),
-
-                //Bank_ID_AcctDetracc_NO = (int)reader["Bank_ID_AcctDetracc_NO"],
-                //Currency_ID_AcctDetracc_NO = (int)reader["Currency_ID_AcctDetracc_NO"],
-                //Vendor_AcctDetracc_NO = reader["Vendor_AcctDetracc_NO"].ToString(),
 
                 Bank_ID_AcctDetracc_NO = reader["Bank_ID_AcctDetracc_NO"] == DBNull.Value ? 0 : (int)reader["Bank_ID_AcctDetracc_NO"],
                 Currency_ID_AcctDetracc_NO = reader["Currency_ID_AcctDetracc_NO"] == DBNull.Value ? 0 : (int)reader["Currency_ID_AcctDetracc_NO"],
@@ -243,26 +241,33 @@ namespace SGC.Services.CM.DataMaster
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 Vendor_Status = reader["Vendor_Status"].ToString(),
+
+                Country = new Country
+                {
+                    Country_ID = reader["Country_ID"] == DBNull.Value ? 0 : (int)reader["Country_ID"],
+                    Country_Name = reader["Country_Name"] == DBNull.Value ? "" : reader["Country_Name"].ToString(),
+                },
+
                 Districts = new District
                 {
-                    Dist_ID = (int)reader["Dist_ID"],
-                    Dist_Name = reader["Dist_Name"].ToString(),
+                    Dist_ID = reader["Dist_ID"] == DBNull.Value ? 0 : (int)reader["Dist_ID"],
+                    Dist_Name = reader["Dist_Name"] == DBNull.Value ? "" : reader["Dist_Name"].ToString(),
                     Provinces = new Province
                     {
-                        Prov_ID = (int)reader["Prov_ID"],
-                        Prov_Name = reader["Prov_Name"].ToString(),
+                        Prov_ID = reader["Prov_ID"] == DBNull.Value ? 0 : (int)reader["Prov_ID"],
+                        Prov_Name = reader["Prov_Name"] == DBNull.Value ? "" : reader["Prov_Name"].ToString(),
                         Departments = new Department
                         {
-                            Depa_ID = (int)reader["Depa_ID"],
-                            Depa_Name = reader["Depa_Name"].ToString(),
+                            Depa_ID = reader["Depa_ID"] == DBNull.Value ? 0 : (int)reader["Depa_ID"],
+                            Depa_Name = reader["Depa_Name"] == DBNull.Value ? "" : reader["Depa_Name"].ToString(),
                             Regions = new Region
                             {
-                                Region_ID = (int)reader["Region_ID"],
-                                Region_Name = reader["Region_Name"].ToString(),
+                                Region_ID = reader["Region_ID"] == DBNull.Value ? 0 : (int)reader["Region_ID"],
+                                Region_Name = reader["Region_Name"] == DBNull.Value ? "" : reader["Region_Name"].ToString(),
                                 Countrys = new Country
                                 {
-                                    Country_ID = (int)reader["Country_ID"],
-                                    Country_Name = reader["Country_Name"].ToString()
+                                    Country_ID = reader["Country_ID"] == DBNull.Value ? 0 : (int)reader["Country_ID"],
+                                    Country_Name = reader["Country_Name"] == DBNull.Value ? "" : reader["Country_Name"].ToString(),
                                 }
                             }
                         }
@@ -348,6 +353,7 @@ namespace SGC.Services.CM.DataMaster
                 cmd.CommandText = "[CM].Vendor_Search";
 
                 cmd.Parameters.Add(new SqlParameter("@Vendor_TaxID", obj["cod"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -381,6 +387,10 @@ namespace SGC.Services.CM.DataMaster
                 cmd.Parameters.Add(new SqlParameter("@Vendor_CatPers", model.Vendor_CatPers));
                 cmd.Parameters.Add(new SqlParameter("@DocIdent_ID", model.DocIdent_ID));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Desc", model.Vendor_Desc));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Class", model.Vendor_Class));
+                cmd.Parameters.Add(new SqlParameter("@Country_ID", model.Country_ID));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_Type", model.Vendor_Type));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_PostalCod", model.Vendor_PostalCod));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_LastName", model.Vendor_LastName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_SurName", model.Vendor_SurName));
                 cmd.Parameters.Add(new SqlParameter("@Vendor_Address", model.Vendor_Address));

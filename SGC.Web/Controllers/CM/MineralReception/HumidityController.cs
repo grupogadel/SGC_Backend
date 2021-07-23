@@ -21,21 +21,33 @@ namespace SGC.Web.Controllers.FI.DataMaster
 
         // POST api/Humidity/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] JObject obj)
+        public async Task<IActionResult> Add([FromBody] JObject obj)
         {
-            return Ok(
-                _humidityService.Add(obj)
-            );
+            try
+            {
+                var result = await this._humidityService.Add(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         // PUT api/Humidity/Update/
         [HttpPut("[action]")]
-        public IActionResult Update([FromBody] Humidity model)
+        public async Task<IActionResult> Update([FromBody] JObject obj)
         {
-            return Ok(
-                _humidityService.Update(model)
-            );
+            try
+            {
+                var result = await this._humidityService.Update(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // DELETE api/Humidity/Delete/{}

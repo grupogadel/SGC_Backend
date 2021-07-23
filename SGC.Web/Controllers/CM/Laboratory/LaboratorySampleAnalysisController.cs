@@ -48,20 +48,32 @@ namespace SGC.Web.Controllers.CM
 
         // POST api/LaboratorySampleAnalysis/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] JObject obj)
+        public async Task<IActionResult> Add([FromBody] JObject obj)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.Add(obj)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.Add(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // POST api/LaboratorySampleAnalysis/AddDetails/
         [HttpPost("[action]")]
-        public IActionResult AddDetails([FromBody] JObject obj)
+        public async Task<IActionResult> AddDetails([FromBody] JObject obj)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.AddDetails(obj)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.AddDetails(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // POST api/LaboratorySampleAnalysis/RemoveItem/
@@ -74,11 +86,17 @@ namespace SGC.Web.Controllers.CM
         }
 
         [HttpPost("[action]")]
-        public IActionResult UpdateResults([FromBody] JObject obj)
+        public async Task<IActionResult> UpdateResults([FromBody] JObject obj)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.UpdateResults(obj)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.UpdateResults(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET api/LaboratorySampleAnalysis/Get/
@@ -105,27 +123,45 @@ namespace SGC.Web.Controllers.CM
         }
 
         [HttpPost("[action]")]
-        public IActionResult AddConsume([FromBody] JObject obj)
+        public async Task<IActionResult> AddConsume([FromBody] JObject obj)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.AddConsume(obj)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.AddConsume(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPost("[action]")]
-        public IActionResult UpdateConsume([FromBody] ConsumeHead model)
+        public async Task<IActionResult> UpdateConsume([FromBody] ConsumeHead model)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.UpdateConsume(model)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.UpdateConsume(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPost("[action]")]
-        public IActionResult AddRecovery([FromBody] JObject obj)
+        public async Task<IActionResult> AddRecovery([FromBody] JObject obj)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.AddRecovery(obj)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.AddRecovery(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpGet("[action]/{id}")]
@@ -143,11 +179,17 @@ namespace SGC.Web.Controllers.CM
         }
 
         [HttpPost("[action]")]
-        public IActionResult UpdateRecovery([FromBody] RecoveryHead model)
+        public async Task<IActionResult> UpdateRecovery([FromBody] RecoveryHead model)
         {
-            return Ok(
-                _laboratorySampleAnalysisService.UpdateRecovery(model)
-            );
+            try
+            {
+                var result = await this._laboratorySampleAnalysisService.UpdateRecovery(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpPost("[action]")]

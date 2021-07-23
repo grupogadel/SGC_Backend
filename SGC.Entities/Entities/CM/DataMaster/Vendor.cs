@@ -13,6 +13,10 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Vendor_TaxID { get; set; }
         public string Vendor_CatPers { get; set; }
         public int? DocIdent_ID { get; set; }
+        public int Country_ID { get; set; }
+        public string Vendor_Class { get; set; }
+        public string Vendor_Type { get; set; }
+        public string Vendor_PostalCod { get; set; }
         public string Vendor_Desc { get; set; }
         public string Vendor_LastName { get; set; }
         public string Vendor_SurName { get; set; }
@@ -35,6 +39,7 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string Vendor_Status { get; set; }
+        public Country Country { get; set; }
         public District Districts { get; set; }
         public DocIdentity DocIdentitys { get; set; }
         public Bank Banks { get; set; }

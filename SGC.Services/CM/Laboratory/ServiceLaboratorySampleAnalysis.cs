@@ -100,7 +100,7 @@ namespace SGC.Services.CM.Laboratory
             }
         }
 
-        public int Add(JObject obj)
+        public async Task<int> Add(JObject obj)
         {
             try
             {
@@ -124,10 +124,10 @@ namespace SGC.Services.CM.Laboratory
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }
@@ -139,7 +139,7 @@ namespace SGC.Services.CM.Laboratory
 
         }
 
-        public int UpdateResults(JObject obj)
+        public async Task<int> UpdateResults(JObject obj)
         {
             try
             {
@@ -149,14 +149,15 @@ namespace SGC.Services.CM.Laboratory
                 cmd.CommandText = "[CM].LeyMineral_UpdatResults";
                 cmd.Parameters.Add(new SqlParameter("@LeyMH_FinishAu", obj["leyMH_FinishAu"].ToObject<decimal>()));
                 cmd.Parameters.Add(new SqlParameter("@LeyMH_FinishAg", obj["leyMH_FinishAg"].ToObject<decimal>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Id", obj["id"].ToObject<int>()));
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }
@@ -168,7 +169,7 @@ namespace SGC.Services.CM.Laboratory
 
         }
 
-        public int AddDetails(JObject obj)
+        public async Task<int> AddDetails(JObject obj)
         {
             try
             {
@@ -183,10 +184,10 @@ namespace SGC.Services.CM.Laboratory
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }
@@ -560,7 +561,7 @@ namespace SGC.Services.CM.Laboratory
             }
         }
 
-        public int AddConsume(JObject obj)
+        public async Task<int> AddConsume(JObject obj)
         {
             try
             {
@@ -615,11 +616,10 @@ namespace SGC.Services.CM.Laboratory
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul; 
             }
@@ -630,7 +630,7 @@ namespace SGC.Services.CM.Laboratory
             }
         }
 
-        public int UpdateConsume(ConsumeHead model)
+        public async Task<int> UpdateConsume(ConsumeHead model)
         {
             try
             {
@@ -681,10 +681,10 @@ namespace SGC.Services.CM.Laboratory
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }
@@ -695,7 +695,7 @@ namespace SGC.Services.CM.Laboratory
             }
         }
 
-        public int AddRecovery(JObject obj)
+        public async Task<int> AddRecovery(JObject obj)
         {
             try
             {
@@ -742,10 +742,10 @@ namespace SGC.Services.CM.Laboratory
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }
@@ -923,7 +923,7 @@ namespace SGC.Services.CM.Laboratory
             };
         }
 
-        public int UpdateRecovery(RecoveryHead model)
+        public async Task<int> UpdateRecovery(RecoveryHead model)
         {
             try
             {
@@ -966,10 +966,10 @@ namespace SGC.Services.CM.Laboratory
                 //Output
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
 
                 return resul;
             }

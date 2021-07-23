@@ -63,7 +63,7 @@ namespace SGC.Services.CM.MineralReception
 
 
         // POST: api/Humidity/Add
-        public  int Add(JObject obj)
+        public async Task<int> Add(JObject obj)
         {
             try
             {
@@ -82,10 +82,11 @@ namespace SGC.Services.CM.MineralReception
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
-                var resul = cmd.ExecuteNonQuery();
+                await conn.OpenAsync();
+                var resul = await cmd.ExecuteNonQueryAsync();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
+
                 return resul;
             }
             catch (Exception e)
@@ -97,26 +98,31 @@ namespace SGC.Services.CM.MineralReception
         }
 
         // PUT: api/Humidity/Update/
-        public int Update(Humidity model)
+        public async Task<int> Update(JObject obj)
         {
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
+                Humidity model = new Humidity();
+                model = obj["humidity"].ToObject<Humidity>();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Humidity_Update";
                 if (model.Hum_PorcH2O is null) model.Hum_PorcH2O = 0;
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", model.Company_ID));
                 cmd.Parameters.Add(new SqlParameter("@Hum_ID", model.Hum_ID));
                 cmd.Parameters.Add(new SqlParameter("@Hum_FirstWeig", model.Hum_FirstWeig));
                 cmd.Parameters.Add(new SqlParameter("@Hum_EndWeig", model.Hum_EndWeig));
                 cmd.Parameters.Add(new SqlParameter("@Hum_PorcH2O", model.Hum_PorcH2O));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
+                cmd.Parameters.Add(new SqlParameter("@BatchM_ID", obj["batchM_ID"].ToObject<int>()));
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
-                conn.Open();
+                await conn.OpenAsync();
                 var resul = cmd.ExecuteNonQuery();
                 resul = (int)cmd.Parameters["@Result"].Value;
-                conn.Close();
+                await conn.CloseAsync();
+
                 return resul;
             }
             catch (Exception e)
