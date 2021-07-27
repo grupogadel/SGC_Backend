@@ -80,6 +80,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
                 SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
@@ -132,6 +136,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 Cond_MaquilaAu_Estim = (decimal)reader["Cond_MaquilaAu_Estim"],
                 Cond_MarginPI_Estim = (decimal)reader["Cond_MarginPI_Estim"],
                 Cond_ConsuAu_Estim = (decimal)reader["Cond_ConsuAu_Estim"],
+                Cond_MaquilaAg_Estim = (decimal)reader["Cond_MaquilaAg_Estim"],
+                Cond_RecovAg_Estim = (decimal)reader["Cond_RecovAg_Estim"],
+                Cond_MarginPIAg_Estim = (decimal)reader["Cond_MarginPIAg_Estim"],
+                Cond_ConsuAg_Estim = (decimal)reader["Cond_ConsuAg_Estim"],
                 Creation_User = (string)reader["Creation_User"],
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = (string)reader["Modified_User"],
@@ -169,6 +177,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
@@ -278,6 +290,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
                 SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
@@ -330,8 +346,11 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
-
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
                 conn.Open();
@@ -408,6 +427,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Creation_User", model.Creation_User));
                 //Details
                 SqlParameter parMaquilasCommercials = GetMaquilaCommercial("tabMaquilaCommercial", model.MaquilasCommercials);
@@ -459,6 +482,10 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAu_Estim", model.Cond_MaquilaAu_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MarginPI_Estim", model.Cond_MarginPI_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAu_Estim", model.Cond_ConsuAu_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg_Estim", model.Cond_MaquilaAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Estim", model.Cond_RecovAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Estim", model.Cond_MarginPIAg_Estim));
+                cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Estim", model.Cond_ConsuAg_Estim));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;

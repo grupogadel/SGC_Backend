@@ -34,6 +34,10 @@ namespace SGC.Entities.Entities.CM.Commercial.CommercialCondition
         public decimal? Cond_MaquilaAu_Estim { get; set; }
         public decimal? Cond_MarginPI_Estim { get; set; }
         public decimal? Cond_ConsuAu_Estim { get; set; }
+        public decimal? Cond_MaquilaAg_Estim { get; set; }
+	    public decimal? Cond_RecovAg_Estim { get; set; }
+        public decimal? Cond_MarginPIAg_Estim { get; set; }
+        public decimal? Cond_ConsuAg_Estim { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
