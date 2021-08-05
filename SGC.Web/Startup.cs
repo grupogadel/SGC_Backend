@@ -108,7 +108,7 @@ namespace SGC.Web
             services.AddScoped<IServiceRuma, ServiceRuma>();
             services.AddScoped<IServiceBatchMineral, ServiceBatchMineral>();
             services.AddScoped<IServiceLaboratorySetting, ServiceLaboratorySetting>();
-            services.AddScoped<IServiceCommercialParameters, ServiceCommercialParameters>();
+            services.AddScoped<IServiceCorporationParameters, ServiceCorporationParameters>();
             services.AddScoped<IServiceMaterialType, ServiceMaterialType>();
             services.AddScoped<IServiceSampleCommercial, ServiceSampleCommercial>();
             services.AddScoped<IServiceSampleHeadOperational, ServiceSampleHeadOperational>();
