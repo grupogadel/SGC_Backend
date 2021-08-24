@@ -45,5 +45,6 @@ namespace SGC.Entities.Entities.CM.MineralReception
         public virtual decimal? RecovH_AgRecovCalc { get; set; }
         public DateTime? Scales_DateInp { get; set; }
         public string Orig_Name { get; set; }
+        public string Zone_Name { get; set; }
     }
 }

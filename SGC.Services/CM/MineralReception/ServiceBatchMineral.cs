@@ -195,6 +195,7 @@ namespace SGC.Services.CM.MineralReception
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 BatchM_Status = reader["BatchM_Status"].ToString(),
+                Zone_Name = reader["Zone_Name"].ToString(),
                 Scales = new Scales
                 {
                     Scales_ID = (int)reader["Scales_ID"],

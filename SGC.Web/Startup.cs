@@ -129,6 +129,9 @@ namespace SGC.Web
 			services.AddScoped<IServiceAccess, ServiceAccess>();
             services.AddScoped<IServiceSampleReferential, ServiceSampleReferential>();
             services.AddScoped<IServicePolicyCorp, ServicePolicyCorp>();
+            services.AddScoped<IServiceToPayCollector, ServiceToPayCollector>();
+            services.AddScoped<IServiceExpCollectorHead, ServiceExpCollectorHead>();
+            services.AddScoped<IServiceComprobanteDePago, ServiceComprobanteDePago>();
 
             services.AddCors(options =>
             {
