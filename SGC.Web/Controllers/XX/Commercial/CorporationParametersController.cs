@@ -11,20 +11,20 @@ namespace SGC.Web.Controllers.XX.Commercial
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CommercialParametersController : ControllerBase
+    public class CorporationParametersController : ControllerBase
     {
-        IServiceCommercialParameters _commercialParametersService;
-        public CommercialParametersController(IServiceCommercialParameters commercialParametersService)
+        IServiceCorporationParameters _corporationParametersService;
+        public CorporationParametersController(IServiceCorporationParameters corporationParametersService)
         {
-            this._commercialParametersService = commercialParametersService;
+            this._corporationParametersService = corporationParametersService;
         }
-        // GET: api/LaboratorySetting/GetAll/1
+        // GET: api/CorporationParameters/GetAll/1
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetAll(int id)
         {
             try
             {
-                var result = await this._commercialParametersService.GetAll(id);
+                var result = await this._corporationParametersService.GetAll(id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -33,40 +33,40 @@ namespace SGC.Web.Controllers.XX.Commercial
             }
         }
 
-        // POST api/CommercialParameters/Add/
+        // POST api/CorporationParameters/Add/
         [HttpPost("[action]")]
-        public IActionResult Add([FromBody] CommercialParameters model)
+        public IActionResult Add([FromBody] CorporationParameters model)
         {
             return Ok(
-                _commercialParametersService.Add(model)
+                _corporationParametersService.Add(model)
             );
         }
 
-        // POST api/CommercialParameters/Update
-        [HttpPut("[action]")]
-        public IActionResult Update([FromBody] CommercialParameters model)
+        // POST api/CorporationParameters/Update
+       [HttpPut("[action]")]
+        public IActionResult Update([FromBody] CorporationParameters model)
         {
             return Ok(
-                _commercialParametersService.Update(model)
+                _corporationParametersService.Update(model)
             );
         }
 
-        // DELETE api/CommercialParameters/Delete/{}
+        // DELETE api/CorporationParameters/Delete/{}
         [HttpDelete("[action]")]
         public IActionResult Delete([FromBody] JObject obj)
         {
             return Ok(
-                _commercialParametersService.Delete(obj)
+                _corporationParametersService.Delete(obj)
             );
         }
 
-        // GET: api/CommercialParameters/Search/{}
+        // GET: api/CorporationParameters/Search/{}
         [HttpPost("[action]")]
         public async Task<IActionResult> Search(JObject obj)
         {
             try
             {
-                var result = await this._commercialParametersService.Search(obj);
+                var result = await this._corporationParametersService.Search(obj);
                 return Ok(result);
             }
             catch (Exception ex)

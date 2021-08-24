@@ -33,6 +33,21 @@ namespace SGC.Web.Controllers.CM.Commercial
             }
         }
 
+        // POST: api/Advance/SearchForDiscounts/{}
+        [HttpPost("[action]")]
+        public IActionResult SearchForDiscounts([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._advanceService.SearchForDiscounts(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // POST api/Advance/Add
         [HttpPost("[action]")]
         public IActionResult Add([FromBody] AdvanceHead model)
@@ -75,6 +90,39 @@ namespace SGC.Web.Controllers.CM.Commercial
             }
         }
 
-        
+        // GET: api/Advance/DiscountsGetAll/1
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> DiscountsGetAll(int id)
+        {
+            try
+            {
+                var result = await this._advanceService.DiscountsGetAll(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // POST api/Advance/DiscountsAdd
+        [HttpPost("[action]")]
+        public IActionResult DiscountsAdd([FromBody] ModelDiscounts model)
+        {
+            return Ok(
+                _advanceService.DiscountsAdd(model)
+            );
+        }
+
+        // PUT api/Advance/DiscountsEdit
+        [HttpPut("[action]")]
+        public IActionResult DiscountsEdit([FromBody] ModelDiscounts model)
+        {
+            return Ok(
+                _advanceService.DiscountsEdit(model)
+            );
+        }
+
+
     }
 }

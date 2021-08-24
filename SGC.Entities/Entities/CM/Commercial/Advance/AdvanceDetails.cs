@@ -24,14 +24,18 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         public string AdvanD_Desc { get; set; }
         public DateTime? AdvanD_ApprDate { get; set; }
         public string AdvanD_ApprUser { get; set; }
-        public decimal AdvanD_Amount { get; set; }
+        public decimal AdvanD_AmountL { get; set; }
+        public decimal AdvanD_AmountF { get; set; }
         public int AdvanD_Days { get; set; }
         public DateTime? AdvanD_PayToDate { get; set; }
+        public bool? AdvanD_PayFull { get; set; }
+        public decimal? AdvanD_AmountPayFull { get; set; }
         public string AdvanD_Status_Cod { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string AdvanD_Status { get; set; }
+       
     }
 }

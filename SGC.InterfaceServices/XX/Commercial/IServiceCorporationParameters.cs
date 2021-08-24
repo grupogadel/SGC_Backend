@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SGC.InterfaceServices.XX.Commercial
 {
-    public interface IServiceCommercialParameters
+    public interface IServiceCorporationParameters
     {
-        Task<List<CommercialParameters>> GetAll(int id);
-        int Add(CommercialParameters model);
-        int Update(CommercialParameters model);
+        Task<List<CorporationParameters>> GetAll(int id);
+        int Add(CorporationParameters model);
+        int Update(CorporationParameters model);
         int Delete(JObject obj);
-        Task<List<CommercialParameters>> Search(JObject obj);
+        Task<List<CorporationParameters>> Search(JObject obj);
     }
 }
