@@ -43,6 +43,50 @@ namespace SGC.Services.CM.Collect
                         response.Add(MapToExpCollectorHead(reader));
                     }
                 }
+
+                foreach (ExpCollectorHead Exp in response) {
+
+                    if (Exp.ExpColIH_Type != "IN") {
+                        Exp.ExpColIH_TotAmountDetails = await this.GetTotalAmountDetails(Exp.ExpColIH_ID);
+                    }
+                }
+          
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
+
+
+        public async Task<decimal> GetTotalAmountDetails(int id)
+        {
+            decimal response = 0;
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].[ExpCollectorHead_GetAmountDetails]";
+                cmd.Parameters.Add(new SqlParameter("@ExpColIH_ID", id));
+
+                //cmd.Parameters.Add("@Result", System.Data.SqlDbType.Decimal).Direction = System.Data.ParameterDirection.ReturnValue;
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = (decimal)reader["SumTotal"];
+                    }
+                }
+
+                //var resul = await cmd.ExecuteReaderAsync();
+                //resul = (decimal)cmd.Parameters["@Result"].Value;
+
                 await conn.CloseAsync();
                 return response;
             }

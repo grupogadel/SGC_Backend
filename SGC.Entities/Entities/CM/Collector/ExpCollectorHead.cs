@@ -31,7 +31,7 @@ namespace SGC.Entities.Entities.CM.Collect
         public string Modified_User { get; set; }
         public DateTime Modified_Date { get; set; }
         public string ExpColIH_Status { get; set; }
-
+        public decimal ExpColIH_TotAmountDetails { get; set; }
 
         public virtual List<ExpCollectorDetails> ExpCollectorDetails { get; set; }
         public virtual ToPayCollector ToPayCollector { get; set; }
