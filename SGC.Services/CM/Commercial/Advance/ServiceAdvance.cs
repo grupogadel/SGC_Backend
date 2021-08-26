@@ -414,6 +414,38 @@ namespace SGC.Services.CM.Commercial.Advance
 
         }
 
+        //PUT: api/Advance/DocumentUpdate
+        public int DocumentUpdate(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Advance_DocumentUpdate";
+                cmd.Parameters.Add(new SqlParameter("@AdvanD_ID", obj["idAdvanD"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@AdvanD_DocSerie", obj["docSerie"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@AdvanD_DocNO", obj["docNO"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@AdvanD_DocDate", obj["docDate"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["user"].ToObject<string>()));
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
         public SqlParameter GetDiscountsDetails(string name, List<Discounts> listDiscountsDetails)
         {
             //logger.InfoFormat("Servicio, Rol:   GetAccesos(string name=:{0}, List<AccesoModel> lstListaAcc)", name);
@@ -554,6 +586,10 @@ namespace SGC.Services.CM.Commercial.Advance
                 AdvanD_PayFull= (bool)reader["AdvanD_PayFull"],
                 AdvanD_AmountPayFull = reader["AdvanD_AmountPayFull"] == DBNull.Value ? (decimal?)null : (decimal)reader["AdvanD_AmountPayFull"],
                 AdvanD_Status_Cod = reader["AdvanD_Status_Cod"].ToString(),
+                AdvanD_DocSerie = reader["AdvanD_DocSerie"].ToString(),
+                AdvanD_DocNO = reader["AdvanD_DocNO"].ToString(),
+                AdvanD_DocDate = reader["AdvanD_DocDate"] == DBNull.Value ? (DateTime?)null: (DateTime)reader["AdvanD_DocDate"],
+                AdvanD_Status_Doc = reader["AdvanD_Status_Doc"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),

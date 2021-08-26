@@ -123,6 +123,15 @@ namespace SGC.Web.Controllers.CM.Commercial
             );
         }
 
+        // PUT api/Advance/DocumentUpdate
+        [HttpPut("[action]")]
+        public IActionResult DocumentUpdate([FromBody] JObject obj)
+        {
+            return Ok(
+                _advanceService.DocumentUpdate(obj)
+            );
+        }
+
 
     }
 }

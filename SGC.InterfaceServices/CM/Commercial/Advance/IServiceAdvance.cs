@@ -16,5 +16,6 @@ namespace SGC.InterfaceServices.CM.Commercial.Advance
         Task<List<Discounts>> DiscountsGetAll(int id);
         int DiscountsAdd(ModelDiscounts model);
         int DiscountsEdit(ModelDiscounts model);
+        int DocumentUpdate(JObject obj);
     }
 }

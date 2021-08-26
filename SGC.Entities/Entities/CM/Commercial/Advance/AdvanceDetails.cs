@@ -31,6 +31,10 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         public bool? AdvanD_PayFull { get; set; }
         public decimal? AdvanD_AmountPayFull { get; set; }
         public string AdvanD_Status_Cod { get; set; }
+        public string AdvanD_DocSerie { get; set; }
+        public string AdvanD_DocNO { get; set; }
+        public DateTime? AdvanD_DocDate { get; set; }
+        public string AdvanD_Status_Doc { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
