@@ -26,6 +26,7 @@ namespace SGC.Entities.Entities.CM.Commercial.CommercialCondition
         public decimal? Cond_Humi_Sec { get; set; }
         public decimal? Cond_RecovAg_Sec { get; set; }
         public decimal? Cond_ConsuAg_Sec { get; set; }
+        public decimal? Cond_MarginPIAg_Sec { get; set; }
         public decimal? Cond_OzMinAg { get; set; }
         public decimal? Cond_MaquilaAg { get; set; }
         public decimal? Cond_ExpLab { get; set; }

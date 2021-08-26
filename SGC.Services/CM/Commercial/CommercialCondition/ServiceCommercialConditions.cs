@@ -72,6 +72,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
@@ -128,6 +129,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 Cond_Humi_Sec = (decimal)reader["Cond_Humi_Sec"],
                 Cond_RecovAg_Sec = (decimal)reader["Cond_RecovAg_Sec"],
                 Cond_ConsuAg_Sec = (decimal)reader["Cond_ConsuAg_Sec"],
+                Cond_MarginPIAg_Sec = (decimal)reader["Cond_MarginPIAg_Sec"],
                 Cond_OzMinAg = (decimal)reader["Cond_OzMinAg"],
                 Cond_MaquilaAg = (decimal)reader["Cond_MaquilaAg"],
                 Cond_ExpLab = (decimal)reader["Cond_ExpLab"],
@@ -169,6 +171,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
@@ -282,6 +285,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
@@ -338,6 +342,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
@@ -419,6 +424,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
@@ -474,6 +480,7 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
                 cmd.Parameters.Add(new SqlParameter("@Cond_Humi_Sec", model.Cond_Humi_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_RecovAg_Sec", model.Cond_RecovAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ConsuAg_Sec", model.Cond_ConsuAg_Sec));
+                cmd.Parameters.Add(new SqlParameter("@Cond_MarginPIAg_Sec", model.Cond_MarginPIAg_Sec));
                 cmd.Parameters.Add(new SqlParameter("@Cond_OzMinAg", model.Cond_OzMinAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_MaquilaAg", model.Cond_MaquilaAg));
                 cmd.Parameters.Add(new SqlParameter("@Cond_ExpLab", model.Cond_ExpLab));
