@@ -35,9 +35,6 @@ namespace SGC.Services.CM.MineralReception
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 BatchM_Status = reader["BatchM_Status"].ToString(),
 
-                //BatchMineral = new BatchMineral { BatchM_PorHumInt = (int)reader["BatchM_PorHumInt"], 
-                //            Scales = new Scales { Scales_ID = (int)reader["Scales_ID"], Scales_Lote = reader["Scales_Lote"].ToString(), Creation_User = reader["User_Recep"].ToString(), Creation_Date = (DateTime)reader["Date_Recep"] }
-                //},  
               
             };
         }
@@ -160,39 +157,7 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
-
-
-        //public async Task<List<SampleHead>> SampleNoHumidity(JObject obj)
-        //{
-        //    var response = new List<SampleHead>();
-
-        //    try
-        //    {
-        //        SqlConnection conn = new SqlConnection(_context);
-        //        SqlCommand cmd = conn.CreateCommand();
-        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
-        //        cmd.CommandText = "[CM].Sample_No_Humidity";
-               
-        //        cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
-
-        //        await conn.OpenAsync();
-        //        using (var reader = await cmd.ExecuteReaderAsync())
-        //        {
-        //            while (await reader.ReadAsync())
-        //            {
-        //                response.Add(MapToNoHumidity(reader));
-        //            }
-        //        }
-        //        await conn.CloseAsync();
-        //        return response;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return response;// 
-        //        throw e;
-        //    }
-        //}
-
+        
 
         public async Task<List<BatchMineral>> Search(JObject obj)
         {
@@ -204,9 +169,24 @@ namespace SGC.Services.CM.MineralReception
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].Humidity_Search";
+
                 bool rank = false;
-                if (obj["dateTo"].ToObject<DateTime>() == obj["dateFrom"].ToObject<DateTime>()) rank = false;
-                else rank = true;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["dateFrom"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["dateTo"].ToObject<string>(), out dateTime))
+                {
+                    obj["dateTo"] = DateTime.Now;
+                    obj["dateFrom"] = obj["dateTo"];
+                    rank = false;
+                }
+                else
+                {
+                    if (!DateTime.TryParse(obj["dateFrom"].ToObject<string>(), out dateTime))
+                    {
+                        obj["dateFrom"] = obj["dateTo"];
+                    }
+                    rank = true;
+                }
 
                 cmd.Parameters.Add(new SqlParameter("@DateFrom", obj["dateFrom"].ToObject<DateTime>()));
                 cmd.Parameters.Add(new SqlParameter("@DateTo", obj["dateTo"].ToObject<DateTime>()));

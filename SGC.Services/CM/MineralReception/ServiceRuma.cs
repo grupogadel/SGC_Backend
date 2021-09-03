@@ -346,7 +346,6 @@ namespace SGC.Services.CM.MineralReception
                 throw e;
             }
         }
-        // GET api/Ruma/Get/1
         public Ruma Get(int id)
         {
             try
@@ -429,7 +428,7 @@ namespace SGC.Services.CM.MineralReception
             }
             catch (Exception e)
             {
-                return response;// 
+                return response;
                 throw e;
             }
         }
