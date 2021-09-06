@@ -33,6 +33,21 @@ namespace SGC.Web.Controllers.CM.Commercial
             }
         }
 
+        // POST: api/Advance/SearchByInterval/{}
+        [HttpPost("[action]")]
+        public IActionResult SearchByInterval([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._advanceService.SearchByInterval(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // POST: api/Advance/SearchForDiscounts/{}
         [HttpPost("[action]")]
         public IActionResult SearchForDiscounts([FromBody] JObject obj)
@@ -82,6 +97,21 @@ namespace SGC.Web.Controllers.CM.Commercial
             try
             {
                 var result = await this._advanceService.Balance(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // POST: api/Advance/BalanceAccumulated/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> BalanceAccumulated([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._advanceService.BalanceAccumulated(obj);
                 return Ok(result);
             }
             catch (Exception ex)

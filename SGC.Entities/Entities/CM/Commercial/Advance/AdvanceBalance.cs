@@ -11,5 +11,6 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         public string Period_Cod { get; set; }
         public string MPeriod_Name { get; set; }
         public decimal Amount { get; set; }
+        public decimal? AmountPayFull { get; set; }
     }
 }

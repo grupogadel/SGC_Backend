@@ -15,5 +15,6 @@ namespace SGC.InterfaceServices.XX.Entity
         int ChangeStatus(JObject obj);
         Period Get(JObject obj);
         Task<List<Period>> Search(JObject obj);
+        Task<List<Period>> SearchAll(JObject obj);
     }
 }

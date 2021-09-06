@@ -29,7 +29,8 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         public int AdvanD_Days { get; set; }
         public DateTime? AdvanD_PayToDate { get; set; }
         public bool? AdvanD_PayFull { get; set; }
-        public decimal? AdvanD_AmountPayFull { get; set; }
+        public decimal? AdvanD_AmountPayFullL { get; set; }
+        public decimal? AdvanD_AmountPayFullF { get; set; }
         public string AdvanD_Status_Cod { get; set; }
         public string AdvanD_DocSerie { get; set; }
         public string AdvanD_DocNO { get; set; }

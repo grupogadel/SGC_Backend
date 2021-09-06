@@ -47,6 +47,26 @@ namespace SGC.Services.XX.Entity
             };
         }
 
+        private Period MapToPeriodAll(SqlDataReader reader)
+        {
+            return new Period()
+            {
+                Period_ID = (int)reader["Period_ID"],
+                Period_Cod = reader["Period_Cod"].ToString(),
+                Period_NO = reader["Period_NO"].ToString(),
+                Company_ID = (int)reader["Company_ID"],
+                Period_Year = reader["Period_Year"].ToString(),
+                Period_Date_Start = (DateTime)reader["Period_Date_Start"],
+                Period_Date_End = (DateTime)reader["Period_Date_End"],
+                Creation_User = reader["Creation_User"].ToString(),
+                Creation_Date = (DateTime)reader["Creation_Date"],
+                Modified_User = reader["Modified_User"].ToString(),
+                Modified_Date = (DateTime)reader["Modified_Date"],
+                Period_Status = reader["Period_Status"].ToString()
+               
+            };
+        }
+
         public async Task<int> AddAllPeriods(JObject obj)
         {
             try
@@ -191,6 +211,37 @@ namespace SGC.Services.XX.Entity
                     while (await reader.ReadAsync())
                     {
                         response.Add(MapToPeriod(reader));
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;// 
+                throw e;
+            }
+        }
+
+        public async Task<List<Period>> SearchAll(JObject obj)
+        {
+            var response = new List<Period>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].Period_SearchAll";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response.Add(MapToPeriodAll(reader));
                     }
                 }
                 await conn.CloseAsync();

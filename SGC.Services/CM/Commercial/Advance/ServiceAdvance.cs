@@ -69,6 +69,64 @@ namespace SGC.Services.CM.Commercial.Advance
             }
         }
 
+        //POST: api/Advance/SearchByInterval/{}
+        public List<AdvanceHead> SearchByInterval(JObject obj)
+        {
+            var advanceHead = new List<AdvanceHead>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].AdvanceHead_SearchByInterval";
+
+                string[] dateFrom = obj["noPeriodFrom"].ToObject<string>().Split('.');  // 01.2021
+                string[] dateTo = obj["noPeriodTo"].ToObject<string>().Split('.');      // 08.2021
+                
+                DateTime periodFrom = new DateTime(Convert.ToInt32(dateFrom[1]), Convert.ToInt32(dateFrom[0]), 1);
+                DateTime periodTo = new DateTime(Convert.ToInt32(dateTo[1]), Convert.ToInt32(dateTo[0]), 1).AddMonths(1).AddDays(-1);
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@AdvanH_NO", obj["noAdvanH"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["idVendor"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Period_From", periodFrom));
+                cmd.Parameters.Add(new SqlParameter("@Period_To", periodTo));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        advanceHead.Add(MapToAdvanceHead(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].AdvanceDetails_Search";
+
+                foreach (var ah in advanceHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@AdvanH_ID", ah.AdvanH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ah.AdvanceDetails.Add(MapToAdvanceDetails(dr));
+                        }
+                    }
+                }
+                conn.Close();
+                return advanceHead;
+            }
+            catch (Exception e)
+            {
+                return advanceHead;
+                throw e;
+            }
+        }
+
         //POST: api/Advance/SearchForDiscounts/{}
         public List<AdvanceHead> SearchForDiscounts(JObject obj)
         {
@@ -250,6 +308,42 @@ namespace SGC.Services.CM.Commercial.Advance
                     while (await reader.ReadAsync())
                     {
                         advanceBalance.Add(MapToAdvanceBalance(reader));
+                    }
+                }
+
+                await conn.CloseAsync();
+                return advanceBalance;
+            }
+            catch (Exception e)
+            {
+                return advanceBalance;
+                throw e;
+            }
+        }
+
+        //POST: api/Advance/BalanceAccumulated/{}
+        public async Task<List<AdvanceBalanceAccumulated>> BalanceAccumulated(JObject obj)
+        {
+            var advanceBalance = new List<AdvanceBalanceAccumulated>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Advance_BalanceAccumulated";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["idVendor"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Year", obj["noYear"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Currency", obj["noCurrency"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        advanceBalance.Add(MapToAdvanceBalanceAccumulated(reader));
                     }
                 }
 
@@ -493,17 +587,23 @@ namespace SGC.Services.CM.Commercial.Advance
             }
         }
 
+        private AdvanceBalanceAccumulated MapToAdvanceBalanceAccumulated(SqlDataReader reader)
+        {
+            return new AdvanceBalanceAccumulated()
+            {
+                Accumulated = reader["Accumulated"] == DBNull.Value ? (decimal?)0 : (decimal)reader["Accumulated"]
+            };
+        }
 
-
-
-		
-		private AdvanceBalance MapToAdvanceBalance(SqlDataReader reader)
+        private AdvanceBalance MapToAdvanceBalance(SqlDataReader reader)
         {
             return new AdvanceBalance()
             {
                 Period_Cod = (string)reader["Period_Cod"],
                 MPeriod_Name = (string)reader["MPeriod_Name"],
-                Amount = (decimal)reader["Amount"]
+                Amount = (decimal)reader["Amount"],
+                AmountPayFull = reader["AmountPayFull"] == DBNull.Value ? (decimal?)null : (decimal)reader["AmountPayFull"]
+
             };
         }
 
@@ -584,7 +684,8 @@ namespace SGC.Services.CM.Commercial.Advance
                 AdvanD_Days = (int)reader["AdvanD_Days"],
                 AdvanD_PayToDate = (DateTime)reader["AdvanD_PayToDate"],
                 AdvanD_PayFull= (bool)reader["AdvanD_PayFull"],
-                AdvanD_AmountPayFull = reader["AdvanD_AmountPayFull"] == DBNull.Value ? (decimal?)null : (decimal)reader["AdvanD_AmountPayFull"],
+                AdvanD_AmountPayFullL = reader["AdvanD_AmountPayFullL"] == DBNull.Value ? (decimal?)null : (decimal)reader["AdvanD_AmountPayFullL"],
+                AdvanD_AmountPayFullF = reader["AdvanD_AmountPayFullF"] == DBNull.Value ? (decimal?)null : (decimal)reader["AdvanD_AmountPayFullF"],
                 AdvanD_Status_Cod = reader["AdvanD_Status_Cod"].ToString(),
                 AdvanD_DocSerie = reader["AdvanD_DocSerie"].ToString(),
                 AdvanD_DocNO = reader["AdvanD_DocNO"].ToString(),

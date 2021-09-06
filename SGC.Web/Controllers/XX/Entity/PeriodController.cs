@@ -66,6 +66,21 @@ namespace SGC.Web.Controllers.XX
             }
         }
 
+        // POST: api/Company/Search
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchAll([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._periodService.SearchAll(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;   
+            }
+        }
+
         // GET api/Period/Get/
         [HttpGet("[action]")]
         public IActionResult Get([FromBody] JObject obj)
