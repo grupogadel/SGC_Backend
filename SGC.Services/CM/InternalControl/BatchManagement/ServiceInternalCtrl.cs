@@ -119,7 +119,7 @@ namespace SGC.Services.CM.InternalControl.BatchManagement
             return new InternalCtrlHeadCommercial()
             {
                 IntCtrlH_ID = (int)reader["IntCtrlH_ID"],
-                SampH_ID = (int)reader["BatchM_ID"],
+                SampH_ID = (int)reader["SampH_ID"],
                 Company_ID = (int)reader["Company_ID"],
                 IntCtrlH_Current_Detail = (int)reader["IntCtrlH_Current_Detail"],
                 BatchM_ID = (int)reader["BatchM_ID"],
