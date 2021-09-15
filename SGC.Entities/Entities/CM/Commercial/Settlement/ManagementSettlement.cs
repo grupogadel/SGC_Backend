@@ -40,6 +40,6 @@ namespace SGC.Entities.Entities.CM.Commercial.Settlement
         public int Zone_ID { get; set; }
         public string Zone_Name { get; set; }
 
-        public virtual LiquidationHead LiquidationHead { get; set; }
+        //public virtual LiquidationHead LiquidationHead { get; set; }
     }
 }
