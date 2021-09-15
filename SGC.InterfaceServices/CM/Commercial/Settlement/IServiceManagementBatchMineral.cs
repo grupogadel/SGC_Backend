@@ -13,6 +13,6 @@ namespace SGC.InterfaceServices.CM.Commercial.Settlement
         int Delete(JObject obj);
         List<ManagementBatchMineral> Search(JObject obj);
         ManagementBatchMineral Get(int id);
-        ManagementSettlement GetS(int id);
+        //ManagementSettlement GetS(int id);
     }
 }

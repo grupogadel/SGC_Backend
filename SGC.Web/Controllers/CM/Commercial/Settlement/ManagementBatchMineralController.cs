@@ -40,13 +40,13 @@ namespace SGC.Web.Controllers.CM.Commercial.Settlement
             );
         }
 
-        // GET api/ManagementSettlement/Get/1
-        [HttpGet("[action]/{id}")]
-        public IActionResult GetS(int id)
-        {
-            return Ok(
-                _managementBatchMineralService.GetS(id)
-            );
-        }
+        //// GET api/ManagementSettlement/Get/1
+        //[HttpGet("[action]/{id}")]
+        //public IActionResult GetS(int id)
+        //{
+        //    return Ok(
+        //        _managementBatchMineralService.GetS(id)
+        //    );
+        //}
     }
 }

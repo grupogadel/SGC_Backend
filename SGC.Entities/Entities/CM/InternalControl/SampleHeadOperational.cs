@@ -20,6 +20,7 @@ namespace SGC.Entities.Entities.CM.InternalControl
         public string Modified_User { get; set; }
         public DateTime? Modified_Date { get; set; }
         public string SampH_Status { get; set; }
+        public string SampH_Status_Cod { get; set; }
         public virtual SampleDetailsOperational SampleDetailsOperational { get; set; }
     }
 }

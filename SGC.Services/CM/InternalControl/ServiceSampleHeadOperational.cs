@@ -135,9 +135,24 @@ namespace SGC.Services.CM.InternalControl
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].SampleOperational_Search";
+
                 bool rank = false;
-                if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>()) rank = false;
-                else rank = true;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                }
+                else
+                {
+                    if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                    {
+                        obj["date_From"] = obj["date_To"];
+                    }
+                    rank = true;
+                }
 
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
@@ -181,6 +196,7 @@ namespace SGC.Services.CM.InternalControl
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
                 SampH_Status = reader["SampH_Status"].ToString(),
+                SampH_Status_Cod = reader["SampH_Status_Cod"].ToString(),
 
                 SampleDetailsOperational = new SampleDetailsOperational {
                     SampD_ID = (int)reader["SampD_ID"],
