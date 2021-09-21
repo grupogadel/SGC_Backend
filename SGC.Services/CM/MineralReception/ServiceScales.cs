@@ -277,7 +277,7 @@ namespace SGC.Services.CM.MineralReception
                     Vendor_LastName = reader["Vendor_LastName"].ToString(),
                     Vendor_SurName = reader["Vendor_SurName"].ToString(),
                 },
-                Periods =new Period
+                Periods = new Period
                 {
                     Period_ID = (int)reader["Period_ID"],
                     Period_Cod = reader["Period_Cod"].ToString(),
@@ -285,6 +285,8 @@ namespace SGC.Services.CM.MineralReception
                 }
             };
         }
+
+
         public int Add(Scales model)
         {
             try

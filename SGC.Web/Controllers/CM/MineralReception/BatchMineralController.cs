@@ -76,5 +76,30 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 throw ex;
             }
         }
+
+        // POST: api/BatchMineral/SearchByDocApprob/{}
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchByDocApprob(JObject obj)
+        {
+            try
+            {
+                var result = await this._batchMineralService.SearchByDocApprob(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // PUT api/BatchMineral/ApproveDoc
+        [HttpPut("[action]")]
+        public IActionResult ApproveDoc([FromBody] JObject obj)
+        {
+            return Ok(
+                _batchMineralService.ApproveDoc(obj)
+            );
+        }
+
     }
 }

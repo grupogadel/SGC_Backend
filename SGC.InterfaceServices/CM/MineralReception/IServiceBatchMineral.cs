@@ -17,5 +17,7 @@ namespace SGC.InterfaceServices.CM.MineralReception
         BatchMineral Get(int id);
         Task<List<BatchMineral>> Search(JObject obj);
         Task<List<BatchMineral>> SearchByRuma(JObject obj);
+        Task<List<ModelBatchMineral>> SearchByDocApprob(JObject obj);
+        int ApproveDoc(JObject obj);
     }
 }
