@@ -50,6 +50,8 @@ using SGC.InterfaceServices.CM.Commercial.SampleReferential;
 using SGC.Services.CM.Commercial.SampleReferential;
 using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
 using SGC.Services.CM.Commercial.CommercialCondition;
+using SGC.InterfaceServices.CM.DataMaster.CollectorControl;
+using SGC.Services.CM.DataMaster.Commercial.CollectorControl;
 
 namespace SGC.Web
 {
@@ -132,6 +134,8 @@ namespace SGC.Web
             services.AddScoped<IServiceToPayCollector, ServiceToPayCollector>();
             services.AddScoped<IServiceExpCollectorHead, ServiceExpCollectorHead>();
             services.AddScoped<IServiceComprobanteDePago, ServiceComprobanteDePago>();
+            services.AddScoped<IServiceExpCollectMaster, ServiceExpCollectMaster>();
+            services.AddScoped<IServiceChartAccLocMaster, ServiceChartAccLocMaster>();
 
             services.AddCors(options =>
             {
