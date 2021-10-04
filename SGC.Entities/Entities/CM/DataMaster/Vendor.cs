@@ -14,6 +14,8 @@ namespace SGC.Entities.Entities.CM.DataMaster
         public string Vendor_CatPers { get; set; }
         public int? DocIdent_ID { get; set; }
         public int Country_ID { get; set; }
+        public int CountryDist_ID { get; set; }
+        public string CountryDist_Name { get; set; }
         public string Vendor_Class { get; set; }
         public string Vendor_Type { get; set; }
         public string Vendor_PostalCod { get; set; }

@@ -248,6 +248,9 @@ namespace SGC.Services.CM.DataMaster
                     Country_Name = reader["Country_Name"] == DBNull.Value ? "" : reader["Country_Name"].ToString(),
                 },
 
+                CountryDist_ID = reader["CountryDist_ID"] == DBNull.Value ? 0 : (int)reader["CountryDist_ID"],
+                CountryDist_Name = reader["CountryDist_Name"] == DBNull.Value ? "" : reader["CountryDist_Name"].ToString(),
+
                 Districts = new District
                 {
                     Dist_ID = reader["Dist_ID"] == DBNull.Value ? 0 : (int)reader["Dist_ID"],
@@ -264,11 +267,12 @@ namespace SGC.Services.CM.DataMaster
                             {
                                 Region_ID = reader["Region_ID"] == DBNull.Value ? 0 : (int)reader["Region_ID"],
                                 Region_Name = reader["Region_Name"] == DBNull.Value ? "" : reader["Region_Name"].ToString(),
-                                Countrys = new Country
-                                {
-                                    Country_ID = reader["Country_ID"] == DBNull.Value ? 0 : (int)reader["Country_ID"],
-                                    Country_Name = reader["Country_Name"] == DBNull.Value ? "" : reader["Country_Name"].ToString(),
-                                }
+
+                                //Countrys = new Country
+                                //{
+                                //   Country_ID = reader["Country_ID"] == DBNull.Value ? 0 : (int)reader["Country_ID"],
+                                //    Country_Name = reader["Country_Name"] == DBNull.Value ? "" : reader["Country_Name"].ToString(),
+                                //}
                             }
                         }
                     }

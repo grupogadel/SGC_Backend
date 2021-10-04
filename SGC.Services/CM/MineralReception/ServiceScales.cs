@@ -276,6 +276,7 @@ namespace SGC.Services.CM.MineralReception
                     Vendor_Desc = reader["Vendor_Desc"].ToString(),
                     Vendor_LastName = reader["Vendor_LastName"].ToString(),
                     Vendor_SurName = reader["Vendor_SurName"].ToString(),
+                    Vendor_CatPers = reader["Vendor_CatPers"].ToString(),
                 },
                 Periods = new Period
                 {
