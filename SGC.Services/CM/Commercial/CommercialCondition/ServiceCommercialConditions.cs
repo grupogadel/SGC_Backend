@@ -109,11 +109,12 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
 
         private CommercialConditions MapToCommercialConditions(SqlDataReader reader, int opc)
         {
+
             return new CommercialConditions()
             {
                 Cond_ID = (int)reader["Cond_ID"],
                 Vendor_ID = (int)reader["Vendor_ID"],
-                Vendor_FullName = opc == 3 ? ((string)reader["Vendor_Name"]+ " "+(string)reader["Vendor_LastName"]) : null,
+                Vendor_FullName = opc == 3 ? (reader["Vendor_CatPers"].ToString().Equals("01"))? ((string)reader["Vendor_Name"]+ " "+(string)reader["Vendor_LastName"]) : (string)reader["Vendor_Desc"]: null,
                 Orig_ID = (int)reader["Orig_ID"],
                 Orig_Name = opc == 2 ?(string)reader["Orig_Name"]: null,
                 Zone_ID = (int)reader["Zone_ID"],
