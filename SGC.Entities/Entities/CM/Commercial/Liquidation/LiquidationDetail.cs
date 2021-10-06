@@ -22,8 +22,8 @@ namespace SGC.Entities.Entities.CM.Commercial.Liquidation
         public decimal? LiquiD_TotLiq { get; set; }
         public decimal? LiquiD_PorcBrutMarg { get; set; }
         public decimal? LiquiD_ImpBrutMarg { get; set; }
-        public string? LiquiD_Mineral { get; set; }
-        public string? LiquiD_DataLine { get; set; }
+        public string LiquiD_Mineral { get; set; }
+        public string LiquiD_DataLine { get; set; }
         public decimal? LiquiD_TMHInitial { get; set; }
         public decimal? LiquiD_PorHumInitial { get; set; }
         public decimal? LiquiD_LeyInitial { get; set; }
