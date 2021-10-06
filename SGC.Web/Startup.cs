@@ -42,8 +42,6 @@ using SGC.InterfaceServices.CM.InternalControl.BatchManagement;
 using SGC.Services.CM.InternalControl.BatchManagement;
 using SGC.InterfaceServices.CM.Commercial.Advance;
 using SGC.Services.CM.Commercial.Advance;
-using SGC.Services.CM.Commercial.Settlement;
-using SGC.InterfaceServices.CM.Commercial.Settlement;
 using SGC.InterfaceServices.CM.CollectorControl;
 using SGC.Services.CM.CollectorControl;
 using SGC.InterfaceServices.CM.Commercial.SampleReferential;
@@ -52,6 +50,8 @@ using SGC.InterfaceServices.CM.Commercial.CommercialCondition;
 using SGC.Services.CM.Commercial.CommercialCondition;
 using SGC.InterfaceServices.CM.DataMaster.CollectorControl;
 using SGC.Services.CM.DataMaster.Commercial.CollectorControl;
+using SGC.Services.CM.Commercial.Liquidation;
+using SGC.InterfaceServices.CM.Commercial.Liquidation;
 
 namespace SGC.Web
 {
@@ -120,8 +120,6 @@ namespace SGC.Web
 	        services.AddScoped<IServiceLabExternal, ServiceLabExternal>();
             services.AddScoped<IServiceLaboratorySampleAnalysis, ServiceLaboratorySampleAnalysis>();
 			services.AddScoped<IServiceAdvance, ServiceAdvance>();
-            services.AddScoped<IServiceManagementBatchMineral, ServiceManagementBatchMineral>();
-            services.AddScoped<IServiceCommercialBatchManagement, ServiceCommercialBatchManagement>();
             services.AddScoped<IServiceExpHead, ServiceExpHead>();
             services.AddScoped<IServiceModule, ServiceModule>();
 			services.AddScoped<IServicePosition, ServicePosition>();
@@ -136,6 +134,8 @@ namespace SGC.Web
             services.AddScoped<IServiceComprobanteDePago, ServiceComprobanteDePago>();
             services.AddScoped<IServiceExpCollectMaster, ServiceExpCollectMaster>();
             services.AddScoped<IServiceChartAccLocMaster, ServiceChartAccLocMaster>();
+            services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
+            services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
 
             services.AddCors(options =>
             {

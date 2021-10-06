@@ -399,5 +399,67 @@ namespace SGC.Services.XX.Commercial
                 throw e;
             }
         }
+
+        public async Task<CorporationParameters> Getcurrent(JObject obj)
+        {
+            var response = new CorporationParameters();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].CorporationParameters_Getcurrent";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToCorporationParameters(reader);
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
+        public async Task<CorporationParameters> GetID(int id)
+        {
+            var response = new CorporationParameters();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[XX].CorporationParameters_GetID";
+
+                cmd.Parameters.Add(new SqlParameter("@CorpP_ID", id));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToCorporationParameters(reader);
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
     }
 }

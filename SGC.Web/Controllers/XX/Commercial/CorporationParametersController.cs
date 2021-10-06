@@ -43,7 +43,7 @@ namespace SGC.Web.Controllers.XX.Commercial
         }
 
         // POST api/CorporationParameters/Update
-       [HttpPut("[action]")]
+        [HttpPut("[action]")]
         public IActionResult Update([FromBody] CorporationParameters model)
         {
             return Ok(
@@ -67,6 +67,34 @@ namespace SGC.Web.Controllers.XX.Commercial
             try
             {
                 var result = await this._corporationParametersService.Search(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Getcurrent(JObject obj)
+        {
+            try
+            {
+                var result = await this._corporationParametersService.Getcurrent(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetID(int id)
+        {
+            try
+            {
+                var result = await this._corporationParametersService.GetID(id);
                 return Ok(result);
             }
             catch (Exception ex)

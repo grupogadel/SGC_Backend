@@ -589,5 +589,78 @@ namespace SGC.Services.CM.Commercial.CommercialCondition
             }
         }
 
+
+        public async Task<CommercialConditions> LiquidationCommercialConditionsSearch(JObject obj)
+        {
+            var response = new CommercialConditions();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Liquidation_CommercialConditionsSearch";
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["vendor_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Orig_ID", obj["orig_ID"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Zone_ID", obj["zone_ID"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<string>()));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToCommercialConditionsLiquidation(reader);
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+        private CommercialConditions MapToCommercialConditionsLiquidation(SqlDataReader reader)
+        {
+            return new CommercialConditions()
+            {
+                Cond_ID = (int)reader["Cond_ID"],
+                Vendor_ID = (int)reader["Vendor_ID"],
+                Orig_ID = (int)reader["Orig_ID"],
+                Zone_ID = (int)reader["Zone_ID"],
+                Company_ID = (int)reader["Company_ID"],
+                Cond_Cod = (string)reader["Cond_Cod"],
+                Cond_Desc = (string)reader["Cond_Desc"],
+                Cond_DateStart = (DateTime)reader["Cond_DateStart"],
+                Cond_DateEnd = (DateTime)reader["Cond_DateEnd"],
+                Cond_WeigPor_Sec = (decimal)reader["Cond_WeigPor_Sec"],
+                Cond_LeyAuPor_Sec = (decimal)reader["Cond_LeyAuPor_Sec"],
+                Cond_LeyAgPor_Sec = (decimal)reader["Cond_LeyAgPor_Sec"],
+                Cond_Humi_Sec = (decimal)reader["Cond_Humi_Sec"],
+                Cond_RecovAg_Sec = (decimal)reader["Cond_RecovAg_Sec"],
+                Cond_ConsuAg_Sec = (decimal)reader["Cond_ConsuAg_Sec"],
+                Cond_MarginPIAg_Sec = (decimal)reader["Cond_MarginPIAg_Sec"],
+                Cond_OzMinAg = (decimal)reader["Cond_OzMinAg"],
+                Cond_MaquilaAg = (decimal)reader["Cond_MaquilaAg"],
+                Cond_ExpLab = (decimal)reader["Cond_ExpLab"],
+                Cond_ExpAdmin_Estim = (decimal)reader["Cond_ExpAdmin_Estim"],
+                Cond_RecovAu_Estim = (decimal)reader["Cond_RecovAu_Estim"],
+                Cond_MaquilaAu_Estim = (decimal)reader["Cond_MaquilaAu_Estim"],
+                Cond_MarginPI_Estim = (decimal)reader["Cond_MarginPI_Estim"],
+                Cond_ConsuAu_Estim = (decimal)reader["Cond_ConsuAu_Estim"],
+                Cond_MaquilaAg_Estim = (decimal)reader["Cond_MaquilaAg_Estim"],
+                Cond_RecovAg_Estim = (decimal)reader["Cond_RecovAg_Estim"],
+                Cond_MarginPIAg_Estim = (decimal)reader["Cond_MarginPIAg_Estim"],
+                Cond_ConsuAg_Estim = (decimal)reader["Cond_ConsuAg_Estim"],
+                Creation_User = (string)reader["Creation_User"],
+                Creation_Date = (DateTime)reader["Creation_Date"],
+                Modified_User = (string)reader["Modified_User"],
+                Modified_Date = (DateTime)reader["Modified_Date"],
+                Cond_Status = (string)reader["Cond_Status"]
+            };
+        }
+
     }
 }

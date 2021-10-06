@@ -28,5 +28,9 @@ namespace SGC.InterfaceServices.CM.Commercial.CommercialCondition
 		
 		//Update by Maquilas
 		int UpdateByMaquilas(CommercialConditions model);
+
+        //Liquidation
+        Task<CommercialConditions> LiquidationCommercialConditionsSearch(JObject obj);
+
     }
 }

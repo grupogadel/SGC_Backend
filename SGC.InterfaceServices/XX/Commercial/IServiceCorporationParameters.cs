@@ -14,5 +14,7 @@ namespace SGC.InterfaceServices.XX.Commercial
         int Update(CorporationParameters model);
         int Delete(JObject obj);
         Task<List<CorporationParameters>> Search(JObject obj);
+        Task<CorporationParameters> Getcurrent(JObject obj);
+        Task<CorporationParameters> GetID(int id);
     }
 }

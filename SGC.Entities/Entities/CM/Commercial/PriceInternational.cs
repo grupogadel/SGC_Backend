@@ -7,10 +7,10 @@ namespace SGC.Entities.Entities.CM.Commercial
     {
         [Key]
         public int Price_ID { get; set; }
-        public DateTime Price_DatePrice { get; set; }
-        public decimal Price_GoldAM { get; set; }
-        public decimal Price_GoldPM { get; set; }
-        public decimal Price_Silver { get; set; }
+        public DateTime? Price_DatePrice { get; set; }
+        public decimal? Price_GoldAM { get; set; }
+        public decimal? Price_GoldPM { get; set; }
+        public decimal? Price_Silver { get; set; }
         public string Creation_User { get; set; }
         public DateTime Creation_Date { get; set; }
         public string Modified_User { get; set; }

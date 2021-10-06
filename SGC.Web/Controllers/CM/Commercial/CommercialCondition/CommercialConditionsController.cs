@@ -139,7 +139,19 @@ namespace SGC.Web.Controllers.CM.Commercial.CommercialCondition
             );
         }
 
-
-        
+        // POST: api/CommercialConditions/LiquidationCommercialConditionsSearch
+        [HttpPost("[action]")]
+        public async Task<IActionResult> LiquidationCommercialConditionsSearch([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._commercialConditionService.LiquidationCommercialConditionsSearch(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
