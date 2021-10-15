@@ -180,6 +180,37 @@ namespace SGC.Services.CM.InternalControl
             }
         }
 
+
+        public async Task<Code> GetCode(int id)
+        {
+            var response = new Code();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].[SampleOperational_GetCode]";
+
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID", id));
+               
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToSampleHeadOperationalCode(reader);
+                    }
+                }
+                await conn.CloseAsync();
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
         private SampleHeadOperational MapToSampleHeadOperational(SqlDataReader reader)
         {
             return new SampleHeadOperational()
@@ -252,6 +283,13 @@ namespace SGC.Services.CM.InternalControl
                 }
 
             };
+        }
+
+
+        private Code MapToSampleHeadOperationalCode(SqlDataReader reader)
+        {
+            var code = reader["SampH_NO"].ToString();
+            return new Code() { Value = reader["SampH_NO"].ToString() };
         }
 
 

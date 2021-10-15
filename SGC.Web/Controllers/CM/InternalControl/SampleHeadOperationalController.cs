@@ -65,13 +65,27 @@ namespace SGC.Web.Controllers.CM
             }
         }
 
-        // POST: api/SampleHeadOperational/GetAllArea
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> GetAllArea(int id)
         {
             try
             {
                 var result = await this._sampleHeadOperationalService.GetAllArea(id);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetCode(int id)
+        {
+            try
+            {
+                var result = await this._sampleHeadOperationalService.GetCode(id);
                 return Ok(result);
             }
             catch (Exception ex)

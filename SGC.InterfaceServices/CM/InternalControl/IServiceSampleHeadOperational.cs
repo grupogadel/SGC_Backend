@@ -15,6 +15,7 @@ namespace SGC.InterfaceServices.CM.InternalControl
         int Update(SampleHeadOperational model);
         int ChangeStatus(JObject obj);
         Task<List<SampleOriginArea>> GetAllArea(int idCompany);
+        Task<Code> GetCode(int idCompany);
         Task<List<SampleHeadOperational>> Search(JObject obj);
     }
 }

@@ -42,15 +42,16 @@ namespace SGC.Services.CM.Laboratory
                     obj["date_To"] = DateTime.Now;
                     obj["date_From"] = obj["date_To"];
                     rank = false;
-                } else {
+                }
+                else
+                {
+                    if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                    {
+                        obj["date_From"] = obj["date_To"];
+                    }
                     rank = true;
                 }
 
-                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
-                {
-                    obj["date_From"] = obj["date_To"];
-                    rank = true;
-                }
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
@@ -98,14 +99,13 @@ namespace SGC.Services.CM.Laboratory
                 }
                 else
                 {
+                    if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                    {
+                        obj["date_From"] = obj["date_To"];
+                    }
                     rank = true;
                 }
 
-                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
-                {
-                    obj["date_From"] = obj["date_To"];
-                    rank = true;
-                }
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
                 cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
