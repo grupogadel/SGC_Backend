@@ -8,6 +8,7 @@ namespace SGC.InterfaceServices.CM.Commercial.Advance
     public interface IServiceAdvance
     {
         List<AdvanceHead> Search(JObject obj);
+        List<AdvanceHead> GetAllForLiquidation(JObject obj);
         List<AdvanceHead> SearchByInterval(JObject obj);
         List<AdvanceHead> SearchForDiscounts(JObject obj);
         int Add(AdvanceHead model);

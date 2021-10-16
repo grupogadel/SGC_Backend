@@ -13,7 +13,9 @@ namespace SGC.Entities.Entities.CM.Commercial.Advance
         public int Period_ID { get; set; }
         public string Period_NO { get; set; }
         public int Vendor_ID { get; set; }
-        public string Vendor_FullName { get; set; }
+        public string Vendor_Desc { get; set; }
+        public string Vendor_SurName { get; set; }
+        public string Vendor_LastName { get; set; }
         public string AdvanH_NO { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }

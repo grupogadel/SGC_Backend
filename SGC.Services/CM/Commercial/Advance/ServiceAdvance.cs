@@ -69,6 +69,56 @@ namespace SGC.Services.CM.Commercial.Advance
             }
         }
 
+
+        //POST: api/Advance/GetAllForLiquidation/{}
+        public List<AdvanceHead> GetAllForLiquidation(JObject obj)
+        {
+            var advanceHead = new List<AdvanceHead>();
+
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].AdvanceHead_GetAllForLiquidation";
+
+                cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["idVendor"].ToObject<string>()));
+
+                conn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        advanceHead.Add(MapToAdvanceHead(reader));
+                    }
+                }
+
+                cmd.CommandText = "[CM].AdvanceDetails_GetAllForLiquidation";
+
+                foreach (var ah in advanceHead)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@AdvanH_ID", ah.AdvanH_ID));
+
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            ah.AdvanceDetails.Add(MapToAdvanceDetails(dr));
+                        }
+                    }
+                }
+                conn.Close();
+                return advanceHead;
+            }
+            catch (Exception e)
+            {
+                return advanceHead;
+                throw e;
+            }
+        }
+
         //POST: api/Advance/SearchByInterval/{}
         public List<AdvanceHead> SearchByInterval(JObject obj)
         {
@@ -131,7 +181,6 @@ namespace SGC.Services.CM.Commercial.Advance
         public List<AdvanceHead> SearchForDiscounts(JObject obj)
         {
             var advanceHead = new List<AdvanceHead>();
-            var advanceDetails = new List<AdvanceDetails>();
 
             try
             {
@@ -616,7 +665,9 @@ namespace SGC.Services.CM.Commercial.Advance
                 Period_ID = (int)reader["Period_ID"],
                 Period_NO = reader["Period_NO"].ToString(),
                 Vendor_ID = (int)reader["Vendor_ID"],
-                Vendor_FullName = reader["Vendor_SurName"].ToString() + " " + reader["Vendor_LastName"].ToString(),
+                Vendor_Desc = reader["Vendor_Desc"].ToString(),
+                Vendor_SurName = reader["Vendor_SurName"].ToString(),
+                Vendor_LastName = reader["Vendor_LastName"].ToString(),
                 AdvanH_NO = reader["AdvanH_NO"].ToString(),
                 Creation_User = reader["Creation_User"].ToString(),
                 Creation_Date = (DateTime)reader["Creation_Date"],

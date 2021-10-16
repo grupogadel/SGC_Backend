@@ -285,6 +285,9 @@ namespace SGC.Services.CM.Commercial.Liquidation
 
                 Zone_ID = (int)reader["Zone_ID"],
                 Zone_Name = reader["Zone_Name"].ToString(),
+
+                MinType_ID = (int)reader["MinType_ID"],
+                MinType_Desc = reader["MinType_Desc"].ToString(),
              
                 LiquidationHead = new LiquidationHead
                 {

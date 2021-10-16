@@ -51,6 +51,10 @@ namespace SGC.Entities.Entities.CM.Commercial.Liquidation
         public int Zone_ID { get; set; }
         public string Zone_Name { get; set; }
 
+        //MineralType
+        public int MinType_ID { get; set; }
+        public string MinType_Desc { get; set; }
+
         public virtual LiquidationHead LiquidationHead { get; set; }
     }
 }

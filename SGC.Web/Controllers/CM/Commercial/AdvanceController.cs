@@ -33,6 +33,21 @@ namespace SGC.Web.Controllers.CM.Commercial
             }
         }
 
+        // POST: api/Advance/GetAll/{}
+        [HttpPost("[action]")]
+        public IActionResult GetAllForLiquidation([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = this._advanceService.GetAllForLiquidation(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         // POST: api/Advance/SearchByInterval/{}
         [HttpPost("[action]")]
         public IActionResult SearchByInterval([FromBody] JObject obj)

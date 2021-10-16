@@ -135,7 +135,7 @@ namespace SGC.Web
             services.AddScoped<IServiceExpCollectMaster, ServiceExpCollectMaster>();
             services.AddScoped<IServiceChartAccLocMaster, ServiceChartAccLocMaster>();
             services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
-            services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
+            services.AddScoped<IServiceTaxMaster, ServiceTaxMaster>();
 
             services.AddCors(options =>
             {
