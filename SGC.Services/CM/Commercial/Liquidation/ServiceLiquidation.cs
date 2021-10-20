@@ -24,14 +24,38 @@ namespace SGC.Services.CM.Commercial.Liquidation
         {
             var response = new List<ManagementLiquidation>();
 
-            //var priceInternationalCurrent = new PriceInternational();
             try
             {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].[Liquidation_Search_Batches]";
+
+                bool rank = false;
+                DateTime dateTime;
+
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                {
+                    obj["date_To"] = DateTime.Now;
+                    obj["date_From"] = obj["date_To"];
+                    rank = false;
+                }
+                else
+                {
+                    if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                    {
+                        obj["date_From"] = obj["date_To"];
+                    }
+                    rank = true;
+                }
+
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["company_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@BatchM_Lote_New", obj["batchM_Lote_New"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_To", obj["date_To"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@Date_From", obj["date_From"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_Status", obj["liquiH_Status"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@Vendor_ID", obj["vendor_ID"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@Rank", rank));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
