@@ -52,6 +52,8 @@ using SGC.InterfaceServices.CM.DataMaster.CollectorControl;
 using SGC.Services.CM.DataMaster.Commercial.CollectorControl;
 using SGC.Services.CM.Commercial.Liquidation;
 using SGC.InterfaceServices.CM.Commercial.Liquidation;
+using SGC.InterfaceServices.CM.Commercial.Proposal;
+using SGC.Services.CM.Commercial.Proposal;
 
 namespace SGC.Web
 {
@@ -136,6 +138,7 @@ namespace SGC.Web
             services.AddScoped<IServiceChartAccLocMaster, ServiceChartAccLocMaster>();
             services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
             services.AddScoped<IServiceTaxMaster, ServiceTaxMaster>();
+            services.AddScoped<IServiceLiquidationAdvance, ServiceLiquidationAdvance>();
 
             services.AddCors(options =>
             {
