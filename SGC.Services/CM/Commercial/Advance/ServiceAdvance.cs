@@ -105,7 +105,7 @@ namespace SGC.Services.CM.Commercial.Advance
                     {
                         while (dr.Read())
                         {
-                            ah.AdvanceDetails.Add(MapToAdvanceDetails(dr));
+                            ah.AdvanceDetails.Add(MapToAdvanceDetailsForDiscounts(dr));
                         }
                     }
                 }
@@ -706,7 +706,11 @@ namespace SGC.Services.CM.Commercial.Advance
                 Creation_Date = (DateTime)reader["Creation_Date"],
                 Modified_User = reader["Modified_User"].ToString(),
                 Modified_Date = (DateTime)reader["Modified_Date"],
-                AdvanD_Status = reader["AdvanD_Status"].ToString()
+                AdvanD_Status = reader["AdvanD_Status"].ToString(),
+                AdvanD_DocSerie = reader["AdvanD_DocSerie"].ToString(),
+                AdvanD_DocNO = reader["AdvanD_DocNO"].ToString(),
+                AdvanD_DocDate = reader["AdvanD_DocDate"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["AdvanD_DocDate"],
+                AdvanD_Status_Doc = reader["AdvanD_Status_Doc"].ToString()
             };
         }
 
