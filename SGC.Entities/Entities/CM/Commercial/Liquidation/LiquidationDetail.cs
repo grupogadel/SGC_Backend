@@ -32,6 +32,10 @@ namespace SGC.Entities.Entities.CM.Commercial.Liquidation
         public decimal? LiquiD_MaquilaInitial { get; set; }
         public decimal? LiquiD_ConsuCNInitial { get; set; }
         public decimal? LiquiD_ExpAdmInitial { get; set; }
+        public int? CompPago_ID { get; set; }
+        public string LiquiD_InvSerie { get; set; }
+        public string LiquiD_InvNO { get; set; }
+        public DateTime? LiquiD_InvDate { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }

@@ -46,5 +46,21 @@ namespace SGC.Web.Controllers.CM.Commercial.Proposal
             }
         }
 
+        
+        [HttpPut("[action]")]
+        public IActionResult Approb([FromBody] JObject obj)
+        {
+            return Ok(
+                _liquidationAdvanceService.Approb(obj)
+            );
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult ApprobFact([FromBody] JObject obj)
+        {
+            return Ok(
+                _liquidationAdvanceService.ApprobFact(obj)
+            );
+        }
     }
 }

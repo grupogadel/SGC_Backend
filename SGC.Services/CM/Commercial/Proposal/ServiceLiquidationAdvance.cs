@@ -106,6 +106,69 @@ namespace SGC.Services.CM.Commercial.Proposal
 
         }
 
+        //PUT: api/LiquidationAdvance/Approb/{}
+        public int Approb(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Liquidation_ProposalApprob";
+                //Detail
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_ID", obj["id"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_UserApro", obj["user"].ToObject<string>()));
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
+        public int ApprobFact(JObject obj)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].Liquidation_ProposalApprobFact";
+                //Detail
+                cmd.Parameters.Add(new SqlParameter("@CompPago_Cod", obj["comPag"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiD_InvSerie", obj["serie"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiD_InvNO", obj["num"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiD_InvDate", obj["date"].ToObject<DateTime>()));
+                cmd.Parameters.Add(new SqlParameter("@LiquiD_ID", obj["id"].ToObject<int>()));
+                cmd.Parameters.Add(new SqlParameter("@User", obj["user"].ToObject<string>()));
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                conn.Open();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                conn.Close();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+
+        }
+
 
         public SqlParameter GetLiquidationAdvance(string name, List<LiquidationAdvance> liquidationAdvance)
         {
