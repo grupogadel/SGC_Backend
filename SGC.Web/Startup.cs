@@ -54,6 +54,8 @@ using SGC.Services.CM.Commercial.Liquidation;
 using SGC.InterfaceServices.CM.Commercial.Liquidation;
 using SGC.InterfaceServices.CM.Commercial.Proposal;
 using SGC.Services.CM.Commercial.Proposal;
+using SGC.InterfaceServices.CM.Commercial.Reports;
+using SGC.Services.CM.Commercial.Reports;
 
 namespace SGC.Web
 {
@@ -139,6 +141,7 @@ namespace SGC.Web
             services.AddScoped<IServiceLiquidation, ServiceLiquidation>();
             services.AddScoped<IServiceTaxMaster, ServiceTaxMaster>();
             services.AddScoped<IServiceLiquidationAdvance, ServiceLiquidationAdvance>();
+            services.AddScoped<IServiceReports, ServiceReports>();
 
             services.AddCors(options =>
             {

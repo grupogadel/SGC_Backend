@@ -990,6 +990,7 @@ namespace SGC.Services.CM.Laboratory
                 cmd.CommandText = "[CM].LeyMineral_End";
                 cmd.Parameters.Add(new SqlParameter("@LeyMD_ID", obj["leyMD_ID"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", obj["modified_User"].ToObject<string>()));
+                cmd.Parameters.Add(new SqlParameter("@SampH_ID", obj["sampH_ID"].ToObject<int>()));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
 
