@@ -234,7 +234,7 @@ namespace SGC.Services.CM.Commercial.Liquidation
                 LiquiD_ConsuCNInitial = reader["LiquiD_ConsuCNInitial"] == DBNull.Value ? new decimal?() : (decimal)reader["LiquiD_ConsuCNInitial"],
                 LiquiD_ExpAdmInitial = reader["LiquiD_ExpAdmInitial"] == DBNull.Value ? new decimal?() : (decimal)reader["LiquiD_ExpAdmInitial"],
                 CompPago_ID = reader["CompPago_ID"] == DBNull.Value ? new int?() : (int)reader["CompPago_ID"],
-                LiquiD_InvSerie = reader["CompPago_ID"].ToString(),
+                LiquiD_InvSerie = reader["LiquiD_InvSerie"].ToString(),
                 LiquiD_InvNO = reader["LiquiD_InvNO"].ToString(),
                 LiquiD_InvDate = reader["LiquiD_InvDate"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["LiquiD_InvDate"],
                 Creation_User = reader["Creation_User"].ToString(),
