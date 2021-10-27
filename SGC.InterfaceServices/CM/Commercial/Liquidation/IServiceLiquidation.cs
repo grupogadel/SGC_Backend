@@ -15,5 +15,6 @@ namespace SGC.InterfaceServices.CM.Commercial.Liquidation
         int ChangeStatus(JObject obj);
         Task<int> Add(ManagementLiquidation model);
         Task<int> Update(ManagementLiquidation model);
+        Task<int> AddRefund(ManagementLiquidation model);
     }
 }

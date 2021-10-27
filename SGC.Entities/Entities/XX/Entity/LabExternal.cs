@@ -8,9 +8,9 @@ namespace SGC.Entities.Entities.XX.Entity
     public class LabExternal
     {
         [Key]
-        public int LabExt_ID { get; set; }
+        public int? LabExt_ID { get; set; }
         public int Company_ID { get; set; }
-        public int LabExt_Cod { get; set; }
+        public int? LabExt_Cod { get; set; }
         public bool LabExt_Authorized { get; set; }
         public string LabExt_Name { get; set; }
         public string LabExt_Address { get; set; }

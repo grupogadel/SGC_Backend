@@ -6,7 +6,7 @@ namespace SGC.Entities.Entities.XX.Commercial.Laboratory
 {
     public class AnalisysType
     {
-        public int AnalType_ID { get; set; }
+        public int? AnalType_ID { get; set; }
         public string AnalType_Cod { get; set; }
         public string AnalType_Desc { get; set; }
         public string Creation_User { get; set; }

@@ -3,6 +3,8 @@ using Newtonsoft.Json.Linq;
 using SGC.Entities.Entities.CM.Commercial.Liquidation;
 using SGC.Entities.Entities.CM.Commercial;
 using SGC.InterfaceServices.CM.Commercial.Liquidation;
+using SGC.Entities.Entities.XX.Commercial.Laboratory;
+using SGC.Entities.Entities.XX.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -86,6 +88,8 @@ namespace SGC.Services.CM.Commercial.Liquidation
                         element.LiquidationHead.LiquidationDetailAu = new LiquidationDetail();
                         element.LiquidationHead.LiquidationDetailAuInt = new LiquidationDetail();
                         element.LiquidationHead.LiquidationDetailAgInt = new LiquidationDetail();
+                        element.LiquidationHead.LiquidationDetailAuReint = new LiquidationDetail();
+                        element.LiquidationHead.LiquidationDetailAgReint = new LiquidationDetail();
                         //element.LiquidationHead.PriceInternational = await PriceInternationalGetDay(DateTime.Now);
                     } else {
                         element.LiquidationHead.LiquidationDetailAg = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Ag", "Com");
@@ -93,6 +97,17 @@ namespace SGC.Services.CM.Commercial.Liquidation
                         element.LiquidationHead.LiquidationDetailAuInt = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Au", "Int");
                         element.LiquidationHead.LiquidationDetailAgInt = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Ag", "Int");
                         element.LiquidationHead.PriceInternational = await PriceInternationalGetID((int)element.LiquidationHead.Price_ID);
+
+                        if (element.LiquidationHead.LiquiH_Status == "51")
+                        {
+                            element.LiquidationHead.LiquidationDetailAuReint = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Au", "Rein");
+                            element.LiquidationHead.LiquidationDetailAgReint = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Ag", "Rein");
+                        }
+                        else
+                        {
+                            element.LiquidationHead.LiquidationDetailAuReint = new LiquidationDetail();
+                            element.LiquidationHead.LiquidationDetailAgReint = new LiquidationDetail();
+                        }
                     }
                 }
                 response = temp;
@@ -330,11 +345,31 @@ namespace SGC.Services.CM.Commercial.Liquidation
                     LiquiH_DateApro = reader["LiquiH_DateApro"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["LiquiH_DateApro"],
                     LiquiH_ExpLabVal = reader["LiquiH_ExpLabVal"] == DBNull.Value ? 0 : (decimal)reader["LiquiH_ExpLabVal"],
                     LiquiH_ExpLabValInitial = reader["LiquiH_ExpLabValInitial"] == DBNull.Value ? 0 : (decimal)reader["LiquiH_ExpLabValInitial"],
+                    LiquiH_DateDoc = reader["LiquiH_DateDoc"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["LiquiH_DateDoc"],
+                    LiquiH_NODoc = reader["LiquiH_NODoc"].ToString(),
+                    LabExt_ID = reader["LabExt_ID"] == DBNull.Value ? new int?() : (int)reader["LabExt_ID"],
+                    AnalType_ID = reader["AnalType_ID"] == DBNull.Value ? new int?() : (int)reader["AnalType_ID"],
                     Creation_User = reader["Creation_User"].ToString(),
                     Creation_Date = reader["Creation_Date"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["Creation_Date"],
                     Modified_User = reader["Modified_User"].ToString(),
                     Modified_Date = reader["Modified_Date"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["Modified_Date"],
                     LiquiH_Status = reader["LiquiH_Status"].ToString(),
+
+                    AnalisysType = new AnalisysType
+                    {
+                        AnalType_ID = reader["AnalType_ID"] == DBNull.Value ? new int?() : (int)reader["AnalType_ID"],
+                        AnalType_Cod = reader["AnalType_Cod"].ToString(),
+                        AnalType_Desc = reader["AnalType_Desc"].ToString(),
+                    },
+
+                    LabExternal = new LabExternal
+                    {
+                        LabExt_ID = reader["LabExt_ID"] == DBNull.Value ? new int?() : (int)reader["LabExt_ID"],
+                        LabExt_Cod = reader["LabExt_Cod"] == DBNull.Value ? new int?() : (int)reader["LabExt_Cod"],
+                        LabExt_Name = reader["LabExt_Name"].ToString(),
+                        LabExt_City = reader["LabExt_City"].ToString(),
+                    },
+
                 },
             };
         }
@@ -450,6 +485,49 @@ namespace SGC.Services.CM.Commercial.Liquidation
             }
         }
 
+        public async Task<int> AddRefund(ManagementLiquidation model)
+        {
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[CM].[Liquidation_AddRefund]";
+
+                List<LiquidationDetail> liquidationDetail = new List<LiquidationDetail>();
+                model.LiquidationHead.LiquidationDetailAuReint.LiquiD_DataLine = "Rein";
+                model.LiquidationHead.LiquidationDetailAgReint.LiquiD_DataLine = "Rein";
+                liquidationDetail.Add(model.LiquidationHead.LiquidationDetailAuReint);
+                liquidationDetail.Add(model.LiquidationHead.LiquidationDetailAgReint);
+
+                //Head
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_ID", model.LiquidationHead.LiquiH_ID));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_ExpLabVal", model.LiquidationHead.LiquiH_ExpLabVal));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_DateDoc", model.LiquidationHead.LiquiH_DateDoc));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_NODoc", model.LiquidationHead.LiquiH_NODoc));
+                cmd.Parameters.Add(new SqlParameter("@LabExt_ID", model.LiquidationHead.LabExt_ID));
+                cmd.Parameters.Add(new SqlParameter("@AnalType_ID", model.LiquidationHead.AnalType_ID));
+                cmd.Parameters.Add(new SqlParameter("@Modified_User", model.LiquidationHead.Modified_User));
+                cmd.Parameters.Add(new SqlParameter("@LiquiH_Status", model.LiquidationHead.LiquiH_Status));
+                //Details
+                SqlParameter parGetLiquidationDetail = GetLiquidationDetail("tabLiquidationDetail", liquidationDetail);
+                cmd.Parameters.Add(parGetLiquidationDetail);
+                //Output
+                cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;
+
+                await conn.OpenAsync();
+                var resul = cmd.ExecuteNonQuery();
+                resul = (int)cmd.Parameters["@Result"].Value;
+                await conn.CloseAsync();
+
+                return resul;
+            }
+            catch (Exception e)
+            {
+                return -1;
+                throw e;
+            }
+        }
 
         public SqlParameter GetLiquidationDetail(string name, List<LiquidationDetail> liquidationDetail)
         {

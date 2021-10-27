@@ -82,5 +82,19 @@ namespace SGC.Web.Controllers.CM.Commercial.Liquidation
                 throw ex;
             }
         }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> AddRefund([FromBody] ManagementLiquidation model)
+        {
+            try
+            {
+                var result = await this._liquidationService.AddRefund(model);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
