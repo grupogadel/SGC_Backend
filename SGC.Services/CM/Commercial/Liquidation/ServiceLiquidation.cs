@@ -98,7 +98,7 @@ namespace SGC.Services.CM.Commercial.Liquidation
                         element.LiquidationHead.LiquidationDetailAgInt = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Ag", "Int");
                         element.LiquidationHead.PriceInternational = await PriceInternationalGetID((int)element.LiquidationHead.Price_ID);
 
-                        if (element.LiquidationHead.LiquiH_Status == "51")
+                        if (element.LiquidationHead.LiquiH_Status == "51" || element.LiquidationHead.LiquiH_Status == "52")
                         {
                             element.LiquidationHead.LiquidationDetailAuReint = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Au", "Rein");
                             element.LiquidationHead.LiquidationDetailAgReint = await GetDetailMineral((int)element.LiquidationHead.LiquiH_ID, "Ag", "Rein");
