@@ -79,7 +79,6 @@ namespace SGC.Services.CM.Commercial
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[CM].PriceInternational_Update";
                 cmd.Parameters.Add(new SqlParameter("@Price_ID", model.Price_ID));
-                cmd.Parameters.Add(new SqlParameter("@Price_DatePrice", model.Price_DatePrice));
                 cmd.Parameters.Add(new SqlParameter("@Price_GoldAM", model.Price_GoldAM));
                 cmd.Parameters.Add(new SqlParameter("@Price_GoldPM", model.Price_GoldPM));
                 cmd.Parameters.Add(new SqlParameter("@Price_Silver", model.Price_Silver));
