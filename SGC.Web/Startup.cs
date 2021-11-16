@@ -56,6 +56,8 @@ using SGC.InterfaceServices.CM.Commercial.Proposal;
 using SGC.Services.CM.Commercial.Proposal;
 using SGC.InterfaceServices.CM.Commercial.Reports;
 using SGC.Services.CM.Commercial.Reports;
+using SGC.InterfaceServices.OP.PlantCIP;
+using SGC.Services.OP.PlantCIP;
 
 namespace SGC.Web
 {
@@ -142,6 +144,8 @@ namespace SGC.Web
             services.AddScoped<IServiceTaxMaster, ServiceTaxMaster>();
             services.AddScoped<IServiceLiquidationAdvance, ServiceLiquidationAdvance>();
             services.AddScoped<IServiceReports, ServiceReports>();
+            services.AddScoped<IServiceCampaign, ServiceCampaign>();
+            services.AddScoped<IServicePlants, ServicePlants>();
 
             services.AddCors(options =>
             {

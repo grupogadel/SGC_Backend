@@ -9,6 +9,7 @@ namespace SGC.Entities.Entities.CM.MineralReception
     public class Ruma
     {
         public int Ruma_ID { get; set; }
+        public int? CampH_ID { get; set; }
         public int Company_ID { get; set; }
         public string Ruma_NO { get; set; }
         public string Ruma_Desc { get; set; }

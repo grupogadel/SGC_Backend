@@ -433,8 +433,6 @@ namespace SGC.Services.CM.MineralReception
             }
         }
 
-
-
         public async Task<List<BatchMineral>> GetBatches(int id)
         {
             var response = new List<BatchMineral>();
