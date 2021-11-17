@@ -19,21 +19,6 @@ namespace SGC.Web.Controllers.CM.MineralReception
             this._campaignService = campaignService;
         }
 
-        //// GET: api/Campaign/GetAll/1
-        //[HttpGet("[action]/{id}")]
-        //public async Task<IActionResult> GetAll(int id)
-        //{
-        //    try
-        //    {
-        //        var result = await this._campaignService.GetAll(id);
-        //        return Ok(result);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
         // POST api/Campaign/Add/
         [HttpPost("[action]")]
         public async Task<IActionResult> Add([FromBody] Campaign model)
@@ -107,30 +92,6 @@ namespace SGC.Web.Controllers.CM.MineralReception
                 throw ex;
             }
         }
-
-        //// GET api/Campaign/Get/1
-        //[HttpGet("[action]/{id}")]
-        //public IActionResult Get(int id)
-        //{
-        //    return Ok(
-        //        _campaignService.Get(id)
-        //    );
-        //}
-
-        //// GET: api/Campaign/SearchLote/{}
-        //[HttpPost("[action]")]
-        //public async Task<IActionResult> SearchLote(JObject obj)
-        //{
-        //    try
-        //    {
-        //        var result = await this._campaignService.SearchLote(obj);
-        //        return Ok(result);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
 
         // GET: api/Campaign/GetRumas/{}
         [HttpGet("[action]/{id}")]

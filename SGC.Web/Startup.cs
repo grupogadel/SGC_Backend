@@ -146,6 +146,8 @@ namespace SGC.Web
             services.AddScoped<IServiceReports, ServiceReports>();
             services.AddScoped<IServiceCampaign, ServiceCampaign>();
             services.AddScoped<IServicePlants, ServicePlants>();
+            services.AddScoped<IServiceLeach, ServiceLeach>();
+            services.AddScoped<IServiceGrinding, ServiceGrinding>();
 
             services.AddCors(options =>
             {
