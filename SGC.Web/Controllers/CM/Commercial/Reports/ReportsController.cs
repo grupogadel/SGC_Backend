@@ -32,5 +32,19 @@ namespace SGC.Web.Controllers.CM.Commercial.Reports
                 throw ex;
             }
         }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SearchMineralBatchLiiquidation([FromBody] JObject obj)
+        {
+            try
+            {
+                var result = await this._reportsService.SearchMineralBatchLiiquidation(obj);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

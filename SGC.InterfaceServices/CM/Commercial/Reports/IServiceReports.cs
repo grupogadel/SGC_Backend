@@ -11,5 +11,6 @@ namespace SGC.InterfaceServices.CM.Commercial.Reports
     public interface IServiceReports
     {
         Task<List<BatchComProcTime>> SearchTimeProc(JObject obj);
+        Task<List<MineralBatchLiquidation>> SearchMineralBatchLiiquidation(JObject obj);
     }
 }
