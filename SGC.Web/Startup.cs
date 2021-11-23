@@ -58,6 +58,8 @@ using SGC.InterfaceServices.CM.Commercial.Reports;
 using SGC.Services.CM.Commercial.Reports;
 using SGC.InterfaceServices.OP.PlantCIP;
 using SGC.Services.OP.PlantCIP;
+using SGC.InterfaceServices.XX.Operations.Mining.Plant;
+using SGC.Services.XX.Operations.Mining.Plant;
 
 namespace SGC.Web
 {
@@ -148,6 +150,8 @@ namespace SGC.Web
             services.AddScoped<IServicePlants, ServicePlants>();
             services.AddScoped<IServiceLeach, ServiceLeach>();
             services.AddScoped<IServiceGrinding, ServiceGrinding>();
+            services.AddScoped<IServiceCrushed, ServiceCrushed>();
+            services.AddScoped<IServiceCircuitPlant, ServiceCircuitPlant>();
 
             services.AddCors(options =>
             {
