@@ -138,6 +138,7 @@ namespace SGC.Services.CM.Commercial.Reports
                 BatchM_Lote_New = reader["BatchM_Lote_New"].ToString(),
                 BatchM_TMSInt = reader["BatchM_TMSInt"] == DBNull.Value ? (decimal?)null : (decimal)reader["BatchM_TMSInt"],
                 BatchM_TMHInt = reader["BatchM_TMHInt"] == DBNull.Value ? (decimal?)null : (decimal)reader["BatchM_TMHInt"],
+                BatchM_TMSHist = reader["BatchM_TMSHist"] == DBNull.Value ? (decimal?)null : (decimal)reader["BatchM_TMSHist"],
 
                 Ruma_NO = reader["Ruma_NO"].ToString(),
 
@@ -177,12 +178,16 @@ namespace SGC.Services.CM.Commercial.Reports
                     {
                         element.LiquidationDetailAuReport = new LiquidationDetail();
                         element.LiquidationDetailAgReport = new LiquidationDetail();
-             
+                        element.LiquidationDetailAuInt = new LiquidationDetail();
+                        element.LiquidationDetailAgInt = new LiquidationDetail();
+
                     }
                     else
                     {
                         element.LiquidationDetailAuReport = await GetDetailMineral((int)element.LiquiH_ID, "Au", "Com");
                         element.LiquidationDetailAgReport = await GetDetailMineral((int)element.LiquiH_ID, "Ag", "Com");
+                        element.LiquidationDetailAuInt = await GetDetailMineral((int)element.LiquiH_ID, "Au", "Int");
+                        element.LiquidationDetailAgInt = await GetDetailMineral((int)element.LiquiH_ID, "Ag", "Int");
 
                         if (element.LiquiH_Status == "51" || element.LiquiH_Status == "52")
                         {

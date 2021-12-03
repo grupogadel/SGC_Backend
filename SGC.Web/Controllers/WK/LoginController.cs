@@ -47,5 +47,20 @@ namespace SGC.Web.Controllers.CM.DataMaster
                 throw ex;   
             }
         }
+
+        // GET: api/Login/NavigationMenuGet/{}
+        //[HttpGet("[action]/{idPosition}")]
+        //public async Task<IActionResult> FatherlessModules(int idPosition)
+        //{
+        //    try
+        //    {
+        //        var result = await this._loginService.FatherlessModules(idPosition);
+        //        return Ok(result);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
     }
 }

@@ -12,6 +12,7 @@ namespace SGC.InterfaceServices.WK
     {
         Task<UserAccount> LoginUser(JObject obj);
         Task<List<NavigationMenu>> NavigationMenuGet(int idPosition);
+        //Task<List<NavigationMenu>> FatherlessModules(int idPosition);
         //Task<List<Company>> GetCompanyPosition(int id);
     }
 }

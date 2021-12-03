@@ -12,6 +12,7 @@ namespace SGC.Entities.Entities.CM.Commercial.Reports
         public string BatchM_Lote_New { get; set; }
         public decimal? BatchM_TMSInt { get; set; }
         public decimal? BatchM_TMHInt { get; set; }
+        public decimal? BatchM_TMSHist { get; set; }
 
         //Scale
         public DateTime Scales_DateInp { get; set; }
@@ -49,6 +50,8 @@ namespace SGC.Entities.Entities.CM.Commercial.Reports
         //Liquidation Details
         public virtual LiquidationDetail LiquidationDetailAuReport { get; set; }
         public virtual LiquidationDetail LiquidationDetailAgReport { get; set; }
+        public virtual LiquidationDetail LiquidationDetailAuInt { get; set; }
+        public virtual LiquidationDetail LiquidationDetailAgInt { get; set; }
 
     }
 }

@@ -258,8 +258,8 @@ namespace SGC.Services.WK
                 AccPos_ID = (int)reader["AccPos_ID"],
                 Access_ID = (int)reader["Access_ID"],
                 Position_ID = (int)reader["Position_ID"],
-                AccPos_LimMax = (decimal)reader["AccPos_LimMax"],
-                AccPos_LimMin = (decimal)reader["AccPos_LimMin"],
+                AccPos_LimMax = reader["AccPos_LimMax"] == DBNull.Value ? (decimal?)null : (decimal)reader["AccPos_LimMax"],
+                AccPos_LimMin = reader["AccPos_LimMin"] == DBNull.Value ? (decimal?)null : (decimal)reader["AccPos_LimMin"],
                 Creation_User = reader["Creation_UserAP"].ToString(),
                 Modified_User = reader["Modified_UserAP"].ToString(),
                 Access = new Access{

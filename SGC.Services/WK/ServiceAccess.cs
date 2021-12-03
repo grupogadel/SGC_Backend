@@ -148,6 +148,7 @@ namespace SGC.Services.WK
                 cmd.Parameters.Add(new SqlParameter("@Access_Name", model.Access_Name));
                 cmd.Parameters.Add(new SqlParameter("@Access_Desc", model.Access_Desc));
                 cmd.Parameters.Add(new SqlParameter("@Access_IconName", model.Access_IconName));
+                cmd.Parameters.Add(new SqlParameter("@Module_ID", model.Module_ID));
                 cmd.Parameters.Add(new SqlParameter("@Modified_User", model.Modified_User));
 
                 cmd.Parameters.Add("@Result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.ReturnValue;

@@ -15,6 +15,7 @@ namespace SGC.Services.WK
     public class ServiceLogin : IServiceLogin
     {
         private readonly string _context;
+        private List<NavigationMenu> _modules;
 
         public ServiceLogin(IConfiguration configuration)
         {
@@ -149,12 +150,83 @@ namespace SGC.Services.WK
             var response = new List<NavigationMenu>();
             try
             {
+                List<NavigationMenu> menuitems = await MenuItemsGet(idPosition);
+                var responseGroup = new List<NavigationMenu>();
+                response = (from item in menuitems
+                            where item.Module_Father == null
+                            select new NavigationMenu
+                            {
+                                Id = item.Id,
+                                Module_Father = item.Module_Father,
+                                Title = item.Title,
+                                Icon = item.Icon,
+                                Type = item.Type,
+                                Url = item.Url,
+                                Children = GetChildren(item.Id, menuitems)
+                            }).ToList();
+
+                var menuAll = new NavigationMenu();
+                menuAll.Id = 0;
+                menuAll.Type = "group";
+                menuAll.Title = "Modulos";
+                menuAll.Module_Father = 1;
+                menuAll.Icon = "icon";
+                menuAll.Url = "";
+                menuAll.Children = response;
+                responseGroup.Add(menuAll);
+
+                return responseGroup;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
+        public async Task<NavigationMenu> GetFather(int father_ID)
+        {
+            var response = new NavigationMenu();
+            try
+            {
+                SqlConnection conn = new SqlConnection(_context);
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "[WK].Module_GetFather";
+
+                cmd.Parameters.Add(new SqlParameter("@Father_ID", father_ID));
+
+                await conn.OpenAsync();
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        response = MapToMenuModule(reader);
+                    }
+                }
+                await conn.CloseAsync();
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                return response;
+                throw e;
+            }
+        }
+
+
+        public async Task<List<NavigationMenu>> ModulesByAccess(int idPosition)
+        {
+            var response = new List<NavigationMenu>();
+            try
+            {
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.CommandText = "[WK].LoginMenuModule";
-
                 cmd.Parameters.Add(new SqlParameter("@Position_ID", idPosition));
+
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -166,8 +238,6 @@ namespace SGC.Services.WK
                 }
                 await conn.CloseAsync();
 
-                response = await NavigationMenuGetOrder(response, idPosition);
-
                 return response;
             }
             catch (Exception e)
@@ -177,7 +247,63 @@ namespace SGC.Services.WK
             }
         }
 
-        public async Task<List<NavigationMenu>> AccessGet(int idPosition, int idModule)
+        private static List<NavigationMenu> GetChildren(int idCategoria, List<NavigationMenu> menuitems)
+        {
+            List<NavigationMenu> response = (from item in menuitems
+                                               let tieneHijos = menuitems.Where(o => o.Module_Father == item.Id).Any()
+                                               where item.Module_Father == idCategoria
+                                               select new NavigationMenu
+                                               {
+                                                   Id = item.Id,
+                                                   Module_Father = item.Module_Father,
+                                                   Title = item.Title,
+                                                   Icon = item.Icon,
+                                                   Type = item.Type,
+                                                   Url = item.Url,
+                                                   Children = tieneHijos && item.Type == "group" ? GetChildren(item.Id, menuitems) : null
+                                               }).ToList();
+
+            return response;
+
+        }
+
+        private async Task fathers(NavigationMenu father) {
+            if (father.Module_Father == null)
+                return;
+            NavigationMenu fathert = await GetFather((int)father.Module_Father);
+            _modules.Add(fathert);
+            await fathers(fathert);
+        }
+
+        public async Task<List<NavigationMenu>> MenuItemsGet(int idPosition)
+        {
+            var modules = new List<NavigationMenu>();
+            var access = new List<NavigationMenu>();
+            var menu = new List<NavigationMenu>();
+            try
+            {
+                _modules = new List<NavigationMenu>();
+                modules = await ModulesByAccess(idPosition);
+
+                foreach (NavigationMenu module in modules){
+                    await fathers(module);
+                }
+
+                List<NavigationMenu> uniqueFathers = _modules.Distinct().ToList();
+
+                access = await AccessGetPosition(idPosition);
+                menu = uniqueFathers.Concat(access.Concat(modules).ToList()).ToList();
+
+                return menu;
+            }
+            catch (Exception e)
+            {
+                return menu;
+                throw e;
+            }
+        }
+
+        public async Task<List<NavigationMenu>> AccessGetPosition(int idPosition)
         {
             var response = new List<NavigationMenu>();
             try
@@ -185,10 +311,9 @@ namespace SGC.Services.WK
                 SqlConnection conn = new SqlConnection(_context);
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.CommandText = "[WK].LoginMenuAccess";
+                cmd.CommandText = "[WK].LoginMenuAccessPosition";
 
                 cmd.Parameters.Add(new SqlParameter("@Position_ID", idPosition));
-                cmd.Parameters.Add(new SqlParameter("@Module_ID", idModule));
 
                 await conn.OpenAsync();
                 using (var reader = await cmd.ExecuteReaderAsync())
@@ -208,81 +333,6 @@ namespace SGC.Services.WK
                 throw e;
             }
         }
-
-        private async Task<List<NavigationMenu>> NavigationMenuGetOrder(List<NavigationMenu> modules, int idPosition)
-        {
-            var navigationResponde = new NavigationMenu();
-            var menuResponse = new List<NavigationMenu>();
-
-            var modulesAccGet = await NavigationGetAccess(modules, idPosition);
-
-            foreach (NavigationMenu module in modulesAccGet){
-                var fatherIndex = new NavigationMenu(); 
-                if (module.Module_Father != null) {
-                    fatherIndex = ModuleFatherGet2(modules, module.Module_Father);
-                    //foreach (NavigationMenu Acc in father.Children){
-                    //    Access.Add(Acc);
-                    //}
-                    //Access.Add(module);
-                    fatherIndex.Children.Add(module);
-                    navigationResponde = fatherIndex;
-                    //menuResponse.Add(navigationResponde);
-                    modulesAccGet.FirstOrDefault(i => i.Id == navigationResponde.Id);
-                    //modulesAccGet.Remove(fatherIndex);
-                }
-                
-            }
-            int e = 0;
-            var navigationRespondeF = new List<NavigationMenu>();
-            
-            foreach (NavigationMenu module in modulesAccGet)
-            {
-                if (module.Module_Father == null){
-                    navigationRespondeF.Add(module);
-                }
-                e++;
-            }
-            return navigationRespondeF;
-        }
-
-        private NavigationMenu ModuleFatherGet2(List<NavigationMenu> modules, int? idFather)
-        {
-            var response = new NavigationMenu();
-
-            foreach (NavigationMenu module in modules)
-            {
-                if (module.Id == idFather)
-                {
-                    response = module;
-                    break;
-                }
-            }
-            return response;
-        }
-
-        private  int ModuleFatherGet(List<NavigationMenu> modules, int? idFather){
-            var response = 0;
-            int loop = 0;
-            foreach (NavigationMenu module in modules){
-                if (module.Id == idFather){
-                    response = loop;
-                    break;
-                }
-                loop++;
-            }
-            return response;
-        }
-
-        private async Task<List<NavigationMenu>> NavigationGetAccess(List<NavigationMenu> modules, int idPosition)
-        {
-            //var response = new List<NavigationMenu>();
-
-            foreach (NavigationMenu module in modules){
-                module.Children = await AccessGet(idPosition, module.Id);
-            }
-            return modules;
-        }
-
         private UserAccount MapToLoginUser(SqlDataReader reader)
         {
             return new UserAccount()
@@ -330,9 +380,10 @@ namespace SGC.Services.WK
             return new NavigationMenu()
             {
                 Id = (int)reader["Access_ID"],
-                Name = reader["Access_Name"].ToString(),
+                Title = reader["Access_Name"].ToString(),
                 Url = reader["Access_Url"].ToString(),
-                Module_Father = null,
+                Module_Father = (int)reader["Module_ID"],
+                Type = "item",
                 Icon = reader["Access_IconName"].ToString(),
             };
         }   
@@ -341,10 +392,11 @@ namespace SGC.Services.WK
             return new NavigationMenu()
             {
                 Id = (int)reader["Module_ID"],
-                Name = reader["Module_Name"].ToString(),
-                Icon = "fa fa-folder-open",
-                Url = reader["Module_Name"].ToString(),
                 Module_Father = reader["Module_Father"] == DBNull.Value ? new int?() : (int)reader["Module_Father"],
+                Title = reader["Module_Name"].ToString(),
+                Icon = "fa fa-folder-open",
+                Type = "group",
+                Url = reader["Module_Name"].ToString(),
             };
         }
 

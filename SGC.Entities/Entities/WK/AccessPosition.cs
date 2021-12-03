@@ -11,8 +11,8 @@ namespace SGC.Entities.Entities.WK
         public int AccPos_ID { get; set; }
 		public int Access_ID { get; set; }
 		public int Position_ID { get; set; }
-        public decimal AccPos_LimMin { get; set; }
-        public decimal AccPos_LimMax { get; set; }
+        public decimal? AccPos_LimMin { get; set; }
+        public decimal? AccPos_LimMax { get; set; }
         public string Creation_User { get; set; }
         public DateTime? Creation_Date { get; set; }
         public string Modified_User { get; set; }
