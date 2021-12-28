@@ -64,15 +64,20 @@ namespace SGC.Services.CM.Laboratory
                 bool rank = false;
                 DateTime dateTime;
 
-                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime)  && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
+                if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime) && !DateTime.TryParse(obj["date_To"].ToObject<string>(), out dateTime))
                 {
                     obj["date_To"] = DateTime.Now;
                     obj["date_From"] = obj["date_To"];
                     rank = false;
                 }
-
-                if (obj["date_To"].ToObject<DateTime>() == obj["date_From"].ToObject<DateTime>()) rank = false;
-                else rank = true;
+                else
+                {
+                    if (!DateTime.TryParse(obj["date_From"].ToObject<string>(), out dateTime))
+                    {
+                        obj["date_From"] = obj["date_To"];
+                    }
+                    rank = true;
+                }
 
                 cmd.Parameters.Add(new SqlParameter("@Company_ID", obj["idCompany"].ToObject<int>()));
                 cmd.Parameters.Add(new SqlParameter("@SampH_NO", obj["sampH_NO"].ToObject<string>()));
@@ -89,7 +94,7 @@ namespace SGC.Services.CM.Laboratory
                     {
                         response.Add(MapToSampleHead(reader));
                     }
-                }
+                 }
                 await conn.CloseAsync();
                 return response;
             }
